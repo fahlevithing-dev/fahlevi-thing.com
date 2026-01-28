@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            
+            const searchBox = document.querySelector('.search-box');
+            if (searchBox) searchBox.classList.toggle('active');
         });
     }
    // --- SEARCH FUNCTIONALITY ---
