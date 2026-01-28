@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Fahlevi Thing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="brand">
+                <h1 class="brand-name"><a href="index.html">FAHLEVI THING</a></h1>
+                <p class="tagline">a Reza POV</p>
+            </div>
+            
+            <img src="images/LogoFahlevithing.jpeg" alt="Fahlevi Thing Logo" class="header-logo">
+            
+            <div class="nav-wrapper">
+                <nav class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#" id="portfolio-nav">MY PORTFOLIO</a></li>
+                        <li><a href="insights.html">INSIGHTS</a></li>
+                        <li><a href="about.html">ABOUT ME</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="search-box">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search article...">
+                        <button type="submit" aria-label="Search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span class="eye-icon">👀</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-layout">
+        
+        <main class="content-area">
+            
+            <div class="post-details" style="margin-bottom: 40px;">
+                <h2>Search Results</h2>
+                <p id="search-query-display" style="color: #777; font-style: italic; margin-top: 5px;">Showing results for: "..."</p>
+                <hr style="width: 60px; border: 1px solid #2584a1; margin: 20px 0;">
+            </div>
+
+            <div id="search-results-container" class="posts-grid">
+                <!-- Search results will be injected here -->
+            </div>
+
+            <div id="no-results" style="display: none; text-align: center; color: #777; margin-top: 50px;">
+                <p>No articles found matching your search.</p>
+                <a href="index.html" style="color: var(--accent-blue); text-decoration: underline; margin-top: 10px; display: inline-block;">Back to Home</a>
+            </div>
+
+        </main>
+
+        <aside class="sidebar-area">
+            <div class="widget">
+                <h3>Connect</h3>
+                <div class="social-widget">
+                    <a href="https://instagram.com/fahlevithing" class="soc-icon ig"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/rezafahlevirff" class="soc-icon tw"><i class="fab fa-x-twitter"></i></a>
+                    <a href="mailto:fahlevithing@gmail.com" class="soc-icon em"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-socials">
+                <a href="https://instagram.com/fahlevithing" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/rezafahlevirff" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:fahlevithing@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 <b>Reza Fahlevi</b>. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Internal Script for Search Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get Query from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('q');
+            const displayElement = document.getElementById('search-query-display');
+            const container = document.getElementById('search-results-container');
+            const noResults = document.getElementById('no-results');
+
+            if (query) {
+                displayElement.textContent = `Showing results for: "${query}"`;
+                
+                // 2. Define Content Database (Index)
+                const siteContent = [
+                    { title: "How I Got Into The World of Investing?", url: "investment-journey.html", category: "INVESTMENT", date: "26 DECEMBER 2025", excerpt: "Me, Reza Fahlevi. I would like to begin my first post by sharing my personal introduction to the world of stock market investing...", content: "how i got into the world of investing stock market rhb sekuritas warren buffett lo kheng hong film ipo civil servant bpk ri privileges however" },
+                    { title: "Fahlevi's Portfolio", url: "portfolio.html", category: "PORTFOLIO", date: "27 JANUARY 2026", excerpt: "In this post, I will share my current portfolio, which I will regularly update to reflect my latest work and progress.", content: "pwon dkft sril adro admr portfolio update pakuwon jati nickel coal mining textile sritex however margin of safety" },
+                    { title: "The Miracle of the \"Modest\" 20 Percent", url: "miracle-of-20-percent.html", category: "INVESTMENT", date: "27 JANUARY 2026", excerpt: "Historically (from 1965 to 2023), Berkshire Hathaway has achieved a Compound Annual Growth Rate (CAGR) of approximately 19.8%...", content: "berkshire hathaway warren buffett cagr compound interest market average s&p 500 however scale law of large numbers" },
+                    { title: "How China Could Win Against The US", url: "china-ai-race.html", category: "TECHNOLOGY", date: "15 JANUARY 2026", excerpt: "The global narrative on Artificial Intelligence is often hyper-focused on who has the smartest chatbot or the fastest chip...", content: "how china could win against the us ai artificial intelligence energy chips infrastructure models applications deepseek nvidia jensen huang however" },
+                    { title: "Plaza Indonesia Realty & Pakuwon Jati", url: "property-analysis.html", category: "STOCK ANALYSIS", date: "26 DECEMBER 2025", excerpt: "As of 31 December 2024, Plaza Indonesia Realty Tbk (PLIN) owns and manages three core property portfolios...", content: "plin pwon plaza indonesia grand hyatt property real estate financial development balance sheet dire simas however how valuable are the assets" },
+                    { title: "Why Pakuwon Jati (PWON) Remains a Top-Tier Resilient Property Stock", url: "pwon-analysis.html", category: "STOCK ANALYSIS", date: "28 JANUARY 2026", excerpt: "PT Pakuwon Jati Tbk (PWON) stands out as one of the most structurally defensive property developers in Indonesia...", content: "pwon pakuwon jati property developer recurring income superblocks gandaria city kota kasablanka however margin of safety" },
+                    { title: "DKFT Analysis: Turnaround Story & Nickel Outlook", url: "dkft-analysis.html", category: "STOCK ANALYSIS", date: "28 JANUARY 2026", excerpt: "I started paying attention to DKFT shares when the price was still around IDR 180 per share...", content: "dkft nickel ore miner turnaround smelter bahlil lahadalia mining quota however valuation" },
+                    { title: "The Rise and Fall of Sritex (SRIL)", url: "sril-analysis.html", category: "STOCK ANALYSIS", date: "28 JANUARY 2026", excerpt: "Sri Rejeki Isman Tbk (SRIL), widely known as Sritex, was once the largest integrated textile manufacturer in Southeast Asia...", content: "sril sritex textile manufacturer bankruptcy debt red flags however iwan lukminto" },
+                    { title: "ADRO & ADMR Analysis", url: "adro-admr-analysis.html", category: "STOCK ANALYSIS", date: "28 JANUARY 2026", excerpt: "I have been observing Adaro Energy (ADRO) for a long time, as it is one of Indonesia’s coal mining companies...", content: "adro admr adaro energy coal mining green energy transition aluminum smelter aadi dividend however charlie munger" },
+                    { title: "About Me", url: "about.html", category: "PROFILE", date: "", excerpt: "I'm not an expert. I'm just an investment enthusiast. But on this website, I write without boundaries.", content: "about me reza fahlevi investment enthusiast personal archive thoughts reflections however how significant" }
+                ];
+
+                // 3. Filter Content
+                const lowerQuery = query.toLowerCase();
+                const results = siteContent.filter(item => {
+                    return item.title.toLowerCase().includes(lowerQuery) || 
+                           item.excerpt.toLowerCase().includes(lowerQuery) ||
+                           item.category.toLowerCase().includes(lowerQuery) ||
+                           (item.content && item.content.toLowerCase().includes(lowerQuery));
+                });
+
+                // 4. Render Results
+                if (results.length > 0) {
+                    results.forEach(item => {
+                        const articleHTML = `
+                            <article class="post-item">
+                                <div class="post-details">
+                                    <div class="meta-cat">${item.category} ${item.date ? '• ' + item.date : ''}</div>
+                                    <h2><a href="${item.url}">${item.title}</a></h2>
+                                    <div class="excerpt">
+                                        <p>${item.excerpt}</p>
+                                    </div>
+                                    <a href="${item.url}" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        `;
+                        container.insertAdjacentHTML('beforeend', articleHTML);
+                    });
+                } else {
+                    noResults.style.display = 'block';
+                }
+            } else {
+                displayElement.textContent = "Please enter a search term.";
+                noResults.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
