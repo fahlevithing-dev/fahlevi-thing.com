@@ -1,43 +1,103 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- Elemen Modal ---
-    const modalOverlay = document.getElementById('portfolio-modal');
-    const portfolioBtn = document.getElementById('portfolio-btn');
-    const closeModalBtn = document.getElementById('close-modal');
+    // =========================================
+    // 1. MOBILE MENU TOGGLE
+    // =========================================
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-    // 1. Buka Modal saat klik "MY PORTFOLIO"
-    if (portfolioBtn) {
-        portfolioBtn.addEventListener('click', (e) => {
-            e.preventDefault(); // Mencegah link lompat
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Matikan scroll body saat modal buka
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Toggle search box visibility on mobile if needed
+            const searchBox = document.querySelector('.search-box');
+            if (searchBox) searchBox.classList.toggle('active');
         });
     }
 
-    // 2. Tutup Modal fungsi helper
-    const closeModal = () => {
-        modalOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Hidupkan scroll body kembali
+    // =========================================
+    // 2. SEARCH FUNCTIONALITY
+    // =========================================
+    const searchForms = document.querySelectorAll('.search-box form');
+    searchForms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = form.querySelector('input');
+            const query = input.value.trim();
+            if (query) {
+                // Redirect to search page (adjust URL as needed)
+                window.location.href = `search?q=${encodeURIComponent(query)}`;
+            }
+        });
+    });
+
+    // =========================================
+    // 3. PORTFOLIO MODAL LOGIC (UPDATED)
+    // =========================================
+    
+    // Elemen-elemen Modal
+    const modalOverlay = document.getElementById('portfolio-modal');
+    const portfolioNav = document.getElementById('portfolio-nav'); // Link di Navbar
+    const closeModalBtn = document.getElementById('close-modal');
+    
+    // Fungsi: Buka Modal
+    const openPortfolioOverlay = () => {
+        if (modalOverlay) {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Matikan scroll background
+        }
     };
 
-    // Tutup saat klik tombol X
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', closeModal);
+    // Fungsi: Tutup Modal
+    const closePortfolioOverlay = () => {
+        if (modalOverlay) {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Hidupkan scroll background
+            
+            // Bersihkan hash URL agar bersih
+            if (window.location.hash === '#show-portfolio') {
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
+        }
+    };
+
+    // Event Listener: Klik Link Navbar "MY PORTFOLIO"
+    if (portfolioNav) {
+        portfolioNav.addEventListener('click', (e) => {
+            // Cek apakah user ada di halaman index.html (Home)
+            const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+            
+            if (isHomePage) {
+                e.preventDefault();
+                openPortfolioOverlay();
+            } else {
+                // Jika di halaman lain (misal about.html), biarkan link bekerja
+                // Link harus mengarah ke: href="index.html#show-portfolio"
+            }
+        });
     }
 
-    // Tutup saat klik area gelap (backdrop)
+    // Event Listener: Tombol Close (X)
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closePortfolioOverlay);
+    }
+
+    // Event Listener: Klik Area Gelap (Backdrop) untuk menutup
     window.addEventListener('click', (e) => {
         if (e.target === modalOverlay) {
-            closeModal();
+            closePortfolioOverlay();
         }
     });
 
-    // 3. Fungsi Navigasi dari dalam Modal
+    // Event Listener: Logic Smooth Scroll saat Kartu Saham diklik
+    // (Menggunakan onclick="scrollToSection(...)" dari HTML sebelumnya)
     window.scrollToSection = (sectionId) => {
-        closeModal(); // Tutup modal dulu
+        closePortfolioOverlay(); // Tutup modal dulu
+        
         const section = document.getElementById(sectionId);
         if (section) {
-            // Beri sedikit delay agar modal tertutup smooth baru scroll
+            // Beri sedikit delay agar animasi tutup modal selesai, baru scroll
             setTimeout(() => {
                 section.scrollIntoView({ 
                     behavior: 'smooth',
@@ -46,128 +106,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300);
         }
     };
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // Toggle Menu Mobile
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            
-            const searchBox = document.querySelector('.search-box');
-            if (searchBox) searchBox.classList.toggle('active');
-        });
-    }
-   // --- SEARCH FUNCTIONALITY ---
-    const searchForms = document.querySelectorAll('.search-box form');
-    searchForms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const input = form.querySelector('input');
-            const query = input.value.trim();
-            if (query) {
-                window.location.href = `search?q=${encodeURIComponent(query)}`;
-            }
-        });
-    });
-    // --- PORTFOLIO OVERLAY LOGIC ---
-    // Inject Overlay HTML
-    const overlayHTML = `
-        <div id="portfolio-overlay" class="portfolio-overlay">
-            <div class="close-overlay">&times;</div>
-            <div class="overlay-content">
-                <h2 class="overlay-title">Investment Portfolio</h2>
-                <div class="portfolio-grid">
-                    <a href="pwon-analysis.html" class="portfolio-card">
-                        <span class="stock-code">PWON</span>
-                        <span class="stock-name">Pakuwon Jati</span>
-                        <span class="stock-cat">Property Developer</span>
-                    </a>
-                    <a href="dkft-analysis.html" class="portfolio-card">
-                        <span class="stock-code">DKFT</span>
-                        <span class="stock-name">Central Omega</span>
-                        <span class="stock-cat">Nickel Mining</span>
-                    </a>
-                    <a href="sril-analysis.html" class="portfolio-card">
-                        <span class="stock-code">SRIL</span>
-                        <span class="stock-name">Sri Rejeki Isman</span>
-                        <span class="stock-cat">Textile & Garment</span>
-                    </a>
-                    <a href="adro-admr-analysis.html" class="portfolio-card">
-                        <span class="stock-code">ADRO & ADMR</span>
-                        <span class="stock-name">Adaro Group</span>
-                        <span class="stock-cat">Energy & Minerals</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    `;
-    document.body.insertAdjacentHTML('beforeend', overlayHTML);
-
-    const portfolioNav = document.getElementById('portfolio-nav');
-    const overlay = document.getElementById('portfolio-overlay');
-    const closeBtn = document.querySelector('.close-overlay');
-    const overlayLinks = document.querySelectorAll('.overlay-content a');
- 
-    if (portfolioNav && overlay && closeBtn) {
-        const openPortfolioOverlay = () => overlay.classList.add('active');
-        const closePortfolioOverlay = () => {
-            overlay.classList.remove('active');
-            // Membersihkan hash dari URL setelah overlay ditutup untuk UX yang lebih baik
-            if (window.location.hash === '#show-portfolio') {
-                history.pushState("", document.title, window.location.pathname + window.location.search);
-            }
-        };
- 
-        // 1. Logika saat link navigasi portfolio diklik
-        portfolioNav.addEventListener('click', (e) => {
-            // Jika sudah di homepage, jangan navigasi, cukup buka overlay.
-            const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
-            if (isHomePage) {
-                e.preventDefault();
-                openPortfolioOverlay();
-            }
-            // Jika di halaman lain, biarkan link mengarahkan ke index.html#show-portfolio
-        });
- 
-        // 2. Logika untuk menutup overlay
-        closeBtn.addEventListener('click', closePortfolioOverlay);
-        overlayLinks.forEach(link => {
-            link.addEventListener('click', closePortfolioOverlay);
-        });
- 
-        // 3. Cek URL saat halaman dimuat untuk membuka overlay jika ada hash
-        if (window.location.hash === '#show-portfolio') {
-            openPortfolioOverlay();
-        }
+    // Auto-Open: Jika URL mengandung #show-portfolio (misal redirect dari halaman lain)
+    if (window.location.hash === '#show-portfolio') {
+        openPortfolioOverlay();
     }
 
-    // --- GOOGLE TRANSLATE WIDGET INJECTION ---
+    // =========================================
+    // 4. GOOGLE TRANSLATE WIDGET
+    // =========================================
     const socialWidget = document.querySelector('.social-widget');
     if (socialWidget) {
-        // Create container for translate widget
+        // Create container
         const translateDiv = document.createElement('div');
         translateDiv.id = 'google_translate_element';
         translateDiv.className = 'translate-widget';
+        translateDiv.style.marginTop = '15px'; // Sedikit spasi
         
-        // Insert after the social widget
+        // Insert after social widget
         socialWidget.parentNode.insertBefore(translateDiv, socialWidget.nextSibling);
 
-        // Define the callback function globally
+        // Global callback
         window.googleTranslateElementInit = function() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'id', // Only Indonesian
+                includedLanguages: 'id', // Hanya Indonesia
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
         };
 
-        // Inject the Google Translate script
+        // Inject script
         const script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
