@@ -4,7 +4,7 @@
 This is a static personal website/blog built with plain HTML, CSS, and JavaScript. The site focuses on financial/investment content from "Reza POV" and is written primarily in Indonesian. Recently integrated with Google Gemini AI for an interactive chat assistant.
 
 ## Architecture
-- **Static Site Structure**: Multiple HTML pages (`index.html`, `about.html`, `privacy.html`) sharing common `style.css` and `Script.js`
+- **Static Site Structure**: Multiple HTML pages (`index.html`, `about.html`, `privacy.html`) sharing common `style.css` and `script.js`
 - **Layout Components**: Header with navigation, main content area, sidebar (including Gemini chat widget), and footer
 - **Content Pattern**: Blog-style posts with thumbnail images, metadata categories, excerpts, and "read more" links
 - **AI Integration**: Client-side Gemini API chat interface in the sidebar
@@ -36,7 +36,7 @@ This is a static personal website/blog built with plain HTML, CSS, and JavaScrip
 
 ## AI Integration (Gemini Assistant)
 - **API Setup**: Requires Google Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
-- **Security Warning**: API key is currently stored client-side in `Script.js` - exposed in browser source. For production, implement backend proxy to secure the key.
+- **Security Warning**: API key is currently stored client-side in `script.js` - exposed in browser source. For production, implement backend proxy to secure the key.
 - **Model**: Uses `gemini-3-flash-preview` model via `@google/generativeai` library (loaded via CDN)
 - **Chat Session**: Maintains conversation context using `startChat()` method
 - **Error Handling**: Displays user-friendly error messages for API failures
@@ -50,7 +50,7 @@ This is a static personal website/blog built with plain HTML, CSS, and JavaScrip
   - Google Fonts (Inter, Lora)
   - FontAwesome 6.4.2 via CDN
   - Google Generative AI library via CDN
-- **API Key Management**: Replace `'YOUR_API_KEY_HERE'` in `Script.js` with actual key (temporary - migrate to secure backend)
+- **API Key Management**: Replace `'YOUR_API_KEY_HERE'` in `script.js` with actual key (temporary - migrate to secure backend)
 
 ## Code Examples
 - **CSS Variables**: `var(--accent-blue)` for consistent theming
@@ -69,5 +69,5 @@ This is a static personal website/blog built with plain HTML, CSS, and JavaScrip
 - `about.html`: Personal information page
 - `privacy.html`: Privacy policy page
 - `style.css`: All styling with CSS custom properties and chat styles
-- `Script.js`: Mobile menu, dropdown interactions, and Gemini chat logic</content>
+- `script.js`: Mobile menu, dropdown interactions, and Gemini chat logic
 <parameter name="filePath">d:\Fahlevithing\.github\copilot-instructions.md

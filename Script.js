@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const input = form.querySelector('input');
             const query = input.value.trim();
             if (query) {
-                window.location.href = `search?q=${encodeURIComponent(query)}`;
+                window.location.href = `search.html?q=${encodeURIComponent(query.toLowerCase())}`;
             }
         });
     });
