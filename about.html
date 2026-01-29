@@ -3,38 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>About - Fahlevi Thing</title>
-    <meta name="description" content="Personal thoughts, reflections, and investment insights by Reza Fahlevi.">
-    <meta property="og:title" content="About - Fahlevi Thing">
-    <meta property="og:description" content="I write without boundaries. A personal archive of thoughts by Reza Fahlevi.">
-    <meta property="og:image" content="images/reza.png">
-    <meta property="og:url" content="https://fahlevi-thing-com.vercel.app/about">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
-    
-    <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="main-header">
         <div class="container header-container">
             <div class="brand">
-                <h1 class="brand-name"><a href="/">FAHLEVI THING</a></h1>
+                <h1 class="brand-name"><a href="index.html">FAHLEVI THING</a></h1>
                 <p class="tagline">a Reza POV</p>
             </div>
             
             <div class="nav-wrapper">
                 <nav class="navbar">
                     <ul class="nav-links">
-                        <li><a href="/">HOME</a></li>
-                        <li><a href="portfolio">MY PORTFOLIO</a></li>
-                        <li><a href="insights">INSIGHTS</a></li>
-                        <li><a href="about" class="active">ABOUT</a></li>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#" id="portfolio-nav">MY PORTFOLIO</a></li>
+                        <li><a href="insights.html">INSIGHTS</a></li>
+                        <li><a href="about.html" class="active">ABOUT</a></li>
                     </ul>
                 </nav>
                 
@@ -58,9 +48,11 @@
         <main class="content-area">
             
             <article class="post-item full-content">
+                
                 <div class="post-details" style="text-align: center; margin-bottom: 50px;">
                     <div class="meta-cat">Reza Fahlevi</div>
                     <h2>About</h2>
+                    
                     <div class="post-date" style="font-size: 0.9rem; color: #999; margin-top: 5px; font-style: italic;">
                         January 5, 2026
                     </div>
@@ -71,33 +63,34 @@
                     <img src="images/reza.png" alt="Reza Fahlevi" style="width: 100%; max-width: 450px; height: auto; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: block; margin: 0 auto;">
                 </div>
 
-                <div class="entry-content" style="font-size: 1.1rem; color: #333; line-height: 1.8;">
-                    <p style="text-align: center; margin-bottom: 20px; font-weight: 600;">I'm not an expert. I'm just an investment enthusiast.</p>
+                <div class="entry-content" style="font-size: 1.1rem; color: #333;">
+                    
+                    <p style="text-align: center; margin-bottom: 20px;">I'm not an expert. I'm just an investment enthusiast.</p>
 
                     <div style="text-align: justify; max-width: 90%; margin: 0 auto;">
-                        <p style="margin-bottom: 15px;">But on this website, I write without boundaries. This is a space where I put down everything I want—exactly as I think it, exactly as I feel it, and exactly as it exists in my mind. There are no fixed rules, no expectations to please anyone, and no obligation to be consistent or agreeable.</p>
+                        <p style="margin-bottom: 15px;">But on this fucking website, I write without boundaries. This is a space where I put down everything I want—exactly as I think it, exactly as I feel it, and exactly as it exists in my mind. There are no fixed rules, no expectations to please anyone, and no obligation to be consistent or agreeable.</p>
                         <p style="margin-bottom: 15px;">This website exists as a personal archive of thoughts, reflections, ideas, doubts, opinions, and moments of both clarity and confusion. It is a place to explore perspectives, document learning, and express emotions freely.</p>
                         <p style="margin-bottom: 0;">As long as this space exists, I will continue to write honestly, openly, and unapologetically—driven purely by curiosity, experience, and the need to think through words.</p>
                     </div>
 
-                    <p style="font-style: italic; margin: 30px auto 0; text-align: justify; max-width: 90%; border-left: 3px solid #2584a1; padding-left: 15px;">
-                        For What It's Worth<br>
-                        I did it <span style="text-decoration: underline;">my way</span>
+                    <p style="font-style: italic; margin: 15px auto 0; text-align: justify; max-width: 90%;">
+                        <a href="https://open.spotify.com/intl-id/track/5Ih40KFkj3cSzxgisQxBvX?si=P3tzNnfqTOqbCqcBIaPxCg&nd=1&dlsi=e4694163dc82450a" target="_blank" class="spotify-link">For What It's Worth</a><br>
+                        I did it <a href="#" class="spotify-link">my way</a>
                     </p>
+
                 </div>
             </article>
+
         </main>
 
         <aside class="sidebar-area">
             <div class="widget">
                 <h3>Connect</h3>
                 <div class="social-widget">
-                    <a href="https://instagram.com/fahlevithing" class="soc-icon ig" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/rezafahlevirff" class="soc-icon tw" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://instagram.com/fahlevithing" class="soc-icon ig"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/rezafahlevirff" class="soc-icon tw"><i class="fab fa-x-twitter"></i></a>
                     <a href="mailto:fahlevithing@gmail.com" class="soc-icon em"><i class="fas fa-envelope"></i></a>
-                    <div style="margin-top: 20px; text-align: center;">
-                        <img src="images/logofahlevithing.jpg" alt="Fahlevi Thing Logo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #2584a1;">
-                    </div>
+                    <img src="images/LogoFahlevithing.jpeg" alt="Fahlevi Thing Logo" class="header-logo">
                 </div>
             </div>
         </aside>
@@ -111,11 +104,14 @@
                 <a href="mailto:fahlevithing@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
             <div class="copyright">
-                © 2026 <b>Reza Fahlevi</b>. All Rights Reserved.
+                &copy; 2025 <b>Reza Fahlevi</b>. All Rights Reserved.
+            </div>
+            <div class="footer-legal" style="margin-top: 10px; font-size: 0.8rem;">
+                <a href="privacy.html" style="color: #999; text-decoration: none; transition: 0.3s;">Privacy Policy</a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js?v=1.2"></script>
+    <script src="script.js"></script>
 </body>
 </html>
