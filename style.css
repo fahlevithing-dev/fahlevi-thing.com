@@ -365,15 +365,21 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .nav-wrapper { flex-direction: column; align-items: flex-start; padding-bottom: 20px; }
+    .nav-wrapper { ion: column; 
+        align-items: flex-start; 
+        padding-bottom: 20px;
+        /* Pastikan wrapper punya tinggi minimal agar tombol hamburger tidak keluar/terpotong */
+        min-height: 60px; 
+        position: relative;
+    }
+    
     .nav-links { 
         display: none; 
         width: 100%; 
         flex-direction: column; 
         align-items: flex-start; 
         gap: 0;
-        margin-top: 25px;
-    }
+        margin
     .nav-links.active { display: flex; } /* Class untuk JS toggle */
     
     .nav-links li { width: 100%; }
@@ -387,8 +393,14 @@ footer {
     .search-box.active { display: block; }
     .search-box input { width: 100%; }
     
-    .hamburger { display: block; position: absolute; right: 20px; top: 18px; font-size: 1.5rem; cursor: pointer; }
-    .nav-wrapper { position: relative; }
+    .hamburger { 
+  
+        top: 18px; 
+        font-size: 1.5rem; 
+        cursor: pointer; 
+        z-index: 100; /* Pastikan di atas elemen lain */
+        color: #fff; /* Pastikan kontras dengan background teal */
+    }
 }
 
 /* --- PORTFOLIO OVERLAY --- */

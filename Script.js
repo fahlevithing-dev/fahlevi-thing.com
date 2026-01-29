@@ -62,23 +62,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('portfolio-overlay');
     const closeBtn = document.querySelector('.close-overlay');
     const overlayLinks = document.querySelectorAll('.overlay-content a');
-
+ 
     if (portfolioNav && overlay && closeBtn) {
-        portfolioNav.addEventListener('click', (e) => {
-            e.preventDefault();
-            overlay.classList.add('active');
-        });
-
-        closeBtn.addEventListener('click', () => {
+        const openPortfolioOverlay = () => overlay.classList.add('active');
+        const closePortfolioOverlay = () => {
             overlay.classList.remove('active');
+            // Membersihkan hash dari URL setelah overlay ditutup untuk UX yang lebih baik
+            if (window.location.hash === '#show-portfolio') {
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
+        };
+ 
+        // 1. Logika saat link navigasi portfolio diklik
+        portfolioNav.addEventListener('click', (e) => {
+            // Jika sudah di homepage, jangan navigasi, cukup buka overlay.
+            const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
+            if (isHomePage) {
+                e.preventDefault();
+                openPortfolioOverlay();
+            }
+            // Jika di halaman lain, biarkan link mengarahkan ke index.html#show-portfolio
         });
-
-        // Close overlay when clicking a link
+ 
+        // 2. Logika untuk menutup overlay
+        closeBtn.addEventListener('click', closePortfolioOverlay);
         overlayLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                overlay.classList.remove('active');
-            });
+            link.addEventListener('click', closePortfolioOverlay);
         });
+ 
+        // 3. Cek URL saat halaman dimuat untuk membuka overlay jika ada hash
+        if (window.location.hash === '#show-portfolio') {
+            openPortfolioOverlay();
+        }
     }
 
     // --- GOOGLE TRANSLATE WIDGET INJECTION ---
