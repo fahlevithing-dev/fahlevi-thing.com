@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="description" content="Fahlevi's Investment Portfolio and Insights">
     <title>Fahlevi's Portfolio - Fahlevi Thing</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,10 +23,10 @@
             <div class="nav-wrapper">
                 <nav class="navbar">
                     <ul class="nav-links">
-                        <li><a href="index">HOME</a></li>
-                        <li><a href="index#show-portfolio" id="portfolio-nav">MY PORTFOLIO</a></li>
-                        <li><a href="insights">INSIGHTS</a></li>
-                        <li><a href="about">ABOUT</a></li>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#" id="portfolio-btn">MY PORTFOLIO</a></li>
+                        <li><a href="insights.html">INSIGHTS</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
                     </ul>
                 </nav>
                 
@@ -33,7 +35,6 @@
                         <input type="text" placeholder="Search article...">
                         <button type="submit" aria-label="Search">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <span class="eye-icon">👀</span>
                         </button>
                     </form>
                 </div>
@@ -46,9 +47,7 @@
     </header>
 
     <div class="container main-layout">
-        
         <main class="content-area">
-            
             <article class="post-item">
                 <div class="post-details">
                     <div class="meta-cat">PORTFOLIO • January 27, 2026</div>
@@ -57,125 +56,42 @@
                     <div class="excerpt">
                         <p>In this post, I will share my current portfolio, which I will regularly update to reflect my latest work and progress.</p>
 
-                        <h3 id="pwon" style="margin-top: 40px; margin-bottom: 15px; font-family: var(--font-heading);">1. PWON</h3>
-                        <p>I first purchased PWON shares in 2019 at an initial price of IDR 490 per share. In the same year, PWON reached its historical peak at approximately IDR 810 per share. During the COVID-19 market crash in March 2020, the share price fell sharply to its lowest level, around IDR 200 per share.</p>
-                        <p>Despite experiencing a significant floating loss at that time, I chose not to sell my holdings. Unfortunately, I also did not take the opportunity to average down during this period.</p>
-                        
-                        <figure>
-                            <img src="images/pwongedung.jpg" alt="Pakuwon Jati">
-                            <figcaption>Source: Pakuwon Jati.com</figcaption>
-                        </figure>
-
-                        <p>Over the years, PWON’s share price has continued to fluctuate, while the company’s financial performance has yet to return to its pre-pandemic peak. In 2019, PWON recorded its highest net profit of IDR 2.720 trillion, largely driven by the office segment.</p>
-                        <p>Since the pandemic, revenue from this segment has structurally weakened and has not recovered to its previous level. This reflects a broader shift in demand for office space, influenced by changes in working patterns and corporate real estate strategies. From a long-term investment perspective, this structural change does not necessarily undermine PWON’s overall business quality. Instead, it highlights the importance of portfolio diversification within the company’s asset base.</p>
-                        <p>PWON’s shopping mall and hospitality segments have shown steady recovery and growth, benefiting from the normalization of consumer activity, rising domestic consumption, and the resilience of experiential retail. The segments increasingly serve as the core drivers of recurring income and long-term value creation.</p>
-                        <p>As of the end of 2025, PWON’s share price remains significantly below its 2019 peak. As of 30 December 2025, PWON was trading at IDR 338 per share. For a long-term investor, this valuation gap reflects not only cyclical recovery dynamics but also the market’s reassessment of earnings sustainability and segmental growth prospects.</p>
-                        <p>My continued holding of PWON is therefore based on a long-term strategy: focusing on asset quality, recurring cash flow from prime retail properties, and management’s ability to adapt its portfolio to post-pandemic structural shifts, rather than short-term price movements.</p>
-                        <p>At the current stage, I continue to allocate approximately 5.7% of my total investment portfolio to PWON. This position size strikes a balance between conviction and risk management. While I remain cautious about the structural challenges in the office segment, I still view PWON as a long-term holding supported by high-quality retail assets, improving performance in the shopping mall and hospitality segments, and its ability to generate recurring cash flow.</p>
-                        
-                        <figure>
-                            <img src="images/pwonupload.png" alt="PWON Data">
-                        </figure>
-
-                        <div class="quote-pov">
-                            <p>“The three most important words in investing are margin of safety.”</p>
-                            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">— Warren Buffett</p>
+                        <div id="pwon-section">
+                            <h3 class="stock-heading">1. PWON</h3>
+                            <p>I first purchased PWON shares in 2019 at an initial price of IDR 490 per share...</p>
+                            <figure>
+                                <img src="images/pwongedung.jpg" alt="Pakuwon Jati" onerror="this.style.display='none'">
+                                <figcaption>Source: Pakuwon Jati.com</figcaption>
+                            </figure>
+                            <p>Current Position: Hold with 5.7% allocation.</p>
                         </div>
 
-                        <h3 id="dkft" style="margin-top: 40px; margin-bottom: 15px; font-family: var(--font-heading);">2. DKFT</h3>
-                        <p>I started paying attention to DKFT shares when the price was still around IDR 180 per share. The company operates as a nickel ore miner and has begun a turnaround after years of persistent losses. The improvement in profitability was driven mainly by the shutdown of its ferronickel smelter for stainless steel production, which had consistently generated annual losses. This strategic decision marked a meaningful shift in DKFT’s operating structure.</p>
-                        <p>I gradually accumulated DKFT shares until reaching an average purchase price of IDR 570. I stopped adding to my position once the share price approached IDR 600, as the valuation had risen sharply. From a long-term perspective, DKFT has not yet demonstrated strong growth prospects. Its plan to build a battery-grade nickel smelter has not been executed and therefore has not contributed meaningful value to the business so far.</p>
-                        <p><strong>Industry Context:</strong> DKFT is among the companies benefiting from the oversupply of nickel smelters in Indonesia. Despite the decline in global nickel prices, domestic demand for nickel ore remains very strong. As a result, Indonesia has even imported nickel ore from the Philippines to meet the needs of its domestic smelting industry.</p>
-                        <p><strong>Policy & Quota Outlook:</strong> At the end of 2025, the Minister of Energy and Mineral Resources (ESDM), Mr. Bahlil Lahadalia, announced a policy to tighten nickel mining permits as part of efforts to support a recovery in global nickel prices. Following this announcement, global nickel prices rebounded, reaching approximately USD 17,000 per metric ton by January 2026. In 2025, DKFT held a nickel ore mining quota of 3 million metric tons. For 2026, the company has applied for an increased quota of 7 million metric tons, supported by an expansion in its proven nickel ore reserves.</p>
-                        <p><strong>Investment View:</strong> Information regarding the approval of DKFT’s mining quota is expected to be announced in the first quarter of 2026. This development will be a key determinant in assessing whether the stock should be bought, held, or sold. Under current conditions, I do not recommend buying DKFT shares, as the valuation has become relatively expensive compared to its fundamental progress.</p>
-                        <p><strong>Current Position:</strong> Status: Hold / Avoid adding. Key Catalyst: Mining quota approval (Q1 2026). Main Risk: Valuation ahead of execution.</p>
+                        <div id="dkft-section" style="margin-top: 60px;">
+                            <h3 class="stock-heading">2. DKFT</h3>
+                            <p>I started paying attention to DKFT shares when the price was still around IDR 180...</p>
+                             </div>
 
-                        <figure>
-                            <img src="images/dkftupload.png">
-                        </figure>
+                        <div id="sril-section" style="margin-top: 60px;">
+                            <h3 class="stock-heading">3. SRIL</h3>
+                            <p>The Rise and Fall of Sritex (SRIL): A Tale of Ignored Red Flags...</p>
+                             </div>
 
-                        <h3 id="sril" style="margin-top: 40px; margin-bottom: 15px; font-family: var(--font-heading);">3. SRIL</h3>
-                        <p><strong>The Rise and Fall of Sritex (SRIL): A Tale of Ignored Red Flags</strong></p>
-                        <p>Sri Rejeki Isman Tbk (SRIL), widely known as Sritex, was once the largest integrated textile manufacturer in Southeast Asia. Its golden era began in 1994 when it secured prestigious contracts to produce military uniforms for NATO and the German Army. The company’s resilience was legendary; it not only survived the 1998 Asian Financial Crisis but also managed to grow eightfold compared to its initial integration in 1992.</p>
-                        <p>The company’s trajectory seemed unstoppable. In 2014, Iwan S. Lukminto was honored as Forbes Indonesia’s Businessman of the Year and EY Entrepreneur of the Year. Sritex also collected numerous accolades, including the IP Enterprise Trophy from WIPO and being named a Top Performing Listed Company in 2015. Until 2019, SRIL consistently reported rising net profits, maintained a seemingly reasonable valuation, and was a staple in the prestigious LQ45 index, signifying high liquidity and market trust.</p>
-                        <p>When I began my career as a civil servant at the Audit Board of Indonesia (BPK RI) in early 2022, I noticed that our official uniforms were also produced by Sritex. The quality was undeniably excellent. However, I soon learned a harsh lesson in investing: superior product quality does not necessarily translate to sound financial management.</p>
-                        <p>In my superficial analysis at the time, I overlooked two critical red flags: an alarmingly high debt-to-equity ratio and a continuous increase in accounts receivable. The facade began to crumble when the company failed to submit its Q1 2021 financial report, leading to its suspension by the Indonesia Stock Exchange on May 18, 2021. Fortunately, I look back at this as a valuable lesson learned at a very low cost, as my investment in SRIL was less than IDR 1 million. The rest is history.</p>
-
-                        <h3 id="adro" style="margin-top: 40px; margin-bottom: 15px; font-family: var(--font-heading);">4. ADRO & ADMR</h3>
-                        <p>I have been observing Adaro Energy (ADRO) for a long time, as it is one of Indonesia’s coal mining companies with relatively stable financial performance despite the cyclical fluctuations in coal prices. ADRO is also among the coal producers with the largest reserves in Indonesia, which has long supported its operational resilience.</p>
+                        <div id="adro-section" style="margin-top: 60px;">
+                            <h3 class="stock-heading">4. ADRO & ADMR</h3>
+                            <p>I have been observing Adaro Energy (ADRO) for a long time...</p>
+                             </div>
                         
-                        <figure>
-                            <img src="images/alamtriminerals.jpg" alt="Alam Tri Mineral">
-                            <figcaption>Source: alamtriminerals.com</figcaption>
-                        </figure>
-
-                        <p>I first purchased ADRO shares in 2019 at around IDR 1,300, but I sold them relatively quickly. I no longer remember the exact reason, although it was likely because I wanted to reallocate capital to another company that I considered more attractive at the time.</p>
-                        <p>Following the COVID-19 outbreak in 2020, ADRO’s financial performance improved significantly, driven by a sharp surge in global coal prices. I only began paying attention to ADRO again and gradually reaccumulated the stock in mid-2024, after learning about the company’s long-term plan to transition toward green energy.</p>
-                        <p>This strategy aims to anticipate the eventual depletion of coal reserves while aligning with Indonesia’s Net Zero Emissions 2050 commitment. An interesting development occurred at the end of 2024, when ADRO’s share price surged nearly 100%, fueled by market speculation surrounding the potential IPO of its green energy business.</p>
-                        <p>However, instead of spinning off the renewable segment, ADRO ultimately divested its majority stake in Adaro Andalan Indonesia (AADI)—the company’s primary profit contributor at the time, which operated its thermal coal mining business.</p>
-                        <p>To compensate shareholders, ADRO distributed an extraordinarily large dividend, which was widely perceived as an opportunity for investors to participate in AADI’s IPO. AADI was listed at a relatively attractive valuation, and the IPO proved highly successful. Shareholders who reinvested their ADRO dividends into AADI shares were able to realize gains of nearly 100%. Interestingly, during this period, ADRO’s share price declined sharply. Personally, I chose to average down my ADRO position, viewing the price correction as an opportunity to accumulate shares of a company that was repositioning itself for a cleaner and more sustainable energy future.</p>
-                        <p>In mid-2025, I decided to sell my entire AADI position, realizing a profit of approximately 50%, and reallocated the proceeds toward further accumulation of ADRO shares, despite carrying an unrealized loss of around 30% at the time. In addition, I also began gradually investing in ADMR, whose valuation appeared relatively more premium compared to ADRO.</p>
-                        <p>Currently, ADRO holds approximately 85% ownership in ADMR and around 20% in AADI. As a result, ADRO’s main profit engine has shifted from AADI to ADMR, which focuses on high-calorie coal. Beyond coal, ADMR is also developing an aluminum smelter project in North Kalimantan. The smelter will be supplied with electricity generated by hydropower plants owned by ADRO, creating vertical integration between energy generation and downstream aluminum production.</p>
-                        <p>This indicates that ADRO’s future revenue will be increasingly dependent on ADMR, while its renewable and green energy ventures—although strategic—are not yet meaningful contributors to earnings.</p>
-                        <p>As of 6 January 2025, ADMR’s share price has risen significantly, driven by expectations ahead of the aluminum smelter’s operational phase. In my view, the long-term outlook for Adaro Energy remains highly promising, provided that the company continues to be managed prudently and strategically. For this reason, I have decided to continue holding both ADRO and ADMR shares.</p>
-                        
-                        <div class="quote-pov">
+                        <div class="quote-pov" style="margin-top: 50px;">
                             <p>“If you’re not willing to react with equanimity to a market price decline of 50%, you’re not fit to be a common shareholder.”</p>
                             <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">— Charlie Munger</p>
                         </div>
 
-                        <p style="margin-top: 30px; font-style: italic;">The most important thing is focus allocation; when it's wrong, the minus one could change everything.</p>
-                        
                         <p style="font-size: 0.8rem; color: #999; margin-top: 40px; border-top: 1px solid #eee; padding-top: 10px;">
-                            Disclaimer: This reflects my personal investment decision and perspective. It is not intended as investment advice or a recommendation to buy, sell, or hold any securities. Investing in the capital market involves significant risks, including the potential loss of capital. Each investor should conduct their own research and make decisions according to their individual risk tolerance and financial circumstances.
+                            Disclaimer: This reflects my personal investment decision...
                         </p>
                     </div>
                 </div>
             </article>
-
-            <div class="recent-posts">
-                <h2 class="featured-label" style="margin-top: 40px;">Recent Posts</h2>
-
-            <div>
-            <article class="post-item">
-                <div class="post-details">
-                    <div class="meta-cat">STOCK ANALYSIS • January 28, 2026</div>
-                    <h2><a href="dkft-analysis.html">DKFT Analysis: Turnaround Story & Nickel Outlook</a></h2>
-                    <div class="excerpt">
-                        <p>I started paying attention to DKFT shares when the price was still around IDR 180 per share. The company operates as a nickel ore miner and has begun a turnaround after years of persistent losses...</p>
-                    </div>
-                    <a href="dkft-analysis.html" class="read-more">Read More</a>
-                </div>
-            </article>
-
-            <article class="post-item">
-                <div class="post-details">
-                    <div class="meta-cat">STOCK ANALYSIS • January 28, 2026</div>
-                    <h2><a href="sril-analysis.html">The Rise and Fall of Sritex (SRIL): A Tale of Ignored Red Flags</a></h2>
-                    <div class="excerpt">
-                        <p>Sri Rejeki Isman Tbk (SRIL), widely known as Sritex, was once the largest integrated textile manufacturer in Southeast Asia. Its golden era began in 1994 when it secured prestigious contracts...</p>
-                    </div>
-                    <a href="sril-analysis.html" class="read-more">Read More</a>
-                </div>
-            </article>
-
-            <article class="post-item">
-                <div class="post-thumb">
-                    <img src="images/alamtriminerals.jpg" alt="ADRO & ADMR Analysis">
-                </div>
-                <div class="post-details">
-                    <div class="meta-cat">STOCK ANALYSIS • January 28, 2026</div>
-                    <h2><a href="adro-admr-analysis.html">ADRO & ADMR Analysis: Strategic Shift & Green Energy Transition</a></h2>
-                    <div class="excerpt">
-                        <p>I have been observing Adaro Energy (ADRO) for a long time, as it is one of Indonesia’s coal mining companies with relatively stable financial performance despite the cyclical fluctuations in coal prices...</p>
-                    </div>
-                    <a href="adro-admr-analysis.html" class="read-more">Read More</a>
-                </div>
-            </article>
-            </div>
-
-            </div>
-
         </main>
 
         <aside class="sidebar-area">
@@ -185,28 +101,62 @@
                     <a href="https://instagram.com/fahlevithing" class="soc-icon ig"><i class="fab fa-instagram"></i></a>
                     <a href="https://twitter.com/rezafahlevirff" class="soc-icon tw"><i class="fab fa-x-twitter"></i></a>
                     <a href="mailto:fahlevithing@gmail.com" class="soc-icon em"><i class="fas fa-envelope"></i></a>
-                    <img src="images/logofahlevithing.jpeg" alt="Fahlevi Thing Logo" class="header-logo">
                 </div>
             </div>
         </aside>
-
     </div>
 
     <footer>
         <div class="container footer-content">
-            <div class="footer-socials">
-                <a href="https://instagram.com/fahlevithing" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/rezafahlevirff" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="mailto:fahlevithing@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="copyright">
-                &copy; 2025 <b>Reza Fahlevi</b>. All Rights Reserved.
-            </div>
-            <div class="footer-legal" style="margin-top: 10px; font-size: 0.8rem;">
-                <a href="privacy.html" style="color: #999; text-decoration: none; transition: 0.3s;">Privacy Policy</a>
-            </div>
+            <div class="copyright">&copy; 2026 <b>Reza Fahlevi</b>. All Rights Reserved.</div>
         </div>
     </footer>
+
+    <div id="portfolio-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Portfolio Highlights</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-intro">Select a ticker to jump to the analysis:</p>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card" onclick="scrollToSection('pwon-section')">
+                        <div class="card-icon"><i class="fa-solid fa-building"></i></div>
+                        <div class="card-info">
+                            <h4>PWON</h4>
+                            <span>Property & Real Estate</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right card-arrow"></i>
+                    </div>
+                    <div class="portfolio-card" onclick="scrollToSection('dkft-section')">
+                        <div class="card-icon"><i class="fa-solid fa-industry"></i></div>
+                        <div class="card-info">
+                            <h4>DKFT</h4>
+                            <span>Nickel Mining</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right card-arrow"></i>
+                    </div>
+                    <div class="portfolio-card" onclick="scrollToSection('sril-section')">
+                        <div class="card-icon"><i class="fa-solid fa-shirt"></i></div>
+                        <div class="card-info">
+                            <h4>SRIL</h4>
+                            <span>Textile (Case Study)</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right card-arrow"></i>
+                    </div>
+                    <div class="portfolio-card" onclick="scrollToSection('adro-section')">
+                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="card-info">
+                            <h4>ADRO / ADMR</h4>
+                            <span>Energy & Coal</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right card-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
