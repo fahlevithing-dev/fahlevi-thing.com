@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const input = form.querySelector('input');
             const query = input.value.trim();
             if (query) {
-                window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                window.location.href = `search?q=${encodeURIComponent(query)}`;
             }
         });
     });
@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="close-overlay">&times;</div>
             <div class="overlay-content">
                 <ul>
-                    <li><a href="pwon-analysis.html#pwon">PWON</a></li>
-                    <li><a href="dkft-analysis.html">DKFT</a></li>
-                    <li><a href="sril-analysis.html#sril">SRIL</a></li>
-                    <li><a href="adro-admr-analysis.html">ADRO & ADMR</a></li>
+                    <li><a href="pwon-analysis#pwon">PWON</a></li>
+                    <li><a href="dkft-analysis">DKFT</a></li>
+                    <li><a href="sril-analysis#sril">SRIL</a></li>
+                    <li><a href="adro-admr-analysis">ADRO & ADMR</a></li>
                 </ul>
             </div>
         </div>
