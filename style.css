@@ -365,12 +365,16 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .nav-wrapper { ion: column; 
+    /* Sembunyikan logo di mobile agar teks header terbaca jelas */
+    .header-logo { display: none; }
+
+    .nav-wrapper { 
+        flex-direction: column; 
         align-items: flex-start; 
-        padding-bottom: 20px;
-        /* Pastikan wrapper punya tinggi minimal agar tombol hamburger tidak keluar/terpotong */
-        min-height: 60px; 
+        padding: 20px;
+        min-height: 70px; 
         position: relative;
+        height: auto; /* Penting: agar container memanjang saat menu dibuka */
     }
     
     .nav-links { 
@@ -379,11 +383,17 @@ footer {
         flex-direction: column; 
         align-items: flex-start; 
         gap: 0;
-        margin
-    .nav-links.active { display: flex; } /* Class untuk JS toggle */
+        margin-top: 50px; /* Memberi jarak agar menu 'HOME' tidak tertutup tombol hamburger */
+    }
+    .nav-links.active { display: flex; }
     
     .nav-links li { width: 100%; }
-    .nav-links a { display: block; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.15); width: 100%; }
+    .nav-links a { 
+        display: block; 
+        padding: 15px 0; /* Memperlebar area klik tombol */
+        border-bottom: 1px solid rgba(255,255,255,0.15); 
+        width: 100%; 
+    }
     .nav-links li:last-child a { border-bottom: none; }
     
     .main-layout { flex-direction: column; gap: 60px; }
@@ -394,12 +404,14 @@ footer {
     .search-box input { width: 100%; }
     
     .hamburger { 
-  
-        top: 18px; 
+        display: block; 
+        position: absolute; 
+        right: 20px; 
+        top: 20px; 
         font-size: 1.5rem; 
         cursor: pointer; 
-        z-index: 100; /* Pastikan di atas elemen lain */
-        color: #fff; /* Pastikan kontras dengan background teal */
+        z-index: 100; 
+        color: #fff; 
     }
 }
 
