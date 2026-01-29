@@ -1,5 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- Elemen Modal ---
+    const modalOverlay = document.getElementById('portfolio-modal');
+    const portfolioBtn = document.getElementById('portfolio-btn');
+    const closeModalBtn = document.getElementById('close-modal');
+
+    // 1. Buka Modal saat klik "MY PORTFOLIO"
+    if (portfolioBtn) {
+        portfolioBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah link lompat
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Matikan scroll body saat modal buka
+        });
+    }
+
+    // 2. Tutup Modal fungsi helper
+    const closeModal = () => {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Hidupkan scroll body kembali
+    };
+
+    // Tutup saat klik tombol X
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+    }
+
+    // Tutup saat klik area gelap (backdrop)
+    window.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+
+    // 3. Fungsi Navigasi dari dalam Modal
+    window.scrollToSection = (sectionId) => {
+        closeModal(); // Tutup modal dulu
+        const section = document.getElementById(sectionId);
+        if (section) {
+            // Beri sedikit delay agar modal tertutup smooth baru scroll
+            setTimeout(() => {
+                section.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 300);
+        }
+    };
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    
     // Toggle Menu Mobile
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
