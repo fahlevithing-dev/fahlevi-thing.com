@@ -36,21 +36,25 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="stock-code">PWON</span>
                         <span class="stock-name">Pakuwon Jati</span>
                         <span class="stock-cat">Property Developer</span>
+                        <span class="portfolio-readmore">Read Analysis</span>
                     </a>
                     <a href="dkft-analysis.html" class="portfolio-card">
                         <span class="stock-code">DKFT</span>
                         <span class="stock-name">Central Omega</span>
                         <span class="stock-cat">Nickel Mining</span>
+                        <span class="portfolio-readmore">Read Analysis</span>
                     </a>
                     <a href="sril-analysis.html" class="portfolio-card">
                         <span class="stock-code">SRIL</span>
                         <span class="stock-name">Sri Rejeki Isman</span>
                         <span class="stock-cat">Textile & Garment</span>
+                        <span class="portfolio-readmore">Read Analysis</span>
                     </a>
                     <a href="adro-admr-analysis.html" class="portfolio-card">
                         <span class="stock-code">ADRO & ADMR</span>
                         <span class="stock-name">Adaro Group</span>
                         <span class="stock-cat">Energy & Minerals</span>
+                        <span class="portfolio-readmore">Read Analysis</span>
                     </a>
                 </div>
             </div>

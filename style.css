@@ -444,6 +444,9 @@ footer {
     text-align: center;
     transform: scale(0.95);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 10px;
 }
 
 .portfolio-overlay.active .overlay-content {
@@ -503,6 +506,16 @@ footer {
 .stock-cat {
     font-size: 0.75rem;
     color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.portfolio-readmore {
+    margin-top: 15px;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-blue);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
