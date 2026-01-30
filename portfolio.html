@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Fahlevi's Investment Portfolio and Insights">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Fahlevi's Portfolio - Fahlevi Thing</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -35,6 +36,7 @@
                         <input type="text" placeholder="Search article...">
                         <button type="submit" aria-label="Search">
                             <i class="fa-solid fa-magnifying-glass"></i>
+                            <span class="eye-icon">👀</span>
                         </button>
                     </form>
                 </div>
@@ -147,79 +149,8 @@
             </article>
         </main>
 
-        <aside class="sidebar-area">
-            <div class="widget">
-                <h3>Connect</h3>
-                <div class="social-widget">
-                    <a href="https://instagram.com/fahlevithing" class="soc-icon ig"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/rezafahlevirff" class="soc-icon tw"><i class="fab fa-x-twitter"></i></a>
-                    <a href="mailto:fahlevithing@gmail.com" class="soc-icon em"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </aside>
-    </div>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-socials">
-                <a href="https://instagram.com/fahlevithing" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/rezafahlevirff" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="mailto:fahlevithing@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="copyright">
-                &copy; 2025 <b>Reza Fahlevi</b>. All Rights Reserved.
-            </div>
-            <div class="footer-legal" style="margin-top: 10px; font-size: 0.8rem;">
-                <a href="privacy.html" style="color: #999; text-decoration: none; transition: 0.3s;">Privacy Policy</a>
-            </div>
-        </div>
+               </div>
     </footer>
-
-    <div id="portfolio-modal" class="modal-overlay">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h3>Portfolio Highlights</h3>
-                <button id="close-modal" class="close-btn">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-intro">Select a ticker to jump to the analysis:</p>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card" onclick="scrollToSection('pwon-section')">
-                        <div class="card-icon"><i class="fa-solid fa-building"></i></div>
-                        <div class="card-info">
-                            <h4>PWON</h4>
-                            <span>Property & Real Estate</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-right card-arrow"></i>
-                    </div>
-                    <div class="portfolio-card" onclick="scrollToSection('dkft-section')">
-                        <div class="card-icon"><i class="fa-solid fa-industry"></i></div>
-                        <div class="card-info">
-                            <h4>DKFT</h4>
-                            <span>Nickel Mining</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-right card-arrow"></i>
-                    </div>
-                    <div class="portfolio-card" onclick="scrollToSection('sril-section')">
-                        <div class="card-icon"><i class="fa-solid fa-shirt"></i></div>
-                        <div class="card-info">
-                            <h4>SRIL</h4>
-                            <span>Textile (Case Study)</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-right card-arrow"></i>
-                    </div>
-                    <div class="portfolio-card" onclick="scrollToSection('adro-section')">
-                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                        <div class="card-info">
-                            <h4>ADRO / ADMR</h4>
-                            <span>Energy & Coal</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-right card-arrow"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
