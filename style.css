@@ -691,6 +691,30 @@ body { top: 0px !important; }
 .home-portfolio .stock-name { color: #333; }
 .home-portfolio .stock-cat { color: #777; }
 
+/* --- MOBILE MENU LOGO ANIMATION --- */
+@keyframes fadeInLogo {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .nav-links.active::after {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 90px;
+        background-image: url('images/logofahlevithing.jpeg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        margin: 40px auto;
+        border: 3px solid rgba(255,255,255,0.2);
+        opacity: 0;
+        animation: fadeInLogo 0.8s ease forwards;
+        animation-delay: 0.2s;
+        align-self: center;
+    }
+}
 .portfolio-disclaimer {
     margin-top: 40px;
     padding: 20px;
