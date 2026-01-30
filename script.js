@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navLinks) {
         const logoLi = document.createElement('li');
         logoLi.className = 'mobile-logo-item';
-        logoLi.innerHTML = '<img src="images/logofahlevithing.jpeg" alt="Fahlevi Thing Logo" class="mobile-nav-logo">';
+        logoLi.innerHTML = '<a href="index.html"><img src="images/logofahlevithing.jpeg" alt="Fahlevi Thing Logo" class="mobile-nav-logo"></a>';
         navLinks.appendChild(logoLi);
     }
 

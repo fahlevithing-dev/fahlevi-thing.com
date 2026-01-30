@@ -391,6 +391,7 @@ footer {
     .nav-links a { 
         display: block; 
         padding: 15px 0; /* Memperlebar area klik tombol */
+        padding-right: 110px; /* Memberi ruang agar teks tidak menabrak logo */
         border-bottom: 1px solid rgba(255,255,255,0.15); 
         width: 100%; 
     }
