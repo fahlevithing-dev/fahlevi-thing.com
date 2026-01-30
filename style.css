@@ -676,6 +676,42 @@ body { top: 0px !important; }
     line-height: 1.6;
 }
 
+/* --- CONTENT TABLES --- */
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 0.95rem;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.content-table thead tr {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    text-align: left;
+    font-family: var(--font-heading);
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--accent-blue);
+}
+
 /* --- HOMEPAGE PORTFOLIO (LIGHT MODE) --- */
 .home-portfolio .portfolio-card {
     background: #ffffff;
