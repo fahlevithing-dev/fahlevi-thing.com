@@ -13,14 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Inject Logo into Mobile Menu (Beautification)
-    if (navLinks) {
-        const logoLi = document.createElement('li');
-        logoLi.className = 'mobile-logo-item';
-        logoLi.innerHTML = '<a href="index.html"><img src="images/logofahlevithing.jpeg" alt="Fahlevi Thing Logo" class="mobile-nav-logo"></a>';
-        navLinks.appendChild(logoLi);
-    }
-
    // --- SEARCH FUNCTIONALITY ---
     const searchForms = document.querySelectorAll('.search-box form');
     searchForms.forEach(form => {

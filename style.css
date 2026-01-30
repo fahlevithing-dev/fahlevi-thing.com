@@ -391,7 +391,6 @@ footer {
     .nav-links a { 
         display: block; 
         padding: 15px 0; /* Memperlebar area klik tombol */
-        padding-right: 110px; /* Memberi ruang agar teks tidak menabrak logo */
         border-bottom: 1px solid rgba(255,255,255,0.15); 
         width: 100%; 
     }
@@ -701,43 +700,4 @@ body { top: 0px !important; }
     color: #555;
     font-style: italic;
     line-height: 1.6;
-}
-
-/* --- MOBILE MENU LOGO (INJECTED) --- */
-.mobile-logo-item { display: none; }
-
-@keyframes fadeInLogo {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        position: relative;
-    }
-    .mobile-logo-item {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: auto;
-        margin: 0;
-        padding: 0;
-        border: none;
-    }
-    .mobile-nav-logo {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        border: 3px solid rgba(255,255,255,0.2);
-        padding: 3px;
-        object-fit: cover;
-        opacity: 0;
-    }
-
-    .nav-links.active .mobile-nav-logo {
-        animation: fadeInLogo 0.8s ease forwards;
-        animation-delay: 0.2s;
-    }
 }
