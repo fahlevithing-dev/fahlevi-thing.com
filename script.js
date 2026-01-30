@@ -253,15 +253,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.insertAdjacentHTML('beforeend', articleHTML);
             });
 
-            // Add Load More / Next Page Button if needed
+            // Pagination Controls Wrapper
+            const paginationWrapper = document.createElement('div');
+            paginationWrapper.style.textAlign = 'center';
+            paginationWrapper.style.marginTop = '30px';
+            paginationWrapper.style.display = 'flex';
+            paginationWrapper.style.justifyContent = 'center';
+            paginationWrapper.style.gap = '20px';
+
+            // Previous Page Button
+            if (page > 1) {
+                const prevBtn = document.createElement('button');
+                prevBtn.innerHTML = '&larr; Previous Page';
+                prevBtn.className = 'read-more';
+                prevBtn.style.background = 'none';
+                prevBtn.style.border = 'none';
+                prevBtn.style.cursor = 'pointer';
+                prevBtn.style.fontSize = '1rem';
+                prevBtn.addEventListener('click', () => {
+                    currentPage--;
+                    displayList(currentPage);
+                    container.scrollIntoView({ behavior: 'smooth' });
+                });
+                paginationWrapper.appendChild(prevBtn);
+            }
+
+            // Next Page Button
             if (end < posts.length) {
-                const btnHTML = `<div style="text-align:center; margin-top:30px;"><button id="load-more-${containerId}" class="read-more" style="background:none; border:none; cursor:pointer; font-size:1rem;">Next Page &rarr;</button></div>`;
-                container.insertAdjacentHTML('beforeend', btnHTML);
-                document.getElementById(`load-more-${containerId}`).addEventListener('click', () => {
+                const nextBtn = document.createElement('button');
+                nextBtn.innerHTML = 'Next Page &rarr;';
+                nextBtn.className = 'read-more';
+                nextBtn.style.background = 'none';
+                nextBtn.style.border = 'none';
+                nextBtn.style.cursor = 'pointer';
+                nextBtn.style.fontSize = '1rem';
+                nextBtn.addEventListener('click', () => {
                     currentPage++;
                     displayList(currentPage);
                     container.scrollIntoView({ behavior: 'smooth' });
                 });
+                paginationWrapper.appendChild(nextBtn);
+            }
+
+            if (paginationWrapper.hasChildNodes()) {
+                container.appendChild(paginationWrapper);
             }
         }
 
