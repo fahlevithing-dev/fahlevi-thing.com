@@ -308,6 +308,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const featuredUrls = ["miracle-of-20-percent.html", "investment-journey.html"];
     renderPagination(allPosts.filter(p => !featuredUrls.includes(p.url)), 'home-posts-container', 8);
     
-    // For Insights: Show all posts
-    renderPagination(allPosts, 'insights-posts-container', 8);
+    // For Insights: Exclude specific portfolio/personal posts
+    const insightsExcludedUrls = [
+        "pwon-analysis.html",
+        "dkft-analysis.html",
+        "sril-analysis.html",
+        "adro-admr-analysis.html",
+        "cita-analysis.html",
+        "investment-journey.html"
+    ];
+    renderPagination(allPosts.filter(p => !insightsExcludedUrls.includes(p.url)), 'insights-posts-container', 8);
 });
