@@ -52,11 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="stock-name">Adaro Group</span>
                         <span class="stock-cat">Energy & Minerals</span>
                     </a>
-                    <a href="cita-analysis.html" class="portfolio-card">
-                        <span class="stock-code">CITA</span>
-                        <span class="stock-name">Cita Mineral</span>
-                        <span class="stock-cat">Bauxite Mining</span>
-                    </a>
                 </div>
             </div>
         </div>
