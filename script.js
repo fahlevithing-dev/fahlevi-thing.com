@@ -129,4 +129,150 @@ document.addEventListener('DOMContentLoaded', () => {
         script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
         document.body.appendChild(script);
     }
+
+    // --- DYNAMIC POSTS & PAGINATION LOGIC ---
+    
+    // 1. Centralized Post Data
+    const allPosts = [
+        {
+            title: "Gold as the Harbinger: A Century of Commodity Cycles (1928–2026)",
+            url: "gold-harbinger.html",
+            category: "INVESTMENT",
+            date: "January 31, 2026",
+            excerpt: "History reveals a persistent pattern in macro-finance: Gold is rarely just a shiny rock; it is the \"canary in the coal mine.\" Since 1928, major upward revaluations in Gold have almost invariably preceded a broader secular bull market in commodities.",
+            image: "images/goldprice.jpg"
+        },
+        {
+            title: "Investment Insight: PT Cita Mineral Investindo Tbk (CITA) – Beyond Bauxite Mining",
+            url: "cita-analysis.html",
+            category: "STOCK ANALYSIS",
+            date: "January 30, 2026",
+            excerpt: "As global aluminum prices reached a 4-year high in January 2026, CITA is positioned as a unique play in the metals sector. While often categorized solely as an upstream bauxite miner, CITA’s true profitability is now driven by its downstream \"money machines\" through associate entities (WHW and KAI), rather than just raw ore sales.",
+            image: "images/citathumbnail.jpeg"
+        },
+        {
+            title: "Understanding Today’s Sharp IHSG Decline: A Rational Guide for Investors",
+            url: "ihsg-decline.html",
+            category: "MARKET UPDATE",
+            date: "January 28, 2026",
+            excerpt: "Today’s sharp decline in the IHSG may feel unsettling, especially for new investors still adapting to market fluctuations. Seeing a portfolio turn red simultaneously often raises concern. However, understanding the actual mechanics behind this drop is the first step toward becoming a confident and disciplined investor.",
+            image: "images/ihsgthumbnail.jpeg"
+        },
+        {
+            title: "The Miracle of the \"Modest\" 20 Percent",
+            url: "miracle-of-20-percent.html",
+            category: "INVESTMENT",
+            date: "January 27, 2026",
+            excerpt: "Historically (from 1965 to 2023), Berkshire Hathaway has achieved a Compound Annual Growth Rate (CAGR) of approximately 19.8%. While this figure may seem modest compared to the \"anomalies\" of short-term trading gains, it is extraordinary for the following three reasons...",
+            image: "" 
+        },
+        {
+            title: "How China Could Win Against The US",
+            url: "china-ai-race.html",
+            category: "TECHNOLOGY",
+            date: "January 15, 2026",
+            excerpt: "The global narrative on Artificial Intelligence is often hyper-focused on who has the smartest chatbot or the fastest chip. However, this perspective mistakes the frosting for the cake. For seasoned observers, AI is best understood as a five-layer industrial system consisting of: Energy, Chips, Infrastructure, Models, and Applications.",
+            image: ""
+        },
+        {
+            title: "DKFT Analysis: Turnaround Story & Nickel Outlook",
+            url: "dkft-analysis.html",
+            category: "STOCK ANALYSIS",
+            date: "January 6, 2026",
+            excerpt: "I started paying attention to DKFT shares when the price was still around IDR 180 per share. The company operates as a nickel ore miner and has begun a turnaround after years of persistent losses...",
+            image: ""
+        },
+        {
+            title: "The Rise and Fall of Sritex (SRIL): A Tale of Ignored Red Flags",
+            url: "sril-analysis.html",
+            category: "STOCK ANALYSIS",
+            date: "January 6, 2026",
+            excerpt: "Sri Rejeki Isman Tbk (SRIL), widely known as Sritex, was once the largest integrated textile manufacturer in Southeast Asia. Its golden era began in 1994 when it secured prestigious contracts...",
+            image: ""
+        },
+        {
+            title: "ADRO & ADMR Analysis: Strategic Shift & Green Energy Transition",
+            url: "adro-admr-analysis.html",
+            category: "STOCK ANALYSIS",
+            date: "January 6, 2026",
+            excerpt: "I have been observing Adaro Energy (ADRO) for a long time, as it is one of Indonesia’s coal mining companies with relatively stable financial performance despite the cyclical fluctuations in coal prices...",
+            image: "images/alamtriminerals.jpg"
+        },
+        {
+            title: "Why Pakuwon Jati (PWON) Remains a Top-Tier Resilient Property Stock",
+            url: "pwon-analysis.html",
+            category: "STOCK ANALYSIS",
+            date: "January 6, 2026",
+            excerpt: "PT Pakuwon Jati Tbk (PWON) stands out as one of the most structurally defensive property developers in Indonesia. Its business model—emphasizing high recurring income, conservative financial management...",
+            image: "images/pwongedung.jpg"
+        },
+        {
+            title: "Plaza Indonesia Realty & Pakuwon Jati",
+            url: "property-analysis.html",
+            category: "STOCK ANALYSIS",
+            date: "December 26, 2025",
+            excerpt: "As of 31 December 2024, Plaza Indonesia Realty Tbk (PLIN) owns and manages three core property portfolios. Meanwhile, Pakuwon Jati Tbk (PWON) stands out as one of the most structurally defensive property developers in Indonesia. A deep dive into their balance sheets and cash flow strategies...",
+            image: "images/grand-hyatt-jakarta-p202-new-exterior.16x9.webp"
+        },
+        {
+            title: "How I Got Into The World of Investing?",
+            url: "investment-journey.html",
+            category: "INVESTMENT",
+            date: "December 26, 2025",
+            excerpt: "Me, Reza Fahlevi. I would like to begin my first post by sharing my personal introduction to the world of stock market investing. I was first exposed to investment concepts during my university years, when I studied Economics with a major in Accounting at Syiah Kuala University in Banda Aceh...",
+            image: ""
+        }
+    ];
+
+    // 2. Pagination Function
+    function renderPagination(posts, containerId, itemsPerPage) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        let currentPage = 1;
+
+        function displayList(page) {
+            container.innerHTML = "";
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedItems = posts.slice(start, end);
+
+            paginatedItems.forEach(item => {
+                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"></div>` : "";
+                const articleHTML = `
+                    <article class="post-item">
+                        ${thumbHTML}
+                        <div class="post-details">
+                            <div class="meta-cat">${item.category} • ${item.date}</div>
+                            <h2><a href="${item.url}">${item.title}</a></h2>
+                            <div class="excerpt"><p>${item.excerpt}</p></div>
+                            <a href="${item.url}" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                `;
+                container.insertAdjacentHTML('beforeend', articleHTML);
+            });
+
+            // Add Load More / Next Page Button if needed
+            if (end < posts.length) {
+                const btnHTML = `<div style="text-align:center; margin-top:30px;"><button id="load-more-${containerId}" class="read-more" style="background:none; border:none; cursor:pointer; font-size:1rem;">Next Page &rarr;</button></div>`;
+                container.insertAdjacentHTML('beforeend', btnHTML);
+                document.getElementById(`load-more-${containerId}`).addEventListener('click', () => {
+                    currentPage++;
+                    displayList(currentPage);
+                    container.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+        }
+
+        displayList(currentPage);
+    }
+
+    // 3. Initialize Pagination
+    // For Home: Exclude featured posts (Miracle & Investment Journey) to avoid duplication
+    const featuredUrls = ["miracle-of-20-percent.html", "investment-journey.html"];
+    renderPagination(allPosts.filter(p => !featuredUrls.includes(p.url)), 'home-posts-container', 8);
+    
+    // For Insights: Show all posts
+    renderPagination(allPosts, 'insights-posts-container', 8);
 });
