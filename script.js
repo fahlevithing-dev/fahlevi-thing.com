@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "TECHNOLOGY",
             date: "January 15, 2026",
             excerpt: "The global narrative on Artificial Intelligence is often hyper-focused on who has the smartest chatbot or the fastest chip. However, this perspective mistakes the frosting for the cake. For seasoned observers, AI is best understood as a five-layer industrial system consisting of: Energy, Chips, Infrastructure, Models, and Applications.",
-            image: ""
+            image: "images/howchina.jpeg"
         },
         {
             title: "DKFT Analysis: Turnaround Story & Nickel Outlook",
