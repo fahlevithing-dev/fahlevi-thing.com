@@ -12,15 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (searchBox) searchBox.classList.toggle('active');
         });
     }
-
-    // Inject Logo into Mobile Menu (Beautification)
-    if (navLinks) {
-        const logoLi = document.createElement('li');
-        logoLi.className = 'mobile-logo-item';
-        logoLi.innerHTML = '<img src="images/logofahlevithing.jpeg" alt="Fahlevi Thing Logo" class="mobile-nav-logo">';
-        navLinks.appendChild(logoLi);
-    }
-
    // --- SEARCH FUNCTIONALITY ---
     const searchForms = document.querySelectorAll('.search-box form');
     searchForms.forEach(form => {
@@ -60,11 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="stock-code">ADRO & ADMR</span>
                         <span class="stock-name">Adaro Group</span>
                         <span class="stock-cat">Energy & Minerals</span>
-                    </a>
-                    <a href="cita-analysis.html" class="portfolio-card">
-                        <span class="stock-code">CITA</span>
-                        <span class="stock-name">Cita Mineral</span>
-                        <span class="stock-cat">Bauxite Mining</span>
                     </a>
                 </div>
             </div>
