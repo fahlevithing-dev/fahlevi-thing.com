@@ -318,4 +318,52 @@ document.addEventListener('DOMContentLoaded', () => {
         "investment-journey.html"
     ];
     renderPagination(allPosts.filter(p => !insightsExcludedUrls.includes(p.url)), 'insights-posts-container', 8);
+
+    // --- COOKIE CONSENT LOGIC ---
+    const cookieConsentKey = 'fahlevithing_cookie_consent';
+    
+    if (!localStorage.getItem(cookieConsentKey)) {
+        const bannerHTML = `
+            <div id="cookie-banner" class="cookie-banner">
+                <div class="cookie-content">
+                    <div class="cookie-text">
+                        <p>We use cookies to improve your experience and analyze website traffic. By continuing to visit this site, you agree to our use of cookies. <a href="privacy.html">Learn more</a>.</p>
+                    </div>
+                    <button id="accept-cookies" class="cookie-btn">Accept</button>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', bannerHTML);
+
+        // Trigger animation after a small delay
+        setTimeout(() => {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) banner.classList.add('show');
+        }, 100);
+
+        // Handle Accept Click
+        const acceptBtn = document.getElementById('accept-cookies');
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(cookieConsentKey, 'true');
+                
+                // Update Google Analytics Consent to 'Granted'
+                if (typeof gtag === 'function') {
+                    gtag('consent', 'update', {
+                        'ad_storage': 'granted',
+                        'analytics_storage': 'granted',
+                        'ad_user_data': 'granted',
+                        'ad_personalization': 'granted'
+                    });
+                }
+
+                const banner = document.getElementById('cookie-banner');
+                banner.classList.remove('show');
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    banner.remove();
+                }, 500);
+            });
+        }
+    }
 });
