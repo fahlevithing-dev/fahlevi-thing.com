@@ -327,9 +327,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div id="cookie-banner" class="cookie-banner">
                 <div class="cookie-content">
                     <div class="cookie-text">
-                        <p>We use cookies to improve your experience and analyze website traffic. By continuing to visit this site, you agree to our use of cookies. <a href="privacy.html">Learn more</a>.</p>
+                        <p>We use cookies to improve your experience and analyze website traffic. By continuing to visit this site, you agree to our use of cookies. <br><span style="font-size: 0.9em; color: #666;">Kami menggunakan cookie untuk meningkatkan pengalaman Anda. Dengan melanjutkan, Anda menyetujui penggunaan cookie kami.</span> <a href="privacy.html">Learn more / Selengkapnya</a>.</p>
                     </div>
-                    <button id="accept-cookies" class="cookie-btn">Accept</button>
+                    <button id="accept-cookies" class="cookie-btn">Accept / Setuju</button>
                 </div>
             </div>
         `;
@@ -365,5 +365,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 500);
             });
         }
+    }
+
+    // --- CONTACT FORM HANDLER ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Construct mailto link
+            const subject = `Contact from Website: ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+            const mailtoLink = `mailto:fahlevithing@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open mail client
+            window.location.href = mailtoLink;
+        });
     }
 });
