@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create a Service (e.g., Gmail) and two Templates (one for Contact, one for Subscription).
     const EMAIL_PUBLIC_KEY = "lfs3BUQP3cUUT5ir6"; 
     const EMAIL_SERVICE_ID = "service_ner42la"; 
-    const EMAIL_TEMPLATE_CONTACT = "template_92xf4ac"; 
+    // Menggunakan template subscription yang sudah aktif karena template contact sebelumnya tidak ditemukan
+    const EMAIL_TEMPLATE_CONTACT = "template_uvo492o"; 
     const EMAIL_TEMPLATE_SUB = "template_uvo492o"; 
 
     const sendEmail = (templateId, params, btnElement) => {
@@ -449,11 +450,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = contactForm.querySelector('textarea[name="message"]').value;
             
             const params = {
-                from_name: name,
-                from_email: email,
-                message: message,
+                // Menyesuaikan data agar terbaca di template subscription
+                subscriber_email: email, // Email pengirim
+                message: `Pesan Baru dari Website:\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
+                
+                // Parameter standar
                 to_email: "fahlevithing@gmail.com", 
                 to_name: "Admin Fahlevi Thing",
+                from_name: name,
+                from_email: email,
                 reply_to: email
             };
 
