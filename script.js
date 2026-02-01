@@ -630,7 +630,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <li>
                     <div class="year-toggle">2026 <i class="fas fa-chevron-down"></i></div>
                     <ul class="quarters-list" style="display: none;">
-                        <li><a href="#">Q1 (Coming Soon)</a></li>
+                        <li><a href="portfolio-update-q1-2026.html">Q1 2026</a></li>
                         <li><a href="#">Q2 (Coming Soon)</a></li>
                         <li><a href="#">Q3 (Coming Soon)</a></li>
                         <li><a href="#">FY (Coming Soon)</a></li>
