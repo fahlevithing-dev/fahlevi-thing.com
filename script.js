@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "INVESTMENT",
             date: "February 1, 2026",
             excerpt: "This is the story of the \"Black Gold\" from the Nusantara. A story proving that in the vast world of coffee, Indonesia does not chase quantity; it chases character.",
-            image: "images/fore.png" 
+            image: "images/fore.jpeg" 
         },
         {
             title: "Gold as the Harbinger: A Century of Commodity Cycles (1928–2026)",
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "INVESTMENT",
             date: "January 31, 2026",
             excerpt: "History reveals a persistent pattern in macro-finance: Gold is rarely just a shiny rock; it is the \"canary in the coal mine.\" Since 1928, major upward revaluations in Gold have almost invariably preceded a broader secular bull market in commodities.",
-            image: "images/goldprice.jpg"
+            image: "images/goldprice.jpeg"
         },
         {
             title: "Investment Insight: PT Cita Mineral Investindo Tbk (CITA) – Beyond Bauxite Mining",
