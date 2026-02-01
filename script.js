@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                     .catch((err) => {
                         console.error(err);
-                        alert("Subscription Error: " + JSON.stringify(err));
+                         alert("Subscription failed. Details: " + (err.text || JSON.stringify(err)));
                     });
             }
         });
