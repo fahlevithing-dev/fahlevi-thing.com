@@ -478,11 +478,15 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (emailInput && emailInput.value) {
                 const params = {
+                    // Data Subscriber
                     subscriber_email: emailInput.value,
-                    to_email: "fahlevithing@gmail.com", // Mengirim notifikasi ke admin (mengatasi error recipient empty)
+                    message: "User dengan email " + emailInput.value + " telah subscribe.",
+                    
+                    // Parameter Standar EmailJS (Penting untuk mencegah error 'recipient empty')
+                    to_email: "fahlevithing@gmail.com", 
+                    to_name: "Admin Fahlevi Thing",
                     from_name: "New Subscriber",
                     from_email: emailInput.value,
-                    message: "User dengan email " + emailInput.value + " telah subscribe.",
                     reply_to: emailInput.value
                 };
 
@@ -504,7 +508,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                     .catch((err) => {
                         console.error(err);
-                         alert("Subscription failed. Details: " + (err.text || JSON.stringify(err)));
+                        if (err.text && err.text.includes("recipients address is empty")) {
+                            alert("PENGATURAN DASHBOARD DIPERLUKAN:\nKolom 'To Email' di Template EmailJS (template_uvo492o) masih kosong.\n\nSilakan buka dashboard EmailJS, edit template tersebut, dan isi 'To Email' dengan: fahlevithing@gmail.com");
+                        } else {
+                            alert("Subscription failed. Details: " + (err.text || JSON.stringify(err)));
+                        }
                     });
             }
         });
