@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const EMAIL_PUBLIC_KEY = "lfs3BUQP3cUUT5ir6"; 
     const EMAIL_SERVICE_ID = "service_ner42la"; 
     const EMAIL_TEMPLATE_CONTACT = "template_92xf4ac"; 
-    const EMAIL_TEMPLATE_SUB = "template_92xf4ac"; // Menggunakan ID Contact sementara agar tidak error
+    const EMAIL_TEMPLATE_SUB = "template_uvo492o"; 
 
     const sendEmail = (templateId, params, btnElement) => {
         if (!window.emailjs) {
@@ -475,9 +475,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (emailInput && emailInput.value) {
                 const params = {
-                    from_name: "New Subscriber", // Disesuaikan agar cocok dengan template Contact
-                    from_email: emailInput.value,
-                    message: "User ini ingin berlangganan Portfolio Updates."
+                    subscriber_email: emailInput.value,
+                    message: "New Subscriber for Portfolio Updates"
                 };
 
                 sendEmail(EMAIL_TEMPLATE_SUB, params, submitBtn)
