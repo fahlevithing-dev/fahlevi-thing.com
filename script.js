@@ -565,4 +565,37 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // --- PORTFOLIO UPDATE WIDGET ---
+    // Injects a new widget below the existing Connect/Translate widget in the sidebar
+    const sidebarArea = document.querySelector('.sidebar-area');
+    if (sidebarArea) {
+        const portfolioWidget = document.createElement('div');
+        portfolioWidget.className = 'widget portfolio-update-widget';
+        portfolioWidget.innerHTML = `
+            <h3>Portfolio Update</h3>
+            <ul class="portfolio-years">
+                <li>
+                    <div class="year-toggle">2026 <i class="fas fa-chevron-down"></i></div>
+                    <ul class="quarters-list" style="display: none;">
+                        <li><a href="#">Q1 (Coming Soon)</a></li>
+                        <li><a href="#">Q2 (Coming Soon)</a></li>
+                        <li><a href="#">Q3 (Coming Soon)</a></li>
+                        <li><a href="#">FY (Coming Soon)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        `;
+        sidebarArea.appendChild(portfolioWidget);
+
+        const yearToggle = portfolioWidget.querySelector('.year-toggle');
+        const quartersList = portfolioWidget.querySelector('.quarters-list');
+        const icon = yearToggle.querySelector('i');
+
+        yearToggle.addEventListener('click', () => {
+            const isHidden = quartersList.style.display === 'none';
+            quartersList.style.display = isHidden ? 'block' : 'none';
+            icon.className = isHidden ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+        });
+    }
 });

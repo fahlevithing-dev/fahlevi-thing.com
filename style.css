@@ -1015,3 +1015,29 @@ body { top: 0px !important; }
 .share-btn.whatsapp { background-color: #25D366; }
 .share-btn.linkedin { background-color: #0077b5; }
 .share-btn.copy { background-color: var(--text-muted); }
+
+/* --- PORTFOLIO UPDATE WIDGET --- */
+.portfolio-update-widget {
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+}
+
+.year-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-heading);
+    padding: 8px 0;
+    transition: 0.3s;
+}
+
+.year-toggle:hover { color: var(--accent-blue); }
+
+.quarters-list { margin-left: 10px; margin-top: 5px; }
+.quarters-list li { margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px; }
+.quarters-list a { font-size: 0.9rem; color: var(--text-muted); display: block; }
+.quarters-list a:hover { color: var(--accent-blue); padding-left: 5px; }
