@@ -206,6 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "The Archipelago’s Black Gold: A Narrative of Character Over Quantity",
+            url: "archipelago-black-gold.html",
+            category: "INVESTMENT",
+            date: "February 1, 2026",
+            excerpt: "This is the story of the \"Black Gold\" from the Nusantara. A story proving that in the vast world of coffee, Indonesia does not chase quantity; it chases character.",
+            image: "images/fore.jpg" 
+        },
+        {
             title: "Gold as the Harbinger: A Century of Commodity Cycles (1928–2026)",
             url: "gold-harbinger.html",
             category: "INVESTMENT",
