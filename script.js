@@ -541,12 +541,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (shareContainer) {
         const url = window.location.href;
         const title = document.title;
+        const encodedUrl = encodeURIComponent(url);
+        const encodedTitle = encodeURIComponent(title);
         
-        // Simple Share Button (Text Only)
+        // Structure with Pop-out Menu
         shareContainer.innerHTML = `
-            <button id="web-share-btn" class="simple-share-btn">
-                SHARE
-            </button>
+            <div class="share-wrapper">
+                <div id="share-popup" class="share-popup">
+                    <a href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" target="_blank" class="share-icon twitter" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}" target="_blank" class="share-icon whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" class="share-icon linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <button id="copy-link-btn" class="share-icon copy" aria-label="Copy Link"><i class="fas fa-link"></i></button>
+                </div>
+                <button id="web-share-btn" class="simple-share-btn">
+                    SHARE
+                </button>
+            </div>
         `;
 
         // Inject Toast HTML jika belum ada
@@ -560,10 +570,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const shareBtn = document.getElementById('web-share-btn');
+        const sharePopup = document.getElementById('share-popup');
+        const copyBtn = document.getElementById('copy-link-btn');
         const toast = document.getElementById('toast-notification');
 
-        if (shareBtn) {
-            shareBtn.addEventListener('click', () => {
+        if (shareBtn && sharePopup) {
+            // Toggle Popup saat tombol SHARE diklik
+            shareBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Mencegah event bubbling
+                sharePopup.classList.toggle('active');
+            });
+
+            // Tutup popup jika klik di luar area
+            document.addEventListener('click', (e) => {
+                if (!shareContainer.contains(e.target)) {
+                    sharePopup.classList.remove('active');
+                }
+            });
+        }
+
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
                 navigator.clipboard.writeText(url).then(() => {
                     // Tampilkan Toast
                     toast.classList.add('show');
@@ -572,6 +599,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         toast.classList.remove('show');
                     }, 3000);
+                    
+                    // Tutup popup setelah copy
+                    sharePopup.classList.remove('active');
                 }).catch(err => console.error('Failed to copy:', err));
             });
         }
