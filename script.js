@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- EMAILJS CONFIGURATION ---
     // Register at https://www.emailjs.com/ to get these keys.
     // Create a Service (e.g., Gmail) and two Templates (one for Contact, one for Subscription).
-    const EMAIL_PUBLIC_KEY = "lfs3BUQP3cUUT5ir6"; // Replace with your Public Key
-    const EMAIL_SERVICE_ID = "service_ner42la"; // Replace with your Service ID
-    const EMAIL_TEMPLATE_CONTACT = "template_92xf4ac"; // Replace with Contact Template ID
-    const EMAIL_TEMPLATE_SUB = "YOUR_TEMPLATE_ID_SUBSCRIPTION"; // Replace with Subscription Template ID
+    const EMAIL_PUBLIC_KEY = "lfs3BUQP3cUUT5ir6"; 
+    const EMAIL_SERVICE_ID = "service_ner42la"; 
+    const EMAIL_TEMPLATE_CONTACT = "template_92xf4ac"; 
+    const EMAIL_TEMPLATE_SUB = "template_92xf4ac"; // Menggunakan ID Contact sementara agar tidak error
 
     const sendEmail = (templateId, params, btnElement) => {
         if (!window.emailjs) {
@@ -475,8 +475,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (emailInput && emailInput.value) {
                 const params = {
-                    subscriber_email: emailInput.value,
-                    message: "New Subscriber for Portfolio Updates"
+                    from_name: "New Subscriber", // Disesuaikan agar cocok dengan template Contact
+                    from_email: emailInput.value,
+                    message: "User ini ingin berlangganan Portfolio Updates."
                 };
 
                 sendEmail(EMAIL_TEMPLATE_SUB, params, submitBtn)
