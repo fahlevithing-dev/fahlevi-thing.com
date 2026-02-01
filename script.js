@@ -1,5 +1,74 @@
+// Load EmailJS SDK for handling emails without backend
+(function() {
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
+    document.head.appendChild(script);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- DARK MODE TOGGLE ---
+    const navWrapper = document.querySelector('.nav-wrapper');
+    if (navWrapper) {
+        // Create Toggle Button
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'theme-toggle';
+        toggleBtn.setAttribute('aria-label', 'Toggle Dark Mode');
+        toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        
+        // Insert before hamburger or search box
+        const hamburger = document.querySelector('.hamburger');
+        if (hamburger) {
+            navWrapper.insertBefore(toggleBtn, hamburger);
+        } else {
+            navWrapper.appendChild(toggleBtn);
+        }
+
+        // Check LocalStorage or System Preference
+        const currentTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Toggle Logic
+        toggleBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            const newTheme = isDark ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            toggleBtn.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+        });
+    }
+
+    // --- EMAILJS CONFIGURATION ---
+    // Register at https://www.emailjs.com/ to get these keys.
+    // Create a Service (e.g., Gmail) and two Templates (one for Contact, one for Subscription).
+    const EMAIL_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your Public Key
+    const EMAIL_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace with your Service ID
+    const EMAIL_TEMPLATE_CONTACT = "YOUR_TEMPLATE_ID_CONTACT"; // Replace with Contact Template ID
+    const EMAIL_TEMPLATE_SUB = "YOUR_TEMPLATE_ID_SUBSCRIPTION"; // Replace with Subscription Template ID
+
+    const sendEmail = (templateId, params, btnElement) => {
+        if (!window.emailjs) {
+            alert("Email service is loading. Please try again in a few seconds.");
+            return Promise.reject("EmailJS not loaded");
+        }
+        const originalText = btnElement.innerText;
+        btnElement.innerText = "Sending...";
+        btnElement.disabled = true;
+
+        emailjs.init(EMAIL_PUBLIC_KEY);
+        return emailjs.send(EMAIL_SERVICE_ID, templateId, params)
+            .finally(() => {
+                btnElement.innerText = originalText;
+                btnElement.disabled = false;
+            });
+    };
+
     // Toggle Menu Mobile
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -373,17 +442,64 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             
-            // Construct mailto link
-            const subject = `Contact from Website: ${name}`;
-            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-            const mailtoLink = `mailto:fahlevithing@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const params = {
+                from_name: name,
+                from_email: email,
+                message: message
+            };
+
+            sendEmail(EMAIL_TEMPLATE_CONTACT, params, submitBtn)
+                .then(() => {
+                    alert("Message sent successfully! I will get back to you soon.");
+                    contactForm.reset();
+                })
+                .catch((err) => {
+                    console.error(err);
+                    alert("Failed to send message. Please try again.");
+                });
+        });
+    }
+
+    // --- NEWSLETTER SUBSCRIPTION LOGIC ---
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const submitBtn = newsletterForm.querySelector('button[type="submit"]');
             
-            // Open mail client
-            window.location.href = mailtoLink;
+            if (emailInput && emailInput.value) {
+                const params = {
+                    subscriber_email: emailInput.value,
+                    message: "New Subscriber for Portfolio Updates"
+                };
+
+                sendEmail(EMAIL_TEMPLATE_SUB, params, submitBtn)
+                    .then(() => {
+                        alert('Thank you for subscribing! You will be notified when new posts are published.');
+                        
+                        // Check if on homepage to open overlay directly
+                        const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
+                        const overlay = document.getElementById('portfolio-overlay');
+
+                        if (isHomePage && overlay) {
+                            overlay.classList.add('active');
+                        } else {
+                            window.location.href = 'index.html#show-portfolio';
+                        }
+                        
+                        newsletterForm.reset();
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        alert("Subscription failed. Please try again.");
+                    });
+            }
         });
     }
 });
