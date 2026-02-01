@@ -479,10 +479,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (emailInput && emailInput.value) {
                 const params = {
                     subscriber_email: emailInput.value,
-                    to_email: emailInput.value, // Menambahkan to_email agar template mengenali tujuan pengiriman
+                    to_email: "fahlevithing@gmail.com", // Mengirim notifikasi ke admin (mengatasi error recipient empty)
                     from_name: "New Subscriber",
                     from_email: emailInput.value,
-                    message: "New Subscriber for New Updates",
+                    message: "User dengan email " + emailInput.value + " telah subscribe.",
                     reply_to: emailInput.value
                 };
 
