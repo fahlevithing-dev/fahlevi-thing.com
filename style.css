@@ -1040,7 +1040,7 @@ body { top: 0px !important; }
     position: absolute;
     bottom: 120%; /* Muncul di atas tombol */
     left: 50%;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%) translateY(20px) scale(0.8);
     background-color: var(--bg-header);
     border: 1px solid var(--border-color);
     border-radius: 50px;
@@ -1050,14 +1050,14 @@ body { top: 0px !important; }
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5);
     z-index: 100;
 }
 
 .share-popup.active {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0) scale(1);
 }
 
 /* Panah kecil di bawah popup */
@@ -1130,3 +1130,46 @@ body { top: 0px !important; }
     color: #4ce483; /* Warna hijau untuk ikon check */
     font-size: 1.1rem;
 }
+
+/* --- PORTFOLIO UPDATE WIDGET --- */
+.portfolio-update-widget {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.portfolio-update-widget h3 {
+    margin-bottom: 25px;
+}
+
+.year-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-heading);
+    padding: 12px 15px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.year-toggle:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}
+
+.quarters-list {
+    margin-top: 15px;
+    padding-left: 20px;
+    border-left: 2px solid var(--border-color);
+    margin-left: 15px;
+}
+
+.quarters-list li { margin-bottom: 10px; }
+.quarters-list a { font-size: 0.9rem; color: var(--text-muted); display: block; transition: 0.3s; }
+.quarters-list a:hover { color: var(--accent-blue); transform: translateX(5px); font-weight: 600; }
