@@ -549,30 +549,30 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
         `;
 
+        // Inject Toast HTML jika belum ada
+        if (!document.getElementById('toast-notification')) {
+            const toastHTML = `
+                <div id="toast-notification" class="toast-notification">
+                    <i class="fas fa-check-circle"></i> Link Copied to Clipboard
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', toastHTML);
+        }
+
         const shareBtn = document.getElementById('web-share-btn');
+        const toast = document.getElementById('toast-notification');
+
         if (shareBtn) {
-            shareBtn.addEventListener('click', async () => {
-                // Gunakan Native Share jika tersedia (biasanya di HP)
-                if (navigator.share) {
-                    try {
-                        await navigator.share({
-                            title: title,
-                            text: 'Check out this article by Reza Fahlevi:',
-                            url: url
-                        });
-                    } catch (err) {
-                        console.log('Share canceled:', err);
-                    }
-                } else {
-                    // Fallback untuk Desktop: Copy Link
-                    navigator.clipboard.writeText(url).then(() => {
-                        const originalText = shareBtn.innerText;
-                        shareBtn.innerText = "LINK COPIED";
-                        setTimeout(() => {
-                            shareBtn.innerText = originalText;
-                        }, 2000);
-                    }).catch(err => console.error('Failed to copy:', err));
-                }
+            shareBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(url).then(() => {
+                    // Tampilkan Toast
+                    toast.classList.add('show');
+                    
+                    // Sembunyikan setelah 3 detik
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+                }).catch(err => console.error('Failed to copy:', err));
             });
         }
 

@@ -978,8 +978,10 @@ body { top: 0px !important; }
     padding-top: 30px;
     border-top: 1px solid var(--border-color);
     display: flex;
+    justify-content: center;
     align-items: center;
-    opacity: 0; translateY(30px);
+    opacity: 0; 
+    transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -990,23 +992,31 @@ body { top: 0px !important; }
 
 .simple-share-btn {
     background: none;
+    border: none;
     font-family: var(--font-heading);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 3px;
-    color: var(nter;
+    color: var(--text-muted);
+    cursor: pointer;
     transition: all 0.3s ease;
     padding: 10px 20px;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 15px;
-}:
+    position: relative;
+}
+
+.simple-share-btn::before,
+.simple-share-btn::after {
     content: '';
     display: block;
     width: 30px;
-  0.3s, background-color 0.3s;
-
+    height: 1px;
+    background-color: var(--border-color);
+    transition: width 0.3s, background-color 0.3s;
+}
 
 .simple-share-btn:hover {
     color: var(--text-heading);
@@ -1015,13 +1025,37 @@ body { top: 0px !important; }
 .simple-share-btn:hover::before,
 .simple-share-btn:hover::after {
     width: 50px;
- 
-solid var(--border-color);
-    padding-top: 30px;
+    background-color: var(--accent-blue);
 }
 
-.year-toggle {
+/* --- TOAST NOTIFICATION --- */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px); /* Mulai dari bawah layar */
+    background-color: #333;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s;
+    z-index: 10000;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    flri- a 9r
+    gap: 10px;
+    pointer-events: none; /* Agar tidak mengganggu klik */
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-notification i {
+    color: #4ce483; /* Warna hijau untuk ikon check */
+    font-size: 1.1rem;
+}
