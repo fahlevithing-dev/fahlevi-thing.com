@@ -444,14 +444,16 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const name = contactForm.querySelector('input[name="name"]').value;
+            const email = contactForm.querySelector('input[name="email"]').value;
+            const message = contactForm.querySelector('textarea[name="message"]').value;
             
             const params = {
                 from_name: name,
                 from_email: email,
-                message: message
+                message: message,
+                to_email: "fahlevithing@gmail.com", // Memastikan tujuan email terdefinisi
+                reply_to: email
             };
 
             sendEmail(EMAIL_TEMPLATE_CONTACT, params, submitBtn)
@@ -480,7 +482,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     to_email: emailInput.value, // Menambahkan to_email agar template mengenali tujuan pengiriman
                     from_name: "New Subscriber",
                     from_email: emailInput.value,
-                    message: "New Subscriber for New Updates"
+                    message: "New Subscriber for New Updates",
+                    reply_to: emailInput.value
                 };
 
                 sendEmail(EMAIL_TEMPLATE_SUB, params, submitBtn)
