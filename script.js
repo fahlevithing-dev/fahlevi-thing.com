@@ -549,7 +549,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="share-wrapper">
                 <div id="share-popup" class="share-popup">
                     <a href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" target="_blank" class="share-icon twitter" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.threads.net/intent/post?text=${encodedTitle}%20${encodedUrl}" target="_blank" class="share-icon threads" aria-label="Share on Threads"><i class="fab fa-threads"></i></a>
                     <a href="https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}" target="_blank" class="share-icon whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}" target="_blank" class="share-icon telegram" aria-label="Share on Telegram"><i class="fab fa-telegram"></i></a>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" class="share-icon linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <button id="copy-link-btn" class="share-icon copy" aria-label="Copy Link"><i class="fas fa-link"></i></button>
                 </div>
