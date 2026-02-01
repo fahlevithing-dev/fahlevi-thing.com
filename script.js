@@ -477,7 +477,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (emailInput && emailInput.value) {
                 const params = {
                     subscriber_email: emailInput.value,
-                    message: "New Subscriber for Portfolio Updates"
+                    to_email: emailInput.value, // Menambahkan to_email agar template mengenali tujuan pengiriman
+                    from_name: "New Subscriber",
+                    from_email: emailInput.value,
+                    message: "New Subscriber for New Updates"
                 };
 
                 sendEmail(EMAIL_TEMPLATE_SUB, params, submitBtn)
