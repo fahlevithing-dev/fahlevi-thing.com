@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnElement.innerText = "Sending...";
         btnElement.disabled = true;
 
+        // Explicitly initialize EmailJS to ensure Public Key is recognized
         emailjs.init(EMAIL_PUBLIC_KEY);
         return emailjs.send(EMAIL_SERVICE_ID, templateId, params)
             .finally(() => {
@@ -460,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .catch((err) => {
                     console.error(err);
-                    alert("Failed to send message. Please try again.");
+                    alert("Failed to send message: " + (err.text || JSON.stringify(err)));
                 });
         });
     }
@@ -497,7 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                     .catch((err) => {
                         console.error(err);
-                        alert("Subscription failed. Please try again.");
+                        alert("Subscription Error: " + JSON.stringify(err));
                     });
             }
         });
