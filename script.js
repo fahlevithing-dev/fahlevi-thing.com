@@ -452,7 +452,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 from_name: name,
                 from_email: email,
                 message: message,
-                to_email: "fahlevithing@gmail.com", // Memastikan tujuan email terdefinisi
+                to_email: "fahlevithing@gmail.com", 
+                to_name: "Admin Fahlevi Thing",
                 reply_to: email
             };
 
@@ -463,7 +464,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .catch((err) => {
                     console.error(err);
-                    alert("Failed to send message: " + (err.text || JSON.stringify(err)));
+                    if (err.text && err.text.includes("recipients address is empty")) {
+                        alert("PENGATURAN DASHBOARD DIPERLUKAN:\nKolom 'To Email' di Template Contact (template_92xf4ac) masih kosong.\n\nSilakan buka dashboard EmailJS, edit template tersebut, dan isi 'To Email' dengan: fahlevithing@gmail.com");
+                    } else {
+                        alert("Failed to send message: " + (err.text || JSON.stringify(err)));
+                    }
                 });
         });
     }
