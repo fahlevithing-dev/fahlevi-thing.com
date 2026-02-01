@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "INVESTMENT",
             date: "February 1, 2026",
             excerpt: "This is the story of the \"Black Gold\" from the Nusantara. A story proving that in the vast world of coffee, Indonesia does not chase quantity; it chases character.",
-            image: "images/fore.jpg" 
+            image: "images/fore.png" 
         },
         {
             title: "Gold as the Harbinger: A Century of Commodity Cycles (1928–2026)",
