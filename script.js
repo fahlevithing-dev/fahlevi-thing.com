@@ -539,29 +539,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- SHARE BUTTONS LOGIC ---
     const shareContainer = document.querySelector('.share-container');
     if (shareContainer) {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent(document.title);
+        const url = window.location.href;
+        const title = document.title;
         
+        // Simple Share Button (Text Only)
         shareContainer.innerHTML = `
-            <p class="share-label">SHARE</p>
-            <div class="share-buttons">
-                <a href="https://twitter.com/intent/tweet?text=${title}&url=${url}" target="_blank" class="share-btn twitter" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://api.whatsapp.com/send?text=${title}%20${url}" target="_blank" class="share-btn whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=${url}" target="_blank" class="share-btn linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <button class="share-btn copy" aria-label="Copy Link"><i class="fas fa-link"></i></button>
-            </div>
+            <button id="web-share-btn" class="simple-share-btn">
+                SHARE
+            </button>
         `;
 
-        const copyBtn = shareContainer.querySelector('.copy');
-        if (copyBtn) {
-            copyBtn.addEventListener('click', () => {
-                navigator.clipboard.writeText(window.location.href).then(() => {
-                    const originalIcon = copyBtn.innerHTML;
-                    copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-                    setTimeout(() => {
-                        copyBtn.innerHTML = originalIcon;
-                    }, 2000);
-                }).catch(err => console.error('Failed to copy:', err));
+        const shareBtn = document.getElementById('web-share-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async () => {
+                // Gunakan Native Share jika tersedia (biasanya di HP)
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: title,
+                            text: 'Check out this article by Reza Fahlevi:',
+                            url: url
+                        });
+                    } catch (err) {
+                        console.log('Share canceled:', err);
+                    }
+                } else {
+                    // Fallback untuk Desktop: Copy Link
+                    navigator.clipboard.writeText(url).then(() => {
+                        const originalText = shareBtn.innerText;
+                        shareBtn.innerText = "LINK COPIED";
+                        setTimeout(() => {
+                            shareBtn.innerText = originalText;
+                        }, 2000);
+                    }).catch(err => console.error('Failed to copy:', err));
+                }
             });
         }
 

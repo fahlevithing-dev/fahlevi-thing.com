@@ -978,11 +978,8 @@ body { top: 0px !important; }
     padding-top: 30px;
     border-top: 1px solid var(--border-color);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0; translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -991,150 +988,40 @@ body { top: 0px !important; }
     transform: translateY(0);
 }
 
-.share-label {
+.simple-share-btn {
+    background: none;
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 700;
+    letter-spacing: 3px;
+    color: var(nter;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    color: var(--text-muted);
     display: flex;
     align-items: center;
     gap: 15px;
-}
-
-.share-label::before,
-.share-label::after {
+}:
     content: '';
     display: block;
-    width: 40px;
-    height: 1px;
-    background-color: var(--border-color);
-}
+    width: 30px;
+  0.3s, background-color 0.3s;
 
-.share-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
 
-.share-btn {
+.simple-share-btn:hover {
+    color: var(--text-heading);
+    letter-spacing: 4px; /* Efek melebar sedikit saat hover */
+}
+.simple-share-btn:hover::before,
+.simple-share-btn:hover::after {
     width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1.2rem;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    position: relative;
-    text-decoration: none;
-}
-
-.share-btn:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
-}
-
-.share-btn i {
-    transition: transform 0.3s;
-}
-
-.share-btn:hover i {
-    transform: scale(1.2);
-}
-
-.share-btn.twitter { 
-    background: linear-gradient(135deg, #333 0%, #000 100%);
-}
-.share-btn.whatsapp { 
-    background: linear-gradient(135deg, #4ce483 0%, #25D366 100%);
-}
-.share-btn.linkedin { 
-    background: linear-gradient(135deg, #00a0dc 0%, #0077b5 100%);
-}
-.share-btn.copy { 
-    background: linear-gradient(135deg, #999 0%, #777 100%);
-}
-
-/* Tooltips */
-.share-btn::after {
-    content: attr(aria-label);
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: #222;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    z-index: 10;
-    font-family: var(--font-body);
-}
-
-.share-btn:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-.share-btn::before {
-    content: '';
-    position: absolute;
-    bottom: 115%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    border: 6px solid transparent;
-    border-top-color: #222;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.share-btn:hover::before {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-/* --- PORTFOLIO UPDATE WIDGET --- */
-.portfolio-update-widget {
-    margin-top: 40px;
-    border-top: 1px solid var(--border-color);
+ 
+solid var(--border-color);
     padding-top: 30px;
 }
 
 .year-toggle {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    color: var(--text-heading);
-    padding: 8px 0;
-    transition: 0.3s;
-}
-
-.year-toggle:hover { color: var(--accent-blue); }
-
-.quarters-list { margin-left: 10px; margin-top: 5px; }
-.quarters-list li { margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px; }
-.quarters-list a { font-size: 0.9rem; color: var(--text-muted); display: block; }
-.quarters-list a:hover { color: var(--accent-blue); padding-left: 5px; }
+    flri- a 9r
