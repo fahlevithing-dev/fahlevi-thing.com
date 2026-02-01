@@ -543,7 +543,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = encodeURIComponent(document.title);
         
         shareContainer.innerHTML = `
-            <p class="share-label">Share this article:</p>
+            <p class="share-label">SHARE</p>
             <div class="share-buttons">
                 <a href="https://twitter.com/intent/tweet?text=${title}&url=${url}" target="_blank" class="share-btn twitter" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
                 <a href="https://api.whatsapp.com/send?text=${title}%20${url}" target="_blank" class="share-btn whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -564,6 +564,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }).catch(err => console.error('Failed to copy:', err));
             });
         }
+
+        // Animation on scroll (Fade-in)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    shareContainer.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(shareContainer);
     }
 
     // --- PORTFOLIO UPDATE WIDGET ---
