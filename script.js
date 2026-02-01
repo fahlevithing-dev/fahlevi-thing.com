@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- EMAILJS CONFIGURATION ---
     // Register at https://www.emailjs.com/ to get these keys.
     // Create a Service (e.g., Gmail) and two Templates (one for Contact, one for Subscription).
-    const EMAIL_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your Public Key
-    const EMAIL_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace with your Service ID
-    const EMAIL_TEMPLATE_CONTACT = "YOUR_TEMPLATE_ID_CONTACT"; // Replace with Contact Template ID
+    const EMAIL_PUBLIC_KEY = "lfs3BUQP3cUUT5ir6"; // Replace with your Public Key
+    const EMAIL_SERVICE_ID = "service_ner42la"; // Replace with your Service ID
+    const EMAIL_TEMPLATE_CONTACT = "template_92xf4ac"; // Replace with Contact Template ID
     const EMAIL_TEMPLATE_SUB = "YOUR_TEMPLATE_ID_SUBSCRIPTION"; // Replace with Subscription Template ID
 
     const sendEmail = (templateId, params, btnElement) => {
