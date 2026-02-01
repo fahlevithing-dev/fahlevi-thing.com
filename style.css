@@ -1034,7 +1034,7 @@ body { top: 0px !important; }
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(100px); /* Mulai dari bawah layar */
-    background-color: #333;
+    background-color: var(--accent-blue);
     color: #fff;
     padding: 12px 24px;
     border-radius: 50px;
