@@ -971,3 +971,47 @@ body { top: 0px !important; }
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(37, 132, 161, 0.3);
 }
+
+/* --- SHARE BUTTONS --- */
+.share-container {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.share-label {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-heading);
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.share-btn.twitter { background-color: #000; }
+.share-btn.whatsapp { background-color: #25D366; }
+.share-btn.linkedin { background-color: #0077b5; }
+.share-btn.copy { background-color: var(--text-muted); }

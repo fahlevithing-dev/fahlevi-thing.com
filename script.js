@@ -535,4 +535,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- SHARE BUTTONS LOGIC ---
+    const shareContainer = document.querySelector('.share-container');
+    if (shareContainer) {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.title);
+        
+        shareContainer.innerHTML = `
+            <p class="share-label">Share this article:</p>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=${title}&url=${url}" target="_blank" class="share-btn twitter" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://api.whatsapp.com/send?text=${title}%20${url}" target="_blank" class="share-btn whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=${url}" target="_blank" class="share-btn linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <button class="share-btn copy" aria-label="Copy Link"><i class="fas fa-link"></i></button>
+            </div>
+        `;
+
+        const copyBtn = shareContainer.querySelector('.copy');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    const originalIcon = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalIcon;
+                    }, 2000);
+                }).catch(err => console.error('Failed to copy:', err));
+            });
+        }
+    }
 });
