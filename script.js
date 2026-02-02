@@ -483,6 +483,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const name = contactForm.querySelector('input[name="name"]').value;
             const email = contactForm.querySelector('input[name="email"]').value;
+
+            // Ensure contact info is not empty or just whitespace
+            if (!email || email.trim() === "") {
+                alert("Please enter your email, contact, or social media.");
+                return;
+            }
+
             const message = contactForm.querySelector('textarea[name="message"]').value;
             
             const params = {
