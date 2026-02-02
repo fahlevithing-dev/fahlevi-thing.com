@@ -194,19 +194,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- GOOGLE TRANSLATE WIDGET INJECTION ---
     const socialWidget = document.querySelector('.social-widget');
     if (socialWidget) {
+        // Create wrapper for alignment
+        const wrapperDiv = document.createElement('div');
+        wrapperDiv.className = 'translate-wrapper';
+        socialWidget.parentNode.insertBefore(wrapperDiv, socialWidget.nextSibling);
+
         // Create container for translate widget
         const translateDiv = document.createElement('div');
         translateDiv.id = 'google_translate_element';
         translateDiv.className = 'translate-widget';
-        
-        // Insert after the social widget
-        socialWidget.parentNode.insertBefore(translateDiv, socialWidget.nextSibling);
+        wrapperDiv.appendChild(translateDiv);
 
         // Create text below translate widget
-        const subTranslateText = document.createElement('div');
+        const subTranslateText = document.createElement('a');
+        subTranslateText.href = 'about.html';
         subTranslateText.className = 'sub-translate-text';
         subTranslateText.textContent = 'we know nothing';
-        translateDiv.parentNode.insertBefore(subTranslateText, translateDiv.nextSibling);
+        wrapperDiv.appendChild(subTranslateText);
 
         // Define the callback function globally
         window.googleTranslateElementInit = function() {
