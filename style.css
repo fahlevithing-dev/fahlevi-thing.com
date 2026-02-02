@@ -679,17 +679,18 @@ footer {
 
 .sub-translate-text {
     display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.75rem;
+    font-family: 'Lora', serif; /* Menggunakan font serif yang lebih elegan */
+    font-size: 0.85rem;
     font-style: italic;
-    color: #9e2a2b; /* Elegant Deep Red */
-    letter-spacing: 0.5px;
+    font-weight: 700; /* Menebalkan agar 'menyala' seperti quotes */
+    color: red; /* Merah menyala sesuai permintaan */
+    letter-spacing: 1px;
     margin-top: 5px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .sub-translate-text:hover {
-    color: #0f4c81; /* Elegant Classic Blue */
+    color: #002147; /* Elegant Oxford Blue (Biru Tua Mewah) */
 }
 
 /* Custom styling for Google Translate Simple Layout */
@@ -1213,3 +1214,36 @@ body { top: 0px !important; }
 .quarters-list li { margin-bottom: 10px; }
 .quarters-list a { font-size: 0.9rem; color: var(--text-muted); display: block; transition: 0.3s; }
 .quarters-list a:hover { color: var(--accent-blue); transform: translateX(5px); font-weight: 600; }
+
+/* --- BACK TO TOP BUTTON --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-blue);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #1a6b85;
+    transform: translateY(-3px);
+}
