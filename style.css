@@ -55,6 +55,9 @@ ul { list-style: none; }
     border-bottom: 1px solid var(--border-color);
     background: var(--bg-header);
     transition: background-color 0.3s;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-container {
@@ -71,6 +74,23 @@ ul { list-style: none; }
 }
 
 .brand-name a { color: var(--text-heading); }
+
+.pre-title {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    transition: all 0.4s ease;
+    max-height: 30px;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.pre-title.hidden {
+    opacity: 0;
+    max-height: 0;
+}
 
 .tagline {
     font-family: var(--font-body);
@@ -650,6 +670,15 @@ footer {
     margin-top: 25px;
     margin-left: 5px;
     text-align: left;
+}
+
+.sub-translate-text {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 /* Custom styling for Google Translate Simple Layout */

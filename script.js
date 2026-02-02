@@ -7,6 +7,24 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- HEADER PRE-TITLE INJECTION ---
+    const brandName = document.querySelector('.brand-name');
+    if (brandName) {
+        const preTitle = document.createElement('div');
+        preTitle.className = 'pre-title';
+        preTitle.textContent = 'you know nothing, Jon Snow? but,';
+        brandName.parentNode.insertBefore(preTitle, brandName);
+
+        // Hide pre-title on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                preTitle.classList.add('hidden');
+            } else {
+                preTitle.classList.remove('hidden');
+            }
+        });
+    }
+
     // --- DARK MODE TOGGLE ---
     const navWrapper = document.querySelector('.nav-wrapper');
     if (navWrapper) {
@@ -183,6 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Insert after the social widget
         socialWidget.parentNode.insertBefore(translateDiv, socialWidget.nextSibling);
+
+        // Create text below translate widget
+        const subTranslateText = document.createElement('div');
+        subTranslateText.className = 'sub-translate-text';
+        subTranslateText.textContent = 'we know nothing';
+        translateDiv.parentNode.insertBefore(subTranslateText, translateDiv.nextSibling);
 
         // Define the callback function globally
         window.googleTranslateElementInit = function() {
