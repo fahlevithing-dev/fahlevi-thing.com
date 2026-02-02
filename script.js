@@ -507,6 +507,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             sendEmail(EMAIL_TEMPLATE_CONTACT, params, submitBtn)
                 .then(() => {
+                    // Google Ads Conversion Event
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'ads_conversion_Submit_lead_form_1', {});
+                    }
+
                     alert("Message sent successfully! I will get back to you soon.");
                     contactForm.reset();
                 })
