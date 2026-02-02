@@ -682,14 +682,14 @@ footer {
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-style: italic;
-    color: var(--text-muted);
-    color: red;
+    color: #9e2a2b; /* Elegant Deep Red */
+    letter-spacing: 0.5px;
     margin-top: 5px;
     transition: color 0.3s;
 }
 
 .sub-translate-text:hover {
-    color: blue;
+    color: #0f4c81; /* Elegant Classic Blue */
 }
 
 /* Custom styling for Google Translate Simple Layout */
