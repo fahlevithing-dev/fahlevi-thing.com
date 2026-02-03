@@ -10,6 +10,7 @@
     /* Theme Variables */
     --bg-body: #ffffff;
     --bg-header: #ffffff;
+    --bg-header-scrolled: rgba(255, 255, 255, 0.85); /* For blur effect */
     --text-main: #444444;
     --text-heading: #111111;
     --text-muted: #777777;
@@ -22,6 +23,7 @@
 [data-theme="dark"] {
     --bg-body: #121212;
     --bg-header: #1a1a1a;
+    --bg-header-scrolled: rgba(26, 26, 26, 0.85); /* For blur effect */
     --text-main: #e0e0e0;
     --text-heading: #ffffff;
     --text-muted: #b0b0b0;
@@ -56,16 +58,19 @@ ul { list-style: none; }
     padding: 50px 0 20px;
     border-bottom: 1px solid var(--border-color);
     background: var(--bg-header);
-    transition: background-color 0.3s, padding 0.3s ease;
+    transition: background-color 0.3s, padding 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease, backdrop-filter 0.5s ease;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .main-header.scrolled {
+    background-color: var(--bg-header-scrolled);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* For Safari */
     padding-top: 15px;
     padding-bottom: 15px !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .header-container {
@@ -79,7 +84,7 @@ ul { list-style: none; }
     font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 5px;
-    transition: font-size 0.3s ease;
+    transition: font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-header.scrolled .brand-name {
@@ -113,7 +118,7 @@ ul { list-style: none; }
     margin-bottom: 40px;
     display: inline-block;
     position: relative;
-    transition: margin 0.3s ease, font-size 0.3s ease;
+    transition: margin 0.5s cubic-bezier(0.4, 0, 0.2, 1), font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-header.scrolled .tagline {
