@@ -62,6 +62,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- STICKY BRAND / SCROLLABLE NAV LOGIC ---
+    // Separate navigation from header so only the brand remains sticky
+    const mainHeader = document.querySelector('.main-header');
+    // Re-select navWrapper to ensure we have the element (variable scope)
+    const navWrapperEl = document.querySelector('.nav-wrapper');
+    
+    if (mainHeader && navWrapperEl) {
+        // Create new container for nav to maintain layout
+        const navContainer = document.createElement('div');
+        navContainer.className = 'container';
+        
+        // Move navWrapper to new container
+        navContainer.appendChild(navWrapperEl);
+        
+        // Insert new container after mainHeader
+        mainHeader.parentNode.insertBefore(navContainer, mainHeader.nextSibling);
+        
+        // Adjust spacing
+        mainHeader.style.paddingBottom = '10px';
+        navWrapperEl.style.marginTop = '10px';
+        
+        const tagline = mainHeader.querySelector('.tagline');
+        if (tagline) {
+            tagline.style.marginBottom = '20px';
+        }
+    }
+
+    // --- HEADER SCROLL EFFECT (RESIZE ON SCROLL) ---
+    if (mainHeader) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+        });
+    }
+
     // --- EMAILJS CONFIGURATION ---
     // Register at https://www.emailjs.com/ to get these keys.
     // Create a Service (e.g., Gmail) and two Templates (one for Contact, one for Subscription).

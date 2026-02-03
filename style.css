@@ -56,10 +56,16 @@ ul { list-style: none; }
     padding: 50px 0 20px;
     border-bottom: 1px solid var(--border-color);
     background: var(--bg-header);
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, padding 0.3s ease;
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.main-header.scrolled {
+    padding-top: 15px;
+    padding-bottom: 15px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .header-container {
@@ -73,6 +79,11 @@ ul { list-style: none; }
     font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 5px;
+    transition: font-size 0.3s ease;
+}
+
+.main-header.scrolled .brand-name {
+    font-size: 1.8rem;
 }
 
 .brand-name a { color: var(--text-heading); }
@@ -102,6 +113,12 @@ ul { list-style: none; }
     margin-bottom: 40px;
     display: inline-block;
     position: relative;
+    transition: margin 0.3s ease, font-size 0.3s ease;
+}
+
+.main-header.scrolled .tagline {
+    margin-bottom: 10px !important;
+    font-size: 1rem;
 }
 
 /* Garis dekorasi kecil di bawah tagline */
