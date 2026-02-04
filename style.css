@@ -233,6 +233,11 @@ ul { list-style: none; }
     position: sticky;
     top: 100px;
     height: fit-content;
+    transition: border-color 0.5s ease;
+}
+
+.sidebar-area.is-sticky {
+    border-color: var(--accent-blue);
 }
 
 /* --- POST ITEMS --- */
