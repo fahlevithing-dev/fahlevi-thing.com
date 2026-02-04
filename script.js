@@ -246,13 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapperDiv.className = 'translate-wrapper';
         
         if (connectWrapper) {
-            // Inject BEFORE the logo link to place it in the middle
-            const logoLink = connectWrapper.querySelector('.logo-link');
-            if (logoLink) {
-                connectWrapper.insertBefore(wrapperDiv, logoLink);
-            } else {
-                connectWrapper.appendChild(wrapperDiv);
-            }
+            // Inject AFTER the connect-wrapper to place it at the bottom
+            connectWrapper.parentNode.insertBefore(wrapperDiv, connectWrapper.nextSibling);
         } else {
             // Fallback
             socialIcons.parentNode.insertBefore(wrapperDiv, socialIcons.nextSibling);
