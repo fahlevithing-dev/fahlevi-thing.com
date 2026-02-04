@@ -375,12 +375,18 @@ figcaption {
 .soc-icon { font-size: 1.4rem; color: var(--text-muted); }
 .soc-icon:hover { color: var(--accent-blue); }
 
-.header-logo {
+.logo-link {
     position: absolute;
     top: 0;
     right: 0;
     width: 85px;
     height: 85px;
+    display: block;
+}
+
+.header-logo {
+    width: 100%;
+    height: 100%;
     border-radius: 25%;
     object-fit: cover;
     border: 1px solid var(--accent-blue);
@@ -436,7 +442,7 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 768px) {
     /* Sembunyikan logo di mobile agar teks header terbaca jelas */
-    .header-logo { display: none; }
+    .logo-link { display: none; }
 
     /* Layout Mobile untuk Connect Widget (Icons - Translate - Logo) */
     .connect-widget {
@@ -445,13 +451,18 @@ footer {
         justify-content: center;
         align-items: center;
         gap: 15px;
+        background-color: var(--disclaimer-bg);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        margin-top: 30px;
     }
 
     .connect-widget h3 {
         display: none;
     }
 
-    .connect-widget .header-logo {
+    .connect-widget .logo-link {
         display: block;
         position: static;
         width: 50px;
@@ -461,6 +472,8 @@ footer {
 
     .connect-widget .translate-wrapper {
         margin-top: 0;
+        width: 100%;
+        order: 3;
     }
 
     .nav-wrapper { 
