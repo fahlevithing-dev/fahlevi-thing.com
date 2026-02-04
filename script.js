@@ -237,33 +237,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- GOOGLE TRANSLATE WIDGET INJECTION ---
-    const socialWidget = document.querySelector('.social-widget');
-    if (socialWidget) {
-        let injectionTarget = socialWidget.parentNode;
-        const sidebarConnect = socialWidget.closest('.sidebar-connect');
-
-        // Handle new layout structure
-        if (sidebarConnect) {
-            injectionTarget = sidebarConnect;
-        } else {
-            // Fallback for old layout
-            socialWidget.parentNode.classList.add('connect-widget');
-            
-            // Move logo link out of social-widget to parent for better mobile layout control
-            const logoLink = socialWidget.querySelector('.logo-link');
-            if (logoLink) {
-                socialWidget.parentNode.appendChild(logoLink);
-            }
-        }
+    const socialIcons = document.querySelector('.social-icons');
+    if (socialIcons) {
+        const connectWrapper = socialIcons.closest('.connect-wrapper');
 
         // Create wrapper for alignment
         const wrapperDiv = document.createElement('div');
         wrapperDiv.className = 'translate-wrapper';
         
-        if (sidebarConnect) {
-            injectionTarget.appendChild(wrapperDiv);
+        if (connectWrapper) {
+            // Inject BEFORE the logo link to place it in the middle
+            const logoLink = connectWrapper.querySelector('.logo-link');
+            if (logoLink) {
+                connectWrapper.insertBefore(wrapperDiv, logoLink);
+            } else {
+                connectWrapper.appendChild(wrapperDiv);
+            }
         } else {
-            injectionTarget.insertBefore(wrapperDiv, socialWidget.nextSibling);
+            // Fallback
+            socialIcons.parentNode.insertBefore(wrapperDiv, socialIcons.nextSibling);
         }
 
         // Create container for translate widget

@@ -381,8 +381,7 @@ figcaption {
     justify-content: space-between; /* Dorong teks ke kiri, logo ke kanan */
     align-items: center;           /* Sejajarkan secara vertikal */
     width: 100%;
-    max-width: 350px;              /* Sesuaikan lebar area ini */
-    padding: 10px;
+    max-width: px;
 }
 
 .connect-left {
@@ -743,8 +742,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 25px;
-}
+    margin-top: 0; /* 
 
 .translate-widget {
     text-align: center;
