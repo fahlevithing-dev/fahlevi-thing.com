@@ -379,8 +379,8 @@ figcaption {
     position: absolute;
     top: 0;
     right: 0;
-    width: 55px;
-    height: 55px;
+    width: 35px;
+    height: 35px;
     display: block;
 }
 
@@ -1319,8 +1319,7 @@ body { top: 0px !important; }
 .back-to-top:hover {
     background-color: #1a6b85;
     transform: translateY(-3px);
-}
-  // --- GOOGLE TRANSLATE WIDGET INJECTION ---
+}    // --- GOOGLE TRANSLATE WIDGET INJECTION ---
     const socialWidget = document.querySelector('.social-widget');
     if (socialWidget) {
         // Add class for styling control
