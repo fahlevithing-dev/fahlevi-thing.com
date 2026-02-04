@@ -1,4 +1,6 @@
 // Load EmailJS SDK for handling emails without backend
+// SECURITY NOTE: Ensure you configure "Allowed Origins" in your EmailJS dashboard 
+// to restrict usage of these keys to your specific domain (e.g., fahlevithing.com).
 (function() {
     var script = document.createElement('script');
     script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
@@ -6,6 +8,11 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- SECURITY: FRAME BUSTING (Prevent Clickjacking) ---
+    if (window.top !== window.self) {
+        window.top.location = window.self.location;
+    }
     
     // --- HEADER PRE-TITLE INJECTION ---
     const brandName = document.querySelector('.brand-name');
@@ -232,6 +239,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- GOOGLE TRANSLATE WIDGET INJECTION ---
     const socialWidget = document.querySelector('.social-widget');
     if (socialWidget) {
+        // Add class for styling control
+        socialWidget.parentNode.classList.add('connect-widget');
+
+        // Move logo out of social-widget to parent for better mobile layout control
+        const logo = socialWidget.querySelector('.header-logo');
+        if (logo) {
+            socialWidget.parentNode.appendChild(logo);
+        }
+
         // Create wrapper for alignment
         const wrapperDiv = document.createElement('div');
         wrapperDiv.className = 'translate-wrapper';
@@ -626,11 +642,11 @@ document.addEventListener('DOMContentLoaded', () => {
         shareContainer.innerHTML = `
             <div class="share-wrapper">
                 <div id="share-popup" class="share-popup">
-                    <a href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" target="_blank" class="share-icon twitter" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://www.threads.net/intent/post?text=${encodedTitle}%20${encodedUrl}" target="_blank" class="share-icon threads" aria-label="Share on Threads"><i class="fab fa-threads"></i></a>
-                    <a href="https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}" target="_blank" class="share-icon whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}" target="_blank" class="share-icon telegram" aria-label="Share on Telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" class="share-icon linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" target="_blank" rel="noopener noreferrer" class="share-icon twitter" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.threads.net/intent/post?text=${encodedTitle}%20${encodedUrl}" target="_blank" rel="noopener noreferrer" class="share-icon threads" aria-label="Share on Threads"><i class="fab fa-threads"></i></a>
+                    <a href="https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}" target="_blank" rel="noopener noreferrer" class="share-icon whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}" target="_blank" rel="noopener noreferrer" class="share-icon telegram" aria-label="Share on Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" rel="noopener noreferrer" class="share-icon linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <button id="copy-link-btn" class="share-icon copy" aria-label="Copy Link"><i class="fas fa-link"></i></button>
                 </div>
                 <button id="web-share-btn" class="simple-share-btn">

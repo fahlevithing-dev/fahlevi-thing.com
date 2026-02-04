@@ -438,6 +438,31 @@ footer {
     /* Sembunyikan logo di mobile agar teks header terbaca jelas */
     .header-logo { display: none; }
 
+    /* Layout Mobile untuk Connect Widget (Icons - Translate - Logo) */
+    .connect-widget {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .connect-widget h3 {
+        display: none;
+    }
+
+    .connect-widget .header-logo {
+        display: block;
+        position: static;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+
+    .connect-widget .translate-wrapper {
+        margin-top: 0;
+    }
+
     .nav-wrapper { 
         flex-direction: column; 
         align-items: flex-start; 

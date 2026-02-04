@@ -1,3 +1,11 @@
-User-agent: *
-Allow: /
-Sitemap: https://fahlevi-thing.com/sitemap.xml
+User-agent: Googlebot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
