@@ -93,6 +93,11 @@ ul { list-style: none; }
     position: relative;
 }
 
+/* Hide logo image if accidentally placed in header (fixes privacy.html, search.html, etc.) */
+.header-container .header-logo {
+    display: none;
+}
+
 .brand-name {
     font-family: var(--font-heading);
     font-size: 2.5rem;
