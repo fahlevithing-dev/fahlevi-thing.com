@@ -780,8 +780,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const stickySidebar = document.querySelector('.sidebar-area');
     if (stickySidebar) {
         window.addEventListener('scroll', () => {
-            // Check if sidebar is in sticky state (approx 80px from top)
-            if (stickySidebar.getBoundingClientRect().top <= 81) {
+            // Check if sidebar is in sticky state (approx 100px from top)
+            if (stickySidebar.getBoundingClientRect().top <= 101) {
                 stickySidebar.classList.add('is-sticky');
             } else {
                 stickySidebar.classList.remove('is-sticky');

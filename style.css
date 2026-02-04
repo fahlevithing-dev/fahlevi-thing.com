@@ -246,13 +246,16 @@ ul { list-style: none; }
     border-left: 1px solid var(--border-color);
     padding-left: 40px;
     position: sticky;
-    top: 80px;
+    top: 100px;
     height: fit-content;
-    transition: border-color 0.5s ease;
+    transition: border-color 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 0 12px 12px 0;
 }
 
 .sidebar-area.is-sticky {
     border-color: var(--accent-blue);
+    background-color: var(--disclaimer-bg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 /* --- POST ITEMS --- */
