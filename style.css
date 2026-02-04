@@ -379,8 +379,8 @@ figcaption {
     position: absolute;
     top: 0;
     right: 0;
-    width: 18px;
-    height: 18px;
+    width: 55px;
+    height: 55px;
     display: block;
 }
 
@@ -1320,3 +1320,18 @@ body { top: 0px !important; }
     background-color: #1a6b85;
     transform: translateY(-3px);
 }
+  // --- GOOGLE TRANSLATE WIDGET INJECTION ---
+    const socialWidget = document.querySelector('.social-widget');
+    if (socialWidget) {
+        // Add class for styling control
+        socialWidget.parentNode.classList.add('connect-widget');
+
+        // Move logo link out of social-widget to parent for better mobile layout control
+        const logoLink = socialWidget.querySelector('.logo-link');
+        if (logoLink) {
+            socialWidget.parentNode.appendChild(logoLink);
+        }
+
+        // Create wrapper for alignment
+        const wrapperDiv = document.createElement('div');
+        wrapperDiv.className = 'translate-wrapper';
