@@ -752,10 +752,10 @@ footer {
 .sub-translate-text {
     display: inline-block;
     font-family: 'Lora', serif; /* Menggunakan font serif yang lebih elegan */
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-style: italic;
     font-weight: 700; /* Menebalkan agar 'menyala' seperti quotes */
-    color: red; /* Merah menyala sesuai permintaan */
+    color: #000;
     letter-spacing: 1px;
     margin-top: 5px;
     transition: color 0.3s ease;
