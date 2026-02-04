@@ -379,9 +379,14 @@ figcaption {
     position: absolute;
     top: 0;
     right: 0;
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
     display: block;
+}
+
+@keyframes logoEntry {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .header-logo {
@@ -392,6 +397,7 @@ figcaption {
     border: 1px solid var(--accent-blue);
     padding: 3px;
     background-color: #fff;
+    animation: logoEntry 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 /* --- FOOTER --- */
@@ -448,7 +454,7 @@ footer {
     .connect-widget {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-between; /* Ikon kiri, Logo kanan */
         align-items: center;
         gap: 15px;
         background-color: var(--disclaimer-bg);
@@ -465,15 +471,20 @@ footer {
     .connect-widget .logo-link {
         display: block;
         position: static;
-        width: 30px;
-        height: 30px;
+        width: 50px; /* Ukuran logo diperbesar agar jelas */
+        height: 50px;
         margin: 0;
+        order: 2; /* Pastikan logo di urutan kedua (kanan) */
+    }
+
+    .connect-widget .social-widget {
+        order: 1; /* Ikon di urutan pertama (kiri) */
     }
 
     .connect-widget .translate-wrapper {
         margin-top: 0;
         width: 100%;
-        order: 3;
+        order: 3; /* Bahasa di urutan ketiga (bawah) */
     }
 
     .nav-wrapper { 
