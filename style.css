@@ -375,23 +375,27 @@ figcaption {
 .soc-icon { font-size: 1.4rem; color: var(--text-muted); }
 .soc-icon:hover { color: var(--accent-blue); }
 
-/* --- CONNECT HEADER LAYOUT (Flexbox) --- */
-.connect-container {
-    display: flex;
-    align-items: center; /* Sejajar vertikal */
-    gap: 10px;           /* Jarak antara teks dan logo */
-    margin-bottom: 20px;
+/* --- SIDEBAR CONNECT WIDGET --- */
+.sidebar-connect {
+    position: relative; /* Wajib agar logo bisa diatur posisinya */
+    padding: 10px;
+    min-height: 80px;   /* Sesuaikan dengan tinggi area yang diinginkan */
 }
 
-.connect-container h3 {
-    margin-bottom: 0; /* Hilangkan margin bawaan h3 agar sejajar */
+.text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antara tulisan CONNECT dan ikon sosmed */
+    margin-right: 70px; /* Prevent overlap with absolute logo on desktop */
 }
 
 .logo-link {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-decoration: none;
+    position: absolute;
+    top: 50%;           /* Menaruh di tengah secara vertikal */
+    right: 0;           /* Melekat di sisi kanan */
+    transform: translateY(-50%); /* Penyeimbang agar benar-benar di tengah */
+    width: 60px;        /* Ukuran lebih besar sesuai permintaan */
+    height: 60px;
 }
 
 @keyframes logoEntry {
@@ -402,10 +406,10 @@ figcaption {
 .header-logo {
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 12px;
     object-fit: contain;
-    border: 1px solid var(--accent-blue);
-    padding: 3px;
+    border: 1.5px solid var(--accent-blue);
+    padding: 5px;
     background-color: #fff;
     animation: logoEntry 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
@@ -461,7 +465,7 @@ footer {
     /* .logo-link { display: none; }  <-- Dihapus agar logo tetap tampil di mobile sesuai layout baru */
 
     /* Layout Mobile untuk Connect Widget (Icons - Translate - Logo) */
-    .connect-widget {
+    .connect-widget, .sidebar-connect {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between; /* Ikon kiri, Logo kanan */
@@ -474,24 +478,25 @@ footer {
         margin-top: 30px;
     }
 
-    .connect-widget h3 {
+    .connect-widget h3, .sidebar-connect h3 {
         display: none;
     }
 
-    .connect-widget .logo-link {
+    .connect-widget .logo-link, .sidebar-connect .logo-link {
         display: block;
         position: static;
-        width: 20px;
-        height: 20px;
+        width: 50px;
+        height: 50px;
         margin: 0;
         order: 2; /* Pastikan logo di urutan kedua (kanan) */
     }
 
-    .connect-widget .social-widget {
+    .connect-widget .social-widget, .sidebar-connect .text-group {
         order: 1; /* Ikon di urutan pertama (kiri) */
+        margin-right: 0; /* Reset margin desktop */
     }
 
-    .connect-widget .translate-wrapper {
+    .connect-widget .translate-wrapper, .sidebar-connect .translate-wrapper {
         margin-top: 0;
         width: 100%;
         order: 3; /* Bahasa di urutan ketiga (bawah) */

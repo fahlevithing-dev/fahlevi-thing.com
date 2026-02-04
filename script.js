@@ -239,19 +239,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- GOOGLE TRANSLATE WIDGET INJECTION ---
     const socialWidget = document.querySelector('.social-widget');
     if (socialWidget) {
-        // Add class for styling control
-        socialWidget.parentNode.classList.add('connect-widget');
+        let injectionTarget = socialWidget.parentNode;
+        const sidebarConnect = socialWidget.closest('.sidebar-connect');
 
-        // Move logo out of social-widget to parent for better mobile layout control
-        const logo = socialWidget.querySelector('.header-logo');
-        if (logo) {
-            socialWidget.parentNode.appendChild(logo);
+        // Handle new layout structure
+        if (sidebarConnect) {
+            injectionTarget = sidebarConnect;
+        } else {
+            // Fallback for old layout
+            socialWidget.parentNode.classList.add('connect-widget');
+            
+            // Move logo link out of social-widget to parent for better mobile layout control
+            const logoLink = socialWidget.querySelector('.logo-link');
+            if (logoLink) {
+                socialWidget.parentNode.appendChild(logoLink);
+            }
         }
 
         // Create wrapper for alignment
         const wrapperDiv = document.createElement('div');
         wrapperDiv.className = 'translate-wrapper';
-        socialWidget.parentNode.insertBefore(wrapperDiv, socialWidget.nextSibling);
+        
+        if (sidebarConnect) {
+            injectionTarget.appendChild(wrapperDiv);
+        } else {
+            injectionTarget.insertBefore(wrapperDiv, socialWidget.nextSibling);
+        }
 
         // Create container for translate widget
         const translateDiv = document.createElement('div');
