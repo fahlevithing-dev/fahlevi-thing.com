@@ -246,7 +246,7 @@ ul { list-style: none; }
     border-left: 1px solid var(--border-color);
     padding-left: 40px;
     position: sticky;
-    top: 100px;
+    top: 120px;
     height: fit-content;
     transition: border-color 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
     border-radius: 0 12px 12px 0;
