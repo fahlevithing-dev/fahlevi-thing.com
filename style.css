@@ -375,41 +375,54 @@ figcaption {
 .soc-icon { font-size: 1.4rem; color: var(--text-muted); }
 .soc-icon:hover { color: var(--accent-blue); }
 
-/* --- SIDEBAR CONNECT WIDGET --- */
-.sidebar-connect {
-    position: relative; /* Wajib agar logo bisa diatur posisinya */
+/* --- CONNECT WIDGET (NEW LAYOUT) --- */
+.connect-wrapper {
+    display: flex;
+    justify-content: space-between; /* Dorong teks ke kiri, logo ke kanan */
+    align-items: center;           /* Sejajarkan secara vertikal */
+    width: 100%;
+    max-width: 350px;              /* Sesuaikan lebar area ini */
     padding: 10px;
-    min-height: 80px;   /* Sesuaikan dengan tinggi area yang diinginkan */
 }
 
-.text-group {
+.connect-left {
     display: flex;
     flex-direction: column;
     gap: 15px; /* Jarak antara tulisan CONNECT dan ikon sosmed */
-    margin-right: 70px; /* Prevent overlap with absolute logo on desktop */
+}
+
+.connect-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 24px; /* Ukuran ikon media sosial */
 }
 
 .logo-link {
-    position: absolute;
-    top: 50%;           /* Menaruh di tengah secara vertikal */
-    right: 0;           /* Melekat di sisi kanan */
-    transform: translateY(-50%); /* Penyeimbang agar benar-benar di tengah */
-    width: 60px;        /* Ukuran lebih besar sesuai permintaan */
-    height: 60px;
+    display: block;
+    width: 70px;  /* Ukuran kotak luar logo */
+    height: 70px;
 }
 
 @keyframes logoEntry {
-    from { opacity: 0; transform: scale(0.5); }
+    from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
 }
 
 .header-logo {
     width: 100%;
     height: 100%;
-    border-radius: 12px;
-    object-fit: contain;
-    border: 1.5px solid var(--accent-blue);
-    padding: 5px;
+    object-fit: contain; /* PENTING: Logo tidak akan gepeng/terpotong */
+    border: 1.5px solid var(--accent-blue); /* Warna border biru kamu */
+    border-radius: 15px;
+    padding: 8px;        /* Memberi ruang napas di dalam kotak logo */
     background-color: #fff;
     animation: logoEntry 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
@@ -465,41 +478,13 @@ footer {
     /* .logo-link { display: none; }  <-- Dihapus agar logo tetap tampil di mobile sesuai layout baru */
 
     /* Layout Mobile untuk Connect Widget (Icons - Translate - Logo) */
-    .connect-widget, .sidebar-connect {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between; /* Ikon kiri, Logo kanan */
-        align-items: center;
-        gap: 15px;
+    .connect-wrapper {
         background-color: var(--disclaimer-bg);
-        padding: 20px;
         border-radius: 12px;
         border: 1px solid var(--border-color);
         margin-top: 30px;
-    }
-
-    .connect-widget h3, .sidebar-connect h3 {
-        display: none;
-    }
-
-    .connect-widget .logo-link, .sidebar-connect .logo-link {
-        display: block;
-        position: static;
-        width: 50px;
-        height: 50px;
-        margin: 0;
-        order: 2; /* Pastikan logo di urutan kedua (kanan) */
-    }
-
-    .connect-widget .social-widget, .sidebar-connect .text-group {
-        order: 1; /* Ikon di urutan pertama (kiri) */
-        margin-right: 0; /* Reset margin desktop */
-    }
-
-    .connect-widget .translate-wrapper, .sidebar-connect .translate-wrapper {
-        margin-top: 0;
-        width: 100%;
-        order: 3; /* Bahasa di urutan ketiga (bawah) */
+        padding: 20px;
+        max-width: 100%;
     }
 
     .nav-wrapper { 
