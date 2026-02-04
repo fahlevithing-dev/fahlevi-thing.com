@@ -60,12 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Toggle Logic
         toggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.add('theme-transition');
+            
             const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
             const newTheme = isDark ? 'light' : 'dark';
             
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             toggleBtn.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            
+            setTimeout(() => {
+                document.documentElement.classList.remove('theme-transition');
+            }, 500);
         });
     }
 
@@ -774,8 +780,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const stickySidebar = document.querySelector('.sidebar-area');
     if (stickySidebar) {
         window.addEventListener('scroll', () => {
-            // Check if sidebar is in sticky state (approx 100px from top)
-            if (stickySidebar.getBoundingClientRect().top <= 101) {
+            // Check if sidebar is in sticky state (approx 80px from top)
+            if (stickySidebar.getBoundingClientRect().top <= 81) {
                 stickySidebar.classList.add('is-sticky');
             } else {
                 stickySidebar.classList.remove('is-sticky');

@@ -34,6 +34,21 @@
     --accent-blue: #3aaacd; /* Lighter teal for better contrast on dark */
 }
 
+/* Dark Mode Specific Overrides */
+[data-theme="dark"] .sub-translate-text,
+[data-theme="dark"] .goog-te-menu-value span {
+    color: #ffffff !important;
+}
+
+/* Smooth Theme Transition */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease !important;
+    transition-delay: 0s !important;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -231,7 +246,7 @@ ul { list-style: none; }
     border-left: 1px solid var(--border-color);
     padding-left: 40px;
     position: sticky;
-    top: 100px;
+    top: 80px;
     height: fit-content;
     transition: border-color 0.5s ease;
 }
@@ -315,6 +330,14 @@ figcaption {
     color: #888;
     margin-top: 10px;
     font-style: italic;
+}
+
+.entry-content {
+    color: #333;
+}
+
+[data-theme="dark"] .entry-content {
+    color: #ffffff;
 }
 
 .image-row {
