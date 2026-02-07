@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (brandName) {
         const preTitle = document.createElement('div');
         preTitle.className = 'pre-title';
-        preTitle.textContent = 'you know nothing, Jon Snow? but,';
+        preTitle.textContent = 'you know nothing, Jon Snow?';
         brandName.parentNode.insertBefore(preTitle, brandName);
 
         // Hide pre-title on scroll
