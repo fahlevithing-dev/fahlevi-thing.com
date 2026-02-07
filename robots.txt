@@ -1,5 +1,7 @@
 User-agent: Googlebot
-Disallow: /
+Allow: /
+
+Sitemap: https://fahlevi-thing.com/sitemap.xml
 
 User-agent: GPTBot
 Disallow: /
