@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
-            title: "Beyond Survival: Why Nusantara is Not Just an Option, It is an Evolution",
+            title: "Why IKN (Nusantara) is Not Just an Option, It is an Evolution",
             url: "nusantara-evolution.html",
             category: "MACRO-ECONOMICS",
             date: "February 7, 2026",
