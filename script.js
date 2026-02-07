@@ -409,7 +409,8 @@ document.addEventListener('DOMContentLoaded', () => {
         function displayList(page) {
             container.innerHTML = "";
             const start = (page - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
+
+      const end = start + itemsPerPage;
             const paginatedItems = posts.slice(start, end);
 
             paginatedItems.forEach(item => {
