@@ -294,6 +294,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Beyond Survival: Why Nusantara is Not Just an Option, It is an Evolution",
+            url: "nusantara-evolution.html",
+            category: "MACRO-ECONOMICS",
+            date: "February 2, 2026",
+            excerpt: "Viewing the Capital City of Nusantara (IKN) solely as a political project is a missed analysis. From a macroeconomic perspective, this project represents a massive national 'Capital Expenditure' (CapEx) designed to lower the 'operational costs' of a Jakarta-centric economy.",
+            image: "images/ikn-evolution.jpg"
+        },
+        {
             title: "The Archipelago’s Black Gold: A Narrative of Character Over Quantity",
             url: "archipelago-black-gold.html",
             category: "INVESTMENT",
