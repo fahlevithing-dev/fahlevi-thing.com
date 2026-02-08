@@ -511,6 +511,50 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     renderPagination(allPosts.filter(p => !insightsExcludedUrls.includes(p.url)), 'insights-posts-container', 8);
 
+    // --- RELATED POSTS LOGIC ---
+    const relatedContainer = document.getElementById('related-posts-container');
+    if (relatedContainer) {
+        // Get current filename
+        const path = window.location.pathname;
+        const currentFilename = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+        
+        const currentPost = allPosts.find(p => p.url === currentFilename);
+        
+        if (currentPost) {
+            // 1. Filter by Category (excluding current post)
+            let related = allPosts.filter(p => p.category === currentPost.category && p.url !== currentPost.url);
+            
+            // 2. If less than 2, fill with recent posts (excluding current and already selected)
+            if (related.length < 2) {
+                const remaining = allPosts.filter(p => p.url !== currentPost.url && !related.includes(p));
+                // Add from remaining until we have 2
+                for (let i = 0; i < remaining.length && related.length < 2; i++) {
+                    related.push(remaining[i]);
+                }
+            }
+            
+            // 3. Take top 2
+            const postsToShow = related.slice(0, 2);
+            
+            // 4. Render
+            postsToShow.forEach(item => {
+                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"></div>` : "";
+                const articleHTML = `
+                    <article class="post-item">
+                        ${thumbHTML}
+                        <div class="post-details">
+                            <div class="meta-cat">${item.category} • ${item.date}</div>
+                            <h2><a href="${item.url}">${item.title}</a></h2>
+                            <div class="excerpt"><p>${item.excerpt}</p></div>
+                            <a href="${item.url}" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                `;
+                relatedContainer.insertAdjacentHTML('beforeend', articleHTML);
+            });
+        }
+    }
+
     // --- COOKIE CONSENT LOGIC ---
     const cookieConsentKey = 'fahlevithing_cookie_consent';
     
@@ -678,6 +722,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}" target="_blank" rel="noopener noreferrer" class="share-icon whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <a href="https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}" target="_blank" rel="noopener noreferrer" class="share-icon telegram" aria-label="Share on Telegram"><i class="fab fa-telegram"></i></a>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" rel="noopener noreferrer" class="share-icon linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <button id="share-instagram-btn" class="share-icon instagram" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></button>
                     <button id="copy-link-btn" class="share-icon copy" aria-label="Copy Link"><i class="fas fa-link"></i></button>
                 </div>
                 <button id="web-share-btn" class="simple-share-btn">
@@ -699,6 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const shareBtn = document.getElementById('web-share-btn');
         const sharePopup = document.getElementById('share-popup');
         const copyBtn = document.getElementById('copy-link-btn');
+        const instaBtn = document.getElementById('share-instagram-btn');
         const toast = document.getElementById('toast-notification');
 
         if (shareBtn && sharePopup) {
@@ -719,6 +765,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (copyBtn) {
             copyBtn.addEventListener('click', () => {
                 navigator.clipboard.writeText(url).then(() => {
+                    toast.innerHTML = '<i class="fas fa-check-circle"></i> Link Copied to Clipboard';
                     // Tampilkan Toast
                     toast.classList.add('show');
                     
@@ -729,6 +776,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Tutup popup setelah copy
                     sharePopup.classList.remove('active');
+                }).catch(err => console.error('Failed to copy:', err));
+            });
+        }
+
+        if (instaBtn) {
+            instaBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(url).then(() => {
+                    toast.innerHTML = '<i class="fas fa-check-circle"></i> Link Copied! Open Instagram...';
+                    toast.classList.add('show');
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+                    
+                    sharePopup.classList.remove('active');
+                    
+                    // Open Instagram in new tab
+                    setTimeout(() => window.open('https://www.instagram.com/', '_blank'), 1000);
                 }).catch(err => console.error('Failed to copy:', err));
             });
         }
@@ -800,6 +865,88 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+     // --- TABLE OF CONTENTS GENERATOR ---
+    const articleContent = document.querySelector('.excerpt');
+    if (articleContent) {
+        const headings = articleContent.querySelectorAll('h3, h4');
+        
+        // Only generate TOC if there are at least 3 headings
+        if (headings.length >= 3) {
+            const tocContainer = document.createElement('div');
+            tocContainer.className = 'toc-container';
+            
+            const tocTitle = document.createElement('div');
+            tocTitle.className = 'toc-title';
+            tocTitle.innerHTML = '<i class="fas fa-list-ul"></i> Table of Contents';
+            tocContainer.appendChild(tocTitle);
+            
+            const tocList = document.createElement('ul');
+            tocList.className = 'toc-list';
+            
+            headings.forEach((heading, index) => {
+                // Generate ID if missing
+                if (!heading.id) {
+                    const slug = heading.textContent
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, '-')
+                        .replace(/(^-|-$)+/g, '');
+                    heading.id = slug || `heading-${index}`;
+                }
+                
+                const listItem = document.createElement('li');
+                // Add class for indentation based on tag name
+                if (heading.tagName.toLowerCase() === 'h4') {
+                    listItem.className = 'toc-h4';
+                }
+                
+                const link = document.createElement('a');
+                link.href = `#${heading.id}`;
+                link.textContent = heading.textContent;
+                
+                // Smooth scroll behavior with offset for sticky header
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.getElementById(heading.id);
+                    const headerOffset = 100; // Adjust for sticky header height
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                    history.pushState(null, null, `#${heading.id}`);
+                });
+                
+                listItem.appendChild(link);
+                tocList.appendChild(listItem);
+            });
+            
+            tocContainer.appendChild(tocList);
+            
+            // Insert TOC before the first heading
+            if (headings.length > 0) {
+                headings[0].parentNode.insertBefore(tocContainer, headings[0]);
+            }
+        }
+    }
+
+    // --- READING TIME ESTIMATOR ---
+    const postDetails = document.querySelector('.post-details');
+    if (postDetails) {
+        const readMore = postDetails.querySelector('.read-more');
+        const excerpt = postDetails.querySelector('.excerpt');
+        const metaCat = postDetails.querySelector('.meta-cat');
+
+        // Only calculate for single post pages (no read-more link, has excerpt content)
+        if (!readMore && excerpt && metaCat) {
+            const text = excerpt.innerText;
+            const wpm = 200;
+            const words = text.trim().length === 0 ? 0 : text.trim().split(/\s+/).length;
+            const readingTime = Math.ceil(words / wpm);
+            
+            if (readingTime > 0) {
+                metaCat.textContent += ` • ${readingTime} min read`;
+            }
+        }
+    }
 
     // --- SIDEBAR STICKY EFFECT ---
     const stickySidebar = document.querySelector('.sidebar-area');

@@ -1254,6 +1254,7 @@ body { top: 0px !important; }
 .share-icon.twitter:hover { background-color: #000; }
 .share-icon.whatsapp:hover { background-color: #25D366; }
 .share-icon.linkedin:hover { background-color: #0077b5; }
+.share-icon.instagram:hover { background-color: #E1306C; }
 .share-icon.copy:hover { background-color: var(--text-muted); }
 
 /* --- TOAST NOTIFICATION --- */
@@ -1277,6 +1278,44 @@ body { top: 0px !important; }
     gap: 10px;
     pointer-events: none; /* Agar tidak mengganggu klik */
 }
+
+/* --- TABLE OF CONTENTS --- */
+.toc-container {
+    background-color: var(--disclaimer-bg);
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px 20px 20px 25px;
+    margin: 30px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.toc-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--text-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toc-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.toc-list li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.toc-list li a { color: var(--text-main); text-decoration: none; transition: all 0.2s; border-bottom: 1px dotted transparent; }
+.toc-list li a:hover { color: var(--accent-blue); border-bottom-color: var(--accent-blue); padding-left: 5px; }
+.toc-list li.toc-h4 { margin-left: 20px; font-size: 0.9rem; color: var(--text-muted); }
 
 .toast-notification.show {
     transform: translateX(-50%) translateY(0);
