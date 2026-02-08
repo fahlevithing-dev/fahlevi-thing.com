@@ -36,7 +36,8 @@
 
 /* Dark Mode Specific Overrides */
 [data-theme="dark"] .sub-translate-text,
-[data-theme="dark"] .goog-te-menu-value span {
+[data-theme="dark"] .goog-te-gadget-simple .goog-te-menu-value,
+[data-theme="dark"] .goog-te-gadget-simple .goog-te-menu-value span {
     color: #ffffff !important;
 }
 
