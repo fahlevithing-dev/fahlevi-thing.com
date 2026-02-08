@@ -832,15 +832,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (instaBtn) {
             instaBtn.addEventListener('click', async () => {
-                // Attempt to use Web Share API (Mobile Native Share Sheet)
-                // This allows sharing to Instagram Stories if the app is installed
+                // 1. Cari Image Thumbnail (Prioritas: Data Post -> Meta Tag -> Default)
+                let fileToShare = null;
+                
+                // Cek dari allPosts (jika ada di halaman artikel)
+                const path = window.location.pathname;
+                const currentFilename = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+                const currentPost = typeof allPosts !== 'undefined' ? allPosts.find(p => p.url === currentFilename) : null;
+                
+                let imageUrl = currentPost && currentPost.image ? currentPost.image : null;
+                
+                // Fallback ke OG Image jika tidak ada gambar di post
+                if (!imageUrl) {
+                    const ogImage = document.querySelector('meta[property="og:image"]');
+                    if (ogImage) imageUrl = ogImage.content;
+                }
+
+                // 2. Fetch gambar dan buat File Object
+                if (imageUrl) {
+                    try {
+                        const response = await fetch(imageUrl);
+                        const blob = await response.blob();
+                        const type = blob.type || 'image/jpeg';
+                        const ext = type.split('/')[1] || 'jpg';
+                        fileToShare = new File([blob], `thumbnail.${ext}`, { type: type });
+                    } catch (e) {
+                        console.log('Failed to fetch image for sharing:', e);
+                    }
+                }
+
+                // 3. Eksekusi Web Share API (Native Share Sheet)
                 if (navigator.share) {
                     try {
-                        await navigator.share({
+                        const shareData = {
                             title: title,
-                            text: title,
-                            url: url
-                        });
+                            text: title + '\n\n' + url, // Gabungkan judul dan URL di text
+                        };
+
+                        // Jika file gambar berhasil diambil & browser mendukung share file
+                        if (fileToShare && navigator.canShare && navigator.canShare({ files: [fileToShare] })) {
+                            shareData.files = [fileToShare];
+                        } else {
+                            shareData.url = url; // Fallback hanya URL jika file gagal
+                        }
+
+                        await navigator.share(shareData);
                         sharePopup.classList.remove('active');
                         return;
                     } catch (err) {
