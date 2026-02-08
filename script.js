@@ -293,6 +293,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Centralized Post Data
     const allPosts = [
+         {
+            title: "The Portfolio War – A Deep Dive into Hajj Fund Strategies (Malaysia vs. Indonesia)",
+            url: "hajj-fund-portfolio-war.html",
+            category: "POLITICAL ECONOMY",
+            date: "February 8, 2026",
+            excerpt: "While Part 1 explored institutional structures, Part 2 dissects balance sheets. Malaysia’s TH operates as a diversified multi-asset endowment, while Indonesia’s BPKH functions closer to a sovereign debt accumulator.",
+            image: "" 
+        },
         {
             title: "Pilgrimage and Political Economy: A Comparative Analysis of Hajj Fund Management in Malaysia and Indonesia",
             url: "hajj-fund-management.html",
