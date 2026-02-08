@@ -294,6 +294,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Pilgrimage and Political Economy: A Comparative Analysis of Hajj Fund Management in Malaysia and Indonesia",
+            url: "hajj-fund-management.html",
+            category: "POLITICAL ECONOMY",
+            date: "February 8, 2026",
+            excerpt: "First-Mover Advantage: Malaysia’s Tabung Haji (TH) has a 50-year head start, allowing it to build a vertically integrated ecosystem. Indonesia’s BPKH is currently shifting from a passive 'saver' strategy to an active 'investor' strategy.",
+            image: "" 
+        },
+        {
             title: "Beyond Survival: Why IKN (Nusantara) is Not Just an Option, It is an Evolution",
             url: "nusantara-evolution.html",
             category: "MACRO-ECONOMICS",
