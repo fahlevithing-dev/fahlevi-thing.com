@@ -518,26 +518,61 @@ document.addEventListener('DOMContentLoaded', () => {
         const path = window.location.pathname;
         const currentFilename = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
         
-        const currentPost = allPosts.find(p => p.url === currentFilename);
-        
-        if (currentPost) {
-            // 1. Filter by Category (excluding current post)
-            let related = allPosts.filter(p => p.category === currentPost.category && p.url !== currentPost.url);
+        // Filter: All posts that are on Home (not featured) AND not the current page
+        const postsToShow = allPosts.filter(p => 
+            !featuredUrls.includes(p.url) && 
+            p.url !== currentFilename
+        );
+
+        // --- LOAD MORE LOGIC ---
+        let visibleCount = 0;
+        const itemsPerBatch = 4; // Show 4 posts at a time
+
+        // Create "Load More" Button Wrapper
+        const btnWrapper = document.createElement('div');
+        btnWrapper.id = 'related-load-more-wrapper';
+        btnWrapper.style.textAlign = 'center';
+        btnWrapper.style.marginTop = '40px';
+        btnWrapper.style.display = 'none'; // Hidden by default
+
+        const loadMoreBtn = document.createElement('button');
+        loadMoreBtn.innerText = 'Load More Articles';
+        // Styling
+        loadMoreBtn.style.padding = '12px 30px';
+        loadMoreBtn.style.backgroundColor = 'transparent';
+        loadMoreBtn.style.color = 'var(--text-heading)';
+        loadMoreBtn.style.border = '1px solid var(--accent-blue)';
+        loadMoreBtn.style.borderRadius = '50px';
+        loadMoreBtn.style.cursor = 'pointer';
+        loadMoreBtn.style.fontFamily = 'var(--font-heading)';
+        loadMoreBtn.style.fontWeight = '700';
+        loadMoreBtn.style.fontSize = '0.9rem';
+        loadMoreBtn.style.transition = 'all 0.3s ease';
+        loadMoreBtn.style.textTransform = 'uppercase';
+        loadMoreBtn.style.letterSpacing = '1px';
+
+        // Hover Effects
+        loadMoreBtn.addEventListener('mouseenter', () => {
+            loadMoreBtn.style.backgroundColor = 'var(--accent-blue)';
+            loadMoreBtn.style.color = '#fff';
+            loadMoreBtn.style.transform = 'translateY(-2px)';
+            loadMoreBtn.style.boxShadow = '0 5px 15px rgba(37, 132, 161, 0.3)';
+        });
+        loadMoreBtn.addEventListener('mouseleave', () => {
+            loadMoreBtn.style.backgroundColor = 'transparent';
+            loadMoreBtn.style.color = 'var(--text-heading)';
+            loadMoreBtn.style.transform = 'translateY(0)';
+            loadMoreBtn.style.boxShadow = 'none';
+        });
+
+        btnWrapper.appendChild(loadMoreBtn);
+        // Insert button after the grid container
+        relatedContainer.parentNode.insertBefore(btnWrapper, relatedContainer.nextSibling);
+
+        const renderBatch = () => {
+            const nextBatch = postsToShow.slice(visibleCount, visibleCount + itemsPerBatch);
             
-            // 2. If less than 2, fill with recent posts (excluding current and already selected)
-            if (related.length < 2) {
-                const remaining = allPosts.filter(p => p.url !== currentPost.url && !related.includes(p));
-                // Add from remaining until we have 2
-                for (let i = 0; i < remaining.length && related.length < 2; i++) {
-                    related.push(remaining[i]);
-                }
-            }
-            
-            // 3. Take top 2
-            const postsToShow = related.slice(0, 2);
-            
-            // 4. Render
-            postsToShow.forEach(item => {
+            nextBatch.forEach(item => {
                 const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
@@ -552,7 +587,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 relatedContainer.insertAdjacentHTML('beforeend', articleHTML);
             });
-        }
+
+            visibleCount += nextBatch.length;
+
+            // Toggle Button Visibility
+            if (visibleCount >= postsToShow.length) {
+                btnWrapper.style.display = 'none';
+            } else {
+                btnWrapper.style.display = 'block';
+            }
+        };
+
+        // Attach Click Event
+        loadMoreBtn.addEventListener('click', renderBatch);
+
+        // Initial Render
+        renderBatch();
     }
 
     // --- COOKIE CONSENT LOGIC ---
