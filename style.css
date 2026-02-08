@@ -813,12 +813,14 @@ footer {
     padding: 6px 12px !important;
     border-radius: 20px !important;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: inline-block !important;
 }
 
 .goog-te-gadget-simple:hover {
     background-color: var(--accent-blue) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 132, 161, 0.4);
 }
 
 .goog-te-gadget-simple:hover .goog-te-menu-value span {
