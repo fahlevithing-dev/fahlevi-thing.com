@@ -948,6 +948,80 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- COPY CODE BUTTON FOR ARTICLES ---
+    const codeBlocks = document.querySelectorAll('pre');
+    codeBlocks.forEach(block => {
+        // Wrap pre in a relative container
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        block.parentNode.insertBefore(wrapper, block);
+        wrapper.appendChild(block);
+
+        // Create button
+        const button = document.createElement('button');
+        button.className = 'copy-code-btn';
+        button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+        button.setAttribute('aria-label', 'Copy code');
+
+        // Copy Logic
+        button.addEventListener('click', () => {
+            const code = block.querySelector('code') || block;
+            const text = code.innerText;
+
+            navigator.clipboard.writeText(text).then(() => {
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+        });
+
+        wrapper.appendChild(button);
+    });
+ // --- SCROLL PROGRESS BAR (ARTICLES ONLY) ---
+    // Heuristic: Check if there is a direct article child in main (typical for single post pages)
+    const isArticlePage = document.querySelector('main > article.post-item');
+    
+    if (isArticlePage) {
+        const progressBarContainer = document.createElement('div');
+        progressBarContainer.className = 'scroll-progress-container';
+        
+        const progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress-bar';
+        
+        progressBarContainer.appendChild(progressBar);
+        document.body.appendChild(progressBarContainer);
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    }
+
+    // --- READING MODE TOGGLE ---
+    if (isArticlePage) {
+        const readingBtn = document.createElement('button');
+        readingBtn.className = 'reading-mode-btn';
+        readingBtn.innerHTML = '<i class="fas fa-book-open"></i>';
+        readingBtn.setAttribute('aria-label', 'Toggle Reading Mode');
+        readingBtn.title = "Reading Mode";
+        document.body.appendChild(readingBtn);
+
+        readingBtn.addEventListener('click', () => {
+            document.body.classList.toggle('reading-mode');
+            const isReadingMode = document.body.classList.contains('reading-mode');
+            
+            readingBtn.innerHTML = isReadingMode ? '<i class="fas fa-times"></i>' : '<i class="fas fa-book-open"></i>';
+            readingBtn.style.backgroundColor = isReadingMode ? 'var(--accent-blue)' : 'var(--text-main)';
+            readingBtn.style.color = isReadingMode ? '#fff' : 'var(--bg-body)';
+        });
+    }
+
     // --- SIDEBAR STICKY EFFECT ---
     const stickySidebar = document.querySelector('.sidebar-area');
     if (stickySidebar) {
