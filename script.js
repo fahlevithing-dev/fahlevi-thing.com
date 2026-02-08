@@ -832,23 +832,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (instaBtn) {
             instaBtn.addEventListener('click', async () => {
-                // 1. Cari Image Thumbnail (Prioritas: Data Post -> Meta Tag -> Default)
+                // 1. Copy Link Terlebih Dahulu (Agar user bisa paste di Stories)
+                try {
+                    await navigator.clipboard.writeText(url);
+                    toast.innerHTML = '<i class="fas fa-check-circle"></i> Link Copied! Select Stories...';
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 3000);
+                } catch (err) {
+                    console.log('Clipboard failed:', err);
+                }
+
+                // 2. Cari Image Thumbnail (Prioritas: Data Post -> Meta Tag -> Default)
                 let fileToShare = null;
                 
-                // Cek dari allPosts (jika ada di halaman artikel)
                 const path = window.location.pathname;
                 const currentFilename = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
                 const currentPost = typeof allPosts !== 'undefined' ? allPosts.find(p => p.url === currentFilename) : null;
                 
                 let imageUrl = currentPost && currentPost.image ? currentPost.image : null;
                 
-                // Fallback ke OG Image jika tidak ada gambar di post
                 if (!imageUrl) {
                     const ogImage = document.querySelector('meta[property="og:image"]');
                     if (ogImage) imageUrl = ogImage.content;
                 }
 
-                // 2. Fetch gambar dan buat File Object
                 if (imageUrl) {
                     try {
                         const response = await fetch(imageUrl);
@@ -857,49 +864,45 @@ document.addEventListener('DOMContentLoaded', () => {
                         const ext = type.split('/')[1] || 'jpg';
                         fileToShare = new File([blob], `thumbnail.${ext}`, { type: type });
                     } catch (e) {
-                        console.log('Failed to fetch image for sharing:', e);
+                        console.log('Failed to fetch image:', e);
                     }
                 }
 
-                // 3. Eksekusi Web Share API (Native Share Sheet)
+                // 3. Eksekusi Web Share API
                 if (navigator.share) {
                     try {
-                        const shareData = {
-                            title: title,
-                            text: title + '\n\n' + url, // Gabungkan judul dan URL di text
-                        };
+                        let shareData = {};
 
-                        // Jika file gambar berhasil diambil & browser mendukung share file
+                        // PENTING: Jika ada file, JANGAN sertakan text/url agar dianggap sebagai Image Share
+                        // Image Share = Muncul opsi Stories & Feed
+                        // Text/Link Share = Biasanya hanya muncul opsi DM (Direct Message)
                         if (fileToShare && navigator.canShare && navigator.canShare({ files: [fileToShare] })) {
-                            shareData.files = [fileToShare];
+                            shareData = {
+                                files: [fileToShare],
+                                title: title // Title opsional, tapi aman
+                            };
                         } else {
-                            shareData.url = url; // Fallback hanya URL jika file gagal
+                            // Fallback jika tidak ada gambar: Share Link biasa
+                            shareData = {
+                                title: title,
+                                text: title,
+                                url: url
+                            };
                         }
 
                         await navigator.share(shareData);
                         sharePopup.classList.remove('active');
                         return;
                     } catch (err) {
-                        // Jika user membatalkan (cancel) menu share, jangan jalankan fallback
                         if (err.name === 'AbortError') return;
                         console.log('Share API skipped:', err);
                     }
                 }
 
-                // Fallback for Desktop or if Web Share fails
-                navigator.clipboard.writeText(url).then(() => {
-                    toast.innerHTML = '<i class="fas fa-check-circle"></i> Link Copied! Paste in Stories...';
-                    toast.classList.add('show');
-                    
-                    setTimeout(() => {
-                        toast.classList.remove('show');
-                    }, 3000);
-                    
-                    sharePopup.classList.remove('active');
-                    
-                    // Open Instagram in new tab
-                    setTimeout(() => window.open('https://www.instagram.com/', '_blank'), 1000);
-                }).catch(err => console.error('Failed to copy:', err));
+                // Fallback Desktop (Jika Web Share API tidak ada)
+                // Karena link sudah dicopy di langkah 1, kita tinggal buka Instagram
+                sharePopup.classList.remove('active');
+                setTimeout(() => window.open('https://www.instagram.com/', '_blank'), 500);
             });
         }
 
