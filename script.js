@@ -844,13 +844,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         sharePopup.classList.remove('active');
                         return;
                     } catch (err) {
+                        // Jika user membatalkan (cancel) menu share, jangan jalankan fallback
+                        if (err.name === 'AbortError') return;
                         console.log('Share API skipped:', err);
                     }
                 }
 
                 // Fallback for Desktop or if Web Share fails
                 navigator.clipboard.writeText(url).then(() => {
-                    toast.innerHTML = '<i class="fas fa-check-circle"></i> Link Copied! Open Instagram...';
+                    toast.innerHTML = '<i class="fas fa-check-circle"></i> Link Copied! Paste in Stories...';
                     toast.classList.add('show');
                     
                     setTimeout(() => {
