@@ -778,6 +778,29 @@ footer {
     }
 }
 
+/* --- RELATED POSTS GRID --- */
+#related-posts-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 30px;
+}
+
+#related-posts-container .post-item {
+    margin-bottom: 0;
+}
+
+#related-posts-container .post-thumb img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    #related-posts-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- GOOGLE TRANSLATE WIDGET --- */
 .translate-wrapper {
     display: flex;

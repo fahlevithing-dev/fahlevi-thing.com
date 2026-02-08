@@ -781,7 +781,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (instaBtn) {
-            instaBtn.addEventListener('click', () => {
+            instaBtn.addEventListener('click', async () => {
+                // Attempt to use Web Share API (Mobile Native Share Sheet)
+                // This allows sharing to Instagram Stories if the app is installed
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: title,
+                            text: title,
+                            url: url
+                        });
+                        sharePopup.classList.remove('active');
+                        return;
+                    } catch (err) {
+                        console.log('Share API skipped:', err);
+                    }
+                }
+
+                // Fallback for Desktop or if Web Share fails
                 navigator.clipboard.writeText(url).then(() => {
                     toast.innerHTML = '<i class="fas fa-check-circle"></i> Link Copied! Open Instagram...';
                     toast.classList.add('show');
