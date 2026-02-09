@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /search.html
-Disallow: /*?q=
 
 Sitemap: https://fahlevi-thing.com/sitemap.xml
