@@ -288,6 +288,7 @@ ul { list-style: none; }
     letter-spacing: 1px;
 }
 
+.post-details h1,
 .post-details h2 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
@@ -295,7 +296,9 @@ ul { list-style: none; }
     margin-bottom: 15px;
 }
 
+.post-details h1 a,
 .post-details h2 a { color: var(--text-heading); }
+.post-details h1 a:hover,
 .post-details h2 a:hover { color: var(--accent-blue); }
 
 .excerpt {
