@@ -293,6 +293,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Centralized Post Data
     const allPosts = [
+        {
+            title: "The Glitch in the Archive",
+            url: "glitch-in-the-archive.html",
+            category: "POETRY",
+            date: "February 10, 2026",
+            excerpt: "The archive grows heavier by the hour. New lines of code, fresh paragraphs, Another article was pushed to the live server. The index page scrolls endlessly down— A monument of sudden, manic focus.",
+            image: "" 
+        },
          {
             title: "The Portfolio War – A Deep Dive into Hajj Fund Strategies (Malaysia vs. Indonesia)",
             url: "hajj-fund-portfolio-war.html",
