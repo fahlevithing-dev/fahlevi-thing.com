@@ -14,6 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
         window.top.location = window.self.location;
     }
     
+    // --- DYNAMIC TEXT UPDATE: Change "My Portfolio" to "Portfolio" ---
+    const portfolioNavLink = document.getElementById('portfolio-nav');
+    if (portfolioNavLink) {
+        // Iterate through child nodes to replace only the text content,
+        // preserving any potential icons within the link.
+        for (const node of portfolioNavLink.childNodes) {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().toLowerCase() === 'my portfolio') {
+                node.textContent = 'Portfolio';
+                break; // Exit loop once text is replaced
+            }
+        }
+    }
+
     // --- HEADER PRE-TITLE INJECTION ---
     const brandName = document.querySelector('.brand-name');
     if (brandName) {
