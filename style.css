@@ -832,6 +832,15 @@ footer {
     color: #002147; /* Elegant Oxford Blue (Biru Tua Mewah) */
 }
 
+.extra-quote-text {
+    font-family: 'Lora', serif;
+    font-size: 0.65rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 3px;
+    text-align: center;
+}
+
 /* Custom styling for Google Translate Simple Layout */
 .goog-te-gadget-simple {
     background-color: transparent !important;

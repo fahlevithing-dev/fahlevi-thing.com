@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (brandName) {
         const preTitle = document.createElement('div');
         preTitle.className = 'pre-title';
-        preTitle.textContent = 'you know nothing, Jon Snow?';
+        preTitle.textContent = 'you know nothing, reza?';
         brandName.parentNode.insertBefore(preTitle, brandName);
 
         // Hide pre-title on scroll
@@ -271,6 +271,12 @@ document.addEventListener('DOMContentLoaded', () => {
         subTranslateText.className = 'sub-translate-text';
         subTranslateText.textContent = 'we know nothing';
         wrapperDiv.appendChild(subTranslateText);
+
+        // Create the secondary quote text below
+        const extraQuote = document.createElement('span');
+        extraQuote.className = 'extra-quote-text';
+        extraQuote.textContent = "what we know is a drop, what we don't know is an ocean";
+        wrapperDiv.appendChild(extraQuote);
 
         // Define the callback function globally
         window.googleTranslateElementInit = function() {
