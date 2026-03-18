@@ -319,6 +319,7 @@ ul { list-style: none; }
     font-size: 1.4rem;
     color: var(--text-heading);
     line-height: 1.4;
+    text-align: left;
 }
 
 .excerpt h4 {
@@ -328,6 +329,7 @@ ul { list-style: none; }
     font-size: 1.15rem;
     color: var(--text-heading);
     line-height: 1.4;
+    text-align: left;
 }
 
 .excerpt ul, .excerpt ol {
