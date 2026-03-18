@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "images/mbg.jpg" 
         },
         {
-            title: "MBG Part 1: The Global Evolution of School Nutrition",
+            title: "Program Makan Bergizi Gratis (MBG): The “Genius” Initiative Facing Implementation Challenges",
             url: "mbg-genius-initiative.html",
             category: "MACRO-ECONOMICS",
             date: "March 18, 2026",
@@ -563,8 +563,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Initialize Pagination
-    // For Home: Exclude featured posts (MBG & Investment Journey) to avoid duplication
-    const featuredUrls = ["mbg-genius-initiative.html", "investment-journey.html"];
+    // For Home: Exclude featured posts to avoid duplication
+    const featuredUrls = ["miracle-of-20-percent.html", "investment-journey.html"];
     renderPagination(allPosts.filter(p => !featuredUrls.includes(p.url)), 'home-posts-container', 8);
     
     // For Insights: Exclude specific portfolio/personal posts
