@@ -316,12 +316,18 @@ ul { list-style: none; }
     margin-top: 30px;
     margin-bottom: 15px;
     font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--text-heading);
+    line-height: 1.4;
 }
 
 .excerpt h4 {
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 10px;
     font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--text-heading);
+    line-height: 1.4;
 }
 
 .excerpt ul, .excerpt ol {
