@@ -1124,6 +1124,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- DYNAMIC LAST UPDATED DATE ---
+    if (postDetails) {
+        const readMore = postDetails.querySelector('.read-more');
+        const metaCat = postDetails.querySelector('.meta-cat');
+
+        // Only add to single post pages (where there is no read-more link)
+        if (!readMore && metaCat) {
+            const lastModified = new Date(document.lastModified);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = lastModified.toLocaleDateString('en-US', options);
+
+            const lastUpdatedDiv = document.createElement('div');
+            lastUpdatedDiv.style.fontSize = '0.85rem';
+            lastUpdatedDiv.style.color = 'var(--text-muted)';
+            lastUpdatedDiv.style.fontStyle = 'italic';
+            lastUpdatedDiv.style.marginTop = '5px';
+            lastUpdatedDiv.innerHTML = `<i class="fas fa-history"></i> Last Updated: ${formattedDate}`;
+
+            // Insert exactly after meta-cat
+            metaCat.parentNode.insertBefore(lastUpdatedDiv, metaCat.nextSibling);
+        }
+    }
+
     // --- COPY CODE BUTTON FOR ARTICLES ---
     const codeBlocks = document.querySelectorAll('pre');
     codeBlocks.forEach(block => {
