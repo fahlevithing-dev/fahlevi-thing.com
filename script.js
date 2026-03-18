@@ -313,7 +313,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
-            title: "Program Makan Bergizi Gratis (MBG): The “Genius” Initiative Facing Implementation Challenges",
+            title: "MBG Part 5: The Grand Vision & Long-Term Impacts",
+            url: "mbg-part-5.html",
+            category: "MACRO-ECONOMICS",
+            date: "March 18, 2026",
+            excerpt: "If Indonesia successfully navigates the current implementation hurdles and achieves a 'zero mistake' operational state, the MBG program transforms into a powerful engine for national restructuring...",
+            image: "images/mbg.jpg" 
+        },
+        {
+            title: "MBG Part 4: Safety, Quality, and the \"Zero Mistake\" Mandate",
+            url: "mbg-part-4.html",
+            category: "MACRO-ECONOMICS",
+            date: "March 18, 2026",
+            excerpt: "As Indonesia moves toward its ambitious goal of serving over 82.9 million beneficiaries by 2029, the National Nutrition Agency (BGN) has had to confront immediate systemic failures...",
+            image: "images/mbg.jpg" 
+        },
+        {
+            title: "MBG Part 3: Navigating the Implementation Minefield",
+            url: "mbg-part-3.html",
+            category: "MACRO-ECONOMICS",
+            date: "March 18, 2026",
+            excerpt: "While the vision of a universal school meal program is theoretically 'genius,' the transition from policy paper to a child’s plate is fraught with systemic obstacles...",
+            image: "images/mbg.jpg" 
+        },
+        {
+            title: "MBG Part 2: The Nutritional Gap & Per Capita Consumption",
+            url: "mbg-part-2.html",
+            category: "MACRO-ECONOMICS",
+            date: "March 18, 2026",
+            excerpt: "To understand why a national school meal program is hailed as a 'genius' intervention, one must examine the empirical data regarding what actually reaches the plates of citizens...",
+            image: "images/mbg.jpg" 
+        },
+        {
+            title: "MBG Part 1: The Global Evolution of School Nutrition",
             url: "mbg-genius-initiative.html",
             category: "MACRO-ECONOMICS",
             date: "March 18, 2026",
