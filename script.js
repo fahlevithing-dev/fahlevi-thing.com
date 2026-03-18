@@ -313,6 +313,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Program Makan Bergizi Gratis (MBG): The “Genius” Initiative Facing Implementation Challenges",
+            url: "mbg-genius-initiative.html",
+            category: "MACRO-ECONOMICS",
+            date: "March 18, 2026",
+            excerpt: "School nutrition policies have evolved from simple public health interventions into strategic pillars for human capital development and geopolitical stability. Globally, providing school meals is no longer just an act of philanthropy...",
+            image: "images/mbg.jpg" 
+        },
+        {
             title: "The Glitch in the Archive",
             url: "glitch-in-the-archive.html",
             category: "POETRY",
