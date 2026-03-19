@@ -1131,19 +1131,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Only add to single post pages (where there is no read-more link)
         if (!readMore && metaCat) {
-            const lastModified = new Date(document.lastModified);
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            const formattedDate = lastModified.toLocaleDateString('en-US', options);
+            let lastModifiedStr = null;
 
-            const lastUpdatedDiv = document.createElement('div');
-            lastUpdatedDiv.style.fontSize = '0.85rem';
-            lastUpdatedDiv.style.color = 'var(--text-muted)';
-            lastUpdatedDiv.style.fontStyle = 'italic';
-            lastUpdatedDiv.style.marginTop = '5px';
-            lastUpdatedDiv.innerHTML = `<i class="fas fa-history"></i> Last Updated: ${formattedDate}`;
+            // 1. Coba ambil dari meta tag HTML (opsional: <meta name="last-modified" content="2026-03-19">)
+            const metaLastMod = document.querySelector('meta[name="last-modified"]');
+            if (metaLastMod) {
+                lastModifiedStr = metaLastMod.getAttribute('content');
+            }
 
-            // Insert exactly after meta-cat
-            metaCat.parentNode.insertBefore(lastUpdatedDiv, metaCat.nextSibling);
+            // 2. Jika tidak ada, ambil dari schema JSON-LD (dateModified)
+            if (!lastModifiedStr) {
+                const jsonScripts = document.querySelectorAll('script[type="application/ld+json"]');
+                for (let script of jsonScripts) {
+                    try {
+                        const data = JSON.parse(script.innerHTML);
+                        if (data && data.dateModified) {
+                            // Sembunyikan "Last Updated" jika tanggalnya sama persis dengan tanggal rilis
+                            if (data.datePublished && data.dateModified === data.datePublished) {
+                                break;
+                            }
+                            lastModifiedStr = data.dateModified;
+                            break;
+                        }
+                    } catch (e) {
+                        // Abaikan jika error saat membaca JSON
+                    }
+                }
+            }
+
+            // 3. Jika tanggal pembaruan (update) ditemukan, format dan tampilkan
+            if (lastModifiedStr) {
+                const lastModified = new Date(lastModifiedStr);
+                if (!isNaN(lastModified.getTime())) {
+                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    const formattedDate = lastModified.toLocaleDateString('en-US', options);
+
+                    const lastUpdatedDiv = document.createElement('div');
+                    lastUpdatedDiv.style.fontSize = '0.85rem';
+                    lastUpdatedDiv.style.color = 'var(--text-muted)';
+                    lastUpdatedDiv.style.fontStyle = 'italic';
+                    lastUpdatedDiv.style.marginTop = '5px';
+                    lastUpdatedDiv.innerHTML = `<i class="fas fa-history"></i> Last Updated: ${formattedDate}`;
+
+                    // Masukkan ke bawah kategori tulisan
+                    metaCat.parentNode.insertBefore(lastUpdatedDiv, metaCat.nextSibling);
+                }
+            }
         }
     }
 
