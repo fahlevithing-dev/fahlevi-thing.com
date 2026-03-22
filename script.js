@@ -291,6 +291,13 @@ document.addEventListener('DOMContentLoaded', () => {
         extraQuote.textContent = "what we know is a drop, what we don't know is an ocean";
         wrapperDiv.appendChild(extraQuote);
 
+        // Create the author text below the quote
+        const quoteAuthor = document.createElement('span');
+        quoteAuthor.className = 'extra-quote-text';
+        quoteAuthor.textContent = "(- Isaac Newton)";
+        quoteAuthor.style.marginTop = '2px'; // Jarak agar terlihat menyatu dengan kutipan di atasnya
+        wrapperDiv.appendChild(quoteAuthor);
+
         // Define the callback function globally
         window.googleTranslateElementInit = function() {
             new google.translate.TranslateElement({
