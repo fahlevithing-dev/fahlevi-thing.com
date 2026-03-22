@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create the author text below the quote
         const quoteAuthor = document.createElement('span');
         quoteAuthor.className = 'extra-quote-text';
-        quoteAuthor.textContent = "(- Isaac Newton)";
+        quoteAuthor.textContent = "- Isaac Newton";
         quoteAuthor.style.marginTop = '2px'; // Jarak agar terlihat menyatu dengan kutipan di atasnya
         wrapperDiv.appendChild(quoteAuthor);
 
