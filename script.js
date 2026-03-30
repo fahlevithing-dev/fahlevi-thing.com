@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "STOCK ANALYSIS",
             date: "March 30, 2026",
             excerpt: "My journey with WIFI (PT Solusi Sinergi Digital Tbk.) began with a simple quantitative screen on Stockbit. I was searching for undervalued gems, and WIFI caught my eye with its low PBV and PE ratios...",
-            image: "images/wifi.png"
+            image: ""
         },
         {
             title: "MBG Part 5: The Grand Vision & Long-Term Impacts",
@@ -601,9 +601,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const path = window.location.pathname;
         const currentFilename = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
         
-        // Filter: All posts that are on Home (not featured) AND not the current page
-        const postsToShow = allPosts.filter(p => 
-            !featuredUrls.includes(p.url) && 
+        // Filter: All posts that are NOT the current page.
+        const postsToShow = allPosts.filter(p =>
             p.url !== currentFilename
         );
 
