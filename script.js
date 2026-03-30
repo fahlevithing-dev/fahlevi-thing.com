@@ -320,6 +320,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "The WIFI Chronicles: A Journey of Conviction, Caution, and Market Timing",
+            url: "wifi-chronicles.html",
+            category: "STOCK ANALYSIS",
+            date: "March 30, 2026",
+            excerpt: "My journey with WIFI (PT Solusi Sinergi Digital Tbk.) began with a simple quantitative screen on Stockbit. I was searching for undervalued gems, and WIFI caught my eye with its low PBV and PE ratios...",
+            image: ""
+        },
+        {
             title: "MBG Part 5: The Grand Vision & Long-Term Impacts",
             url: "mbg-part-5.html",
             category: "MACRO-ECONOMICS",
