@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
             excerpt: "In the summer of 2021, Joan Laporta returned to the FC Barcelona presidency with a mandate that would have seemed almost paradoxical to the club's founders: to save a democratic, member-owned institution by deploying the financial instruments of Wall Street.",
-            image: ""
+            image: "images/fcbpart3.jpeg"
         },
         {
             title: "Part 2 of 3: From the Blank Jersey to Qatar Airways — Commercial Pivot",
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
             excerpt: "In the spring of 2009, FC Barcelona played football that many who witnessed it still struggle to describe in purely sporting terms. The club was at the apex of a philosophy: tiki-taka possession, pressed with geometric precision...",
-            image: ""
+            image: "images/fcbpart2.png"
         },
         {
             title: "Part 1 of 3: \"More Than a Club\" — How FC Barcelona Was Built as a Democratic Institution",
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
             excerpt: "There is a phrase in Catalan — Més que un club — that FC Barcelona has carried for over half a century. Translated, it means \"More than a club.\" But what does that actually mean? How does a football club transcend the sport itself...",
-            image: ""
+            image: "images/fcbpart1.jpg"
         },
         {
             title: "The WIFI Chronicles: A Journey of Conviction, Caution, and Market Timing",
