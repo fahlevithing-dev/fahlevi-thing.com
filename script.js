@@ -957,9 +957,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 let imageUrl = currentPost && currentPost.image ? currentPost.image : null;
                 
+                // Cari gambar dari konten artikel (DOM) jika tidak ada di allPosts
+                if (!imageUrl) {
+                    const postImg = document.querySelector('.post-thumb img, .excerpt img');
+                    if (postImg) imageUrl = postImg.src;
+                }
+
                 if (!imageUrl) {
                     const ogImage = document.querySelector('meta[property="og:image"]');
                     if (ogImage) imageUrl = ogImage.content;
+                }
+
+                // Fallback ke Logo Fahlevi Thing jika sama sekali tidak ada gambar
+                if (!imageUrl) {
+                    const headerLogo = document.querySelector('.header-logo');
+                    imageUrl = (headerLogo && headerLogo.src) ? headerLogo.src : 'images/logofahlevithing.jpeg';
                 }
 
                 if (imageUrl) {
