@@ -1151,6 +1151,27 @@ document.addEventListener('DOMContentLoaded', () => {
             if (headings.length > 0) {
                 headings[0].parentNode.insertBefore(tocContainer, headings[0]);
             }
+
+            // --- TOC SCROLL SPY (ACTIVE HIGHLIGHT) ---
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const headerOffset = 120; // Sesuaikan dengan tinggi sticky header Anda
+
+                headings.forEach(heading => {
+                    const headingPosition = heading.getBoundingClientRect().top;
+                    if (headingPosition <= headerOffset) {
+                        current = heading.id;
+                    }
+                });
+
+                const tocLinks = tocList.querySelectorAll('a');
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (current && link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
         }
     }
 
