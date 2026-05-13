@@ -367,6 +367,15 @@ figure img {
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
+
+/* Class specifically for screenshots/tables to prevent blurriness */
+figure img.crisp-image {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
 figcaption {
     font-size: 0.85rem;
     color: #888;
