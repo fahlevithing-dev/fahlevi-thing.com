@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 1. Logika saat link navigasi portfolio diklik
         portfolioNav.addEventListener('click', (e) => {
             // Jika sudah di homepage, jangan navigasi, cukup buka overlay.
-            const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
+            const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.toLowerCase().endsWith('index.html');
             if (isHomePage) {
                 e.preventDefault();
                 openPortfolioOverlay();
@@ -623,7 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (relatedContainer) {
         // Get current filename
         const path = window.location.pathname;
-        const currentFilename = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+        const currentFilename = (path.substring(path.lastIndexOf('/') + 1) || 'index.html').toLowerCase();
         
         // Filter: All posts that are NOT the current page.
         const postsToShow = allPosts.filter(p =>
@@ -838,7 +838,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         alert('Thank you for subscribing! You will be notified when new posts are published.');
                         
                         // Check if on homepage to open overlay directly
-                        const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
+                        const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.toLowerCase().endsWith('index.html');
                         const overlay = document.getElementById('portfolio-overlay');
 
                         if (isHomePage && overlay) {
@@ -952,7 +952,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let fileToShare = null;
                 
                 const path = window.location.pathname;
-                const currentFilename = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+                const currentFilename = (path.substring(path.lastIndexOf('/') + 1) || 'index.html').toLowerCase();
                 const currentPost = typeof allPosts !== 'undefined' ? allPosts.find(p => p.url === currentFilename) : null;
                 
                 let imageUrl = currentPost && currentPost.image ? currentPost.image : null;
@@ -1049,7 +1049,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="year-toggle">2026 <i class="fas fa-chevron-down"></i></div>
                     <ul class="quarters-list" style="display: none;">
                         <li><a href="portfolio-update-q1-2026.html">Q1 2026</a></li>
-                        <li><a href="#">Q2 (Coming Soon)</a></li>
+                        <li><a href="portfolio-update-q2-2026.html">Q2 2026</a></li>
                         <li><a href="#">Q3 (Coming Soon)</a></li>
                         <li><a href="#">FY (Coming Soon)</a></li>
                     </ul>
