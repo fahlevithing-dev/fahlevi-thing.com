@@ -376,6 +376,15 @@ figure img.crisp-image {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
+
+/* Class untuk membuat tampilan screenshot aplikasi (mobile) terlihat lebih profesional */
+figure img.mobile-screenshot {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+}
 figcaption {
     font-size: 0.85rem;
     color: #888;
