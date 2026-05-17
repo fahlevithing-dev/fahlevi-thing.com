@@ -320,11 +320,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
-            title: "Executive Summary: Indonesia's Strategic Macroeconomic Positioning in the G20",
+            title: "Executive Summary: Indonesia's Macroeconomic Positioning in the G20 (Q1 2026)",
             url: "indonesia-macroeconomic-g20-2026.html",
             category: "MACRO-ECONOMICS",
             date: "May 17, 2026",
-            excerpt: "Indonesia enters 2026 on a firm economic footing, distinguishing itself as one of the standout performers in an increasingly fragile global environment. The country has paired a surge in long-term foreign direct investment with broad-based domestic expansion...",
+            excerpt: "Indonesia opened 2026 with solid first-quarter results: year-on-year (YoY) GDP growth reached 5.61%, inflation remained well-contained, and Foreign Direct Investment (FDI) inflows held strong...",
             image: "images/ihsg5thn.jpeg"
         },
         {
