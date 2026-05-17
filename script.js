@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "MACRO-ECONOMICS",
             date: "May 17, 2026",
             excerpt: "Indonesia enters 2026 on a firm economic footing, distinguishing itself as one of the standout performers in an increasingly fragile global environment. The country has paired a surge in long-term foreign direct investment with broad-based domestic expansion...",
-            image: ""
+            image: "images/ihsg5thn.jpeg"
         },
         {
             title: "Part 3 of 3: The Age of Levers — How FC Barcelona Mortgaged Its Future",
