@@ -1487,7 +1487,7 @@ body { top: 0px !important; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     z-index: 999;
 }
 
@@ -1597,7 +1597,7 @@ pre {
     font-size: 1.1rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     z-index: 10000;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     opacity: 0;
     visibility: hidden;
 }
