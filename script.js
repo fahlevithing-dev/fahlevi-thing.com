@@ -320,14 +320,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
-            title: "Executive Summary: Indonesia's Macroeconomic Positioning in the G20 (Q1 2026)",
-            url: "indonesia-macroeconomic-g20-2026.html",
-            category: "MACRO-ECONOMICS",
-            date: "May 17, 2026",
-            excerpt: "Indonesia opened 2026 with solid first-quarter results: year-on-year (YoY) GDP growth reached 5.61%, inflation remained well-contained, and Foreign Direct Investment (FDI) inflows held strong...",
-            image: "images/ihsg5thn.jpeg"
-        },
-        {
             title: "Part 3 of 3: The Age of Levers — How FC Barcelona Mortgaged Its Future",
             url: "fcb-part-3.html",
             category: "POLITICAL ECONOMY",
@@ -1085,14 +1077,6 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTopBtn.setAttribute('aria-label', 'Back to Top');
     document.body.appendChild(backToTopBtn);
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
-
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -1332,6 +1316,56 @@ document.addEventListener('DOMContentLoaded', () => {
             readingBtn.style.color = isReadingMode ? '#fff' : 'var(--bg-body)';
         });
     }
+
+    // --- FLOATING BUTTONS VISIBILITY MANAGER (Auto-hide & Scroll logic) ---
+    let activityTimeout;
+    let cachedReadingBtn = null;
+    let readingBtnChecked = false;
+    let isHoveringButton = false;
+
+    const manageFloatingButtons = () => {
+        const isScrolled = window.scrollY > 300;
+        
+        if (!readingBtnChecked) {
+            cachedReadingBtn = document.querySelector('.reading-mode-btn');
+            readingBtnChecked = true;
+
+            // Mencegah tombol hilang otomatis saat kursor berada di atas tombol
+            const setHoverState = (state) => () => { 
+                isHoveringButton = state; 
+                manageFloatingButtons(); 
+            };
+            
+            if (cachedReadingBtn) {
+                cachedReadingBtn.addEventListener('mouseenter', setHoverState(true));
+                cachedReadingBtn.addEventListener('mouseleave', setHoverState(false));
+            }
+            backToTopBtn.addEventListener('mouseenter', setHoverState(true));
+            backToTopBtn.addEventListener('mouseleave', setHoverState(false));
+        }
+        
+        if (isScrolled) {
+            backToTopBtn.classList.add('visible');
+            if (cachedReadingBtn) cachedReadingBtn.classList.add('visible');
+            
+            clearTimeout(activityTimeout);
+            if (!isHoveringButton) {
+                activityTimeout = setTimeout(() => {
+                    backToTopBtn.classList.remove('visible');
+                    if (cachedReadingBtn) cachedReadingBtn.classList.remove('visible');
+                }, 500); // Menghilang dalam 0.5 detik jika tidak ada aktivitas
+            }
+        } else {
+            backToTopBtn.classList.remove('visible');
+            if (cachedReadingBtn) cachedReadingBtn.classList.remove('visible');
+            clearTimeout(activityTimeout);
+        }
+    };
+
+    window.addEventListener('scroll', manageFloatingButtons);
+    window.addEventListener('mousemove', manageFloatingButtons);
+    window.addEventListener('touchstart', manageFloatingButtons);
+    manageFloatingButtons(); // Inisialisasi awal
 
     // --- SIDEBAR STICKY EFFECT ---
     const stickySidebar = document.querySelector('.sidebar-area');
