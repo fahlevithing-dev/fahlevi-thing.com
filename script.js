@@ -1317,6 +1317,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- FLOATING BUTTONS VISIBILITY MANAGER (Auto-hide & Scroll logic) ---
+    // Menggabungkan logika tombol Back to Top dan Reading Mode agar seragam
+    let activityTimeout;
+    let cachedReadingBtn = null;
+    let readingBtnChecked = false;
+
+    const manageFloatingButtons = () => {
+        const isScrolled = window.scrollY > 300;
+        
+        if (!readingBtnChecked) {
+            cachedReadingBtn = document.querySelector('.reading-mode-btn');
+            readingBtnChecked = true;
+        }
+        
+        if (isScrolled) {
+            backToTopBtn.classList.add('visible');
+            if (cachedReadingBtn) cachedReadingBtn.classList.add('visible');
+            
+            clearTimeout(activityTimeout);
+            activityTimeout = setTimeout(() => {
+                backToTopBtn.classList.remove('visible');
+                if (cachedReadingBtn) cachedReadingBtn.classList.remove('visible');
+            }, 3000); // Keduanya menghilang dalam 3 detik jika tidak ada aktivitas
+        } else {
+            backToTopBtn.classList.remove('visible');
+            if (cachedReadingBtn) cachedReadingBtn.classList.remove('visible');
+            clearTimeout(activityTimeout);
+        }
+    };
+
+    window.addEventListener('scroll', manageFloatingButtons);
+    window.addEventListener('mousemove', manageFloatingButtons);
+    window.addEventListener('touchstart', manageFloatingButtons);
+    manageFloatingButtons(); // Inisialisasi awal
+
     // --- SIDEBAR STICKY EFFECT ---
     const stickySidebar = document.querySelector('.sidebar-area');
     if (stickySidebar) {
