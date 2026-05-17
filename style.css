@@ -1606,6 +1606,11 @@ pre {
     transform: scale(1.1);
 }
 
+.reading-mode-btn.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
 body.reading-mode .main-header,
 body.reading-mode .sidebar-area,
 body.reading-mode footer,

@@ -1323,6 +1323,22 @@ document.addEventListener('DOMContentLoaded', () => {
             readingBtn.style.backgroundColor = isReadingMode ? 'var(--accent-blue)' : 'var(--text-main)';
             readingBtn.style.color = isReadingMode ? '#fff' : 'var(--bg-body)';
         });
+
+        // Auto-hide logika untuk tombol mode baca (hilang dalam 3 detik jika tidak ada aktivitas)
+        let readingModeTimeout;
+        const resetReadingModeTimer = () => {
+            readingBtn.classList.remove('fade-out');
+            clearTimeout(readingModeTimeout);
+            readingModeTimeout = setTimeout(() => {
+                readingBtn.classList.add('fade-out');
+            }, 3000); // 3000ms = 3 detik
+        };
+
+        window.addEventListener('mousemove', resetReadingModeTimer);
+        window.addEventListener('scroll', resetReadingModeTimer);
+        window.addEventListener('touchstart', resetReadingModeTimer);
+        
+        resetReadingModeTimer(); // Panggil saat pertama kali dimuat
     }
 
     // --- SIDEBAR STICKY EFFECT ---
