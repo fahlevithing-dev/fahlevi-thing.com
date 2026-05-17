@@ -1598,17 +1598,18 @@ pre {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     z-index: 10000;
     transition: all 0.3s ease;
-    opacity: 0.8;
+    opacity: 0;
+    visibility: hidden;
 }
 
-.reading-mode-btn:hover {
+.reading-mode-btn.visible {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+.reading-mode-btn.visible:hover {
     opacity: 1;
     transform: scale(1.1);
-}
-
-.reading-mode-btn.fade-out {
-    opacity: 0;
-    pointer-events: none;
 }
 
 body.reading-mode .main-header,
