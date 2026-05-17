@@ -320,6 +320,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Executive Summary: Indonesia's Strategic Macroeconomic Positioning in the G20",
+            url: "indonesia-macroeconomic-g20-2026.html",
+            category: "MACRO-ECONOMICS",
+            date: "May 17, 2026",
+            excerpt: "Indonesia enters 2026 on a firm economic footing, distinguishing itself as one of the standout performers in an increasingly fragile global environment. The country has paired a surge in long-term foreign direct investment with broad-based domestic expansion...",
+            image: ""
+        },
+        {
             title: "Part 3 of 3: The Age of Levers — How FC Barcelona Mortgaged Its Future",
             url: "fcb-part-3.html",
             category: "POLITICAL ECONOMY",
@@ -1077,6 +1085,14 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTopBtn.setAttribute('aria-label', 'Back to Top');
     document.body.appendChild(backToTopBtn);
 
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -1316,41 +1332,6 @@ document.addEventListener('DOMContentLoaded', () => {
             readingBtn.style.color = isReadingMode ? '#fff' : 'var(--bg-body)';
         });
     }
-
-    // --- FLOATING BUTTONS VISIBILITY MANAGER (Auto-hide & Scroll logic) ---
-    // Menggabungkan logika tombol Back to Top dan Reading Mode agar seragam
-    let activityTimeout;
-    let cachedReadingBtn = null;
-    let readingBtnChecked = false;
-
-    const manageFloatingButtons = () => {
-        const isScrolled = window.scrollY > 300;
-        
-        if (!readingBtnChecked) {
-            cachedReadingBtn = document.querySelector('.reading-mode-btn');
-            readingBtnChecked = true;
-        }
-        
-        if (isScrolled) {
-            backToTopBtn.classList.add('visible');
-            if (cachedReadingBtn) cachedReadingBtn.classList.add('visible');
-            
-            clearTimeout(activityTimeout);
-            activityTimeout = setTimeout(() => {
-                backToTopBtn.classList.remove('visible');
-                if (cachedReadingBtn) cachedReadingBtn.classList.remove('visible');
-            }, 3000); // Keduanya menghilang dalam 3 detik jika tidak ada aktivitas
-        } else {
-            backToTopBtn.classList.remove('visible');
-            if (cachedReadingBtn) cachedReadingBtn.classList.remove('visible');
-            clearTimeout(activityTimeout);
-        }
-    };
-
-    window.addEventListener('scroll', manageFloatingButtons);
-    window.addEventListener('mousemove', manageFloatingButtons);
-    window.addEventListener('touchstart', manageFloatingButtons);
-    manageFloatingButtons(); // Inisialisasi awal
 
     // --- SIDEBAR STICKY EFFECT ---
     const stickySidebar = document.querySelector('.sidebar-area');
