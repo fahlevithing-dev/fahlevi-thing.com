@@ -320,6 +320,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Executive Summary: Indonesia's Strategic Macroeconomic Positioning in the G20",
+            url: "indonesia-macroeconomic-g20-2026.html",
+            category: "MACRO-ECONOMICS",
+            date: "May 17, 2026",
+            excerpt: "Indonesia enters 2026 on a firm economic footing, distinguishing itself as one of the standout performers in an increasingly fragile global environment. The country has paired a surge in long-term foreign direct investment with broad-based domestic expansion...",
+            image: "images/ihsg5thn.jpeg"
+        },
+        {
             title: "Part 3 of 3: The Age of Levers — How FC Barcelona Mortgaged Its Future",
             url: "fcb-part-3.html",
             category: "POLITICAL ECONOMY",
@@ -626,11 +634,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentFilename = (path.substring(path.lastIndexOf('/') + 1) || 'index.html').toLowerCase();
         
         // Filter: All posts that are NOT the current page.
-        const postsToShow = allPosts.filter(p => {
-            const pBase = p.url.replace('.html', '').toLowerCase();
-            const currentBase = currentFilename.replace('.html', '').toLowerCase();
-            return pBase !== currentBase;
-        });
+        const postsToShow = allPosts.filter(p =>
+            p.url !== currentFilename
+        );
 
         // --- LOAD MORE LOGIC ---
         let visibleCount = 0;
@@ -955,9 +961,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const path = window.location.pathname;
                 const currentFilename = (path.substring(path.lastIndexOf('/') + 1) || 'index.html').toLowerCase();
-                const currentPost = typeof allPosts !== 'undefined' ? allPosts.find(p => 
-                    p.url.replace('.html', '').toLowerCase() === currentFilename.replace('.html', '').toLowerCase()
-                ) : null;
+                const currentPost = typeof allPosts !== 'undefined' ? allPosts.find(p => p.url === currentFilename) : null;
                 
                 let imageUrl = currentPost && currentPost.image ? currentPost.image : null;
                 
