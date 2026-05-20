@@ -320,6 +320,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Executive Summary: Indonesia's Macroeconomic Positioning in the G20 (Q1 2026)",
+            url: "indonesia-macroeconomic-g20-2026.html",
+            category: "MACRO-ECONOMICS",
+            date: "May 17, 2026",
+            excerpt: "Indonesia opened 2026 with solid first-quarter results: year-on-year (YoY) GDP growth reached 5.61%, inflation remained well-contained, and Foreign Direct Investment (FDI) inflows held strong.",
+            image: "images/ihsg5thn.jpeg"
+        },
+        {
             title: "Part 3 of 3: The Age of Levers — How FC Barcelona Mortgaged Its Future",
             url: "fcb-part-3.html",
             category: "POLITICAL ECONOMY",
