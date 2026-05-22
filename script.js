@@ -320,6 +320,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Echoes of the New Order: Why Indonesia's New Export Body Stirs Old Anxieties in the Capital Market",
+            url: "echoes-of-the-new-order.html",
+            category: "POLITICAL ECONOMY",
+            date: "May 22, 2026",
+            excerpt: "On 20 May 2026, President Prabowo Subianto used his state-of-the-economy address to the House (DPR) to unveil a new Government Regulation on the Governance of Natural-Resource Exports.",
+            image: "images/ihsgthumbnail.jpeg"
+        },
+        {
             title: "Executive Summary: Indonesia's Macroeconomic Positioning in the G20 (Q1 2026)",
             url: "indonesia-macroeconomic-g20-2026.html",
             category: "MACRO-ECONOMICS",
