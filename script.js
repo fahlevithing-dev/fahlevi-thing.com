@@ -325,7 +325,8 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "POLITICAL ECONOMY",
             date: "May 22, 2026",
             excerpt: "On 20 May 2026, President Prabowo Subianto used his state-of-the-economy address to the House (DPR) to unveil a new Government Regulation on the Governance of Natural-Resource Exports.",
-            image: "images/bppc.png"
+            image: "images/bppc.png",
+            thumbPosition: "50% 10%"
         },
         {
             title: "Executive Summary: Indonesia's Macroeconomic Positioning in the G20 (Q1 2026)",
@@ -552,7 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const paginatedItems = posts.slice(start, end);
 
             paginatedItems.forEach(item => {
-                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"></div>` : "";
+                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
                         ${thumbHTML}
@@ -695,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nextBatch = postsToShow.slice(visibleCount, visibleCount + itemsPerBatch);
             
             nextBatch.forEach(item => {
-                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"></div>` : "";
+                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
                         ${thumbHTML}
