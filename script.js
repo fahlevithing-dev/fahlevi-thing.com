@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "POLITICAL ECONOMY",
             date: "May 22, 2026",
             excerpt: "On 20 May 2026, President Prabowo Subianto used his state-of-the-economy address to the House (DPR) to unveil a new Government Regulation on the Governance of Natural-Resource Exports.",
-            image: "images/ihsgthumbnail.jpeg"
+            image: "images/bppc.png"
         },
         {
             title: "Executive Summary: Indonesia's Macroeconomic Positioning in the G20 (Q1 2026)",
