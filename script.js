@@ -325,7 +325,8 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "URBAN HISTORY",
             date: "May 23, 2026",
             excerpt: "On 4 November 1890, the City & South London Railway became the first deep-level electric tube railway in the world. Within a century, more than two hundred cities on six continents would be built around its logic.",
-            image: "images/thethames.jpeg"
+            image: "images/thethames.jpeg",
+            thumbPosition: "center 40%"
         },
         {
             title: "Echoes of the New Order: Why Indonesia's New Export Body Stirs Old Anxieties in the Capital Market",
