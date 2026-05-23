@@ -1,12 +1,13 @@
 /* --- VARIABLES & RESET --- */
 :root {
     --primary-color: #1a1a1a;
-    --accent-blue: #2584a1; /* Warna Teal Fahlevi Thing */
+    --accent-blue: #C41230; /* Crimson Red — primary accent */
+    --accent-navy: #1B3A6B; /* Navy Blue — secondary accent */
     --bg-light: #ffffff;
     --border-color: #e5e5e5;
     --font-heading: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --font-body: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+
     /* Theme Variables */
     --bg-body: #ffffff;
     --bg-header: #ffffff;
@@ -17,7 +18,7 @@
     --input-bg: #ffffff;
     --card-bg: #ffffff;
     --disclaimer-bg: #f8f9fa;
-} 
+}
 
 /* Dark Mode Variables */
 [data-theme="dark"] {
@@ -31,7 +32,8 @@
     --input-bg: #222222;
     --card-bg: #1e1e1e;
     --disclaimer-bg: var(--input-bg);
-    --accent-blue: #3aaacd; /* Lighter teal for better contrast on dark */
+    --accent-blue: #E84057; /* Lighter red for better contrast on dark */
+    --accent-navy: #4A7CC7; /* Lighter navy for dark mode */
 }
 
 /* Dark Mode Specific Overrides */
@@ -73,7 +75,7 @@ ul { list-style: none; }
 /* --- HEADER --- */
 .main-header {
     padding: 50px 0 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 3px solid var(--accent-navy);
     background: var(--bg-header);
     transition: background-color 0.3s, padding 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease, backdrop-filter 0.5s ease;
     position: sticky;
@@ -547,14 +549,14 @@ footer {
 
 /* --- SPOTIFY LINKS --- */
 .spotify-link {
-    color: #007bff;
+    color: var(--accent-navy);
     font-weight: 700;
     text-decoration: none;
     border-bottom: 1px dotted #007bff;
     transition: 0.3s;
 }
 .spotify-link:hover {
-    color: #0056b3;
+    color: #122A52;
     border-bottom: 1px solid #0056b3;
 }
 
@@ -914,7 +916,7 @@ footer {
 }
 
 .sub-translate-text:hover {
-    color: #002147; /* Elegant Oxford Blue (Biru Tua Mewah) */
+    color: var(--accent-navy);
 }
 
 .extra-quote-text {
@@ -941,7 +943,7 @@ footer {
 .goog-te-gadget-simple:hover {
     background-color: var(--accent-blue) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 132, 161, 0.4);
+    box-shadow: 0 4px 12px rgba(196, 18, 48, 0.4);
 }
 
 .goog-te-gadget-simple:hover .goog-te-menu-value span {
@@ -1110,7 +1112,7 @@ body { top: 0px !important; }
 }
 
 .cookie-btn:hover {
-    background-color: #1a6b85;
+    background-color: #8B0C1E;
     transform: translateY(-2px);
 }
 
@@ -1184,7 +1186,7 @@ body { top: 0px !important; }
 }
 
 .submit-btn:hover {
-    background-color: #1a6b85;
+    background-color: #8B0C1E;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(37, 132, 161, 0.3);
 }
@@ -1475,7 +1477,7 @@ body { top: 0px !important; }
 }
 
 .back-to-top:hover {
-    background-color: #1a6b85;
+    background-color: #8B0C1E;
     transform: translateY(-3px);
 }
 
@@ -1523,7 +1525,7 @@ pre {
 }
 
 .copy-code-btn:hover {
-    background-color: #1a6b85;
+    background-color: #8B0C1E;
     transform: translateY(-2px);
 }
 
@@ -1687,13 +1689,13 @@ body.reading-mode .content-area {
 }
 
 .references-content a {
-    color: #007bff;
+    color: var(--accent-navy);
     text-decoration: underline;
     font-weight: 700;
 }
 
 .references-content a:hover {
-    color: #0056b3;
+    color: #122A52;
 }
 
 @keyframes fadeInDetails {
