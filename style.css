@@ -169,14 +169,14 @@ ul { list-style: none; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-    background-color: var(--accent-blue);
-    padding: 15px 20px;
-    border-radius: 5px;
+    margin-top: 0;
+    background-color: transparent;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-color);
 }
 
 .navbar {
-    flex: 1; /* Agar menu mengisi ruang */
+    flex: 1;
 }
 
 .nav-links {
@@ -187,16 +187,24 @@ ul { list-style: none; }
 
 .nav-links a {
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #ffffff;
-    transition: opacity 0.3s;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    opacity: 0.8;
+.nav-links a:hover {
+    color: var(--accent-blue);
+    border-bottom-color: var(--accent-blue);
+}
+
+.nav-links a.active {
+    color: var(--accent-blue);
+    border-bottom-color: var(--accent-blue);
 }
 
 /* --- SEARCH BAR DENGAN MATA --- */
@@ -240,7 +248,7 @@ ul { list-style: none; }
     line-height: 1;
 }
 
-.hamburger { display: none; color: #fff; }
+.hamburger { display: none; color: var(--text-heading); }
 
 /* --- MAIN LAYOUT --- */
 .main-layout {
@@ -896,80 +904,65 @@ footer {
     }
 }
 
-/* --- GOOGLE TRANSLATE WIDGET --- */
+/* --- TRANSLATE WIDGET --- */
 .translate-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
 }
 
-.translate-widget {
-    text-align: center;
-}
-
-.sub-translate-text {
-    display: inline-block;
-    font-family: 'Lora', serif; /* Menggunakan font serif yang lebih elegan */
-    font-size: 0.75rem;
-    font-style: italic;
-    font-weight: 700; /* Menebalkan agar 'menyala' seperti quotes */
-    color: #000;
-    letter-spacing: 1px;
-    margin-top: 5px;
-    transition: color 0.3s ease;
-}
-
-.sub-translate-text:hover {
-    color: var(--accent-navy);
-}
-
-.extra-quote-text {
-    font-family: 'Lora', serif;
-    font-size: 0.65rem;
-    font-style: italic;
-    color: var(--text-muted);
-    margin-top: 3px;
-    text-align: center;
-}
-
-/* Custom styling for Google Translate Simple Layout */
-.goog-te-gadget-simple {
-    background-color: transparent !important;
-    background-image: none !important;
-    border: 1px solid var(--accent-navy) !important;
-    padding: 6px 12px !important;
-    border-radius: 20px !important;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    display: inline-block !important;
-}
-
-.goog-te-gadget-simple:hover {
-    background-color: var(--accent-blue) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 77, 152, 0.4);
-}
-
-.goog-te-gadget-simple:hover .goog-te-menu-value span {
-    color: #fff !important;
-}
-
-.goog-te-menu-value span {
-    color: var(--accent-navy) !important;
-    font-family: var(--font-heading) !important;
-    font-weight: 700 !important;
-    font-size: 0.8rem !important;
+.translate-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
 }
 
-.goog-te-gadget-simple img {
-    display: none !important;
+.translate-btn-row {
+    display: flex;
+    gap: 8px;
 }
 
-.goog-te-menu-value {
-    margin: 0 !important;
+.translate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1.5px solid var(--accent-blue);
+    color: var(--accent-blue);
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.25s ease;
+    text-decoration: none;
 }
+
+.translate-btn:hover {
+    background-color: var(--accent-blue);
+    color: #fff;
+}
+
+.translate-btn--secondary {
+    border-color: var(--border-color);
+    color: var(--text-muted);
+}
+
+.translate-btn--secondary:hover {
+    background-color: var(--text-heading);
+    border-color: var(--text-heading);
+    color: #fff;
+}
+
+/* Hide Google Translate Top Bar */
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0px !important; }
 
 /* Hide Google Translate Top Bar */
 .goog-te-banner-frame.skiptranslate { display: none !important; } 

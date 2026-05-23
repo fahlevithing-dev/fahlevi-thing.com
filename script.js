@@ -255,64 +255,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- GOOGLE TRANSLATE WIDGET INJECTION ---
+    // --- TRANSLATE BUTTON (DeepL / Google Translate) ---
     const socialIcons = document.querySelector('.social-icons');
     if (socialIcons) {
         const connectWrapper = socialIcons.closest('.connect-wrapper');
-
-        // Create wrapper for alignment
         const wrapperDiv = document.createElement('div');
         wrapperDiv.className = 'translate-wrapper';
-        
+
         if (connectWrapper) {
-            // Inject AFTER the connect-wrapper to place it at the bottom
             connectWrapper.parentNode.insertBefore(wrapperDiv, connectWrapper.nextSibling);
         } else {
-            // Fallback
             socialIcons.parentNode.insertBefore(wrapperDiv, socialIcons.nextSibling);
         }
 
-        // Create container for translate widget
-        const translateDiv = document.createElement('div');
-        translateDiv.id = 'google_translate_element';
-        translateDiv.className = 'translate-widget';
-        wrapperDiv.appendChild(translateDiv);
+        const label = document.createElement('p');
+        label.className = 'translate-label';
+        label.textContent = 'Read in another language';
+        wrapperDiv.appendChild(label);
 
-        // Create text below translate widget
-        const subTranslateText = document.createElement('a');
-        subTranslateText.href = 'about.html';
-        subTranslateText.className = 'sub-translate-text';
-        subTranslateText.textContent = 'we know nothing';
-        wrapperDiv.appendChild(subTranslateText);
+        const btnRow = document.createElement('div');
+        btnRow.className = 'translate-btn-row';
+        wrapperDiv.appendChild(btnRow);
 
-        // Create the secondary quote text below
-        const extraQuote = document.createElement('span');
-        extraQuote.className = 'extra-quote-text';
-        extraQuote.textContent = "what we know is a drop, what we don't know is an ocean";
-        wrapperDiv.appendChild(extraQuote);
+        const pageUrl = encodeURIComponent(window.location.href);
 
-        // Create the author text below the quote
-        const quoteAuthor = document.createElement('span');
-        quoteAuthor.className = 'extra-quote-text';
-        quoteAuthor.textContent = "- Isaac Newton";
-        quoteAuthor.style.marginTop = '2px'; // Jarak agar terlihat menyatu dengan kutipan di atasnya
-        wrapperDiv.appendChild(quoteAuthor);
+        // DeepL button
+        const deeplBtn = document.createElement('a');
+        deeplBtn.className = 'translate-btn';
+        deeplBtn.innerHTML = '<i class="fas fa-language"></i> DeepL';
+        deeplBtn.href = `https://www.deepl.com/translator#en/id/${pageUrl}`;
+        deeplBtn.target = '_blank';
+        deeplBtn.rel = 'noopener';
+        deeplBtn.title = 'Translate with DeepL (most accurate)';
+        btnRow.appendChild(deeplBtn);
 
-        // Define the callback function globally
-        window.googleTranslateElementInit = function() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'id', // Only Indonesian
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        };
-
-        // Inject the Google Translate script
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        document.body.appendChild(script);
+        // Google Translate button
+        const gtBtn = document.createElement('a');
+        gtBtn.className = 'translate-btn translate-btn--secondary';
+        gtBtn.innerHTML = '<i class="fab fa-google"></i> Google';
+        gtBtn.href = `https://translate.google.com/translate?sl=en&tl=id&u=${pageUrl}`;
+        gtBtn.target = '_blank';
+        gtBtn.rel = 'noopener';
+        gtBtn.title = 'Translate with Google Translate';
+        btnRow.appendChild(gtBtn);
     }
 
     // --- DYNAMIC POSTS & PAGINATION LOGIC ---
