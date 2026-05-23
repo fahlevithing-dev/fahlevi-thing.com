@@ -248,7 +248,7 @@ ul { list-style: none; }
     line-height: 1;
 }
 
-.hamburger { display: none; color: var(--text-heading); }
+.hamburger { display: none; color: var(--accent-blue); }
 
 /* --- MAIN LAYOUT --- */
 .main-layout {
