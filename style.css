@@ -558,6 +558,17 @@ footer {
     margin: 14px 0 10px;
 }
 
+.footer-quote-phrase {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--text-heading);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
 .footer-quote-text {
     display: block;
     font-family: 'Lora', serif;
