@@ -320,6 +320,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Echoes Beneath the Thames: How a 3.2-mile experiment in 1890 London built the operating system of the modern city",
+            url: "echoes-beneath-the-thames.html",
+            category: "URBAN HISTORY",
+            date: "May 23, 2026",
+            excerpt: "On 4 November 1890, the City & South London Railway became the first deep-level electric tube railway in the world. Within a century, more than two hundred cities on six continents would be built around its logic.",
+            image: "images/thethames.jpeg"
+        },
+        {
             title: "Echoes of the New Order: Why Indonesia's New Export Body Stirs Old Anxieties in the Capital Market",
             url: "echoes-of-the-new-order.html",
             category: "POLITICAL ECONOMY",
