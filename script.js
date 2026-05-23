@@ -255,6 +255,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- FOOTER QUOTE ---
+    const copyright = document.querySelector('.copyright');
+    if (copyright) {
+        const quoteEl = document.createElement('div');
+        quoteEl.className = 'footer-quote';
+        quoteEl.innerHTML = `<span class="footer-quote-text">"what we know is a drop, what we don't know is an ocean"</span><span class="footer-quote-author">— Isaac Newton</span>`;
+        copyright.parentNode.insertBefore(quoteEl, copyright);
+    }
+
     // --- TRANSLATE BUTTON (DeepL / Google Translate) ---
     const socialIcons = document.querySelector('.social-icons');
     if (socialIcons) {

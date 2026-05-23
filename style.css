@@ -554,8 +554,31 @@ footer {
 .footer-socials .fa-twitter { color: #1DA1F2; } /* Warna Biru Twitter Lama */
 .footer-socials .fa-envelope { color: var(--text-heading); }
 
+.footer-quote {
+    margin: 14px 0 10px;
+}
+
+.footer-quote-text {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text-muted);
+    letter-spacing: 0.3px;
+}
+
+.footer-quote-author {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 0.7rem;
+    font-style: italic;
+    color: var(--accent-navy);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+}
+
 .copyright {
-    color: var(--text-heading); /* Hitam sesuai permintaan */
+    color: var(--text-heading);
     font-family: 'Times New Roman', Times, serif;
 }
 
