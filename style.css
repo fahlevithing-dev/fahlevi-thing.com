@@ -645,11 +645,11 @@ footer {
     .nav-links.active { display: flex; }
     
     .nav-links li { width: 100%; }
-    .nav-links a { 
-        display: block; 
-        padding: 15px 0; /* Memperlebar area klik tombol */
-        border-bottom: 1px solid rgba(255,255,255,0.15); 
-        width: 100%; 
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
     }
     .nav-links li:last-child a { border-bottom: none; }
     
@@ -660,15 +660,15 @@ footer {
     .search-box.active { display: block; }
     .search-box input { width: 100%; }
     
-    .hamburger { 
-        display: block; 
-        position: absolute; 
-        right: 20px; 
-        top: 20px; 
-        font-size: 1.5rem; 
-        cursor: pointer; 
-        z-index: 100; 
-        color: #fff; 
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 100;
+        color: var(--accent-blue);
     }
 }
 
@@ -1227,7 +1227,7 @@ body { top: 0px !important; }
 .theme-toggle {
     background: none;
     border: none;
-    color: #ffffff;
+    color: var(--accent-blue);
     font-size: 1.2rem;
     cursor: pointer;
     margin-left: 20px;
