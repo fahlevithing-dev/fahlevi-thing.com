@@ -9,15 +9,15 @@
     --font-body: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     /* Theme Variables */
-    --bg-body: #F5F3EE;
-    --bg-header: #F5F3EE;
-    --bg-header-scrolled: rgba(245, 243, 238, 0.90);
+    --bg-body: #FAF9F7;
+    --bg-header: #FAF9F7;
+    --bg-header-scrolled: rgba(250, 249, 247, 0.92);
     --text-main: #444444;
     --text-heading: #111111;
     --text-muted: #777777;
-    --input-bg: #FAF9F6;
-    --card-bg: #FAF9F6;
-    --disclaimer-bg: #EDEAE3;
+    --input-bg: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --disclaimer-bg: #F2F0EB;
 }
 
 /* Dark Mode Variables */
