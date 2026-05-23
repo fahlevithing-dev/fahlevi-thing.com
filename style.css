@@ -1,7 +1,7 @@
 /* --- VARIABLES & RESET --- */
 :root {
     --primary-color: #1a1a1a;
-    --accent-blue: #1B3A6B; /* Navy Blue — primary accent */
+    --accent-blue: #004D98; /* Navy Blue — primary accent */
     --accent-navy: #7B1A28; /* Burgundy Red — secondary accent */
     --bg-light: #ffffff;
     --border-color: #e5e5e5;
@@ -32,7 +32,7 @@
     --input-bg: #222222;
     --card-bg: #1e1e1e;
     --disclaimer-bg: var(--input-bg);
-    --accent-blue: #4A7CC7; /* Lighter navy for better contrast on dark */
+    --accent-blue: #4D8FD6; /* Lighter navy for better contrast on dark */
     --accent-navy: #B5404F; /* Lighter red for dark mode */
 }
 
@@ -948,7 +948,7 @@ footer {
 .goog-te-gadget-simple:hover {
     background-color: var(--accent-blue) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(27, 58, 107, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 77, 152, 0.4);
 }
 
 .goog-te-gadget-simple:hover .goog-te-menu-value span {
@@ -1117,7 +1117,7 @@ body { top: 0px !important; }
 }
 
 .cookie-btn:hover {
-    background-color: #0D2247;
+    background-color: #003370;
     transform: translateY(-2px);
 }
 
@@ -1191,7 +1191,7 @@ body { top: 0px !important; }
 }
 
 .submit-btn:hover {
-    background-color: #0D2247;
+    background-color: #003370;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(37, 132, 161, 0.3);
 }
@@ -1482,7 +1482,7 @@ body { top: 0px !important; }
 }
 
 .back-to-top:hover {
-    background-color: #0D2247;
+    background-color: #003370;
     transform: translateY(-3px);
 }
 
@@ -1530,7 +1530,7 @@ pre {
 }
 
 .copy-code-btn:hover {
-    background-color: #0D2247;
+    background-color: #003370;
     transform: translateY(-2px);
 }
 
