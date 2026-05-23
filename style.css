@@ -754,7 +754,8 @@ footer {
     font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 30px;
-    border-bottom: 3px solid var(--text-heading);
+    color: var(--accent-navy);
+    border-bottom: 3px solid var(--accent-navy);
     padding-bottom: 10px;
     display: inline-block;
     text-transform: uppercase;
