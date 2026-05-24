@@ -8,7 +8,63 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    // --- ACCESSIBILITY: SKIP TO CONTENT ---
+    const skipLink = document.createElement('a');
+    skipLink.href = '#main-content';
+    skipLink.className = 'skip-to-content';
+    skipLink.textContent = 'Skip to main content';
+    document.body.insertBefore(skipLink, document.body.firstChild);
+
+    // Add id to main content area
+    const mainContent = document.querySelector('main.content-area');
+    if (mainContent) mainContent.id = 'main-content';
+
+    // --- ACCESSIBILITY: ARIA LANDMARKS ---
+    const header = document.querySelector('header.main-header');
+    if (header) header.setAttribute('role', 'banner');
+
+    const nav = document.querySelector('nav.navbar');
+    if (nav) {
+        nav.setAttribute('role', 'navigation');
+        nav.setAttribute('aria-label', 'Main navigation');
+    }
+
+    const aside = document.querySelector('aside.sidebar-area');
+    if (aside) {
+        aside.setAttribute('role', 'complementary');
+        aside.setAttribute('aria-label', 'Sidebar');
+    }
+
+    const footer = document.querySelector('footer');
+    if (footer) footer.setAttribute('role', 'contentinfo');
+
+    const searchForm = document.querySelector('.search-box form');
+    if (searchForm) {
+        searchForm.setAttribute('role', 'search');
+        searchForm.setAttribute('aria-label', 'Search articles');
+        const searchInput = searchForm.querySelector('input[type="text"]');
+        if (searchInput) searchInput.setAttribute('aria-label', 'Search');
+    }
+
+    // --- ACCESSIBILITY: ARIA-EXPANDED ON HAMBURGER ---
+    const hamburgerBtn = document.querySelector('.hamburger');
+    if (hamburgerBtn) {
+        hamburgerBtn.setAttribute('role', 'button');
+        hamburgerBtn.setAttribute('aria-label', 'Open navigation menu');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.setAttribute('aria-controls', 'nav-links');
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks) navLinks.id = 'nav-links';
+
+        const origClickHandlers = hamburgerBtn.onclick;
+        hamburgerBtn.addEventListener('click', () => {
+            const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+            hamburgerBtn.setAttribute('aria-expanded', String(!isExpanded));
+            hamburgerBtn.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+        });
+    }
+
     // --- SECURITY: FRAME BUSTING (Prevent Clickjacking) ---
     if (window.top !== window.self) {
         window.top.location = window.self.location;
