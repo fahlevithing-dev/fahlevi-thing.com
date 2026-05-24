@@ -312,12 +312,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- FOOTER QUOTE ---
-    const copyright = document.querySelector('.copyright');
-    if (copyright) {
+    const footerSocials = document.querySelector('.footer-socials');
+    if (footerSocials) {
         const quoteEl = document.createElement('div');
         quoteEl.className = 'footer-quote';
         quoteEl.innerHTML = `<span class="footer-quote-phrase">we know nothing.</span><span class="footer-quote-text">"what we know is a drop, what we don't know is an ocean"</span><span class="footer-quote-author">— Isaac Newton</span>`;
-        copyright.parentNode.insertBefore(quoteEl, copyright);
+        footerSocials.parentNode.insertBefore(quoteEl, footerSocials);
     }
 
     // --- TRANSLATE BUTTON (DeepL / Google Translate) ---
