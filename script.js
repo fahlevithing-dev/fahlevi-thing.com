@@ -1,10 +1,9 @@
-// Load EmailJS SDK with Subresource Integrity for supply-chain security.
-// Allowed Origins must be restricted to fahlevi-thing.com in the EmailJS dashboard.
+// Load EmailJS SDK for handling emails without backend
+// SECURITY NOTE: Ensure you configure "Allowed Origins" in your EmailJS dashboard 
+// to restrict usage of these keys to your specific domain (e.g., fahlevithing.com).
 (function() {
     var script = document.createElement('script');
     script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
-    script.integrity = "sha384-VDbnsk/qjpIVHPQMkJiROI+vW/7cw0k8TFYVLUabm7EWoLEDwcXh09XQ6gQ86Y0B";
-    script.crossOrigin = "anonymous";
     document.head.appendChild(script);
 })();
 
@@ -40,18 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const footer = document.querySelector('footer');
     if (footer) footer.setAttribute('role', 'contentinfo');
 
-    const searchForms = document.querySelectorAll('.search-box form');
-    searchForms.forEach(form => {
-        form.setAttribute('role', 'search');
-        form.setAttribute('aria-label', 'Search articles');
-        form.setAttribute('action', 'search.html');
-        form.setAttribute('method', 'get');
-        const searchInput = form.querySelector('input[type="text"]');
-        if (searchInput) {
-            searchInput.setAttribute('name', 'q');
-            searchInput.setAttribute('aria-label', 'Search');
-        }
-    });
+    const searchForm = document.querySelector('.search-box form');
+    if (searchForm) {
+        searchForm.setAttribute('role', 'search');
+        searchForm.setAttribute('aria-label', 'Search articles');
+        const searchInput = searchForm.querySelector('input[type="text"]');
+        if (searchInput) searchInput.setAttribute('aria-label', 'Search');
+    }
 
     // --- ACCESSIBILITY: ARIA-EXPANDED ON HAMBURGER ---
     const hamburgerBtn = document.querySelector('.hamburger');
@@ -74,42 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- SECURITY: FRAME BUSTING (Prevent Clickjacking) ---
     if (window.top !== window.self) {
         window.top.location = window.self.location;
-    }
-
-    // --- SEO: BREADCRUMB STRUCTURED DATA ---
-    const isArticlePage = document.querySelector('.post-content, .article-content, h1.post-title') ||
-        (document.querySelector('main h1') && !document.querySelector('#home-posts-container') && !document.querySelector('#insights-posts-container'));
-    if (isArticlePage) {
-        const pageTitle = document.title.replace(' - Fahlevi Thing', '').trim();
-        const breadcrumb = {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fahlevi-thing.com/" },
-                { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://fahlevi-thing.com/insights.html" },
-                { "@type": "ListItem", "position": 3, "name": pageTitle }
-            ]
-        };
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.textContent = JSON.stringify(breadcrumb);
-        document.head.appendChild(script);
-    }
-
-    // --- SEO: COLLECTION PAGE SCHEMA FOR INSIGHTS ---
-    if (document.getElementById('insights-posts-container')) {
-        const collectionSchema = {
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "Insights — Fahlevi Thing",
-            "description": "Essays and analysis on political economy, macroeconomics, markets, investment, and urban history by Reza Fahlevi.",
-            "url": "https://fahlevi-thing.com/insights.html",
-            "author": { "@type": "Person", "name": "Reza Fahlevi" }
-        };
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.textContent = JSON.stringify(collectionSchema);
-        document.head.appendChild(script);
     }
     
     // --- DYNAMIC TEXT UPDATE: Change "My Portfolio" to "Portfolio" ---
@@ -149,8 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create Toggle Button
         const toggleBtn = document.createElement('button');
         toggleBtn.className = 'theme-toggle';
-        toggleBtn.setAttribute('aria-label', 'Switch to dark mode');
-        toggleBtn.setAttribute('aria-pressed', 'false');
+        toggleBtn.setAttribute('aria-label', 'Toggle Dark Mode');
         toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
         
         // Insert before hamburger or search box
@@ -168,8 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
             document.documentElement.setAttribute('data-theme', 'dark');
             toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-            toggleBtn.setAttribute('aria-label', 'Switch to light mode');
-            toggleBtn.setAttribute('aria-pressed', 'true');
         }
 
         // Toggle Logic
@@ -182,8 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             toggleBtn.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-            toggleBtn.setAttribute('aria-label', isDark ? 'Switch to dark mode' : 'Switch to light mode');
-            toggleBtn.setAttribute('aria-pressed', String(!isDark));
             
             setTimeout(() => {
                 document.documentElement.classList.remove('theme-transition');
@@ -281,10 +234,81 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // --- DYNAMIC COPYRIGHT YEAR ---
-    const copyrightEl = document.querySelector('.copyright');
-    if (copyrightEl) {
-        copyrightEl.innerHTML = `&copy; ${new Date().getFullYear()} <b>Reza Fahlevi</b>. All Rights Reserved.`;
+    // --- PORTFOLIO OVERLAY LOGIC ---
+    // Inject Overlay HTML
+    const overlayHTML = `
+        <div id="portfolio-overlay" class="portfolio-overlay">
+            <div class="close-overlay">&times;</div>
+            <div class="overlay-content">
+                <h2 class="overlay-title">Investment Portfolio</h2>
+                <div class="portfolio-grid">
+                    <a href="pwon-analysis.html" class="portfolio-card">
+                        <span class="stock-code">PWON</span>
+                        <span class="stock-name">Pakuwon Jati</span>
+                        <span class="stock-cat">Property Developer</span>
+                    </a>
+                    <a href="dkft-analysis.html" class="portfolio-card">
+                        <span class="stock-code">DKFT</span>
+                        <span class="stock-name">Central Omega</span>
+                        <span class="stock-cat">Nickel Mining</span>
+                    </a>
+                    <a href="sril-analysis.html" class="portfolio-card">
+                        <span class="stock-code">SRIL</span>
+                        <span class="stock-name">Sri Rejeki Isman</span>
+                        <span class="stock-cat">Textile & Garment</span>
+                    </a>
+                    <a href="adro-admr-analysis.html" class="portfolio-card">
+                        <span class="stock-code">ADRO & ADMR</span>
+                        <span class="stock-name">Adaro Group</span>
+                        <span class="stock-cat">Energy & Minerals</span>
+                    </a>
+                    <a href="cita-analysis.html" class="portfolio-card">
+                        <span class="stock-code">CITA</span>
+                        <span class="stock-name">Cita Mineral</span>
+                        <span class="stock-cat">Bauxite Mining</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', overlayHTML);
+
+    const portfolioNav = document.getElementById('portfolio-nav');
+    const overlay = document.getElementById('portfolio-overlay');
+    const closeBtn = document.querySelector('.close-overlay');
+    const overlayLinks = document.querySelectorAll('.overlay-content a');
+ 
+    if (portfolioNav && overlay && closeBtn) {
+        const openPortfolioOverlay = () => overlay.classList.add('active');
+        const closePortfolioOverlay = () => {
+            overlay.classList.remove('active');
+            // Membersihkan hash dari URL setelah overlay ditutup untuk UX yang lebih baik
+            if (window.location.hash === '#show-portfolio') {
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
+        };
+ 
+        // 1. Logika saat link navigasi portfolio diklik
+        portfolioNav.addEventListener('click', (e) => {
+            // Jika sudah di homepage, jangan navigasi, cukup buka overlay.
+            const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.toLowerCase().endsWith('index.html');
+            if (isHomePage) {
+                e.preventDefault();
+                openPortfolioOverlay();
+            }
+            // Jika di halaman lain, biarkan link mengarahkan ke index.html#show-portfolio
+        });
+ 
+        // 2. Logika untuk menutup overlay
+        closeBtn.addEventListener('click', closePortfolioOverlay);
+        overlayLinks.forEach(link => {
+            link.addEventListener('click', closePortfolioOverlay);
+        });
+ 
+        // 3. Cek URL saat halaman dimuat untuk membuka overlay jika ada hash
+        if (window.location.hash === '#show-portfolio') {
+            openPortfolioOverlay();
+        }
     }
 
     // --- FOOTER QUOTE ---
@@ -580,19 +604,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentPage = 1;
 
-        const totalPages = Math.ceil(posts.length / itemsPerPage);
-
         function displayList(page) {
             container.innerHTML = "";
             const start = (page - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
+
+      const end = start + itemsPerPage;
             const paginatedItems = posts.slice(start, end);
 
             paginatedItems.forEach(item => {
-                const shortAlt = item.title.length > 80 ? item.title.slice(0, 77) + '…' : item.title;
-                const thumbHTML = item.image
-                    ? `<div class="post-thumb"><img src="${item.image}" alt="${shortAlt}" loading="lazy"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>`
-                    : "";
+                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
                         ${thumbHTML}
@@ -600,30 +620,26 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="meta-cat">${item.category} • ${item.date}</div>
                             <h2><a href="${item.url}">${item.title}</a></h2>
                             <div class="excerpt"><p>${item.excerpt}</p></div>
-                            <a href="${item.url}" class="read-more" aria-label="Read more about ${shortAlt}">Read More</a>
+                            <a href="${item.url}" class="read-more">Read More</a>
                         </div>
                     </article>
                 `;
                 container.insertAdjacentHTML('beforeend', articleHTML);
             });
 
-            if (totalPages <= 1) return;
-
-            // Pagination Controls
-            const paginationWrapper = document.createElement('nav');
-            paginationWrapper.setAttribute('aria-label', 'Post pagination');
+            // Pagination Controls Wrapper
+            const paginationWrapper = document.createElement('div');
             paginationWrapper.style.textAlign = 'center';
             paginationWrapper.style.marginTop = '30px';
             paginationWrapper.style.display = 'flex';
             paginationWrapper.style.justifyContent = 'center';
-            paginationWrapper.style.alignItems = 'center';
             paginationWrapper.style.gap = '20px';
 
+            // Previous Page Button
             if (page > 1) {
                 const prevBtn = document.createElement('button');
-                prevBtn.innerHTML = '&larr; Previous';
+                prevBtn.innerHTML = '&larr; Previous Page';
                 prevBtn.className = 'read-more';
-                prevBtn.setAttribute('aria-label', `Go to page ${page - 1}`);
                 prevBtn.style.background = 'none';
                 prevBtn.style.border = 'none';
                 prevBtn.style.cursor = 'pointer';
@@ -636,19 +652,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 paginationWrapper.appendChild(prevBtn);
             }
 
-            const pageIndicator = document.createElement('span');
-            pageIndicator.textContent = `${page} / ${totalPages}`;
-            pageIndicator.setAttribute('aria-current', 'page');
-            pageIndicator.setAttribute('aria-label', `Page ${page} of ${totalPages}`);
-            pageIndicator.style.fontSize = '0.85rem';
-            pageIndicator.style.color = 'var(--text-muted)';
-            paginationWrapper.appendChild(pageIndicator);
-
+            // Next Page Button
             if (end < posts.length) {
                 const nextBtn = document.createElement('button');
-                nextBtn.innerHTML = 'Next &rarr;';
+                nextBtn.innerHTML = 'Next Page &rarr;';
                 nextBtn.className = 'read-more';
-                nextBtn.setAttribute('aria-label', `Go to page ${page + 1}`);
                 nextBtn.style.background = 'none';
                 nextBtn.style.border = 'none';
                 nextBtn.style.cursor = 'pointer';
@@ -661,7 +669,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 paginationWrapper.appendChild(nextBtn);
             }
 
-            container.appendChild(paginationWrapper);
+            if (paginationWrapper.hasChildNodes()) {
+                container.appendChild(paginationWrapper);
+            }
         }
 
         displayList(currentPage);
@@ -682,22 +692,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "investment-journey.html",
         "glitch-in-the-archive.html"
     ];
-    const insightsPosts = allPosts.filter(p => !insightsExcludedUrls.includes(p.url));
-    renderPagination(insightsPosts, 'insights-posts-container', 8);
-
-    // --- INSIGHTS CATEGORY FILTER ---
-    const catBtns = document.querySelectorAll('.cat-btn');
-    if (catBtns.length) {
-        catBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                catBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const cat = btn.dataset.cat;
-                const filtered = cat === 'all' ? insightsPosts : insightsPosts.filter(p => p.category === cat);
-                renderPagination(filtered, 'insights-posts-container', 8);
-            });
-        });
-    }
+    renderPagination(allPosts.filter(p => !insightsExcludedUrls.includes(p.url)), 'insights-posts-container', 8);
 
     // --- RELATED POSTS LOGIC ---
     const relatedContainer = document.getElementById('related-posts-container');
@@ -760,8 +755,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nextBatch = postsToShow.slice(visibleCount, visibleCount + itemsPerBatch);
             
             nextBatch.forEach(item => {
-                const shortAlt = item.title.length > 80 ? item.title.slice(0, 77) + '…' : item.title;
-                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${shortAlt}" loading="lazy"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
+                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
                         ${thumbHTML}
