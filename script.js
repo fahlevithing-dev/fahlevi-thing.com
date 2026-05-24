@@ -234,81 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // --- PORTFOLIO OVERLAY LOGIC ---
-    // Inject Overlay HTML
-    const overlayHTML = `
-        <div id="portfolio-overlay" class="portfolio-overlay">
-            <div class="close-overlay">&times;</div>
-            <div class="overlay-content">
-                <h2 class="overlay-title">Investment Portfolio</h2>
-                <div class="portfolio-grid">
-                    <a href="pwon-analysis.html" class="portfolio-card">
-                        <span class="stock-code">PWON</span>
-                        <span class="stock-name">Pakuwon Jati</span>
-                        <span class="stock-cat">Property Developer</span>
-                    </a>
-                    <a href="dkft-analysis.html" class="portfolio-card">
-                        <span class="stock-code">DKFT</span>
-                        <span class="stock-name">Central Omega</span>
-                        <span class="stock-cat">Nickel Mining</span>
-                    </a>
-                    <a href="sril-analysis.html" class="portfolio-card">
-                        <span class="stock-code">SRIL</span>
-                        <span class="stock-name">Sri Rejeki Isman</span>
-                        <span class="stock-cat">Textile & Garment</span>
-                    </a>
-                    <a href="adro-admr-analysis.html" class="portfolio-card">
-                        <span class="stock-code">ADRO & ADMR</span>
-                        <span class="stock-name">Adaro Group</span>
-                        <span class="stock-cat">Energy & Minerals</span>
-                    </a>
-                    <a href="cita-analysis.html" class="portfolio-card">
-                        <span class="stock-code">CITA</span>
-                        <span class="stock-name">Cita Mineral</span>
-                        <span class="stock-cat">Bauxite Mining</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    `;
-    document.body.insertAdjacentHTML('beforeend', overlayHTML);
-
-    const portfolioNav = document.getElementById('portfolio-nav');
-    const overlay = document.getElementById('portfolio-overlay');
-    const closeBtn = document.querySelector('.close-overlay');
-    const overlayLinks = document.querySelectorAll('.overlay-content a');
- 
-    if (portfolioNav && overlay && closeBtn) {
-        const openPortfolioOverlay = () => overlay.classList.add('active');
-        const closePortfolioOverlay = () => {
-            overlay.classList.remove('active');
-            // Membersihkan hash dari URL setelah overlay ditutup untuk UX yang lebih baik
-            if (window.location.hash === '#show-portfolio') {
-                history.pushState("", document.title, window.location.pathname + window.location.search);
-            }
-        };
- 
-        // 1. Logika saat link navigasi portfolio diklik
-        portfolioNav.addEventListener('click', (e) => {
-            // Jika sudah di homepage, jangan navigasi, cukup buka overlay.
-            const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.toLowerCase().endsWith('index.html');
-            if (isHomePage) {
-                e.preventDefault();
-                openPortfolioOverlay();
-            }
-            // Jika di halaman lain, biarkan link mengarahkan ke index.html#show-portfolio
-        });
- 
-        // 2. Logika untuk menutup overlay
-        closeBtn.addEventListener('click', closePortfolioOverlay);
-        overlayLinks.forEach(link => {
-            link.addEventListener('click', closePortfolioOverlay);
-        });
- 
-        // 3. Cek URL saat halaman dimuat untuk membuka overlay jika ada hash
-        if (window.location.hash === '#show-portfolio') {
-            openPortfolioOverlay();
-        }
+    // --- DYNAMIC COPYRIGHT YEAR ---
+    const copyrightEl = document.querySelector('.copyright');
+    if (copyrightEl) {
+        copyrightEl.innerHTML = `&copy; ${new Date().getFullYear()} <b>Reza Fahlevi</b>. All Rights Reserved.`;
     }
 
     // --- FOOTER QUOTE ---
@@ -692,7 +621,22 @@ document.addEventListener('DOMContentLoaded', () => {
         "investment-journey.html",
         "glitch-in-the-archive.html"
     ];
-    renderPagination(allPosts.filter(p => !insightsExcludedUrls.includes(p.url)), 'insights-posts-container', 8);
+    const insightsPosts = allPosts.filter(p => !insightsExcludedUrls.includes(p.url));
+    renderPagination(insightsPosts, 'insights-posts-container', 8);
+
+    // --- INSIGHTS CATEGORY FILTER ---
+    const catBtns = document.querySelectorAll('.cat-btn');
+    if (catBtns.length) {
+        catBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                catBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const cat = btn.dataset.cat;
+                const filtered = cat === 'all' ? insightsPosts : insightsPosts.filter(p => p.category === cat);
+                renderPagination(filtered, 'insights-posts-container', 8);
+            });
+        });
+    }
 
     // --- RELATED POSTS LOGIC ---
     const relatedContainer = document.getElementById('related-posts-container');
