@@ -125,10 +125,10 @@ ul { list-style: none; }
 .main-header.scrolled {
     background-color: var(--bg-header-scrolled);
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); /* For Safari */
-    padding-top: 15px;
-    padding-bottom: 15px !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 10px 0 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-bottom-width: 1px;
 }
 
 .header-container {
@@ -136,7 +136,15 @@ ul { list-style: none; }
     position: relative;
 }
 
-/* Hide logo image if accidentally placed in header (fixes privacy.html, search.html, etc.) */
+/* Compact scrolled layout: toggle | tagline | hamburger */
+.main-header.scrolled .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Hide logo image if accidentally placed in header */
 .header-container .header-logo {
     display: none;
 }
@@ -147,11 +155,11 @@ ul { list-style: none; }
     font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 5px;
-    transition: font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
 .main-header.scrolled .brand-name {
-    font-size: 1.8rem;
+    display: none;
 }
 
 .brand-name a { color: var(--text-heading); }
@@ -162,13 +170,14 @@ ul { list-style: none; }
     font-style: italic;
     color: var(--text-muted);
     margin-bottom: 0;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     max-height: 30px;
     opacity: 1;
     overflow: hidden;
 }
 
-.pre-title.hidden {
+.pre-title.hidden,
+.main-header.scrolled .pre-title {
     opacity: 0;
     max-height: 0;
 }
@@ -181,12 +190,23 @@ ul { list-style: none; }
     margin-bottom: 40px;
     display: inline-block;
     position: relative;
-    transition: margin 0.5s cubic-bezier(0.4, 0, 0.2, 1), font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: font-size 0.3s ease, margin 0.3s ease;
+}
+
+/* Scrolled: tagline becomes absolute center anchor */
+.main-header.scrolled .brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
 }
 
 .main-header.scrolled .tagline {
-    margin-bottom: 10px !important;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0 !important;
+    color: var(--text-heading);
+    font-style: italic;
+    pointer-events: auto;
 }
 
 /* Garis dekorasi kecil di bawah tagline */
@@ -197,6 +217,11 @@ ul { list-style: none; }
     height: 2px;
     background: var(--accent-navy);
     margin: 15px auto 0;
+    transition: opacity 0.3s ease;
+}
+
+.main-header.scrolled .tagline::after {
+    display: none;
 }
 
 /* --- NAVIGATION & SEARCH WRAPPER --- */
@@ -208,6 +233,23 @@ ul { list-style: none; }
     background-color: transparent;
     padding: 12px 0;
     border-top: 1px solid var(--border-color);
+}
+
+/* Scrolled: nav-wrapper becomes compact right side controls */
+.main-header.scrolled .nav-wrapper {
+    border-top: none;
+    padding: 0;
+    flex: none;
+    gap: 8px;
+}
+
+.main-header.scrolled .navbar,
+.main-header.scrolled .search-box {
+    display: none;
+}
+
+.main-header.scrolled .hamburger {
+    display: flex;
 }
 
 .navbar {
@@ -756,6 +798,11 @@ footer {
         cursor: pointer;
         z-index: 100;
         color: var(--accent-blue);
+    }
+
+    .main-header.scrolled .hamburger {
+        position: static;
+        font-size: 1.3rem;
     }
 }
 
