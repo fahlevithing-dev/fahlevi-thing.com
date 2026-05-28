@@ -116,7 +116,7 @@ ul { list-style: none; }
     padding: 50px 0 20px;
     border-bottom: 3px solid var(--accent-navy);
     background: var(--bg-header);
-    transition: background-color 0.3s, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -126,7 +126,7 @@ ul { list-style: none; }
     background-color: var(--bg-header-scrolled);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    padding: 10px 0 !important;
+    padding: 8px 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     border-bottom-width: 1px;
 }
@@ -147,6 +147,10 @@ ul { list-style: none; }
     font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 5px;
+    transition: opacity 0.3s ease, max-height 0.4s ease;
+    overflow: hidden;
+    max-height: 80px;
+    opacity: 1;
 }
 
 .brand-name a { color: var(--text-heading); }
@@ -187,15 +191,22 @@ ul { list-style: none; }
     height: 2px;
     background: var(--accent-navy);
     margin: 15px auto 0;
+    transition: opacity 0.3s ease, margin 0.3s ease, height 0.3s ease;
 }
 
 /* =====================================================
    SCROLLED — ALL VIEWPORTS
    Layout: [theme-toggle] | [a Reza POV] | [hamburger]
    ===================================================== */
-.main-header.scrolled .brand-name,
+.main-header.scrolled .brand-name {
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+}
+
 .main-header.scrolled .pre-title {
-    display: none;
+    opacity: 0;
+    max-height: 0;
 }
 
 /* header-container: relative so brand can be absolute-centered */
@@ -221,7 +232,9 @@ ul { list-style: none; }
 }
 
 .main-header.scrolled .tagline::after {
-    display: none;
+    opacity: 0;
+    margin-top: 0;
+    height: 0;
 }
 
 /* Nav-wrapper: full-width flex row, space-between pushes toggle left, hamburger right */
