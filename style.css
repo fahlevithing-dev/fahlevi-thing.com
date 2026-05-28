@@ -140,8 +140,6 @@ ul { list-style: none; }
 .main-header.scrolled .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    text-align: left;
 }
 
 /* Hide logo image if accidentally placed in header */
@@ -193,12 +191,13 @@ ul { list-style: none; }
     transition: font-size 0.3s ease, margin 0.3s ease;
 }
 
-/* Scrolled: tagline becomes absolute center anchor */
+/* Scrolled: brand is the centered flex child (order 2) */
 .main-header.scrolled .brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
+    order: 2;
+    flex: 1;
+    text-align: center;
+    position: static;
+    transform: none;
 }
 
 .main-header.scrolled .tagline {
@@ -206,7 +205,6 @@ ul { list-style: none; }
     margin-bottom: 0 !important;
     color: var(--text-heading);
     font-style: italic;
-    pointer-events: auto;
 }
 
 /* Garis dekorasi kecil di bawah tagline */
@@ -217,11 +215,10 @@ ul { list-style: none; }
     height: 2px;
     background: var(--accent-navy);
     margin: 15px auto 0;
-    transition: opacity 0.3s ease;
 }
 
 .main-header.scrolled .tagline::after {
-    display: none;
+    margin: 6px auto 0;
 }
 
 /* --- NAVIGATION & SEARCH WRAPPER --- */
@@ -235,12 +232,10 @@ ul { list-style: none; }
     border-top: 1px solid var(--border-color);
 }
 
-/* Scrolled: nav-wrapper becomes compact right side controls */
+/* Scrolled: unwrap nav-wrapper so toggle and hamburger become
+   direct flex siblings of .brand inside header-container */
 .main-header.scrolled .nav-wrapper {
-    border-top: none;
-    padding: 0;
-    flex: none;
-    gap: 8px;
+    display: contents;
 }
 
 .main-header.scrolled .navbar,
@@ -248,8 +243,17 @@ ul { list-style: none; }
     display: none;
 }
 
+.main-header.scrolled .theme-toggle {
+    order: 1;
+}
+
 .main-header.scrolled .hamburger {
-    display: flex;
+    order: 3;
+    display: flex !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    font-size: 1.3rem;
 }
 
 .navbar {
@@ -610,11 +614,11 @@ figcaption {
 
 /* --- FOOTER --- */
 footer {
-    border-top: 3px solid var(--accent-navy);
-    padding: 48px 0 28px;
+    padding: 60px 0 28px;
     text-align: center;
     font-size: 0.9rem;
     color: var(--text-muted);
+    background: var(--bg-body);
 }
 
 .footer-content {
@@ -800,10 +804,6 @@ footer {
         color: var(--accent-blue);
     }
 
-    .main-header.scrolled .hamburger {
-        position: static;
-        font-size: 1.3rem;
-    }
 }
 
 /* --- PORTFOLIO OVERLAY --- */
