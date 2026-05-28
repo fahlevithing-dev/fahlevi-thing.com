@@ -2,9 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <!-- Main Pages -->
-    <url><loc>https://fahlevi-thing.com/</loc><lastmod>2026-05-24</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-    <url><loc>https://fahlevi-thing.com/index.html</loc><lastmod>2026-05-24</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://fahlevi-thing.com/insights.html</loc><lastmod>2026-05-24</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/</loc><lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+    <url><loc>https://fahlevi-thing.com/insights.html</loc><lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
     <url><loc>https://fahlevi-thing.com/about.html</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://fahlevi-thing.com/portfolio.html</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://fahlevi-thing.com/privacy.html</loc><lastmod>2026-02-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
@@ -12,6 +11,9 @@
     <!-- Portfolio Updates -->
     <url><loc>https://fahlevi-thing.com/portfolio-update-q2-2026.html</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://fahlevi-thing.com/portfolio-update-q1-2026.html</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+    <!-- Articles — Urban History -->
+    <url><loc>https://fahlevi-thing.com/echoes-beneath-the-thames.html</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- Articles — Political Economy & Macro -->
     <url><loc>https://fahlevi-thing.com/echoes-of-the-new-order.html</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -28,9 +30,6 @@
     <url><loc>https://fahlevi-thing.com/hajj-fund-portfolio-war.html</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://fahlevi-thing.com/hajj-fund-management.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
     <url><loc>https://fahlevi-thing.com/nusantara-evolution.html</loc><lastmod>2026-02-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-    <!-- Articles — Urban History -->
-    <url><loc>https://fahlevi-thing.com/echoes-beneath-the-thames.html</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- Articles — Investment & Stock Analysis -->
     <url><loc>https://fahlevi-thing.com/wifi-chronicles.html</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
