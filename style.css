@@ -827,14 +827,28 @@ footer {
 
 .footer-socials a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-color: currentColor;
 }
 
-.footer-socials a:hover .fa-instagram { color: #E1306C; }
-.footer-socials a:hover .fa-twitter   { color: #1DA1F2; }
-.footer-socials a:hover .fa-envelope  { color: var(--accent-blue); }
+/* Instagram — brand gradient via background clip */
+.footer-socials a.ig-link { color: #E1306C; border-color: #E1306C; }
+.footer-socials a.ig-link .fa-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-.footer-socials a:hover { border-color: currentColor; }
+/* X / Twitter */
+.footer-socials a.tw-link { color: #000; border-color: #000; }
+[data-theme="dark"] .footer-socials a.tw-link { color: #fff; border-color: #fff; }
+.footer-socials a.tw-link .fa-twitter,
+.footer-socials a.tw-link .fa-x-twitter { color: inherit; }
+
+/* Email */
+.footer-socials a.em-link { color: var(--accent-blue); border-color: var(--accent-blue); }
+.footer-socials a.em-link .fa-envelope { color: var(--accent-blue); }
 
 .copyright {
     color: var(--text-muted);

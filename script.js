@@ -724,8 +724,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "sril-analysis.html",
         "adro-admr-analysis.html",
         "cita-analysis.html",
-        "investment-journey.html",
-        "glitch-in-the-archive.html"
+        "investment-journey.html"
     ];
     const insightsPosts = allPosts.filter(p => !insightsExcludedUrls.includes(p.url));
     renderPagination(insightsPosts, 'insights-posts-container', 8);
