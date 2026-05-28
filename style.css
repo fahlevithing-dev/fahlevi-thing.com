@@ -227,7 +227,14 @@ ul { list-style: none; }
     display: contents;
 }
 
-.main-header.scrolled .navbar,
+.main-header.scrolled .navbar {
+    display: block;
+}
+
+.main-header.scrolled .nav-links {
+    display: none;
+}
+
 .main-header.scrolled .search-box {
     display: none !important;
 }
