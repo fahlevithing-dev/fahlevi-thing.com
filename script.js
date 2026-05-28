@@ -187,7 +187,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const isOpen = navLinks.classList.toggle('active');
 
             const searchBox = document.querySelector('.search-box');
-            if (searchBox) searchBox.classList.toggle('active', isOpen);
+            if (searchBox) {
+                searchBox.classList.toggle('active', isOpen);
+                // When scrolled, push search box below the nav-links dropdown
+                if (isOpen && mainHeader && mainHeader.classList.contains('scrolled')) {
+                    requestAnimationFrame(() => {
+                        searchBox.style.marginTop = navLinks.offsetHeight + 'px';
+                    });
+                } else {
+                    searchBox.style.marginTop = '';
+                }
+            }
 
             // Swap icon: bars ↔ X
             const icon = hamburger.querySelector('i');
@@ -207,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const searchBox = document.querySelector('.search-box');
                 if (navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
-                    if (searchBox) searchBox.classList.remove('active');
+                    if (searchBox) { searchBox.classList.remove('active'); searchBox.style.marginTop = ''; }
                     const icon = hamburger.querySelector('i');
                     if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
                     hamburger.setAttribute('aria-expanded', 'false');

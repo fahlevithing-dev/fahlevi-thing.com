@@ -190,18 +190,92 @@ ul { list-style: none; }
 }
 
 /* =====================================================
-   SCROLLED — DESKTOP (>768px)
-   Sembunyikan FAHLEVI THING & pre-title, sisakan
-   tagline + garis di atas nav yang tetap normal.
+   SCROLLED — ALL VIEWPORTS
+   Layout: [theme-toggle] | [a Reza POV] | [hamburger]
    ===================================================== */
 .main-header.scrolled .brand-name,
 .main-header.scrolled .pre-title {
     display: none;
 }
 
+/* Flatten header-container into a single flex row */
+.main-header.scrolled .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+/* Brand collapses to just the tagline, centered */
+.main-header.scrolled .brand {
+    order: 2;
+    flex: 1;
+    text-align: center;
+}
+
 .main-header.scrolled .tagline {
     font-size: 1rem;
-    margin-bottom: 12px !important;
+    margin-bottom: 0 !important;
+}
+
+.main-header.scrolled .tagline::after {
+    display: none;
+}
+
+/* Nav-wrapper becomes order-3 but hidden — replaced by hamburger */
+.main-header.scrolled .nav-wrapper {
+    display: contents;
+}
+
+.main-header.scrolled .navbar,
+.main-header.scrolled .search-box {
+    display: none !important;
+}
+
+/* Hamburger always visible when scrolled */
+.main-header.scrolled .hamburger {
+    display: flex !important;
+    order: 3;
+    position: static;
+    top: auto;
+    right: auto;
+}
+
+/* Theme toggle on the left */
+.main-header.scrolled .theme-toggle {
+    order: 1;
+}
+
+/* Dropdown nav panel when menu is open while scrolled */
+.main-header.scrolled .nav-links.active {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-header-scrolled);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    padding: 0 24px 12px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.main-header.scrolled .search-box.active {
+    display: block !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-header-scrolled);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0 24px 16px;
+    z-index: 998;
+    /* Push below nav-links via margin — JS sets this dynamically */
 }
 
 /* --- NAVIGATION & SEARCH WRAPPER --- */
@@ -288,7 +362,20 @@ ul { list-style: none; }
     line-height: 1;
 }
 
-.hamburger { display: none; color: var(--accent-blue); }
+.hamburger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--accent-blue);
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.hamburger:hover { background: var(--input-bg); }
+.hamburger i { transition: transform 0.2s; }
 
 /* --- MAIN LAYOUT --- */
 .main-layout {
@@ -752,24 +839,14 @@ footer {
     .search-box.active { display: block; }
     .search-box input { width: 100%; }
     
+    /* Mobile: show hamburger, positioned absolute in normal (non-scrolled) state */
     .hamburger {
         display: flex;
-        align-items: center;
-        justify-content: center;
         position: absolute;
         right: 16px;
         top: 16px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.4rem;
-        cursor: pointer;
         z-index: 100;
-        color: var(--accent-blue);
-        border-radius: 8px;
-        transition: background 0.2s;
     }
-    .hamburger:hover { background: var(--input-bg); }
-    .hamburger i { transition: transform 0.2s; }
 
 }
 
