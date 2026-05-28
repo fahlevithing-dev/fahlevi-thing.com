@@ -198,42 +198,45 @@ ul { list-style: none; }
     display: none;
 }
 
-/* Flatten header-container into a single flex row */
+/* header-container: relative so brand can be absolute-centered */
 .main-header.scrolled .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
+    position: relative;
+    padding: 4px 0;
 }
 
-/* Brand collapses to just the tagline, centered */
+/* Brand: absolute center */
 .main-header.scrolled .brand {
-    order: 2;
-    flex: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    pointer-events: none;
 }
 
 .main-header.scrolled .tagline {
     font-size: 1rem;
     margin-bottom: 0 !important;
+    pointer-events: auto;
 }
 
 .main-header.scrolled .tagline::after {
     display: none;
 }
 
-/* Nav-wrapper becomes order-3 but hidden — replaced by hamburger */
+/* Nav-wrapper: full-width flex row, space-between pushes toggle left, hamburger right */
 .main-header.scrolled .nav-wrapper {
-    display: contents;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4px 0;
+    border-top: none;
 }
 
+/* Hide nav links and search in compact bar */
 .main-header.scrolled .navbar {
-    display: block;
-    order: 4;
-    width: 0;
-    min-width: 0;
-    overflow: visible;
-    flex-shrink: 0;
+    display: none;
 }
 
 .main-header.scrolled .nav-links {
@@ -247,15 +250,16 @@ ul { list-style: none; }
 /* Hamburger always visible when scrolled */
 .main-header.scrolled .hamburger {
     display: flex !important;
-    order: 3;
     position: static;
     top: auto;
     right: auto;
 }
 
-/* Theme toggle on the left */
-.main-header.scrolled .theme-toggle {
-    order: 1;
+/* Show navbar container when nav is open */
+.main-header.scrolled.menu-open .navbar {
+    display: block;
+    width: 0;
+    overflow: visible;
 }
 
 /* Dropdown nav panel when menu is open while scrolled */

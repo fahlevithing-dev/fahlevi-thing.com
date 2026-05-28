@@ -186,6 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
             const isOpen = navLinks.classList.toggle('active');
 
+            // Toggle menu-open on header so navbar shows for dropdown
+            if (mainHeader) mainHeader.classList.toggle('menu-open', isOpen);
+
             const searchBox = document.querySelector('.search-box');
             if (searchBox) {
                 searchBox.classList.toggle('active', isOpen);
@@ -217,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const searchBox = document.querySelector('.search-box');
                 if (navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
+                    if (mainHeader) mainHeader.classList.remove('menu-open');
                     if (searchBox) { searchBox.classList.remove('active'); searchBox.style.marginTop = ''; }
                     const icon = hamburger.querySelector('i');
                     if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
