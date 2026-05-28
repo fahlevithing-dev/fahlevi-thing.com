@@ -289,9 +289,15 @@ ul { list-style: none; }
     background: var(--bg-header-scrolled);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    padding: 0 24px 16px;
-    z-index: 998;
-    /* Push below nav-links via margin — JS sets this dynamically */
+    padding: 12px 24px 16px;
+    z-index: 1001;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    pointer-events: all;
+}
+
+.main-header.scrolled .search-box.active input {
+    pointer-events: all;
+    width: 100%;
 }
 
 /* --- NAVIGATION & SEARCH WRAPPER --- */
