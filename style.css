@@ -840,11 +840,10 @@ footer {
     background-clip: text;
 }
 
-/* X / Twitter */
-.footer-socials a.tw-link { color: #000; border-color: #000; }
-[data-theme="dark"] .footer-socials a.tw-link { color: #fff; border-color: #fff; }
+/* X / Twitter — classic Twitter blue */
+.footer-socials a.tw-link { color: #1DA1F2; border-color: #1DA1F2; }
 .footer-socials a.tw-link .fa-twitter,
-.footer-socials a.tw-link .fa-x-twitter { color: inherit; }
+.footer-socials a.tw-link .fa-x-twitter { color: #1DA1F2; }
 
 /* Email */
 .footer-socials a.em-link { color: var(--accent-blue); border-color: var(--accent-blue); }
