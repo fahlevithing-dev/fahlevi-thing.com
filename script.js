@@ -216,8 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                const searchBox = document.querySelector('.search-box');
+            const searchBox = document.querySelector('.search-box');
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && (!searchBox || !searchBox.contains(e.target))) {
                 if (navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
                     if (mainHeader) mainHeader.classList.remove('menu-open');
