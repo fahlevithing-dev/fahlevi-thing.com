@@ -182,50 +182,76 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
+    // Build a single dropdown panel (used when scrolled on all viewports)
+    const menuPanel = document.createElement('div');
+    menuPanel.className = 'scrolled-menu-panel';
+    menuPanel.innerHTML = `
+        <ul class="panel-nav-links">
+            ${navLinks ? navLinks.innerHTML : ''}
+        </ul>
+        <div class="panel-search">
+            <form role="search" aria-label="Search articles">
+                <input type="text" placeholder="Search..." aria-label="Search">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> <span class="eye-icon">👀</span></button>
+            </form>
+        </div>`;
+    if (mainHeader) mainHeader.appendChild(menuPanel);
+
+    // Wire search inside the panel
+    const panelForm = menuPanel.querySelector('form');
+    if (panelForm) {
+        panelForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const q = panelForm.querySelector('input').value.trim();
+            if (q) window.location.href = `search.html?q=${encodeURIComponent(q.toLowerCase())}`;
+        });
+    }
+
+    function closeMenu() {
+        navLinks && navLinks.classList.remove('active');
+        menuPanel.classList.remove('active');
+        if (mainHeader) mainHeader.classList.remove('menu-open');
+        const searchBox = document.querySelector('.search-box');
+        if (searchBox) searchBox.classList.remove('active');
+        const icon = hamburger && hamburger.querySelector('i');
+        if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
+        if (hamburger) {
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'Open navigation menu');
+        }
+    }
+
     if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            const isOpen = navLinks.classList.toggle('active');
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isScrolled = mainHeader && mainHeader.classList.contains('scrolled');
+            let isOpen;
 
-            // Toggle menu-open on header so navbar shows for dropdown
-            if (mainHeader) mainHeader.classList.toggle('menu-open', isOpen);
-
-            const searchBox = document.querySelector('.search-box');
-            if (searchBox) {
-                searchBox.classList.toggle('active', isOpen);
-                // When scrolled, push search box below the nav-links dropdown
-                if (isOpen && mainHeader && mainHeader.classList.contains('scrolled')) {
-                    requestAnimationFrame(() => {
-                        searchBox.style.marginTop = navLinks.offsetHeight + 'px';
-                    });
-                } else {
-                    searchBox.style.marginTop = '';
-                }
+            if (isScrolled) {
+                // Use dedicated panel when scrolled
+                isOpen = menuPanel.classList.toggle('active');
+                mainHeader.classList.toggle('menu-open', isOpen);
+            } else {
+                // Normal mobile toggle
+                isOpen = navLinks.classList.toggle('active');
+                const searchBox = document.querySelector('.search-box');
+                if (searchBox) searchBox.classList.toggle('active', isOpen);
             }
 
-            // Swap icon: bars ↔ X
             const icon = hamburger.querySelector('i');
             if (icon) {
                 icon.classList.toggle('fa-bars', !isOpen);
                 icon.classList.toggle('fa-times', isOpen);
             }
-
-            // Sync ARIA
             hamburger.setAttribute('aria-expanded', String(isOpen));
             hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
         });
 
-        // Close menu when clicking outside
+        // Close when clicking outside
         document.addEventListener('click', (e) => {
-            const searchBox = document.querySelector('.search-box');
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && (!searchBox || !searchBox.contains(e.target))) {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    if (mainHeader) mainHeader.classList.remove('menu-open');
-                    if (searchBox) { searchBox.classList.remove('active'); searchBox.style.marginTop = ''; }
-                    const icon = hamburger.querySelector('i');
-                    if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    hamburger.setAttribute('aria-label', 'Open navigation menu');
+            if (!menuPanel.contains(e.target) && !hamburger.contains(e.target)) {
+                if (menuPanel.classList.contains('active') || (navLinks && navLinks.classList.contains('active'))) {
+                    closeMenu();
                 }
             }
         });
