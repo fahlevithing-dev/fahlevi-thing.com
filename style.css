@@ -875,56 +875,33 @@ footer {
         max-width: 100%;
     }
 
-    /* Mobile header: compact row — theme-toggle | tagline | hamburger */
-    .header-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 6px 0;
-    }
-
-    .brand {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        pointer-events: none;
-    }
-
-    .tagline {
-        font-size: 1rem;
-        margin-bottom: 0 !important;
-        pointer-events: auto;
-    }
-
-    .tagline::after { display: none; }
-
-    .nav-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 4px 0;
-        border-top: none;
-        flex-direction: row;
-        min-height: unset;
-        position: static;
-    }
-
-    .navbar { display: none; }
-    .nav-links { display: none; }
-    .nav-links.active { display: flex; flex-direction: column; }
-    .search-box { display: none; }
-    .search-box.active { display: block; width: 100%; }
-    .search-box input { width: 100%; }
-
     .main-layout { flex-direction: column; gap: 60px; }
     .sidebar-area { border-left: none; padding-left: 0; border-top: 1px solid var(--border-color); padding-top: 50px; margin-top: 30px; }
 
+    .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        min-height: 50px;
+        position: relative;
+        height: auto;
+    }
+
+    .nav-links { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 0; margin-top: 10px; }
+    .nav-links.active { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 15px 0; border-bottom: 1px solid var(--border-color); width: 100%; }
+    .nav-links li:last-child a { border-bottom: none; }
+
+    .search-box { width: 100%; margin-top: 20px; display: none; }
+    .search-box.active { display: block; }
+    .search-box input { width: 100%; }
+
     .hamburger {
         display: flex;
-        position: static;
+        position: absolute;
+        right: 0;
+        top: 12px;
         z-index: 100;
     }
 
