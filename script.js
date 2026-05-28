@@ -727,7 +727,22 @@ document.addEventListener('DOMContentLoaded', () => {
         "investment-journey.html",
         "glitch-in-the-archive.html"
     ];
-    renderPagination(allPosts.filter(p => !insightsExcludedUrls.includes(p.url)), 'insights-posts-container', 8);
+    const insightsPosts = allPosts.filter(p => !insightsExcludedUrls.includes(p.url));
+    renderPagination(insightsPosts, 'insights-posts-container', 8);
+
+    // --- CATEGORY FILTER (insights page) ---
+    const catFilter = document.getElementById('category-filter');
+    if (catFilter) {
+        catFilter.addEventListener('click', (e) => {
+            const btn = e.target.closest('.cat-btn');
+            if (!btn) return;
+            catFilter.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.dataset.cat;
+            const filtered = cat === 'ALL' ? insightsPosts : insightsPosts.filter(p => p.category === cat);
+            renderPagination(filtered, 'insights-posts-container', 8);
+        });
+    }
 
     // --- RELATED POSTS LOGIC ---
     const relatedContainer = document.getElementById('related-posts-container');
