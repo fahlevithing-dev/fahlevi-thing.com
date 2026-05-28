@@ -57,12 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelector('.nav-links');
         if (navLinks) navLinks.id = 'nav-links';
 
-        const origClickHandlers = hamburgerBtn.onclick;
-        hamburgerBtn.addEventListener('click', () => {
-            const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-            hamburgerBtn.setAttribute('aria-expanded', String(!isExpanded));
-            hamburgerBtn.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
-        });
+        // ARIA state is managed by the toggle handler below
     }
 
     // --- SECURITY: FRAME BUSTING (Prevent Clickjacking) ---
@@ -189,10 +184,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburger) {
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            
+            const isOpen = navLinks.classList.toggle('active');
+
             const searchBox = document.querySelector('.search-box');
-            if (searchBox) searchBox.classList.toggle('active');
+            if (searchBox) searchBox.classList.toggle('active', isOpen);
+
+            // Swap icon: bars ↔ X
+            const icon = hamburger.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars', !isOpen);
+                icon.classList.toggle('fa-times', isOpen);
+            }
+
+            // Sync ARIA
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+            hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                const searchBox = document.querySelector('.search-box');
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    if (searchBox) searchBox.classList.remove('active');
+                    const icon = hamburger.querySelector('i');
+                    if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    hamburger.setAttribute('aria-label', 'Open navigation menu');
+                }
+            }
         });
     }
 
