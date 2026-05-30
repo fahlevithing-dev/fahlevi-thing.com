@@ -10,8 +10,8 @@
 
     /* Theme Variables — DEFAULT: light body, always-dark transparent header */
     --bg-body: #FAFAFA;
-    --bg-header: rgba(0, 0, 0, 0.55);
-    --bg-header-scrolled: rgba(0, 0, 0, 0.72);
+    --bg-header: rgba(0, 0, 0, 0.28);
+    --bg-header-scrolled: rgba(0, 0, 0, 0.55);
     --text-main: #3a3a3a;
     --text-heading: #0d0d0d;
     --text-muted: #888888;
@@ -24,8 +24,8 @@
 /* Night Mode */
 [data-theme="dark"] {
     --bg-body: #121212;
-    --bg-header: rgba(0, 0, 0, 0.55);
-    --bg-header-scrolled: rgba(0, 0, 0, 0.72);
+    --bg-header: rgba(0, 0, 0, 0.28);
+    --bg-header-scrolled: rgba(0, 0, 0, 0.55);
     --text-main: #e0e0e0;
     --text-heading: #ffffff;
     --text-muted: #b0b0b0;
@@ -194,7 +194,7 @@ ul { list-style: none; }
 }
 
 .main-header .search-box input::placeholder {
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.65);
 }
 
 .main-header .search-box button {
