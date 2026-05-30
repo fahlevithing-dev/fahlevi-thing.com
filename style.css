@@ -479,6 +479,21 @@ ul { list-style: none; }
 
 .content-area {
     flex: 4;
+    min-width: 0; /* Prevent flex overflow breaking sidebar */
+    overflow-x: hidden;
+}
+
+/* Prevent wide content (images, tables, iframes) from breaking layout */
+.content-area img,
+.excerpt img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-area table {
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
 }
 
 .sidebar-area {
