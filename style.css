@@ -10,8 +10,8 @@
 
     /* Theme Variables — DEFAULT: dark */
     --bg-body: #121212;
-    --bg-header: rgba(10, 10, 10, 0.52);
-    --bg-header-scrolled: rgba(10, 10, 10, 0.68);
+    --bg-header: rgba(0, 0, 0, 0.55);
+    --bg-header-scrolled: rgba(0, 0, 0, 0.72);
     --text-main: #e0e0e0;
     --text-heading: #ffffff;
     --text-muted: #b0b0b0;
@@ -24,8 +24,8 @@
 /* Light Mode (toggled via night mode button) */
 [data-theme="dark"] {
     --bg-body: #FAFAFA;
-    --bg-header: rgba(10, 10, 10, 0.52);
-    --bg-header-scrolled: rgba(10, 10, 10, 0.68);
+    --bg-header: rgba(0, 0, 0, 0.55);
+    --bg-header-scrolled: rgba(0, 0, 0, 0.72);
     --text-main: #3a3a3a;
     --text-heading: #0d0d0d;
     --text-muted: #888888;
@@ -413,7 +413,7 @@ ul { list-style: none; }
 
 .panel-nav-links li a:hover,
 .panel-nav-links li a.active {
-    color: var(--accent-blue);
+    color: #ffffff !important;
 }
 
 .panel-search {
@@ -980,7 +980,7 @@ footer {
     margin: 0 0 28px;
     padding: 20px 24px 20px;
     border-bottom: none;
-    background: rgba(0,0,0,0.06);
+    background: rgba(0,0,0,0.35);
     border-radius: 10px;
     border-left: 3px solid var(--accent-navy);
     width: 100%;
