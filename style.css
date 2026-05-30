@@ -8,21 +8,7 @@
     --font-heading: 'Inter', 'Trebuchet MS', Arial, sans-serif;
     --font-body: 'Inter', 'Trebuchet MS', Arial, sans-serif;
 
-    /* Theme Variables — DEFAULT: dark */
-    --bg-body: #121212;
-    --bg-header: rgba(0, 0, 0, 0.55);
-    --bg-header-scrolled: rgba(0, 0, 0, 0.72);
-    --text-main: #e0e0e0;
-    --text-heading: #ffffff;
-    --text-muted: #b0b0b0;
-    --border-color: #333333;
-    --input-bg: #222222;
-    --card-bg: #1e1e1e;
-    --disclaimer-bg: #1e1e1e;
-}
-
-/* Light Mode (toggled via night mode button) */
-[data-theme="dark"] {
+    /* Theme Variables — DEFAULT: light body, always-dark transparent header */
     --bg-body: #FAFAFA;
     --bg-header: rgba(0, 0, 0, 0.55);
     --bg-header-scrolled: rgba(0, 0, 0, 0.72);
@@ -33,8 +19,22 @@
     --input-bg: #FFFFFF;
     --card-bg: #FFFFFF;
     --disclaimer-bg: #F2F0EB;
-    --accent-blue: #7B1A28;
-    --accent-navy: #004D98;
+}
+
+/* Night Mode */
+[data-theme="dark"] {
+    --bg-body: #121212;
+    --bg-header: rgba(0, 0, 0, 0.55);
+    --bg-header-scrolled: rgba(0, 0, 0, 0.72);
+    --text-main: #e0e0e0;
+    --text-heading: #ffffff;
+    --text-muted: #b0b0b0;
+    --border-color: #333333;
+    --input-bg: #222222;
+    --card-bg: #1e1e1e;
+    --disclaimer-bg: #1e1e1e;
+    --accent-blue: #B5404F;
+    --accent-navy: #4D8FD6;
 }
 
 /* Dark Mode Specific Overrides */
@@ -95,7 +95,7 @@ body {
     font-family: var(--font-body);
     color: var(--text-main);
     background-color: var(--bg-body);
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(0, 77, 152, 0.06) 1px, transparent 1px);
     background-size: 28px 28px;
     line-height: 1.75;
     transition: background-color 0.6s ease, color 0.6s ease;
@@ -104,7 +104,7 @@ body {
 
 [data-theme="dark"] body,
 [data-theme="dark"] {
-    background-image: radial-gradient(circle, rgba(0, 77, 152, 0.07) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }

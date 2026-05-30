@@ -113,29 +113,29 @@ document.addEventListener('DOMContentLoaded', () => {
             navWrapper.appendChild(toggleBtn);
         }
 
-        // Default is dark; data-theme="dark" = light mode
+        // Default: light. Night mode = dark.
         const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
             document.documentElement.setAttribute('data-theme', 'dark');
-            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        } else {
-            // Default: no data-theme = dark appearance
             toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
         }
 
         // Toggle Logic
         toggleBtn.addEventListener('click', () => {
             document.documentElement.classList.add('theme-transition');
             
-            const isLight = document.documentElement.getAttribute('data-theme') === 'dark';
-            if (isLight) {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
                 document.documentElement.removeAttribute('data-theme');
-                localStorage.removeItem('theme');
-                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
             }
             
             setTimeout(() => {
