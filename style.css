@@ -160,7 +160,7 @@ ul { list-style: none; }
 .brand-name a { color: var(--text-heading); }
 
 .pre-title {
-    font-family: var(--font-body);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Georgia, serif;
     font-size: 0.85rem;
     font-style: italic;
     color: var(--text-muted);
@@ -876,7 +876,7 @@ footer {
 
 .footer-quote-phrase {
     display: block;
-    font-family: 'Lora', serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Georgia, serif;
     font-size: 1rem;
     font-style: italic;
     font-weight: 700;
@@ -887,7 +887,7 @@ footer {
 
 .footer-quote-text {
     display: block;
-    font-family: 'Lora', serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Georgia, serif;
     font-size: 0.8rem;
     font-style: italic;
     color: var(--text-muted);
