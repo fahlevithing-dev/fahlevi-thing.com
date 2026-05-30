@@ -1,8 +1,8 @@
 /* --- VARIABLES & RESET --- */
 :root {
     --primary-color: #1a1a1a;
-    --accent-blue: #004D98; /* Navy Blue — primary accent */
-    --accent-navy: #7B1A28; /* Burgundy Red — secondary accent */
+    --accent-blue: #7B1A28; /* Burgundy Red — primary accent (swapped) */
+    --accent-navy: #004D98; /* Navy Blue — secondary accent (swapped) */
     --bg-light: #ffffff;
     --border-color: #e5e5e5;
     --font-heading: 'Inter', 'Trebuchet MS', Arial, sans-serif;
@@ -32,8 +32,8 @@
     --input-bg: #222222;
     --card-bg: #1e1e1e;
     --disclaimer-bg: var(--input-bg);
-    --accent-blue: #4D8FD6; /* Lighter navy for better contrast on dark */
-    --accent-navy: #B5404F; /* Lighter red for dark mode */
+    --accent-blue: #B5404F; /* Lighter red for dark mode (swapped) */
+    --accent-navy: #4D8FD6; /* Lighter navy for better contrast on dark (swapped) */
 }
 
 /* Dark Mode Specific Overrides */
