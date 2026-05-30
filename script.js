@@ -405,6 +405,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Why Do Employees Need a Pension Fund If They Can Build One Themselves?",
+            url: "pension-fund-diy",
+            category: "INVESTMENT",
+            date: "May 30, 2026",
+            excerpt: "When it comes to investment returns, a disciplined employee today can get remarkably close to what a professional pension fund delivers — and sometimes do better. But matching its certainty is the part that's genuinely difficult.",
+            image: ""
+        },
+        {
             title: "Echoes Beneath the Thames: How a 3.2-mile experiment in 1890 London built the operating system of the modern city",
             url: "echoes-beneath-the-thames",
             category: "URBAN HISTORY",
