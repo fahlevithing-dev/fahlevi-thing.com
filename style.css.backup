@@ -5,16 +5,16 @@
     --accent-navy: #7B1A28; /* Burgundy Red — secondary accent */
     --bg-light: #ffffff;
     --border-color: #e5e5e5;
-    --font-heading: 'Inter', 'Trebuchet MS', Arial, sans-serif;
-    --font-body: 'Inter', 'Trebuchet MS', Arial, sans-serif;
+    --font-heading: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --font-body: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     /* Theme Variables */
-    --bg-body: #FAFAFA;
-    --bg-header: #FAFAFA;
-    --bg-header-scrolled: rgba(250, 250, 250, 0.94);
-    --text-main: #3a3a3a;
-    --text-heading: #0d0d0d;
-    --text-muted: #888888;
+    --bg-body: #FAF9F7;
+    --bg-header: #FAF9F7;
+    --bg-header-scrolled: rgba(250, 249, 247, 0.92);
+    --text-main: #444444;
+    --text-heading: #111111;
+    --text-muted: #777777;
     --input-bg: #FFFFFF;
     --card-bg: #FFFFFF;
     --disclaimer-bg: #F2F0EB;
@@ -94,18 +94,21 @@ body {
     font-family: var(--font-body);
     color: var(--text-main);
     background-color: var(--bg-body);
-    line-height: 1.75;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    line-height: 1.7;
     transition: background-color 0.6s ease, color 0.6s ease;
-    -webkit-font-smoothing: antialiased;
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 
 .container {
-    max-width: 1180px;
+    max-width: 96%;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 20px;
 }
 
 /* --- HEADER --- */
@@ -140,10 +143,10 @@ ul { list-style: none; }
 
 .brand-name {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 900;
-    letter-spacing: 4px;
-    margin-bottom: 4px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
     transition: opacity 0.3s ease, max-height 0.4s ease;
     overflow: hidden;
     max-height: 80px;
@@ -493,40 +496,33 @@ ul { list-style: none; }
 
 /* --- POST ITEMS --- */
 .post-item {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 .post-thumb img {
     width: 100%;
     height: auto;
-    border-radius: 6px;
+    border-radius: 10px;
     display: block;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.post-thumb:hover img {
-    transform: scale(1.015);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .meta-cat {
     font-family: var(--font-heading);
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
     color: var(--accent-navy);
-    margin-bottom: 12px;
-    letter-spacing: 2px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .post-details h1,
 .post-details h2 {
     font-family: var(--font-heading);
-    font-size: 1.85rem;
-    font-weight: 800;
-    line-height: 1.25;
-    margin-bottom: 14px;
-    letter-spacing: -0.3px;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
 }
 
 .post-details h1 a,
@@ -535,11 +531,10 @@ ul { list-style: none; }
 .post-details h2 a:hover { color: var(--accent-blue); }
 
 .excerpt {
-    font-size: 1rem;
-    color: var(--text-muted);
+    font-size: 1.05rem;
+    color: var(--text-main);
     margin-bottom: 20px;
-    line-height: 1.75;
-    text-align: left;
+    text-align: justify;
 }
 
 .excerpt p {
@@ -666,19 +661,15 @@ figcaption {
 
 .read-more {
     font-family: var(--font-heading);
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
     color: var(--text-heading);
-    border-bottom: 1.5px solid var(--text-heading);
+    border-bottom: 2px solid var(--accent-navy);
     padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
 }
 
 .read-more:hover {
     color: var(--accent-blue);
-    border-bottom-color: var(--accent-blue);
 }
 
 /* --- SIDEBAR --- */
@@ -1104,31 +1095,15 @@ footer {
 /* --- FEATURED SECTION --- */
 .featured-label {
     font-family: var(--font-heading);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 28px;
-    color: var(--text-muted);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: var(--accent-navy);
+    border-bottom: 3px solid var(--accent-navy);
+    padding-bottom: 10px;
+    display: inline-block;
     text-transform: uppercase;
-    border-bottom: none;
-    padding-bottom: 0;
-    display: block;
-    text-transform: uppercase;
-}
-
-/* Editorial thin divider after section labels */
-.featured-label + .posts-grid,
-.featured-label + * {
-    border-top: 1px solid var(--border-color);
-    padding-top: 28px;
-}
-
-/* Subtle lift on grid post hover */
-.posts-grid .post-item {
-    transition: transform 0.25s ease;
-}
-.posts-grid .post-item:hover {
-    transform: translateY(-3px);
 }
 
 /* --- PRIVACY & SINGLE PAGE STYLES --- */
@@ -1183,7 +1158,7 @@ footer {
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 48px 40px;
+    gap: 50px;
 }
 
 .posts-grid .post-item {
@@ -1191,25 +1166,18 @@ footer {
 }
 
 .posts-grid .post-thumb {
-    margin-bottom: 18px;
-    overflow: hidden;
-    border-radius: 6px;
+    margin-bottom: 15px;
 }
 
 .posts-grid .post-thumb img {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     background-color: var(--disclaimer-bg);
-    border-radius: 6px;
-    width: 100%;
 }
 
 .posts-grid .post-details h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 8px;
-    letter-spacing: -0.2px;
+    font-size: 1.35rem;
+    margin-bottom: 10px;
 }
 
 .posts-grid .excerpt {

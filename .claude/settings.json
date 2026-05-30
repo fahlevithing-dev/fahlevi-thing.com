@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:iyaslawrence.com)",
+      "Bash(cp d:/Fahlevithing/style.css d:/Fahlevithing/style.css.backup *)"
+    ],
+    "additionalDirectories": [
+      "d:\\Fahlevithing"
+    ]
+  }
+}
