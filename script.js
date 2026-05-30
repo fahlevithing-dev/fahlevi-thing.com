@@ -722,7 +722,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Initialize Pagination
     // For Home: Exclude featured posts to avoid duplication. Featured posts: "Modest 20 Percent" and "Investment Journey".
-    const featuredUrls = ["miracle-of-20-percent", "investment-journey"];
+    const featuredUrls = ["miracle-of-20-percent", "investment-journey", "pension-fund-diy"];
     renderPagination(allPosts.filter(p => !featuredUrls.includes(p.url)), 'home-posts-container', 8);
 
     // For Insights: Exclude specific portfolio/personal posts
