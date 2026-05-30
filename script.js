@@ -1,4 +1,4 @@
-// Load EmailJS SDK for handling emails without backend
+﻿// Load EmailJS SDK for handling emails without backend
 // SECURITY NOTE: Ensure you configure "Allowed Origins" in your EmailJS dashboard 
 // to restrict usage of these keys to your specific domain (e.g., fahlevithing.com).
 (function() {
@@ -406,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const allPosts = [
         {
             title: "Echoes Beneath the Thames: How a 3.2-mile experiment in 1890 London built the operating system of the modern city",
-            url: "echoes-beneath-the-thames.html",
+            url: "echoes-beneath-the-thames",
             category: "URBAN HISTORY",
             date: "May 23, 2026",
             excerpt: "On 4 November 1890, the City & South London Railway became the first deep-level electric tube railway in the world. Within a century, more than two hundred cities on six continents would be built around its logic.",
@@ -415,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Echoes of the New Order: Why Indonesia's New Export Body Stirs Old Anxieties in the Capital Market",
-            url: "echoes-of-the-new-order.html",
+            url: "echoes-of-the-new-order",
             category: "POLITICAL ECONOMY",
             date: "May 22, 2026",
             excerpt: "On 20 May 2026, President Prabowo Subianto used his state-of-the-economy address to the House (DPR) to unveil a new Government Regulation on the Governance of Natural-Resource Exports.",
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Executive Summary: Indonesia's Macroeconomic Positioning in the G20 (Q1 2026)",
-            url: "indonesia-macroeconomic-g20-2026.html",
+            url: "indonesia-macroeconomic-g20-2026",
             category: "MACRO-ECONOMICS",
             date: "May 17, 2026",
             excerpt: "Indonesia opened 2026 with solid first-quarter results: year-on-year (YoY) GDP growth reached 5.61%, inflation remained well-contained, and Foreign Direct Investment (FDI) inflows held strong.",
@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Part 3 of 3: The Age of Levers — How FC Barcelona Mortgaged Its Future",
-            url: "fcb-part-3.html",
+            url: "fcb-part-3",
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
             excerpt: "In the summer of 2021, Joan Laporta returned to the FC Barcelona presidency with a mandate that would have seemed almost paradoxical to the club's founders: to save a democratic, member-owned institution by deploying the financial instruments of Wall Street.",
@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Part 2 of 3: From the Blank Jersey to Qatar Airways — Commercial Pivot",
-            url: "fcb-part-2.html",
+            url: "fcb-part-2",
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
             excerpt: "In the spring of 2009, FC Barcelona played football that many who witnessed it still struggle to describe in purely sporting terms. The club was at the apex of a philosophy: tiki-taka possession, pressed with geometric precision...",
@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Part 1 of 3: \"More Than a Club\" — How FC Barcelona Was Built as a Democratic Institution",
-            url: "fcb-part-1.html",
+            url: "fcb-part-1",
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
             excerpt: "There is a phrase in Catalan — Més que un club — that FC Barcelona has carried for over half a century. Translated, it means \"More than a club.\" But what does that actually mean? How does a football club transcend the sport itself...",
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "The WIFI Chronicles: A Journey of Conviction, Caution, and Market Timing",
-            url: "wifi-chronicles.html",
+            url: "wifi-chronicles",
             category: "STOCK ANALYSIS",
             date: "March 30, 2026",
             excerpt: "My journey with WIFI (PT Solusi Sinergi Digital Tbk.) began with a simple quantitative screen on Stockbit. I was searching for undervalued gems, and WIFI caught my eye with its low PBV and PE ratios...",
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "MBG Part 5: The Grand Vision & Long-Term Impacts",
-            url: "mbg-part-5.html",
+            url: "mbg-part-5",
             category: "MACRO-ECONOMICS",
             date: "March 18, 2026",
             excerpt: "If Indonesia successfully navigates the current implementation hurdles and achieves a 'zero mistake' operational state, the MBG program transforms into a powerful engine for national restructuring...",
@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "MBG Part 4: Safety, Quality, and the \"Zero Mistake\" Mandate",
-            url: "mbg-part-4.html",
+            url: "mbg-part-4",
             category: "MACRO-ECONOMICS",
             date: "March 18, 2026",
             excerpt: "As Indonesia moves toward its ambitious goal of serving over 82.9 million beneficiaries by 2029, the National Nutrition Agency (BGN) has had to confront immediate systemic failures...",
@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "MBG Part 3: Navigating the Implementation Minefield",
-            url: "mbg-part-3.html",
+            url: "mbg-part-3",
             category: "MACRO-ECONOMICS",
             date: "March 18, 2026",
             excerpt: "While the vision of a universal school meal program is theoretically 'genius,' the transition from policy paper to a child’s plate is fraught with systemic obstacles...",
@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "MBG Part 2: The Nutritional Gap & Per Capita Consumption",
-            url: "mbg-part-2.html",
+            url: "mbg-part-2",
             category: "MACRO-ECONOMICS",
             date: "March 18, 2026",
             excerpt: "To understand why a national school meal program is hailed as a 'genius' intervention, one must examine the empirical data regarding what actually reaches the plates of citizens...",
@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Program Makan Bergizi Gratis (MBG): The “Genius” Initiative Facing Implementation Challenges",
-            url: "mbg-genius-initiative.html",
+            url: "mbg-genius-initiative",
             category: "MACRO-ECONOMICS",
             date: "March 18, 2026",
             excerpt: "School nutrition policies have evolved from simple public health interventions into strategic pillars for human capital development and geopolitical stability. Globally, providing school meals is no longer just an act of philanthropy...",
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "The Glitch in the Archive",
-            url: "glitch-in-the-archive.html",
+            url: "glitch-in-the-archive",
             category: "POETRY",
             date: "February 10, 2026",
             excerpt: "The archive grows heavier by the hour. New lines of code, fresh paragraphs, Another article was pushed to the live server. The index page scrolls endlessly down— A monument of sudden, manic focus.",
@@ -512,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
          {
             title: "The Portfolio War – A Deep Dive into Hajj Fund Strategies (Malaysia vs. Indonesia)",
-            url: "hajj-fund-portfolio-war.html",
+            url: "hajj-fund-portfolio-war",
             category: "POLITICAL ECONOMY",
             date: "February 8, 2026",
             excerpt: "While Part 1 explored institutional structures, Part 2 dissects balance sheets. Malaysia’s TH operates as a diversified multi-asset endowment, while Indonesia’s BPKH functions closer to a sovereign debt accumulator.",
@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Pilgrimage and Political Economy: A Comparative Analysis of Hajj Fund Management in Malaysia and Indonesia",
-            url: "hajj-fund-management.html",
+            url: "hajj-fund-management",
             category: "POLITICAL ECONOMY",
             date: "February 8, 2026",
             excerpt: "First-Mover Advantage: Malaysia’s Tabung Haji (TH) has a 50-year head start, allowing it to build a vertically integrated ecosystem. Indonesia’s BPKH is currently shifting from a passive 'saver' strategy to an active 'investor' strategy.",
@@ -528,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Beyond Survival: Why IKN (Nusantara) is Not Just an Option, It is an Evolution",
-            url: "nusantara-evolution.html",
+            url: "nusantara-evolution",
             category: "MACRO-ECONOMICS",
             date: "February 7, 2026",
             excerpt: "Viewing the Capital City of Nusantara (IKN) solely as a political project is a missed analysis. From a macroeconomic perspective, this project represents a massive national 'Capital Expenditure' (CapEx) designed to lower the 'operational costs' of a Jakarta-centric economy.",
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "The Archipelago’s Black Gold: A Narrative of Character Over Quantity",
-            url: "archipelago-black-gold.html",
+            url: "archipelago-black-gold",
             category: "INVESTMENT",
             date: "February 1, 2026",
             excerpt: "This is the story of the \"Black Gold\" from the Nusantara. A story proving that in the vast world of coffee, Indonesia does not chase quantity; it chases character.",
@@ -544,7 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Gold as the Harbinger: A Century of Commodity Cycles (1928–2026)",
-            url: "gold-harbinger.html",
+            url: "gold-harbinger",
             category: "INVESTMENT",
             date: "January 31, 2026",
             excerpt: "History reveals a persistent pattern in macro-finance: Gold is rarely just a shiny rock; it is the \"canary in the coal mine.\" Since 1928, major upward revaluations in Gold have almost invariably preceded a broader secular bull market in commodities.",
@@ -552,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Investment Insight: PT Cita Mineral Investindo Tbk (CITA) – Beyond Bauxite Mining",
-            url: "cita-analysis.html",
+            url: "cita-analysis",
             category: "STOCK ANALYSIS",
             date: "January 30, 2026",
             excerpt: "As global aluminum prices reached a 4-year high in January 2026, CITA is positioned as a unique play in the metals sector. While often categorized solely as an upstream bauxite miner, CITA’s true profitability is now driven by its downstream \"money machines\" through associate entities (WHW and KAI), rather than just raw ore sales.",
@@ -560,7 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Understanding Today’s Sharp IHSG Decline: A Rational Guide for Investors",
-            url: "ihsg-decline.html",
+            url: "ihsg-decline",
             category: "MARKET UPDATE",
             date: "January 28, 2026",
             excerpt: "Today’s sharp decline in the IHSG may feel unsettling, especially for new investors still adapting to market fluctuations. Seeing a portfolio turn red simultaneously often raises concern. However, understanding the actual mechanics behind this drop is the first step toward becoming a confident and disciplined investor.",
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "The Miracle of the \"Modest\" 20 Percent",
-            url: "miracle-of-20-percent.html",
+            url: "miracle-of-20-percent",
             category: "INVESTMENT",
             date: "January 27, 2026",
             excerpt: "Historically (from 1965 to 2023), Berkshire Hathaway has achieved a Compound Annual Growth Rate (CAGR) of approximately 19.8%. While this figure may seem modest compared to the \"anomalies\" of short-term trading gains, it is extraordinary for the following three reasons...",
@@ -576,7 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "How China Could Win Against The US",
-            url: "china-ai-race.html",
+            url: "china-ai-race",
             category: "TECHNOLOGY",
             date: "January 15, 2026",
             excerpt: "The global narrative on Artificial Intelligence is often hyper-focused on who has the smartest chatbot or the fastest chip. However, this perspective mistakes the frosting for the cake. For seasoned observers, AI is best understood as a five-layer industrial system consisting of: Energy, Chips, Infrastructure, Models, and Applications.",
@@ -584,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "DKFT Analysis: Turnaround Story & Nickel Outlook",
-            url: "dkft-analysis.html",
+            url: "dkft-analysis",
             category: "STOCK ANALYSIS",
             date: "January 6, 2026",
             excerpt: "I started paying attention to DKFT shares when the price was still around IDR 180 per share. The company operates as a nickel ore miner and has begun a turnaround after years of persistent losses...",
@@ -592,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "The Rise and Fall of Sritex (SRIL): A Tale of Ignored Red Flags",
-            url: "sril-analysis.html",
+            url: "sril-analysis",
             category: "STOCK ANALYSIS",
             date: "January 6, 2026",
             excerpt: "Sri Rejeki Isman Tbk (SRIL), widely known as Sritex, was once the largest integrated textile manufacturer in Southeast Asia. Its golden era began in 1994 when it secured prestigious contracts...",
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "ADRO & ADMR Analysis: Strategic Shift & Green Energy Transition",
-            url: "adro-admr-analysis.html",
+            url: "adro-admr-analysis",
             category: "STOCK ANALYSIS",
             date: "January 6, 2026",
             excerpt: "I have been observing Adaro Energy (ADRO) for a long time, as it is one of Indonesia’s coal mining companies with relatively stable financial performance despite the cyclical fluctuations in coal prices...",
@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Why Pakuwon Jati (PWON) Remains a Top-Tier Resilient Property Stock",
-            url: "pwon-analysis.html",
+            url: "pwon-analysis",
             category: "STOCK ANALYSIS",
             date: "January 6, 2026",
             excerpt: "PT Pakuwon Jati Tbk (PWON) stands out as one of the most structurally defensive property developers in Indonesia. Its business model—emphasizing high recurring income, conservative financial management...",
@@ -616,7 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Plaza Indonesia Realty & Pakuwon Jati",
-            url: "property-analysis.html",
+            url: "property-analysis",
             category: "STOCK ANALYSIS",
             date: "December 26, 2025",
             excerpt: "As of 31 December 2024, Plaza Indonesia Realty Tbk (PLIN) owns and manages three core property portfolios. Meanwhile, Pakuwon Jati Tbk (PWON) stands out as one of the most structurally defensive property developers in Indonesia. A deep dive into their balance sheets and cash flow strategies...",
@@ -624,7 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "How I Got Into The World of Investing?",
-            url: "investment-journey.html",
+            url: "investment-journey",
             category: "INVESTMENT",
             date: "December 26, 2025",
             excerpt: "Me, Reza Fahlevi. I would like to begin my first post by sharing my personal introduction to the world of stock market investing. I was first exposed to investment concepts during my university years, when I studied Economics with a major in Accounting at Syiah Kuala University in Banda Aceh...",
