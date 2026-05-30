@@ -113,12 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
             navWrapper.appendChild(toggleBtn);
         }
 
-        // Check LocalStorage or System Preference
+        // Default is dark; data-theme="dark" = light mode
         const currentTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
+        if (currentTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
+            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            // Default: no data-theme = dark appearance
             toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
         }
 
@@ -126,12 +127,16 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleBtn.addEventListener('click', () => {
             document.documentElement.classList.add('theme-transition');
             
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            const newTheme = isDark ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            toggleBtn.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            const isLight = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isLight) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.removeItem('theme');
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
             
             setTimeout(() => {
                 document.documentElement.classList.remove('theme-transition');

@@ -8,32 +8,33 @@
     --font-heading: 'Inter', 'Trebuchet MS', Arial, sans-serif;
     --font-body: 'Inter', 'Trebuchet MS', Arial, sans-serif;
 
-    /* Theme Variables */
-    --bg-body: #FAFAFA;
+    /* Theme Variables — DEFAULT: dark */
+    --bg-body: #121212;
     --bg-header: rgba(10, 10, 10, 0.52);
     --bg-header-scrolled: rgba(10, 10, 10, 0.68);
-    --text-main: #3a3a3a;
-    --text-heading: #0d0d0d;
-    --text-muted: #888888;
-    --input-bg: #FFFFFF;
-    --card-bg: #FFFFFF;
-    --disclaimer-bg: #F2F0EB;
-}
-
-/* Dark Mode Variables */
-[data-theme="dark"] {
-    --bg-body: #121212;
-    --bg-header: #1a1a1a;
-    --bg-header-scrolled: rgba(26, 26, 26, 0.85); /* For blur effect */
     --text-main: #e0e0e0;
     --text-heading: #ffffff;
     --text-muted: #b0b0b0;
     --border-color: #333333;
     --input-bg: #222222;
     --card-bg: #1e1e1e;
-    --disclaimer-bg: var(--input-bg);
-    --accent-blue: #B5404F; /* Lighter red for dark mode (swapped) */
-    --accent-navy: #4D8FD6; /* Lighter navy for better contrast on dark (swapped) */
+    --disclaimer-bg: #1e1e1e;
+}
+
+/* Light Mode (toggled via night mode button) */
+[data-theme="dark"] {
+    --bg-body: #FAFAFA;
+    --bg-header: rgba(10, 10, 10, 0.52);
+    --bg-header-scrolled: rgba(10, 10, 10, 0.68);
+    --text-main: #3a3a3a;
+    --text-heading: #0d0d0d;
+    --text-muted: #888888;
+    --border-color: #e5e5e5;
+    --input-bg: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --disclaimer-bg: #F2F0EB;
+    --accent-blue: #7B1A28;
+    --accent-navy: #004D98;
 }
 
 /* Dark Mode Specific Overrides */
@@ -94,7 +95,7 @@ body {
     font-family: var(--font-body);
     color: var(--text-main);
     background-color: var(--bg-body);
-    background-image: radial-gradient(circle, rgba(0, 77, 152, 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 28px 28px;
     line-height: 1.75;
     transition: background-color 0.6s ease, color 0.6s ease;
@@ -103,7 +104,7 @@ body {
 
 [data-theme="dark"] body,
 [data-theme="dark"] {
-    background-image: radial-gradient(circle, rgba(77, 143, 214, 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(0, 77, 152, 0.07) 1px, transparent 1px);
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
