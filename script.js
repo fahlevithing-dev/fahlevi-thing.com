@@ -255,6 +255,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+
+        // Portfolio link inside panel — trigger overlay directly (getElementById only finds original)
+        menuPanel.addEventListener('click', (e) => {
+            const link = e.target.closest('a[href="/#show-portfolio"]');
+            if (link) {
+                e.preventDefault();
+                closeMenu();
+                const overlay = document.querySelector('.portfolio-overlay');
+                if (overlay) {
+                    overlay.classList.add('active');
+                } else {
+                    window.location.href = '/#show-portfolio';
+                }
+            }
+        });
     }
 
    // --- SEARCH FUNCTIONALITY ---
