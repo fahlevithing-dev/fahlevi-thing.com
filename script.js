@@ -660,7 +660,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <article class="post-item">
                         ${thumbHTML}
                         <div class="post-details">
-                            <div class="meta-cat">${item.category} • ${item.date}</div>
+                            <div class="meta-cat">${item.category} • <span class="meta-date">${item.date}</span></div>
                             <h2><a href="${item.url}">${item.title}</a></h2>
                             <div class="excerpt"><p>${item.excerpt}</p></div>
                             <a href="${item.url}" class="read-more">Read More</a>
@@ -817,7 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <article class="post-item">
                         ${thumbHTML}
                         <div class="post-details">
-                            <div class="meta-cat">${item.category} • ${item.date}</div>
+                            <div class="meta-cat">${item.category} • <span class="meta-date">${item.date}</span></div>
                             <h2><a href="${item.url}">${item.title}</a></h2>
                             <div class="excerpt"><p>${item.excerpt}</p></div>
                             <a href="${item.url}" class="read-more">Read More</a>
