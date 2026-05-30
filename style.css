@@ -980,7 +980,7 @@ footer {
     margin: 0 0 28px;
     padding: 20px 24px 20px;
     border-bottom: none;
-    background: rgba(0,0,0,0.35);
+    background: rgba(0,0,0,0.55);
     border-radius: 10px;
     border-left: 3px solid var(--accent-navy);
     width: 100%;
@@ -993,7 +993,7 @@ footer {
     font-size: 1rem;
     font-style: italic;
     font-weight: 700;
-    color: var(--text-heading);
+    color: #ffffff;
     letter-spacing: 1.5px;
     margin-bottom: 8px;
 }
@@ -1003,7 +1003,7 @@ footer {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Georgia, serif;
     font-size: 0.8rem;
     font-style: italic;
-    color: var(--text-muted);
+    color: rgba(255,255,255,0.75);
     letter-spacing: 0.3px;
     line-height: 1.6;
 }
