@@ -11,7 +11,7 @@
     /* Theme Variables */
     --bg-body: #FAFAFA;
     --bg-header: #FAFAFA;
-    --bg-header-scrolled: rgba(250, 250, 250, 0.94);
+    --bg-header-scrolled: rgba(10, 10, 10, 0.82);
     --text-main: #3a3a3a;
     --text-heading: #0d0d0d;
     --text-muted: #888888;
@@ -233,6 +233,47 @@ ul { list-style: none; }
     font-size: 1rem;
     margin-bottom: 0 !important;
     pointer-events: auto;
+    color: rgba(255,255,255,0.85);
+}
+
+/* White text & icons in dark scrolled header */
+.main-header.scrolled .hamburger {
+    color: rgba(255,255,255,0.9);
+}
+
+.main-header.scrolled .theme-toggle {
+    color: rgba(255,255,255,0.9);
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Dropdown panel matches dark header */
+.scrolled-menu-panel {
+    background: rgba(10, 10, 10, 0.92);
+    border-top-color: rgba(255,255,255,0.1);
+}
+
+.panel-nav-links li a {
+    color: rgba(255,255,255,0.75);
+    border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.panel-nav-links li a:hover,
+.panel-nav-links li a.active {
+    color: #ffffff;
+}
+
+.panel-search input {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: #ffffff;
+}
+
+.panel-search input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.panel-search button {
+    color: rgba(255,255,255,0.7);
 }
 
 .main-header.scrolled .tagline::after {
