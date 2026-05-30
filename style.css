@@ -10,7 +10,7 @@
 
     /* Theme Variables */
     --bg-body: #FAFAFA;
-    --bg-header: #FAFAFA;
+    --bg-header: rgba(10, 10, 10, 0.88);
     --bg-header-scrolled: rgba(10, 10, 10, 0.82);
     --text-main: #3a3a3a;
     --text-heading: #0d0d0d;
@@ -158,6 +158,49 @@ ul { list-style: none; }
 }
 
 .brand-name a { color: var(--text-heading); }
+
+/* White text in dark header */
+.main-header .brand-name a,
+.main-header .pre-title,
+.main-header .tagline {
+    color: rgba(255,255,255,0.9);
+}
+
+.main-header .tagline::after {
+    background: rgba(255,255,255,0.5);
+}
+
+.main-header .nav-links a {
+    color: rgba(255,255,255,0.75);
+}
+
+.main-header .nav-links a:hover,
+.main-header .nav-links a.active {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+.main-header .nav-wrapper {
+    border-top-color: rgba(255,255,255,0.15);
+}
+
+.main-header .search-box input {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: #ffffff;
+}
+
+.main-header .search-box input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.main-header .search-box button {
+    color: rgba(255,255,255,0.7);
+}
+
+.main-header .hamburger {
+    color: rgba(255,255,255,0.9);
+}
 
 .pre-title {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Georgia, serif;
