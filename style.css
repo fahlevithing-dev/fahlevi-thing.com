@@ -276,17 +276,17 @@ ul { list-style: none; }
     padding: 4px 0;
 }
 
-/* Brand: absolute center — sized only by tagline, no residual height from hidden elements */
+/* Brand: absolute center using left:0/right:0/margin:auto for reliable centering */
 .main-header.scrolled .brand {
     position: absolute;
-    left: 50%;
+    left: 0;
+    right: 0;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    width: fit-content;
+    margin: 0 auto;
     text-align: center;
     pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .main-header.scrolled .tagline {
