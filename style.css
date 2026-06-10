@@ -203,9 +203,6 @@ ul { list-style: none; }
     color: rgba(255,255,255,0.4);
 }
 
-.main-header .eye-icon {
-    display: none;
-}
 
 .main-header .search-box button {
     color: rgba(255,255,255,0.7);
