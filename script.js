@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "INVESTMENT",
             date: "June 10, 2026",
             excerpt: "Gojek lost money almost every year yet grew from a $1.3B valuation to $31B at IPO. Here is how a startup sells the next round, not the next profit — and what Amazon's story actually teaches.",
-            image: "images/logofahlevithing.jpeg"
+            image: "images/gojek.png"
         },
         {
             title: "Why Do Employees Need a Pension Fund If They Can Build One Themselves?",
