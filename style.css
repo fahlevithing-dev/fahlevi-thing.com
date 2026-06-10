@@ -10,8 +10,8 @@
 
     /* Theme Variables — DEFAULT: light body, always-dark transparent header */
     --bg-body: #FAFAFA;
-    --bg-header: rgba(0, 0, 0, 0.55);
-    --bg-header-scrolled: rgba(0, 0, 0, 0.55);
+    --bg-header: linear-gradient(160deg, rgba(14, 14, 28, 0.97) 0%, rgba(8, 20, 52, 0.97) 100%);
+    --bg-header-scrolled: rgba(12, 14, 30, 0.94);
     --text-main: #3a3a3a;
     --text-heading: #0d0d0d;
     --text-muted: #888888;
@@ -24,8 +24,8 @@
 /* Night Mode */
 [data-theme="dark"] {
     --bg-body: #121212;
-    --bg-header: rgba(0, 0, 0, 0.55);
-    --bg-header-scrolled: rgba(0, 0, 0, 0.55);
+    --bg-header: linear-gradient(160deg, rgba(8, 8, 18, 0.98) 0%, rgba(4, 14, 38, 0.98) 100%);
+    --bg-header-scrolled: rgba(8, 8, 22, 0.96);
     --text-main: #e0e0e0;
     --text-heading: #ffffff;
     --text-muted: #b0b0b0;
@@ -118,22 +118,23 @@ ul { list-style: none; }
 
 /* --- HEADER --- */
 .main-header {
-    padding: 50px 0 20px;
-    border-bottom: 3px solid var(--accent-navy);
+    padding: 48px 0 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     background: var(--bg-header);
-    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
 }
 
 .main-header.scrolled {
-    background-color: var(--bg-header-scrolled);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: var(--bg-header-scrolled);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 8px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    border-bottom-width: 1px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .header-container {
@@ -148,9 +149,9 @@ ul { list-style: none; }
 
 .brand-name {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     font-weight: 900;
-    letter-spacing: 4px;
+    letter-spacing: 8px;
     margin-bottom: 4px;
     transition: opacity 0.3s ease, max-height 0.4s ease;
     overflow: hidden;
@@ -160,11 +161,16 @@ ul { list-style: none; }
 
 .brand-name a { color: var(--text-heading); }
 
-/* White text in dark header */
-.main-header .brand-name a,
-.main-header .pre-title,
+/* Text in dark editorial header */
+.main-header .brand-name a {
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.main-header .pre-title {
+    color: rgba(255,255,255,0.42);
+}
 .main-header .tagline {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.55);
 }
 
 .main-header .tagline::after {
@@ -194,7 +200,11 @@ ul { list-style: none; }
 }
 
 .main-header .search-box input::placeholder {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.4);
+}
+
+.main-header .eye-icon {
+    display: none;
 }
 
 .main-header .search-box button {
@@ -206,15 +216,19 @@ ul { list-style: none; }
 }
 
 .pre-title {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Georgia, serif;
-    font-size: 0.85rem;
-    font-style: italic;
-    color: rgba(255,255,255,0.7);
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.42);
     display: inline-block;
-    background: rgba(0,0,0,0.35);
-    padding: 3px 10px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 4px 14px;
     border-radius: 20px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     transition: all 0.3s ease;
     max-height: 30px;
     opacity: 1;
@@ -229,22 +243,24 @@ ul { list-style: none; }
 .tagline {
     font-family: var(--font-body);
     font-style: italic;
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 40px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 38px;
     display: inline-block;
     position: relative;
+    letter-spacing: 0.5px;
     transition: font-size 0.3s ease, margin 0.3s ease;
 }
 
-/* Garis dekorasi kecil di bawah tagline */
+/* Garis dekorasi di bawah tagline */
 .tagline::after {
     content: '';
     display: block;
-    width: 40px;
-    height: 2px;
-    background: var(--accent-navy);
-    margin: 15px auto 0;
+    width: 64px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    margin: 14px auto 0;
     transition: opacity 0.3s ease, margin 0.3s ease, height 0.3s ease;
 }
 
