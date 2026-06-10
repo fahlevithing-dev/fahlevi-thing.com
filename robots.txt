@@ -3,4 +3,7 @@ Allow: /
 Disallow: /search
 Disallow: /404
 
+# Block .html URLs — GitHub Pages redirects these to clean URLs; prevent crawl of redirect versions
+Disallow: /*.html$
+
 Sitemap: https://fahlevi-thing.com/sitemap.xml
