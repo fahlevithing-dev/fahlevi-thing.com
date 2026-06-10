@@ -276,15 +276,10 @@ ul { list-style: none; }
     padding: 4px 0;
 }
 
-/* Brand: absolute, stretch full height, flex-center the tagline */
+/* Brand: fill entire header-container, flex-center the tagline */
 .main-header.scrolled .brand {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: fit-content;
-    margin: 0 auto;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
