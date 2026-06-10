@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         panelForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const q = panelForm.querySelector('input').value.trim();
-            if (q) window.location.href = `search.html?q=${encodeURIComponent(q.toLowerCase())}`;
+            if (q) window.location.href = `/search?q=${encodeURIComponent(q.toLowerCase())}`;
         });
     }
 
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const input = form.querySelector('input');
             const query = input.value.trim();
             if (query) {
-                window.location.href = `search.html?q=${encodeURIComponent(query.toLowerCase())}`;
+                window.location.href = `/search?q=${encodeURIComponent(query.toLowerCase())}`;
             }
         });
     });
@@ -667,6 +667,9 @@ document.addEventListener('DOMContentLoaded', () => {
             image: ""
         }
     ];
+
+    // Expose for search.html
+    window.allPosts = allPosts;
 
     // 2. Pagination Function
     function renderPagination(posts, containerId, itemsPerPage) {
