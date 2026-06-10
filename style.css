@@ -255,12 +255,19 @@ ul { list-style: none; }
 .main-header.scrolled .brand-name {
     opacity: 0;
     max-height: 0;
-    margin-bottom: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
 }
 
 .main-header.scrolled .pre-title {
     opacity: 0;
     max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
 }
 
 /* header-container: relative so brand can be absolute-centered */
@@ -269,7 +276,7 @@ ul { list-style: none; }
     padding: 4px 0;
 }
 
-/* Brand: absolute center */
+/* Brand: absolute center — sized only by tagline, no residual height from hidden elements */
 .main-header.scrolled .brand {
     position: absolute;
     left: 50%;
@@ -277,11 +284,16 @@ ul { list-style: none; }
     transform: translate(-50%, -50%);
     text-align: center;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-header.scrolled .tagline {
     font-size: 1rem;
-    margin-bottom: 0 !important;
+    line-height: 1;
+    margin: 0 !important;
+    padding: 0;
     pointer-events: auto;
     color: rgba(255,255,255,0.85);
 }
