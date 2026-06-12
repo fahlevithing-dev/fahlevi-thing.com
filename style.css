@@ -1589,13 +1589,44 @@ footer {
     color: #fff;
 }
 
-/* Hide Google Translate Top Bar */
-.goog-te-banner-frame.skiptranslate { display: none !important; }
-body { top: 0px !important; }
+/* --- SIDEBAR LANGUAGE SWITCH BUTTONS --- */
+.sidebar-lang-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-muted);
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    font-family: var(--font-sans);
+}
 
-/* Hide Google Translate Top Bar */
-.goog-te-banner-frame.skiptranslate { display: none !important; } 
-body { top: 0px !important; }
+.sidebar-lang-btn.active {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.sidebar-lang-btn:hover:not(.active) {
+    background-color: var(--text-heading);
+    border-color: var(--text-heading);
+    color: #fff;
+}
+
+[data-theme="dark"] .sidebar-lang-btn {
+    border-color: var(--border-color);
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .sidebar-lang-btn.active {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
 
 .portfolio-disclaimer {
     margin-top: 40px;
