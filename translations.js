@@ -341,6 +341,23 @@ document.addEventListener('DOMContentLoaded', function () {
         var map = window._rerenderMap || {};
         Object.keys(map).forEach(function (k) { map[k](); });
 
+        // Article page h1 title (uses posts[slug].titleId)
+        var articleH1 = document.querySelector('.post-details h1');
+        if (articleH1) {
+            if (!articleH1.getAttribute('data-title-en')) {
+                articleH1.setAttribute('data-title-en', articleH1.textContent.trim());
+            }
+            var _articleSlug = window.location.pathname.replace(/^\/|\/$/g, '');
+            var _articleTr = window.LANG.posts && window.LANG.posts[_articleSlug];
+            var _titleEn = articleH1.getAttribute('data-title-en');
+            articleH1.textContent = lang === 'id' && _articleTr && _articleTr.titleId ? _articleTr.titleId : _titleEn;
+        }
+
+        // Article body bilingual toggle — articles with both lang="en" and lang="id" excerpt divs
+        document.querySelectorAll('.excerpt[lang]').forEach(function (el) {
+            el.style.display = el.getAttribute('lang') === lang ? '' : 'none';
+        });
+
         // 404 page content
         var notFoundMsg = document.getElementById('not-found-msg');
         if (notFoundMsg) notFoundMsg.textContent = T.pageNotFoundMsg;
