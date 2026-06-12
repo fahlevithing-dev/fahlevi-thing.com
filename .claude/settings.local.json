@@ -3,7 +3,11 @@
     "allow": [
       "Bash(git push *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "WebFetch(domain:cdnjs.cloudflare.com)",
+      "WebSearch",
+      "WebFetch(domain:cdnjs.com)",
+      "Bash(python -)"
     ]
   }
 }

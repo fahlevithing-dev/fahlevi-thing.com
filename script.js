@@ -289,6 +289,85 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- LIVE SEARCH AUTOCOMPLETE ---
+    (function () {
+        var escH = function(s) {
+            return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        };
+        var escRe = function(s) { return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); };
+        var hi = function(text, q) {
+            return escH(text).replace(new RegExp(escRe(escH(q)),'gi'), function(m){ return '<mark>'+m+'</mark>'; });
+        };
+
+        document.querySelectorAll('.search-box').forEach(function(box) {
+            var sug = document.createElement('div');
+            sug.className = 'search-suggestions';
+            sug.hidden = true;
+            box.appendChild(sug);
+
+            var input = box.querySelector('input[type="text"]');
+            if (!input) return;
+            var timer;
+
+            function show(q) {
+                var lower = q.toLowerCase();
+                var posts = window.allPosts || [];
+                var hits = posts.filter(function(p) {
+                    return p.title.toLowerCase().includes(lower) ||
+                           p.category.toLowerCase().includes(lower) ||
+                           p.excerpt.toLowerCase().includes(lower);
+                }).slice(0, 6);
+
+                if (!hits.length) {
+                    sug.innerHTML = '<div class="sug-empty">No results for &ldquo;<strong>' + escH(q) + '</strong>&rdquo;</div>';
+                } else {
+                    sug.innerHTML = hits.map(function(p) {
+                        return '<a class="sug-item" href="/' + p.url + '"><span class="sug-cat">' +
+                               escH(p.category) + '</span><span class="sug-title">' +
+                               hi(p.title, lower) + '</span></a>';
+                    }).join('') +
+                    '<a class="sug-all" href="/search?q=' + encodeURIComponent(q) +
+                    '"><i class="fa-solid fa-magnifying-glass"></i>&ensp;See all results for &ldquo;<strong>' +
+                    escH(q) + '</strong>&rdquo;</a>';
+                }
+                sug.hidden = false;
+            }
+
+            input.addEventListener('input', function() {
+                clearTimeout(timer);
+                var q = input.value.trim();
+                if (q.length < 2) { sug.hidden = true; return; }
+                timer = setTimeout(function(){ show(q); }, 150);
+            });
+
+            input.addEventListener('focus', function() {
+                if (input.value.trim().length >= 2) show(input.value.trim());
+            });
+
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') { sug.hidden = true; }
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    var first = sug.querySelector('.sug-item, .sug-all');
+                    if (first) first.focus();
+                }
+            });
+
+            sug.addEventListener('keydown', function(e) {
+                var items = Array.from(sug.querySelectorAll('.sug-item, .sug-all'));
+                var i = items.indexOf(document.activeElement);
+                if (e.key === 'ArrowDown' && i < items.length - 1) { e.preventDefault(); items[i+1].focus(); }
+                if (e.key === 'ArrowUp') { e.preventDefault(); if (i > 0) items[i-1].focus(); else input.focus(); }
+                if (e.key === 'Escape') { sug.hidden = true; input.focus(); }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!box.contains(e.target)) sug.hidden = true;
+            });
+        });
+    }());
+
     // --- PORTFOLIO OVERLAY LOGIC ---
     // Inject Overlay HTML
     const overlayHTML = `

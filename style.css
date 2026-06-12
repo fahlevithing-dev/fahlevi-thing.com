@@ -2300,3 +2300,92 @@ body.reading-mode .content-area {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* --- LIVE SEARCH DROPDOWN --- */
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    width: 360px;
+    max-height: 420px;
+    overflow-y: auto;
+    background: rgba(6, 10, 30, 0.98);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    z-index: 9999;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.sug-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.12s;
+}
+
+.sug-item:last-of-type { border-bottom: none; }
+
+.sug-item:hover,
+.sug-item:focus {
+    background: rgba(255,255,255,0.07);
+    outline: none;
+}
+
+.sug-cat {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+}
+
+.sug-title {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.82);
+}
+
+.sug-title mark {
+    background: rgba(255,200,50,0.3);
+    color: #ffd96a;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+.sug-all {
+    display: block;
+    padding: 9px 14px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.12s, color 0.12s;
+}
+
+.sug-all:hover,
+.sug-all:focus {
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.75);
+    outline: none;
+}
+
+.sug-all strong { color: rgba(255,255,255,0.75); }
+
+.sug-empty {
+    padding: 16px 14px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.38);
+    text-align: center;
+}
+
+.sug-empty strong { color: rgba(255,255,255,0.65); }
+
+@media (max-width: 768px) {
+    .search-suggestions { width: 100%; right: auto; left: 0; }
+}
