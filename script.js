@@ -190,14 +190,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Build a single dropdown panel (used when scrolled on all viewports)
     const menuPanel = document.createElement('div');
     menuPanel.className = 'scrolled-menu-panel';
+    const _T = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
+    const _panelPlaceholder = (_T && _T.searchPlaceholder) || 'Search...';
     menuPanel.innerHTML = `
         <ul class="panel-nav-links">
             ${navLinks ? navLinks.innerHTML : ''}
         </ul>
         <div class="panel-search">
             <form role="search" aria-label="Search articles">
-                <input type="text" placeholder="Search..." aria-label="Search">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> <span class="eye-icon">👀</span></button>
+                <input type="text" name="q" placeholder="${_panelPlaceholder}" aria-label="Search">
+                <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>`;
     if (mainHeader) mainHeader.appendChild(menuPanel);
@@ -454,51 +456,6 @@ document.addEventListener('DOMContentLoaded', () => {
         footerSocials.parentNode.insertBefore(quoteEl, footerSocials);
     }
 
-    // --- TRANSLATE BUTTON (DeepL / Google Translate) ---
-    const socialIcons = document.querySelector('.social-icons');
-    if (socialIcons) {
-        const connectWrapper = socialIcons.closest('.connect-wrapper');
-        const wrapperDiv = document.createElement('div');
-        wrapperDiv.className = 'translate-wrapper';
-
-        if (connectWrapper) {
-            connectWrapper.parentNode.insertBefore(wrapperDiv, connectWrapper.nextSibling);
-        } else {
-            socialIcons.parentNode.insertBefore(wrapperDiv, socialIcons.nextSibling);
-        }
-
-        const label = document.createElement('p');
-        label.className = 'translate-label';
-        label.textContent = 'Read in another language';
-        wrapperDiv.appendChild(label);
-
-        const btnRow = document.createElement('div');
-        btnRow.className = 'translate-btn-row';
-        wrapperDiv.appendChild(btnRow);
-
-        const pageUrl = encodeURIComponent(window.location.href);
-
-        // DeepL button
-        const deeplBtn = document.createElement('a');
-        deeplBtn.className = 'translate-btn';
-        deeplBtn.innerHTML = '<i class="fas fa-language"></i> DeepL';
-        deeplBtn.href = `https://www.deepl.com/translator#en/id/${pageUrl}`;
-        deeplBtn.target = '_blank';
-        deeplBtn.rel = 'noopener';
-        deeplBtn.title = 'Translate with DeepL (most accurate)';
-        btnRow.appendChild(deeplBtn);
-
-        // Google Translate button
-        const gtBtn = document.createElement('a');
-        gtBtn.className = 'translate-btn translate-btn--secondary';
-        gtBtn.innerHTML = '<i class="fab fa-google"></i> Google';
-        gtBtn.href = `https://translate.google.com/translate?sl=en&tl=id&u=${pageUrl}`;
-        gtBtn.target = '_blank';
-        gtBtn.rel = 'noopener';
-        gtBtn.title = 'Translate with Google Translate';
-        btnRow.appendChild(gtBtn);
-    }
-
     // --- DYNAMIC POSTS & PAGINATION LOGIC ---
     
     // 1. Centralized Post Data
@@ -750,6 +707,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Expose for search.html
     window.allPosts = allPosts;
 
+    window._rerenderMap = window._rerenderMap || {};
+
     // 2. Pagination Function
     function renderPagination(posts, containerId, itemsPerPage) {
         const container = document.getElementById(containerId);
@@ -757,23 +716,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentPage = 1;
 
+        function getLang() {
+            return (window.LANG && window.LANG.current) || 'en';
+        }
+        function getT() {
+            return (window.LANG && window.LANG.ui) ? (window.LANG.ui[getLang()] || {}) : {};
+        }
+
         function displayList(page) {
+            const lang = getLang();
+            const T = getT();
             container.innerHTML = "";
             const start = (page - 1) * itemsPerPage;
-
-      const end = start + itemsPerPage;
+            const end = start + itemsPerPage;
             const paginatedItems = posts.slice(start, end);
 
             paginatedItems.forEach(item => {
+                const postTr = window.LANG && window.LANG.posts && window.LANG.posts[item.url];
+                const title = lang === 'id' && postTr && postTr.titleId ? postTr.titleId : item.title;
+                const excerpt = lang === 'id' && postTr && postTr.excerptId ? postTr.excerptId : item.excerpt;
+                const catKey = (item.category || '').toUpperCase();
+                const catDisplay = (T.categories && T.categories[catKey]) ? T.categories[catKey] : item.category;
+                const readMoreTxt = T.readMore || 'Read More';
+
                 const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
                         ${thumbHTML}
                         <div class="post-details">
-                            <div class="meta-cat">${item.category} • <span class="meta-date">${item.date}</span></div>
-                            <h2><a href="${item.url}">${item.title}</a></h2>
-                            <div class="excerpt"><p>${item.excerpt}</p></div>
-                            <a href="${item.url}" class="read-more">Read More</a>
+                            <div class="meta-cat">${catDisplay} • <span class="meta-date">${item.date}</span></div>
+                            <h2><a href="${item.url}">${title}</a></h2>
+                            <div class="excerpt"><p>${excerpt}</p></div>
+                            <a href="${item.url}" class="read-more">${readMoreTxt}</a>
                         </div>
                     </article>
                 `;
@@ -791,7 +765,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Previous Page Button
             if (page > 1) {
                 const prevBtn = document.createElement('button');
-                prevBtn.innerHTML = '&larr; Previous Page';
+                prevBtn.textContent = getT().prevPage || '← Previous Page';
                 prevBtn.className = 'read-more';
                 prevBtn.style.background = 'none';
                 prevBtn.style.border = 'none';
@@ -808,7 +782,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Next Page Button
             if (end < posts.length) {
                 const nextBtn = document.createElement('button');
-                nextBtn.innerHTML = 'Next Page &rarr;';
+                nextBtn.textContent = getT().nextPage || 'Next Page →';
                 nextBtn.className = 'read-more';
                 nextBtn.style.background = 'none';
                 nextBtn.style.border = 'none';
@@ -827,6 +801,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        window._rerenderMap[containerId] = function () { displayList(currentPage); };
         displayList(currentPage);
     }
 
@@ -885,7 +860,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnWrapper.style.display = 'none'; // Hidden by default
 
         const loadMoreBtn = document.createElement('button');
-        loadMoreBtn.innerText = 'Load More Articles';
+        loadMoreBtn.textContent = (window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'] && window.LANG.ui[window.LANG.current || 'en'].loadMore) || 'Load More Articles';
         // Styling
         loadMoreBtn.style.padding = '12px 30px';
         loadMoreBtn.style.backgroundColor = 'transparent';
@@ -918,19 +893,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // Insert button after the grid container
         relatedContainer.parentNode.insertBefore(btnWrapper, relatedContainer.nextSibling);
 
+        window._rerenderMap['related-posts-container'] = function () {
+            relatedContainer.innerHTML = '';
+            visibleCount = 0;
+            renderBatch();
+        };
+
         const renderBatch = () => {
+            const lang = (window.LANG && window.LANG.current) || 'en';
+            const T = (window.LANG && window.LANG.ui) ? (window.LANG.ui[lang] || {}) : {};
             const nextBatch = postsToShow.slice(visibleCount, visibleCount + itemsPerBatch);
-            
+
             nextBatch.forEach(item => {
+                const postTr = window.LANG && window.LANG.posts && window.LANG.posts[item.url];
+                const title = lang === 'id' && postTr && postTr.titleId ? postTr.titleId : item.title;
+                const excerpt = lang === 'id' && postTr && postTr.excerptId ? postTr.excerptId : item.excerpt;
+                const catKey = (item.category || '').toUpperCase();
+                const catDisplay = (T.categories && T.categories[catKey]) ? T.categories[catKey] : item.category;
+                const readMoreTxt = T.readMore || 'Read More';
                 const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
                         ${thumbHTML}
                         <div class="post-details">
-                            <div class="meta-cat">${item.category} • <span class="meta-date">${item.date}</span></div>
-                            <h2><a href="${item.url}">${item.title}</a></h2>
-                            <div class="excerpt"><p>${item.excerpt}</p></div>
-                            <a href="${item.url}" class="read-more">Read More</a>
+                            <div class="meta-cat">${catDisplay} • <span class="meta-date">${item.date}</span></div>
+                            <h2><a href="${item.url}">${title}</a></h2>
+                            <div class="excerpt"><p>${excerpt}</p></div>
+                            <a href="${item.url}" class="read-more">${readMoreTxt}</a>
                         </div>
                     </article>
                 `;
