@@ -405,6 +405,25 @@ document.addEventListener('DOMContentLoaded', function () {
             tocTitleEl.innerHTML = '<i class="fas fa-list-ul"></i> ' + T.tableOfContents;
         });
 
+        // Translate month names in article dates
+        var _months = {
+            'January': 'Januari', 'February': 'Februari', 'March': 'Maret',
+            'April': 'April', 'May': 'Mei', 'June': 'Juni',
+            'July': 'Juli', 'August': 'Agustus', 'September': 'September',
+            'October': 'Oktober', 'November': 'November', 'December': 'Desember'
+        };
+        document.querySelectorAll('.meta-date').forEach(function (el) {
+            var orig = el.getAttribute('data-date-en') || el.textContent.trim();
+            if (!el.getAttribute('data-date-en')) el.setAttribute('data-date-en', orig);
+            if (lang === 'id') {
+                var translated = orig;
+                Object.keys(_months).forEach(function (en) { translated = translated.replace(en, _months[en]); });
+                el.textContent = translated;
+            } else {
+                el.textContent = orig;
+            }
+        });
+
         // Reading time label (appended by script.js)
         document.querySelectorAll('.min-read-label').forEach(function (el) { el.textContent = T.minRead; });
 
