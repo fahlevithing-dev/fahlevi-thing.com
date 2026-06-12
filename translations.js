@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Article body bilingual toggle — articles with both lang="en" and lang="id" excerpt divs
         document.querySelectorAll('.excerpt[lang]').forEach(function (el) {
-            el.style.display = el.getAttribute('lang') === lang ? '' : 'none';
+            el.style.display = el.getAttribute('lang') === lang ? 'block' : 'none';
         });
 
         // 404 page content
@@ -400,9 +400,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var portWidgetH3 = document.querySelector('.portfolio-update-widget h3');
         if (portWidgetH3) portWidgetH3.textContent = T.portfolioUpdate;
 
-        // Table of Contents
-        var tocTitleEl = document.querySelector('.toc-title');
-        if (tocTitleEl) tocTitleEl.innerHTML = '<i class="fas fa-list-ul"></i> ' + T.tableOfContents;
+        // Table of Contents (each lang excerpt has its own TOC — update all)
+        document.querySelectorAll('.toc-title').forEach(function (tocTitleEl) {
+            tocTitleEl.innerHTML = '<i class="fas fa-list-ul"></i> ' + T.tableOfContents;
+        });
 
         // Reading time label (appended by script.js)
         document.querySelectorAll('.min-read-label').forEach(function (el) { el.textContent = T.minRead; });

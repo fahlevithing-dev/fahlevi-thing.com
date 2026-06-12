@@ -1322,101 +1322,98 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
-     // --- TABLE OF CONTENTS GENERATOR ---
-    const articleContent = document.querySelector('.excerpt');
-    if (articleContent) {
+    // --- TABLE OF CONTENTS GENERATOR ---
+    function _buildToc(articleContent) {
         const headings = articleContent.querySelectorAll('h3, h4');
-        
-        // Only generate TOC if there are at least 3 headings
-        if (headings.length >= 3) {
-            const tocContainer = document.createElement('div');
-            tocContainer.className = 'toc-container';
-            
-            const tocTitle = document.createElement('div');
-            tocTitle.className = 'toc-title';
-            const _tToc = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
-            tocTitle.innerHTML = '<i class="fas fa-list-ul"></i> ' + ((_tToc && _tToc.tableOfContents) || 'Table of Contents');
-            tocContainer.appendChild(tocTitle);
-            
-            const tocList = document.createElement('ul');
-            tocList.className = 'toc-list';
-            
-            headings.forEach((heading, index) => {
-                // Generate ID if missing
-                if (!heading.id) {
-                    const slug = heading.textContent
-                        .toLowerCase()
-                        .replace(/[^a-z0-9]+/g, '-')
-                        .replace(/(^-|-$)+/g, '');
-                    heading.id = slug || `heading-${index}`;
-                }
-                
-                const listItem = document.createElement('li');
-                // Add class for indentation based on tag name
-                if (heading.tagName.toLowerCase() === 'h4') {
-                    listItem.className = 'toc-h4';
-                }
-                
-                const link = document.createElement('a');
-                link.href = `#${heading.id}`;
-                link.textContent = heading.textContent;
-                
-                // Smooth scroll behavior with offset for sticky header
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const target = document.getElementById(heading.id);
-                    const headerOffset = 100; // Adjust for sticky header height
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        if (headings.length < 3) return;
 
-                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                    history.pushState(null, null, `#${heading.id}`);
-                });
-                
-                listItem.appendChild(link);
-                tocList.appendChild(listItem);
-            });
-            
-            tocContainer.appendChild(tocList);
-            
-            // Insert TOC before the first heading
-            if (headings.length > 0) {
-                headings[0].parentNode.insertBefore(tocContainer, headings[0]);
+        const tocContainer = document.createElement('div');
+        tocContainer.className = 'toc-container';
+
+        const tocTitle = document.createElement('div');
+        tocTitle.className = 'toc-title';
+        const _tToc = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
+        tocTitle.innerHTML = '<i class="fas fa-list-ul"></i> ' + ((_tToc && _tToc.tableOfContents) || 'Table of Contents');
+        tocContainer.appendChild(tocTitle);
+
+        const tocList = document.createElement('ul');
+        tocList.className = 'toc-list';
+
+        headings.forEach((heading, index) => {
+            if (!heading.id) {
+                const slug = heading.textContent
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/(^-|-$)+/g, '');
+                heading.id = slug || `heading-${index}`;
             }
 
-            // --- TOC SCROLL SPY (ACTIVE HIGHLIGHT) ---
-            window.addEventListener('scroll', () => {
-                let current = '';
-                const headerOffset = 120; // Sesuaikan dengan tinggi sticky header Anda
+            const listItem = document.createElement('li');
+            if (heading.tagName.toLowerCase() === 'h4') {
+                listItem.className = 'toc-h4';
+            }
 
-                headings.forEach(heading => {
-                    const headingPosition = heading.getBoundingClientRect().top;
-                    if (headingPosition <= headerOffset) {
-                        current = heading.id;
-                    }
-                });
+            const link = document.createElement('a');
+            link.href = `#${heading.id}`;
+            link.textContent = heading.textContent;
 
-                const tocLinks = tocList.querySelectorAll('a');
-                tocLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (current && link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.getElementById(heading.id);
+                const headerOffset = 100;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                history.pushState(null, null, `#${heading.id}`);
             });
+
+            listItem.appendChild(link);
+            tocList.appendChild(listItem);
+        });
+
+        tocContainer.appendChild(tocList);
+
+        if (headings.length > 0) {
+            headings[0].parentNode.insertBefore(tocContainer, headings[0]);
         }
+
+        // --- TOC SCROLL SPY (ACTIVE HIGHLIGHT) ---
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const headerOffset = 120;
+            headings.forEach(heading => {
+                if (heading.getBoundingClientRect().top <= headerOffset) {
+                    current = heading.id;
+                }
+            });
+            tocList.querySelectorAll('a').forEach(link => {
+                link.classList.remove('active');
+                if (current && link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // Build one TOC per lang excerpt (bilingual articles), or single TOC for plain articles
+    const _langExcerpts = document.querySelectorAll('.excerpt[lang]');
+    if (_langExcerpts.length > 0) {
+        _langExcerpts.forEach(_buildToc);
+    } else {
+        const _singleExcerpt = document.querySelector('.excerpt');
+        if (_singleExcerpt) _buildToc(_singleExcerpt);
     }
 
     // --- READING TIME ESTIMATOR ---
     const postDetails = document.querySelector('.post-details');
     if (postDetails) {
         const readMore = postDetails.querySelector('.read-more');
-        const excerpt = postDetails.querySelector('.excerpt');
+        const excerpt = postDetails.querySelector('.excerpt[lang="en"]') || postDetails.querySelector('.excerpt');
         const metaCat = postDetails.querySelector('.meta-cat');
 
         // Only calculate for single post pages (no read-more link, has excerpt content)
         if (!readMore && excerpt && metaCat) {
-            const text = excerpt.innerText;
+            const text = excerpt.textContent;
             const wpm = 200;
             const words = text.trim().length === 0 ? 0 : text.trim().split(/\s+/).length;
             const readingTime = Math.ceil(words / wpm);
