@@ -1557,37 +1557,6 @@ footer {
     gap: 8px;
 }
 
-.translate-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border: 1.5px solid var(--accent-blue);
-    color: var(--accent-blue);
-    border-radius: 4px;
-    background: transparent;
-    transition: all 0.25s ease;
-    text-decoration: none;
-}
-
-.translate-btn:hover {
-    background-color: var(--accent-blue);
-    color: #fff;
-}
-
-.translate-btn--secondary {
-    border-color: var(--border-color);
-    color: var(--text-muted);
-}
-
-.translate-btn--secondary:hover {
-    background-color: var(--text-heading);
-    border-color: var(--text-heading);
-    color: #fff;
-}
 
 /* --- SIDEBAR LANGUAGE SWITCH BUTTONS --- */
 .sidebar-lang-btn {

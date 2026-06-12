@@ -254,9 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
         });
 
-        // Close when clicking outside
+        // Close when clicking outside (exclude search-box and nav-links so typing doesn't close the menu)
+        const searchBoxEl = document.querySelector('.search-box');
         document.addEventListener('click', (e) => {
-            if (!menuPanel.contains(e.target) && !hamburger.contains(e.target)) {
+            const inside = menuPanel.contains(e.target)
+                || hamburger.contains(e.target)
+                || (searchBoxEl && searchBoxEl.contains(e.target))
+                || (navLinks && navLinks.contains(e.target));
+            if (!inside) {
                 if (menuPanel.classList.contains('active') || (navLinks && navLinks.classList.contains('active'))) {
                     closeMenu();
                 }
