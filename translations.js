@@ -20,6 +20,35 @@ window.LANG = (function () {
                 privacyPolicy: 'Privacy Policy',
                 prevPage: '← Previous Page',
                 nextPage: 'Next Page →',
+                insights: 'Insights',
+                about: 'About',
+                searchResults: 'Search Results',
+                searchResultsFor: 'Showing results for:',
+                noResults: 'No articles found matching your search.',
+                pleaseSearch: 'Please enter a search term.',
+                backToHome: 'Back to Home',
+                pageNotFound: 'Page Not Found',
+                pageNotFoundMsg: 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.',
+                getInTouch: 'Get in Touch',
+                namePlaceholder: 'Your Name',
+                emailPlaceholder: 'Your Email, Contact or Social Media',
+                messagePlaceholder: 'Your Message',
+                sendMessage: 'Send Message',
+                portfolioTitle: 'Investment Portfolio',
+                portfolioUpdate: 'Portfolio Update',
+                tableOfContents: 'Table of Contents',
+                minRead: 'min read',
+                lastUpdated: 'Last Updated:',
+                linkCopied: 'Link Copied to Clipboard',
+                copy: 'Copy',
+                copied: 'Copied!',
+                stockCats: {
+                    'Property Developer': 'Property Developer',
+                    'Nickel Mining': 'Nickel Mining',
+                    'Textile & Garment': 'Textile & Garment',
+                    'Energy & Minerals': 'Energy & Minerals',
+                    'Bauxite Mining': 'Bauxite Mining'
+                },
                 categories: {
                     ALL: 'ALL',
                     INVESTMENT: 'INVESTMENT',
@@ -48,6 +77,35 @@ window.LANG = (function () {
                 privacyPolicy: 'Kebijakan Privasi',
                 prevPage: '← Halaman Sebelumnya',
                 nextPage: 'Halaman Berikutnya →',
+                insights: 'Wawasan',
+                about: 'Tentang',
+                searchResults: 'Hasil Pencarian',
+                searchResultsFor: 'Menampilkan hasil untuk:',
+                noResults: 'Tidak ada artikel yang cocok dengan pencarian Anda.',
+                pleaseSearch: 'Silakan masukkan kata kunci pencarian.',
+                backToHome: 'Kembali ke Beranda',
+                pageNotFound: 'Halaman Tidak Ditemukan',
+                pageNotFoundMsg: 'Halaman yang Anda cari mungkin telah dihapus, berganti nama, atau untuk sementara tidak tersedia.',
+                getInTouch: 'Hubungi Saya',
+                namePlaceholder: 'Nama Anda',
+                emailPlaceholder: 'Email, Kontak, atau Media Sosial Anda',
+                messagePlaceholder: 'Pesan Anda',
+                sendMessage: 'Kirim Pesan',
+                portfolioTitle: 'Portofolio Investasi',
+                portfolioUpdate: 'Update Portofolio',
+                tableOfContents: 'Daftar Isi',
+                minRead: 'mnt baca',
+                lastUpdated: 'Terakhir Diperbarui:',
+                linkCopied: 'Tautan Disalin ke Papan Klip',
+                copy: 'Salin',
+                copied: 'Disalin!',
+                stockCats: {
+                    'Property Developer': 'Pengembang Properti',
+                    'Nickel Mining': 'Tambang Nikel',
+                    'Textile & Garment': 'Tekstil & Garmen',
+                    'Energy & Minerals': 'Energi & Mineral',
+                    'Bauxite Mining': 'Tambang Bauksit'
+                },
                 categories: {
                     ALL: 'SEMUA',
                     INVESTMENT: 'INVESTASI',
@@ -240,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var privacyLink = document.querySelector('.footer-legal a');
         if (privacyLink) privacyLink.textContent = T.privacyPolicy;
 
-        // Section headings
+        // Section headings (h3 + featured-label)
         var headingMap = {
             'Featured': 'featured', 'Pilihan Editor': 'featured',
             'Recent Posts': 'recentPosts', 'Artikel Terbaru': 'recentPosts',
@@ -250,6 +308,19 @@ document.addEventListener('DOMContentLoaded', function () {
             var txt = el.textContent.trim();
             var key = headingMap[txt];
             if (key) el.textContent = T[key];
+        });
+
+        // Page-level h1/h2 headings (Insights, About, Search Results, 404)
+        var pageHeadingMap = {
+            'Insights': 'insights', 'Wawasan': 'insights',
+            'About': 'about', 'Tentang': 'about',
+            'Search Results': 'searchResults', 'Hasil Pencarian': 'searchResults',
+            'Page Not Found': 'pageNotFound', 'Halaman Tidak Ditemukan': 'pageNotFound'
+        };
+        document.querySelectorAll('h1, h2').forEach(function (el) {
+            var txt = el.textContent.trim();
+            var key = pageHeadingMap[txt];
+            if (key && T[key]) el.textContent = T[key];
         });
 
         // Category filter buttons (insights page)
@@ -269,6 +340,69 @@ document.addEventListener('DOMContentLoaded', function () {
         // Re-render dynamic containers (pagination, related posts)
         var map = window._rerenderMap || {};
         Object.keys(map).forEach(function (k) { map[k](); });
+
+        // 404 page content
+        var notFoundMsg = document.getElementById('not-found-msg');
+        if (notFoundMsg) notFoundMsg.textContent = T.pageNotFoundMsg;
+        var notFoundLink = document.getElementById('not-found-link');
+        if (notFoundLink) notFoundLink.textContent = T.backToHome;
+
+        // Search page
+        var searchDisplay = document.getElementById('search-query-display');
+        if (searchDisplay) {
+            var _q = new URLSearchParams(window.location.search).get('q');
+            searchDisplay.textContent = _q ? (T.searchResultsFor + ' "' + _q + '"') : T.pleaseSearch;
+        }
+        var noResultsP = document.querySelector('#no-results p');
+        if (noResultsP) noResultsP.textContent = T.noResults;
+        var noResultsA = document.querySelector('#no-results a[href="/"]');
+        if (noResultsA) noResultsA.textContent = T.backToHome;
+
+        // Contact form (about page)
+        var contactH3 = document.querySelector('.contact-section h3');
+        if (contactH3) contactH3.textContent = T.getInTouch;
+        var nameInput = document.querySelector('input#name');
+        if (nameInput) nameInput.placeholder = T.namePlaceholder;
+        var emailInput = document.querySelector('input#email');
+        if (emailInput) emailInput.placeholder = T.emailPlaceholder;
+        var msgTextarea = document.querySelector('textarea#message');
+        if (msgTextarea) msgTextarea.placeholder = T.messagePlaceholder;
+        var submitBtn = document.querySelector('.submit-btn');
+        if (submitBtn && !submitBtn.disabled) submitBtn.textContent = T.sendMessage;
+
+        // Portfolio overlay
+        var overlayTitle = document.querySelector('.overlay-title');
+        if (overlayTitle) overlayTitle.textContent = T.portfolioTitle;
+        document.querySelectorAll('.stock-cat').forEach(function (el) {
+            var enCat = el.getAttribute('data-cat-en') || el.textContent.trim();
+            if (!el.getAttribute('data-cat-en')) el.setAttribute('data-cat-en', enCat);
+            if (T.stockCats && T.stockCats[enCat]) el.textContent = T.stockCats[enCat];
+        });
+
+        // Portfolio sidebar widget
+        var portWidgetH3 = document.querySelector('.portfolio-update-widget h3');
+        if (portWidgetH3) portWidgetH3.textContent = T.portfolioUpdate;
+
+        // Table of Contents
+        var tocTitleEl = document.querySelector('.toc-title');
+        if (tocTitleEl) tocTitleEl.innerHTML = '<i class="fas fa-list-ul"></i> ' + T.tableOfContents;
+
+        // Reading time label (appended by script.js)
+        document.querySelectorAll('.min-read-label').forEach(function (el) { el.textContent = T.minRead; });
+
+        // Last Updated label (appended by script.js)
+        document.querySelectorAll('.last-updated-label').forEach(function (el) { el.textContent = T.lastUpdated; });
+
+        // Toast notification (not visible when translating)
+        var toastEl = document.getElementById('toast-notification');
+        if (toastEl && !toastEl.classList.contains('show')) {
+            toastEl.innerHTML = '<i class="fas fa-check-circle"></i> ' + T.linkCopied;
+        }
+
+        // Copy code buttons (not in copied state)
+        document.querySelectorAll('.copy-code-btn:not(.copied)').forEach(function (btn) {
+            btn.innerHTML = '<i class="fas fa-copy"></i> ' + T.copy;
+        });
 
         // Update sidebar widget label
         var sidebarLangLabel = document.querySelector('.lang-switch-label');

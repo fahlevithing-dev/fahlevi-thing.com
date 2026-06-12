@@ -140,13 +140,17 @@
             const container = document.getElementById(‘search-results-container’);
             const noResults = document.getElementById(‘no-results’);
 
+            const _lang = window.LANG && window.LANG.current || ‘en’;
+            const _T = window.LANG && window.LANG.ui && window.LANG.ui[_lang] || {};
+            const _posts = window.LANG && window.LANG.posts || {};
+
             if (!query) {
-                displayElement.textContent = "Please enter a search term.";
+                displayElement.textContent = _T.pleaseSearch || "Please enter a search term.";
                 noResults.style.display = ‘block’;
                 return;
             }
 
-            displayElement.textContent = `Showing results for: "${query}"`;
+            displayElement.textContent = `${_T.searchResultsFor || ‘Showing results for:’} "${query}"`;
 
             const posts = window.allPosts || [];
             const lowerQuery = query.toLowerCase();
@@ -160,17 +164,23 @@
 
             if (results.length > 0) {
                 results.forEach(item => {
+                    const postTr = _posts[item.url];
+                    const title = _lang === ‘id’ && postTr && postTr.titleId ? postTr.titleId : item.title;
+                    const excerpt = _lang === ‘id’ && postTr && postTr.excerptId ? postTr.excerptId : item.excerpt;
+                    const catKey = (item.category || ‘’).toUpperCase();
+                    const catDisplay = (_T.categories && _T.categories[catKey]) ? _T.categories[catKey] : item.category;
+                    const readMoreTxt = _T.readMore || ‘Read More’;
                     const thumbHTML = item.image
-                        ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"></div>`
+                        ? `<div class="post-thumb"><img src="${item.image}" alt="${title}"></div>`
                         : ‘’;
                     container.insertAdjacentHTML(‘beforeend’, `
                         <article class="post-item">
                             ${thumbHTML}
                             <div class="post-details">
-                                <div class="meta-cat">${item.category}${item.date ? ‘ • ‘ + item.date : ‘’}</div>
-                                <h2><a href="/${item.url}">${item.title}</a></h2>
-                                <div class="excerpt"><p>${item.excerpt}</p></div>
-                                <a href="/${item.url}" class="read-more">Read More</a>
+                                <div class="meta-cat">${catDisplay}${item.date ? ‘ • ‘ + item.date : ‘’}</div>
+                                <h2><a href="/${item.url}">${title}</a></h2>
+                                <div class="excerpt"><p>${excerpt}</p></div>
+                                <a href="/${item.url}" class="read-more">${readMoreTxt}</a>
                             </div>
                         </article>
                     `);

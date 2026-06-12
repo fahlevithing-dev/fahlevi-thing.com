@@ -1126,9 +1126,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Inject Toast HTML jika belum ada
         if (!document.getElementById('toast-notification')) {
+            const _tToast = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
             const toastHTML = `
                 <div id="toast-notification" class="toast-notification">
-                    <i class="fas fa-check-circle"></i> Link Copied to Clipboard
+                    <i class="fas fa-check-circle"></i> ${(_tToast && _tToast.linkCopied) || 'Link Copied to Clipboard'}
                 </div>
             `;
             document.body.insertAdjacentHTML('beforeend', toastHTML);
@@ -1158,7 +1159,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (copyBtn) {
             copyBtn.addEventListener('click', () => {
                 navigator.clipboard.writeText(url).then(() => {
-                    toast.innerHTML = '<i class="fas fa-check-circle"></i> Link Copied to Clipboard';
+                    const _tC = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
+                    toast.innerHTML = `<i class="fas fa-check-circle"></i> ${(_tC && _tC.linkCopied) || 'Link Copied to Clipboard'}`;
                     // Tampilkan Toast
                     toast.classList.add('show');
                     
@@ -1332,7 +1334,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const tocTitle = document.createElement('div');
             tocTitle.className = 'toc-title';
-            tocTitle.innerHTML = '<i class="fas fa-list-ul"></i> Table of Contents';
+            const _tToc = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
+            tocTitle.innerHTML = '<i class="fas fa-list-ul"></i> ' + ((_tToc && _tToc.tableOfContents) || 'Table of Contents');
             tocContainer.appendChild(tocTitle);
             
             const tocList = document.createElement('ul');
@@ -1419,7 +1422,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const readingTime = Math.ceil(words / wpm);
             
             if (readingTime > 0) {
-                metaCat.textContent += ` • ${readingTime} min read`;
+                const _tRt = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
+                const _minReadSpan = document.createElement('span');
+                _minReadSpan.className = 'min-read-label';
+                _minReadSpan.textContent = (_tRt && _tRt.minRead) || 'min read';
+                metaCat.appendChild(document.createTextNode(` • ${readingTime} `));
+                metaCat.appendChild(_minReadSpan);
             }
         }
     }
@@ -1471,7 +1479,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     lastUpdatedDiv.style.color = 'var(--text-muted)';
                     lastUpdatedDiv.style.fontStyle = 'italic';
                     lastUpdatedDiv.style.marginTop = '5px';
-                    lastUpdatedDiv.innerHTML = `<i class="fas fa-history"></i> Last Updated: ${formattedDate}`;
+                    const _tLu = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
+                    lastUpdatedDiv.innerHTML = `<i class="fas fa-history"></i> <span class="last-updated-label">${(_tLu && _tLu.lastUpdated) || 'Last Updated:'}</span> ${formattedDate}`;
 
                     // Masukkan ke bawah kategori tulisan
                     metaCat.parentNode.insertBefore(lastUpdatedDiv, metaCat.nextSibling);
@@ -1492,20 +1501,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create button
         const button = document.createElement('button');
         button.className = 'copy-code-btn';
-        button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+        const _tCopy = () => window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
+        button.innerHTML = `<i class="fas fa-copy"></i> ${(_tCopy() && _tCopy().copy) || 'Copy'}`;
         button.setAttribute('aria-label', 'Copy code');
 
         // Copy Logic
         button.addEventListener('click', () => {
             const code = block.querySelector('code') || block;
             const text = code.innerText;
+            const _t = _tCopy();
 
             navigator.clipboard.writeText(text).then(() => {
-                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.innerHTML = `<i class="fas fa-check"></i> ${(_t && _t.copied) || 'Copied!'}`;
                 button.classList.add('copied');
-                
+
                 setTimeout(() => {
-                    button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    const _t2 = _tCopy();
+                    button.innerHTML = `<i class="fas fa-copy"></i> ${(_t2 && _t2.copy) || 'Copy'}`;
                     button.classList.remove('copied');
                 }, 2000);
             }).catch(err => console.error('Failed to copy:', err));
