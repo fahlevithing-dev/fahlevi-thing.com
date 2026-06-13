@@ -123,7 +123,7 @@ window.LANG = (function () {
         posts: {
             'spacex-gojek-playbook': {
                 titleId: 'Apakah SpaceX Mengikuti Buku Pedoman Gojek?',
-                excerptId: 'SpaceX baru saja meraih $75 miliar dengan valuasi $1,77 triliun — sementara mencatat kerugian $4,9 miliar pada 2025. Ini bukan kali pertama pasar memberikan valuasi setinggi itu kepada platform yang merugi. Indonesia menyaksikan buku pedoman yang sama empat tahun lebih awal melalui GoTo.'
+                excerptId: 'SpaceX meraih $75 miliar dengan valuasi $1,77 triliun sambil mengungkapkan kerugian $4,9 miliar. Indonesia menyaksikan buku pedoman yang sangat serupa bersama GoTo pada 2022. Kedua kisah ini memiliki banyak kemiripan — namun juga perbedaan yang krusial.'
             },
             'how-gojek-got-big': {
                 titleId: 'Bagaimana Gojek Tumbuh Besar dengan Menjual Putaran Berikutnya, Bukan Laba Berikutnya',
