@@ -854,6 +854,14 @@ figure img.crisp-image {
     image-rendering: crisp-edges;
 }
 
+/* Full-width article header image */
+figure img.full-width-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
 /* Class untuk membuat tampilan screenshot aplikasi (mobile) terlihat lebih profesional */
 figure img.mobile-screenshot {
     max-width: 400px;
