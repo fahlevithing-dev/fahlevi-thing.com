@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "INVESTMENT",
             date: "June 12, 2026",
             excerpt: "SpaceX just raised $75 billion at a $1.77 trillion valuation — while losing $4.9 billion in 2025. It is not the first time the market has rewarded a loss-making platform this richly. Indonesia watched the same playbook four years earlier with GoTo.",
-            image: ""
+            image: "images/spacex.jpg"
         },
         {
             title: "How Gojek Got Big by Selling the Next Round, Not the Next Profit",
