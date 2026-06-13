@@ -121,6 +121,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'spacex-gojek-playbook': {
+                titleId: 'Apakah SpaceX Mengikuti Buku Pedoman Gojek?',
+                excerptId: 'SpaceX baru saja meraih $75 miliar dengan valuasi $1,77 triliun — sementara mencatat kerugian $4,9 miliar pada 2025. Ini bukan kali pertama pasar memberikan valuasi setinggi itu kepada platform yang merugi. Indonesia menyaksikan buku pedoman yang sama empat tahun lebih awal melalui GoTo.'
+            },
             'how-gojek-got-big': {
                 titleId: 'Bagaimana Gojek Tumbuh Besar dengan Menjual Putaran Berikutnya, Bukan Laba Berikutnya',
                 excerptId: 'Gojek merugi hampir setiap tahun, namun valuasinya tumbuh dari $1,3 miliar menjadi $31 miliar saat IPO. Inilah bagaimana sebuah startup menjual putaran pendanaan berikutnya alih-alih keuntungan berikutnya — dan apa yang sesungguhnya diajarkan kisah Amazon kepada kita.'
@@ -441,12 +445,6 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.innerHTML = '<i class="fas fa-copy"></i> ' + T.copy;
         });
 
-        // Update sidebar widget label
-        var sidebarLangLabel = document.querySelector('.lang-switch-label');
-        if (sidebarLangLabel) {
-            sidebarLangLabel.textContent = lang === 'id' ? 'BACA DALAM BAHASA LAIN' : 'READ IN ANOTHER LANGUAGE';
-        }
-
         // Update all lang toggle buttons (sidebar + nav fallback)
         document.querySelectorAll('.lang-btn, .sidebar-lang-btn').forEach(function (btn) {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
@@ -511,11 +509,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Primary: inject in sidebar after .connect-wrapper (same position as old DeepL widget)
             var wrapper = document.createElement('div');
             wrapper.className = 'translate-wrapper lang-switch-widget';
-
-            var label = document.createElement('p');
-            label.className = 'translate-label lang-switch-label';
-            label.textContent = window.LANG.current === 'id' ? 'BACA DALAM BAHASA LAIN' : 'READ IN ANOTHER LANGUAGE';
-            wrapper.appendChild(label);
 
             var btnRow = document.createElement('div');
             btnRow.className = 'translate-btn-row';

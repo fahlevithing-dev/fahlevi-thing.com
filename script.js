@@ -466,6 +466,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Is SpaceX Following Gojek's Playbook?",
+            url: "spacex-gojek-playbook",
+            category: "INVESTMENT",
+            date: "June 12, 2026",
+            excerpt: "SpaceX just raised $75 billion at a $1.77 trillion valuation — while losing $4.9 billion in 2025. It is not the first time the market has rewarded a loss-making platform this richly. Indonesia watched the same playbook four years earlier with GoTo.",
+            image: ""
+        },
+        {
             title: "How Gojek Got Big by Selling the Next Round, Not the Next Profit",
             url: "how-gojek-got-big",
             category: "INVESTMENT",
