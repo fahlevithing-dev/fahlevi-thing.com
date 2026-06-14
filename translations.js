@@ -562,7 +562,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     injectLangToggle();
 
-    if (window.LANG.current === 'id') {
-        applyLanguage('id');
-    }
+    applyLanguage(window.LANG.current);
 });
