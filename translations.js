@@ -121,6 +121,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'tesla-playbook': {
+                titleId: 'Buku Pedoman Tesla',
+                excerptId: 'Tesla bernilai $1,5 triliun di atas laba yang terus menyusut. Inilah buku pedomannya — lebih tua dari GoTo, lebih tua dari Uber, ditulis pertama kali oleh Amazon — yang memungkinkan sebuah perusahaan menguasai valuasi bertahun-tahun sebelum laba itu tiba.'
+            },
             'spacex-gojek-playbook': {
                 titleId: 'Apakah SpaceX Mengikuti Buku Pedoman Gojek?',
                 excerptId: 'SpaceX meraih $75 miliar dengan valuasi $1,77 triliun sambil mengungkapkan kerugian $4,9 miliar. Indonesia menyaksikan buku pedoman yang sangat serupa bersama GoTo pada 2022. Kedua kisah ini memiliki banyak kemiripan — namun juga perbedaan yang krusial.'

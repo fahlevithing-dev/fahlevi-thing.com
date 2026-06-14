@@ -466,6 +466,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "The Tesla Playbook",
+            url: "tesla-playbook",
+            category: "INVESTMENT",
+            date: "June 13, 2026",
+            excerpt: "Tesla is worth $1.5 trillion on shrinking profits. This is the playbook — older than GoTo, older than Uber, written first by Amazon — that lets a company command a valuation priced years ahead of its earnings.",
+            image: "images/tesla.jpeg"
+        },
+        {
             title: "Is SpaceX Following Gojek's Playbook?",
             url: "spacex-gojek-playbook",
             category: "INVESTMENT",
