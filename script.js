@@ -141,11 +141,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const _preTitle = document.querySelector('.pre-title');
     if (mainHeader) {
         let _scrollTicking = false;
+        let _headerScrolled = false;
         window.addEventListener('scroll', () => {
             if (!_scrollTicking) {
                 requestAnimationFrame(() => {
                     const y = window.scrollY;
-                    mainHeader.classList.toggle('scrolled', y > 60);
+                    // Hysteresis: add scrolled at 80px, remove only below 40px
+                    // prevents rapid toggling when hovering near threshold
+                    if (!_headerScrolled && y > 80) {
+                        _headerScrolled = true;
+                        mainHeader.classList.add('scrolled');
+                    } else if (_headerScrolled && y < 40) {
+                        _headerScrolled = false;
+                        mainHeader.classList.remove('scrolled');
+                    }
                     if (_preTitle) _preTitle.classList.toggle('hidden', y > 20);
                     _scrollTicking = false;
                 });
