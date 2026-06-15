@@ -1,9 +1,8 @@
 // === EN/ID BILINGUAL SYSTEM ===
 
 window.LANG = (function () {
-    var stored = typeof localStorage !== 'undefined' ? localStorage.getItem('lang') : null;
     return {
-        current: stored || 'en',
+        current: 'en',
         ui: {
             en: {
                 tagline: 'a Reza POV',
@@ -258,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function applyLanguage(lang) {
         if (lang !== 'en' && lang !== 'id') return;
         window.LANG.current = lang;
-        localStorage.setItem('lang', lang);
 
         var T = window.LANG.ui[lang];
 
