@@ -7,7 +7,16 @@
       "WebFetch(domain:cdnjs.cloudflare.com)",
       "WebSearch",
       "WebFetch(domain:cdnjs.com)",
-      "Bash(python -)"
+      "Bash(python -)",
+      "Bash(node --check d:/Fahlevithing/translations.js)",
+      "Bash(node --check d:/Fahlevithing/script.js)",
+      "Bash(node --check translations.js)",
+      "Bash(grep -v \"^[0-9]*:.*\\\\/\\\\*\")",
+      "Bash(sed -n '1415,1430p' script.js)",
+      "Bash(sed -n '1465,1480p' script.js)",
+      "Bash(xargs grep -L 'lang=\"id\"')",
+      "Bash(python -c ' *)",
+      "PowerShell(cd d:\\\\Fahlevithing; $content = Get-Content 'echoes-beneath-the-thames.html' -Raw -Encoding UTF8; $updated = $content -replace 'rel=\"noopener\">', 'rel=\"noopener noreferrer\">'; if \\($content -ne $updated\\) { [System.IO.File]::WriteAllText\\(\"$PWD\\\\echoes-beneath-the-thames.html\", $updated, [System.Text.UTF8Encoding]::new\\($false\\)\\); Write-Output \"Fixed echoes-beneath-the-thames.html\" } else { Write-Output \"No change needed\" })"
     ]
   }
 }
