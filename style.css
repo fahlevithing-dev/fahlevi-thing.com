@@ -1150,16 +1150,22 @@ footer {
 }
 
 /* --- SPOTIFY LINKS --- */
-.spotify-link {
-    color: var(--accent-navy);
+.spotify-link,
+a.spotify-link,
+.excerpt .spotify-link,
+.entry-content .spotify-link {
+    color: var(--accent-navy) !important;
     font-weight: 700;
     text-decoration: none;
-    border-bottom: 1px dotted #007bff;
+    border-bottom: 1px dotted currentColor;
     transition: 0.3s;
+    cursor: pointer;
+    pointer-events: auto;
 }
-.spotify-link:hover {
-    color: #122A52;
-    border-bottom: 1px solid #0056b3;
+.spotify-link:hover,
+a.spotify-link:hover {
+    opacity: 0.75;
+    border-bottom-style: solid;
 }
 
 .footer-legal {
