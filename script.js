@@ -86,14 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         preTitle.textContent = 'you know nothing, reza?';
         brandName.parentNode.insertBefore(preTitle, brandName);
 
-        // Hide pre-title on scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                preTitle.classList.add('hidden');
-            } else {
-                preTitle.classList.remove('hidden');
-            }
-        });
     }
 
     // --- DARK MODE TOGGLE ---
@@ -146,14 +138,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- HEADER SCROLL EFFECT ---
     const mainHeader = document.querySelector('.main-header');
+    const _preTitle = document.querySelector('.pre-title');
     if (mainHeader) {
+        let _scrollTicking = false;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 80) {
-                mainHeader.classList.add('scrolled');
-            } else {
-                mainHeader.classList.remove('scrolled');
+            if (!_scrollTicking) {
+                requestAnimationFrame(() => {
+                    const y = window.scrollY;
+                    mainHeader.classList.toggle('scrolled', y > 60);
+                    if (_preTitle) _preTitle.classList.toggle('hidden', y > 20);
+                    _scrollTicking = false;
+                });
+                _scrollTicking = true;
             }
-        });
+        }, { passive: true });
     }
 
     // --- EMAILJS CONFIGURATION ---

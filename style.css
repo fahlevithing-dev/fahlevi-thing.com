@@ -121,11 +121,13 @@ ul { list-style: none; }
     padding: 48px 0 18px;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     background: var(--bg-header);
-    transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    transition: background 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0,0.2,1);
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+    transform: translateZ(0);
+    will-change: padding, background;
 }
 
 .main-header.scrolled {
@@ -153,10 +155,12 @@ ul { list-style: none; }
     font-weight: 900;
     letter-spacing: 8px;
     margin-bottom: 4px;
-    transition: opacity 0.3s ease, max-height 0.4s ease;
+    transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), max-height 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1), margin 0.35s cubic-bezier(0.4,0,0.2,1);
     overflow: hidden;
     max-height: 80px;
     opacity: 1;
+    transform: translateY(0);
+    will-change: transform, opacity;
 }
 
 .brand-name a { color: var(--text-heading); }
@@ -226,14 +230,17 @@ ul { list-style: none; }
     padding: 4px 14px;
     border-radius: 20px;
     margin-bottom: 10px;
-    transition: all 0.3s ease;
+    transition: opacity 0.25s cubic-bezier(0.4,0,0.2,1), transform 0.25s cubic-bezier(0.4,0,0.2,1), max-height 0.3s cubic-bezier(0.4,0,0.2,1);
     max-height: 30px;
     opacity: 1;
     overflow: hidden;
+    transform: translateY(0);
+    will-change: transform, opacity;
 }
 
 .pre-title.hidden {
     opacity: 0;
+    transform: translateY(-4px);
     max-height: 0;
 }
 
@@ -247,7 +254,7 @@ ul { list-style: none; }
     display: inline-block;
     position: relative;
     letter-spacing: 0.5px;
-    transition: font-size 0.3s ease, margin 0.3s ease;
+    transition: font-size 0.35s cubic-bezier(0.4,0,0.2,1), margin 0.35s cubic-bezier(0.4,0,0.2,1), color 0.35s cubic-bezier(0.4,0,0.2,1);
 }
 
 /* Garis dekorasi di bawah tagline */
@@ -267,6 +274,7 @@ ul { list-style: none; }
    ===================================================== */
 .main-header.scrolled .brand-name {
     opacity: 0;
+    transform: translateY(-6px);
     max-height: 0;
     overflow: hidden;
     margin: 0;
@@ -384,17 +392,25 @@ ul { list-style: none; }
     margin-left: auto;
 }
 
-/* Hide nav links and search in compact bar */
+/* Fade out nav and search when scrolled */
 .main-header.scrolled .navbar {
-    display: none;
-}
-
-.main-header.scrolled .nav-links {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .main-header.scrolled .search-box {
-    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    max-width: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 /* Hamburger always visible when scrolled */
@@ -506,6 +522,11 @@ ul { list-style: none; }
 
 .navbar {
     flex: 1;
+    transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), visibility 0.3s cubic-bezier(0.4,0,0.2,1), max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+    max-height: 200px;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
 }
 
 .nav-links {
@@ -539,6 +560,10 @@ ul { list-style: none; }
 /* --- SEARCH BAR DENGAN MATA --- */
 .search-box {
     position: relative;
+    transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1), visibility 0.3s cubic-bezier(0.4,0,0.2,1), max-width 0.35s cubic-bezier(0.4,0,0.2,1);
+    opacity: 1;
+    visibility: visible;
+    max-width: 300px;
 }
 
 .search-box input {
