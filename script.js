@@ -190,43 +190,54 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     };
 
-    // Toggle Menu Mobile
+    // --- FULLSCREEN OVERLAY MENU ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    // Build a single dropdown panel (used when scrolled on all viewports)
-    const menuPanel = document.createElement('div');
-    menuPanel.className = 'scrolled-menu-panel';
-    const _T = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
-    const _panelPlaceholder = (_T && _T.searchPlaceholder) || 'Search...';
-    menuPanel.innerHTML = `
-        <ul class="panel-nav-links">
-            ${navLinks ? navLinks.innerHTML : ''}
-        </ul>
-        <div class="panel-search">
+    const _fmT = window.LANG && window.LANG.ui && window.LANG.ui[window.LANG.current || 'en'];
+    const _fmPlaceholder = (_fmT && _fmT.searchPlaceholder) || 'Search...';
+    const _fmNavHtml = navLinks ? navLinks.innerHTML : '';
+
+    const fullscreenMenu = document.createElement('div');
+    fullscreenMenu.className = 'fullscreen-menu';
+    fullscreenMenu.setAttribute('role', 'dialog');
+    fullscreenMenu.setAttribute('aria-modal', 'true');
+    fullscreenMenu.setAttribute('aria-label', 'Navigation menu');
+    fullscreenMenu.innerHTML = `
+        <button class="fm-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        <nav class="fm-nav">
+            <ul>${_fmNavHtml}</ul>
+        </nav>
+        <div class="fm-search">
             <form role="search" aria-label="Search articles">
-                <input type="text" name="q" placeholder="${_panelPlaceholder}" aria-label="Search">
-                <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" placeholder="${_fmPlaceholder}" aria-label="Search articles">
+                <button type="submit" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>`;
-    if (mainHeader) mainHeader.appendChild(menuPanel);
+    document.body.appendChild(fullscreenMenu);
 
-    // Wire search inside the panel
-    const panelForm = menuPanel.querySelector('form');
-    if (panelForm) {
-        panelForm.addEventListener('submit', (e) => {
+    const fmForm = fullscreenMenu.querySelector('form');
+    if (fmForm) {
+        fmForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const q = panelForm.querySelector('input').value.trim();
+            const q = fmForm.querySelector('input').value.trim();
             if (q) window.location.href = `/search?q=${encodeURIComponent(q.toLowerCase())}`;
         });
     }
 
+    function openMenu() {
+        fullscreenMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        const icon = hamburger && hamburger.querySelector('i');
+        if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); }
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
+        setTimeout(() => { const inp = fullscreenMenu.querySelector('input'); if (inp) inp.focus(); }, 350);
+    }
+
     function closeMenu() {
-        navLinks && navLinks.classList.remove('active');
-        menuPanel.classList.remove('active');
+        fullscreenMenu.classList.remove('active');
+        document.body.style.overflow = '';
         if (mainHeader) mainHeader.classList.remove('menu-open');
-        const searchBox = document.querySelector('.search-box');
-        if (searchBox) searchBox.classList.remove('active');
         const icon = hamburger && hamburger.querySelector('i');
         if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
         if (hamburger) {
@@ -235,61 +246,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const fmClose = fullscreenMenu.querySelector('.fm-close');
+    if (fmClose) fmClose.addEventListener('click', closeMenu);
+
     if (hamburger) {
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isScrolled = mainHeader && mainHeader.classList.contains('scrolled');
-            let isOpen;
-
-            if (isScrolled) {
-                // Use dedicated panel when scrolled
-                isOpen = menuPanel.classList.toggle('active');
-                mainHeader.classList.toggle('menu-open', isOpen);
-            } else {
-                // Normal mobile toggle
-                isOpen = navLinks.classList.toggle('active');
-                const searchBox = document.querySelector('.search-box');
-                if (searchBox) searchBox.classList.toggle('active', isOpen);
-            }
-
-            const icon = hamburger.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars', !isOpen);
-                icon.classList.toggle('fa-times', isOpen);
-            }
-            hamburger.setAttribute('aria-expanded', String(isOpen));
-            hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-        });
-
-        // Close when clicking outside (exclude search-box and nav-links so typing doesn't close the menu)
-        const searchBoxEl = document.querySelector('.search-box');
-        document.addEventListener('click', (e) => {
-            const inside = menuPanel.contains(e.target)
-                || hamburger.contains(e.target)
-                || (searchBoxEl && searchBoxEl.contains(e.target))
-                || (navLinks && navLinks.contains(e.target));
-            if (!inside) {
-                if (menuPanel.classList.contains('active') || (navLinks && navLinks.classList.contains('active'))) {
-                    closeMenu();
-                }
-            }
-        });
-
-        // Portfolio link inside panel — trigger overlay directly (getElementById only finds original)
-        menuPanel.addEventListener('click', (e) => {
-            const link = e.target.closest('a[href="/#show-portfolio"]');
-            if (link) {
-                e.preventDefault();
-                closeMenu();
-                const overlay = document.querySelector('.portfolio-overlay');
-                if (overlay) {
-                    overlay.classList.add('active');
-                } else {
-                    window.location.href = '/#show-portfolio';
-                }
-            }
+            fullscreenMenu.classList.contains('active') ? closeMenu() : openMenu();
         });
     }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && fullscreenMenu.classList.contains('active')) closeMenu();
+    });
+
+    fullscreenMenu.addEventListener('click', (e) => {
+        const portfolioLink = e.target.closest('a[href="/#show-portfolio"]');
+        if (portfolioLink) {
+            e.preventDefault();
+            closeMenu();
+            const overlay = document.querySelector('.portfolio-overlay');
+            if (overlay) overlay.classList.add('active');
+            else window.location.href = '/#show-portfolio';
+            return;
+        }
+        const navLink = e.target.closest('.fm-nav a');
+        if (navLink) closeMenu();
+    });
 
    // --- SEARCH FUNCTIONALITY ---
     const searchForms = document.querySelectorAll('.search-box form');
