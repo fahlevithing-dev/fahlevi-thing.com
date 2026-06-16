@@ -10,8 +10,8 @@
 
     /* Theme Variables — DEFAULT: light body, always-dark transparent header */
     --bg-body: #FAFAFA;
-    --bg-header: linear-gradient(160deg, rgba(14, 14, 28, 0.97) 0%, rgba(8, 20, 52, 0.97) 100%);
-    --bg-header-scrolled: rgba(12, 14, 30, 0.94);
+    --bg-header: linear-gradient(160deg, #162640 0%, #1D3557 100%);
+    --bg-header-scrolled: rgba(22, 38, 64, 0.96);
     --text-main: #3a3a3a;
     --text-heading: #0d0d0d;
     --text-muted: #888888;
@@ -24,8 +24,8 @@
 /* Night Mode */
 [data-theme="dark"] {
     --bg-body: #121212;
-    --bg-header: linear-gradient(160deg, rgba(8, 8, 18, 0.98) 0%, rgba(4, 14, 38, 0.98) 100%);
-    --bg-header-scrolled: rgba(8, 8, 22, 0.96);
+    --bg-header: linear-gradient(160deg, #111e30 0%, #162640 100%);
+    --bg-header-scrolled: rgba(14, 24, 42, 0.97);
     --text-main: #e0e0e0;
     --text-heading: #ffffff;
     --text-muted: #b0b0b0;
@@ -344,7 +344,7 @@ ul { list-style: none; }
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background-color: #0b1028;
+    background-color: #1D3557;
     background: var(--bg-header);
     display: flex;
     flex-direction: column;
