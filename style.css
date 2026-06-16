@@ -344,7 +344,8 @@ ul { list-style: none; }
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: linear-gradient(160deg, rgba(14,14,28,0.98) 0%, rgba(8,20,52,0.99) 100%);
+    background-color: #0b1028;
+    background: var(--bg-header);
     display: flex;
     flex-direction: column;
     align-items: center;
