@@ -943,6 +943,22 @@ figure img.full-width-image {
     display: block;
 }
 
+/* Shorter, elegant landscape hero image (cropped banner) */
+figure img.article-hero-image {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+@media (max-width: 768px) {
+    figure img.article-hero-image {
+        height: 220px;
+    }
+}
+
 /* Class untuk membuat tampilan screenshot aplikasi (mobile) terlihat lebih profesional */
 figure img.mobile-screenshot {
     max-width: 400px;
