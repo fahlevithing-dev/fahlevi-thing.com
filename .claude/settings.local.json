@@ -16,7 +16,12 @@
       "Bash(sed -n '1465,1480p' script.js)",
       "Bash(xargs grep -L 'lang=\"id\"')",
       "Bash(python -c ' *)",
-      "PowerShell(cd d:\\\\Fahlevithing; $content = Get-Content 'echoes-beneath-the-thames.html' -Raw -Encoding UTF8; $updated = $content -replace 'rel=\"noopener\">', 'rel=\"noopener noreferrer\">'; if \\($content -ne $updated\\) { [System.IO.File]::WriteAllText\\(\"$PWD\\\\echoes-beneath-the-thames.html\", $updated, [System.Text.UTF8Encoding]::new\\($false\\)\\); Write-Output \"Fixed echoes-beneath-the-thames.html\" } else { Write-Output \"No change needed\" })"
+      "PowerShell(cd d:\\\\Fahlevithing; $content = Get-Content 'echoes-beneath-the-thames.html' -Raw -Encoding UTF8; $updated = $content -replace 'rel=\"noopener\">', 'rel=\"noopener noreferrer\">'; if \\($content -ne $updated\\) { [System.IO.File]::WriteAllText\\(\"$PWD\\\\echoes-beneath-the-thames.html\", $updated, [System.Text.UTF8Encoding]::new\\($false\\)\\); Write-Output \"Fixed echoes-beneath-the-thames.html\" } else { Write-Output \"No change needed\" })",
+      "Bash(git commit -m ' *)",
+      "Bash(sed -i 's|src=\"translations\\\\.js\"|src=\"translations.js?v=20260702\"|g; s|src=\"script\\\\.js\"|src=\"script.js?v=20260702\"|g' /d/Fahlevithing/*.html && grep -l 'script.js?v=20260702' /d/Fahlevithing/*.html | wc -l)"
+    ],
+    "additionalDirectories": [
+      "D:\\Fahlevithing"
     ]
   }
 }
