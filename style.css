@@ -955,6 +955,21 @@ figure img.article-hero-image {
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
+/* Side-by-side screenshot comparison row */
+.screenshot-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px 0;
+}
+.screenshot-row figure {
+    flex: 1 1 280px;
+    max-width: 400px;
+    margin: 0;
+}
+
 /* Class untuk membuat tampilan screenshot aplikasi (mobile) terlihat lebih profesional */
 figure img.mobile-screenshot {
     max-width: 400px;
