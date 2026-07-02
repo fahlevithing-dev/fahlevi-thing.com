@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <!-- Main Pages -->
-    <url><loc>https://fahlevi-thing.com/</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-    <url><loc>https://fahlevi-thing.com/insights</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/about</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://fahlevi-thing.com/portfolio</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://fahlevi-thing.com/privacy</loc><lastmod>2026-02-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+    <url><loc>https://fahlevi-thing.com/</loc><lastmod>2026-07-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+    <url><loc>https://fahlevi-thing.com/insights</loc><lastmod>2026-07-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/about</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://fahlevi-thing.com/portfolio</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://fahlevi-thing.com/privacy</loc><lastmod>2026-07-02</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
     <!-- Portfolio Updates -->
     <url><loc>https://fahlevi-thing.com/portfolio-update-q2-2026</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -14,43 +14,43 @@
 
     <!-- Articles — Investment -->
     <url><loc>https://fahlevi-thing.com/danantara</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://fahlevi-thing.com/tesla-playbook</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://fahlevi-thing.com/spacex-gojek-playbook</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://fahlevi-thing.com/how-gojek-got-big</loc><lastmod>2026-06-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/pension-fund-diy</loc><lastmod>2026-05-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/tesla-playbook</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://fahlevi-thing.com/spacex-gojek-playbook</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://fahlevi-thing.com/how-gojek-got-big</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/pension-fund-diy</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- Articles — Urban History -->
-    <url><loc>https://fahlevi-thing.com/echoes-beneath-the-thames</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/echoes-beneath-the-thames</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- Articles — Political Economy & Macro -->
-    <url><loc>https://fahlevi-thing.com/echoes-of-the-new-order</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://fahlevi-thing.com/indonesia-macroeconomic-g20-2026</loc><lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/fcb-part-3</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/fcb-part-2</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/fcb-part-1</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/mbg-part-5</loc><lastmod>2026-03-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/mbg-part-4</loc><lastmod>2026-03-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/mbg-part-3</loc><lastmod>2026-03-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/mbg-part-2</loc><lastmod>2026-03-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/mbg-genius-initiative</loc><lastmod>2026-03-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/glitch-in-the-archive</loc><lastmod>2026-02-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/hajj-fund-portfolio-war</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/hajj-fund-management</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/nusantara-evolution</loc><lastmod>2026-02-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/echoes-of-the-new-order</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://fahlevi-thing.com/indonesia-macroeconomic-g20-2026</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/fcb-part-3</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/fcb-part-2</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/fcb-part-1</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/mbg-part-5</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/mbg-part-4</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/mbg-part-3</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/mbg-part-2</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/mbg-genius-initiative</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/glitch-in-the-archive</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/hajj-fund-portfolio-war</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/hajj-fund-management</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/nusantara-evolution</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
     <!-- Articles — Investment & Stock Analysis -->
-    <url><loc>https://fahlevi-thing.com/wifi-chronicles</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/archipelago-black-gold</loc><lastmod>2026-02-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/gold-harbinger</loc><lastmod>2026-01-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/cita-analysis</loc><lastmod>2026-01-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/ihsg-decline</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/miracle-of-20-percent</loc><lastmod>2026-01-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/china-ai-race</loc><lastmod>2026-01-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://fahlevi-thing.com/dkft-analysis</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://fahlevi-thing.com/sril-analysis</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://fahlevi-thing.com/adro-admr-analysis</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://fahlevi-thing.com/pwon-analysis</loc><lastmod>2026-01-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://fahlevi-thing.com/property-analysis</loc><lastmod>2025-12-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://fahlevi-thing.com/investment-journey</loc><lastmod>2025-12-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://fahlevi-thing.com/wifi-chronicles</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/archipelago-black-gold</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/gold-harbinger</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/cita-analysis</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/ihsg-decline</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/miracle-of-20-percent</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/china-ai-race</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://fahlevi-thing.com/dkft-analysis</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://fahlevi-thing.com/sril-analysis</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://fahlevi-thing.com/adro-admr-analysis</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://fahlevi-thing.com/pwon-analysis</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://fahlevi-thing.com/property-analysis</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://fahlevi-thing.com/investment-journey</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>
