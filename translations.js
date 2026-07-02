@@ -122,7 +122,7 @@ window.LANG = (function () {
         posts: {
             'danantara': {
                 titleId: 'Uang yang Hidup Lebih Lama dari Sumbernya: Cara Kerja Sovereign Wealth Fund',
-                excerptId: 'Setiap rezeki besar ada masa habisnya. Ladang minyak akan kering, harga komoditas akan jatuh, bonus demografi akan berlalu. Negara yang sadar akan hal ini membangun sovereign wealth fund — mengubah pendapatan sesaat menjadi kekayaan yang bertahan selamanya.'
+                excerptId: 'Setiap rezeki besar ada masa habisnya. Ladang minyak akan kering, harga komoditas akan jatuh, bonus demografi akan berlalu. Negara yang sadar akan hal ini membangun sovereign wealth fund untuk mengubah pendapatan sesaat menjadi kekayaan yang bertahan selamanya.'
             },
             'tesla-playbook': {
                 titleId: 'Buku Pedoman Tesla',
