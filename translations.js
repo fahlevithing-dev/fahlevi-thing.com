@@ -121,8 +121,8 @@ window.LANG = (function () {
         },
         posts: {
             'danantara': {
-                titleId: 'Uang yang Bertahan Lebih Lama dari Sumbernya: Logika Sederhana Sovereign Wealth Fund',
-                excerptId: 'Setiap rezeki besar punya tanggal kedaluwarsa. Ladang minyak habis, harga komoditas jatuh, bonus demografi berakhir. Negara yang memahami ini membangun sovereign wealth fund — mengubah pendapatan sementara menjadi modal permanen.'
+                titleId: 'Uang yang Hidup Lebih Lama dari Sumbernya: Cara Kerja Sovereign Wealth Fund',
+                excerptId: 'Setiap rezeki besar ada masa habisnya. Ladang minyak akan kering, harga komoditas akan jatuh, bonus demografi akan berlalu. Negara yang sadar akan hal ini membangun sovereign wealth fund — mengubah pendapatan sesaat menjadi kekayaan yang bertahan selamanya.'
             },
             'tesla-playbook': {
                 titleId: 'Buku Pedoman Tesla',
