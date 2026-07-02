@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "danantara",
             category: "INVESTMENT",
             date: "July 2, 2026",
-            excerpt: "Every windfall comes with a deadline. Oil fields deplete, commodity booms end, demographic dividends expire. Countries that understand this build sovereign wealth funds — converting temporary income into permanent capital.",
+            excerpt: "Every windfall comes with a deadline. Oil fields deplete, commodity booms end, demographic dividends expire. Countries that understand this build sovereign wealth funds, converting temporary income into permanent capital.",
             image: "images/danantara.jpeg",
             featured: true
         },
@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "tesla-playbook",
             category: "INVESTMENT",
             date: "June 13, 2026",
-            excerpt: "Tesla is worth $1.5 trillion on shrinking profits. This is the playbook — older than GoTo, older than Uber, written first by Amazon — that lets a company command a valuation priced years ahead of its earnings.",
+            excerpt: "Tesla is worth $1.5 trillion on shrinking profits. This is the playbook (older than GoTo, older than Uber, written first by Amazon) that lets a company command a valuation priced years ahead of its earnings.",
             image: "images/tesla.jpeg"
         },
         {
@@ -477,7 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "spacex-gojek-playbook",
             category: "INVESTMENT",
             date: "June 12, 2026",
-            excerpt: "SpaceX raised $75 billion at a $1.77 trillion valuation while disclosing a $4.9 billion loss. Indonesia watched a strikingly similar playbook with GoTo in 2022. The two stories rhyme — but they diverge in ways that matter.",
+            excerpt: "SpaceX raised $75 billion at a $1.77 trillion valuation while disclosing a $4.9 billion loss. Indonesia watched a strikingly similar playbook with GoTo in 2022. The two stories rhyme, but they diverge in ways that matter.",
             image: "images/spacex.jpg"
         },
         {
@@ -485,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "how-gojek-got-big",
             category: "INVESTMENT",
             date: "June 10, 2026",
-            excerpt: "Gojek lost money almost every year yet grew from a $1.3B valuation to $31B at IPO. Here is how a startup sells the next round, not the next profit — and what Amazon's story actually teaches.",
+            excerpt: "Gojek lost money almost every year yet grew from a $1.3B valuation to $31B at IPO. Here is how a startup sells the next round, not the next profit, and what Amazon's story actually teaches.",
             image: "images/gojek.png"
         },
         {
@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "pension-fund-diy",
             category: "INVESTMENT",
             date: "May 30, 2026",
-            excerpt: "When it comes to investment returns, a disciplined employee today can get remarkably close to what a professional pension fund delivers — and sometimes do better. But matching its certainty is the part that's genuinely difficult.",
+            excerpt: "When it comes to investment returns, a disciplined employee today can get remarkably close to what a professional pension fund delivers, and sometimes do better. But matching its certainty is the part that's genuinely difficult.",
             image: "images/pensionfunds.jpeg"
         },
         {
@@ -523,7 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "images/ihsg5thn.jpeg"
         },
         {
-            title: "Part 3 of 3: The Age of Levers — How FC Barcelona Mortgaged Its Future",
+            title: "Part 3 of 3: The Age of Levers, How FC Barcelona Mortgaged Its Future",
             url: "fcb-part-3",
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
@@ -531,7 +531,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "images/fcbpart3.jpeg"
         },
         {
-            title: "Part 2 of 3: From the Blank Jersey to Qatar Airways — Commercial Pivot",
+            title: "Part 2 of 3: From the Blank Jersey to Qatar Airways, Commercial Pivot",
             url: "fcb-part-2",
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
@@ -539,11 +539,11 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "images/fcbpart2.png"
         },
         {
-            title: "Part 1 of 3: \"More Than a Club\" — How FC Barcelona Was Built as a Democratic Institution",
+            title: "Part 1 of 3: \"More Than a Club\", How FC Barcelona Was Built as a Democratic Institution",
             url: "fcb-part-1",
             category: "POLITICAL ECONOMY",
             date: "April 3, 2026",
-            excerpt: "There is a phrase in Catalan — Més que un club — that FC Barcelona has carried for over half a century. Translated, it means \"More than a club.\" But what does that actually mean? How does a football club transcend the sport itself...",
+            excerpt: "There is a phrase in Catalan, Més que un club, that FC Barcelona has carried for over half a century. Translated, it means \"More than a club.\" But what does that actually mean? How does a football club transcend the sport itself...",
             image: "images/fcbpart1.jpg"
         },
         {
@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "glitch-in-the-archive",
             category: "POETRY",
             date: "February 10, 2026",
-            excerpt: "The archive grows heavier by the hour. New lines of code, fresh paragraphs, Another article was pushed to the live server. The index page scrolls endlessly down— A monument of sudden, manic focus.",
+            excerpt: "The archive grows heavier by the hour. New lines of code, fresh paragraphs, Another article was pushed to the live server. The index page scrolls endlessly down, A monument of sudden, manic focus.",
             image: "" 
         },
          {
@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "pwon-analysis",
             category: "STOCK ANALYSIS",
             date: "January 6, 2026",
-            excerpt: "PT Pakuwon Jati Tbk (PWON) stands out as one of the most structurally defensive property developers in Indonesia. Its business model—emphasizing high recurring income, conservative financial management...",
+            excerpt: "PT Pakuwon Jati Tbk (PWON) stands out as one of the most structurally defensive property developers in Indonesia. Its business model, emphasizing high recurring income, conservative financial management...",
             image: "images/pwongedung.jpg"
         },
         {

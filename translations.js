@@ -126,47 +126,47 @@ window.LANG = (function () {
             },
             'tesla-playbook': {
                 titleId: 'Buku Pedoman Tesla',
-                excerptId: 'Tesla bernilai $1,5 triliun di atas laba yang terus menyusut. Inilah buku pedomannya — lebih tua dari GoTo, lebih tua dari Uber, ditulis pertama kali oleh Amazon — yang memungkinkan sebuah perusahaan menguasai valuasi bertahun-tahun sebelum laba itu tiba.'
+                excerptId: 'Tesla bernilai $1,5 triliun di atas laba yang terus menyusut. Inilah buku pedomannya (lebih tua dari GoTo, lebih tua dari Uber, ditulis pertama kali oleh Amazon) yang memungkinkan sebuah perusahaan menguasai valuasi bertahun-tahun sebelum laba itu tiba.'
             },
             'spacex-gojek-playbook': {
                 titleId: 'Apakah SpaceX Mengikuti Buku Pedoman Gojek?',
-                excerptId: 'SpaceX meraih $75 miliar dengan valuasi $1,77 triliun sambil mengungkapkan kerugian $4,9 miliar. Indonesia menyaksikan buku pedoman yang sangat serupa bersama GoTo pada 2022. Kedua kisah ini memiliki banyak kemiripan — namun juga perbedaan yang krusial.'
+                excerptId: 'SpaceX meraih $75 miliar dengan valuasi $1,77 triliun sambil mengungkapkan kerugian $4,9 miliar. Indonesia menyaksikan buku pedoman yang sangat serupa bersama GoTo pada 2022. Kedua kisah ini memiliki banyak kemiripan, namun juga perbedaan yang krusial.'
             },
             'how-gojek-got-big': {
                 titleId: 'Bagaimana Gojek Tumbuh Besar dengan Menjual Putaran Berikutnya, Bukan Laba Berikutnya',
-                excerptId: 'Gojek merugi hampir setiap tahun, namun valuasinya tumbuh dari $1,3 miliar menjadi $31 miliar saat IPO. Inilah bagaimana sebuah startup menjual putaran pendanaan berikutnya alih-alih keuntungan berikutnya — dan apa yang sesungguhnya diajarkan kisah Amazon kepada kita.'
+                excerptId: 'Gojek merugi hampir setiap tahun, namun valuasinya tumbuh dari $1,3 miliar menjadi $31 miliar saat IPO. Inilah bagaimana sebuah startup menjual putaran pendanaan berikutnya alih-alih keuntungan berikutnya, dan apa yang sesungguhnya diajarkan kisah Amazon kepada kita.'
             },
             'pension-fund-diy': {
                 titleId: 'Mengapa Karyawan Butuh Dana Pensiun Jika Bisa Membangunnya Sendiri?',
-                excerptId: 'Dari sisi imbal hasil investasi, karyawan yang disiplin sejak dini bisa mendekati hasil yang diberikan dana pensiun profesional — bahkan terkadang melampauinya. Namun menyamai kepastian dan perlindungannya adalah tantangan yang sesungguhnya.'
+                excerptId: 'Dari sisi imbal hasil investasi, karyawan yang disiplin sejak dini bisa mendekati hasil yang diberikan dana pensiun profesional, bahkan terkadang melampauinya. Namun menyamai kepastian dan perlindungannya adalah tantangan yang sesungguhnya.'
             },
             'echoes-beneath-the-thames': {
                 titleId: 'Gema di Bawah Sungai Thames: Percobaan 5 km di London 1890 yang Membentuk Kota Modern',
-                excerptId: 'Pada 4 November 1890, City & South London Railway menjadi jalur kereta bawah tanah listrik pertama di dunia. Dalam satu abad, lebih dari dua ratus kota di enam benua dibangun berdasarkan logika yang sama — dan hasilnya masih kita rasakan hari ini.'
+                excerptId: 'Pada 4 November 1890, City & South London Railway menjadi jalur kereta bawah tanah listrik pertama di dunia. Dalam satu abad, lebih dari dua ratus kota di enam benua dibangun berdasarkan logika yang sama, dan hasilnya masih kita rasakan hari ini.'
             },
             'echoes-of-the-new-order': {
                 titleId: 'Gema Orde Baru: Mengapa Badan Ekspor Baru Indonesia Membangkitkan Kecemasan Lama di Pasar Modal',
-                excerptId: 'Pada 20 Mei 2026, Presiden Prabowo Subianto mengungkap peraturan baru tentang tata kelola ekspor sumber daya alam. Kebijakan ini memicu kecemasan kolektif para pelaku pasar — dan mengingatkan banyak pihak pada pola kontrol ekonomi era Orde Baru.'
+                excerptId: 'Pada 20 Mei 2026, Presiden Prabowo Subianto mengungkap peraturan baru tentang tata kelola ekspor sumber daya alam. Kebijakan ini memicu kecemasan kolektif para pelaku pasar, dan mengingatkan banyak pihak pada pola kontrol ekonomi era Orde Baru.'
             },
             'indonesia-macroeconomic-g20-2026': {
                 titleId: 'Ringkasan Eksekutif: Posisi Makroekonomi Indonesia di G20 (Kuartal I 2026)',
                 excerptId: 'Indonesia membuka 2026 dengan hasil kuartal pertama yang solid: pertumbuhan PDB 5,61% secara tahunan, inflasi terkendali, dan arus masuk investasi asing yang tetap kuat. Bagaimana posisi Indonesia di antara negara-negara G20 lainnya?'
             },
             'fcb-part-3': {
-                titleId: 'Bagian 3 dari 3: Era Leverage — Bagaimana FC Barcelona Menggadaikan Masa Depannya',
-                excerptId: 'Musim panas 2021, Joan Laporta kembali ke kursi presiden Barcelona dengan mandat yang hampir paradoks: menyelamatkan institusi demokratis milik anggota menggunakan instrumen keuangan ala Wall Street — leverage, sekuritisasi, dan taruhan jangka panjang.'
+                titleId: 'Bagian 3 dari 3: Era Leverage, Bagaimana FC Barcelona Menggadaikan Masa Depannya',
+                excerptId: 'Musim panas 2021, Joan Laporta kembali ke kursi presiden Barcelona dengan mandat yang hampir paradoks: menyelamatkan institusi demokratis milik anggota menggunakan instrumen keuangan ala Wall Street, leverage, sekuritisasi, dan taruhan jangka panjang.'
             },
             'fcb-part-2': {
-                titleId: 'Bagian 2 dari 3: Dari Jersey Kosong ke Qatar Airways — Pivot Komersial Barcelona',
+                titleId: 'Bagian 2 dari 3: Dari Jersey Kosong ke Qatar Airways, Pivot Komersial Barcelona',
                 excerptId: 'Musim semi 2009, Barcelona memainkan sepak bola yang sulit dijelaskan hanya dalam bahasa olahraga. Di balik tiki-taka yang memukau, benih transformasi komersial besar-besaran mulai ditanam secara diam-diam.'
             },
             'fcb-part-1': {
-                titleId: 'Bagian 1 dari 3: "Lebih dari Sekadar Klub" — Bagaimana FC Barcelona Dibangun sebagai Institusi Demokratis',
-                excerptId: 'Ada frasa dalam bahasa Katalonia — Més que un club — yang dibawa FC Barcelona selama lebih dari setengah abad. Artinya: "Lebih dari sekadar klub." Namun apa sesungguhnya makna di balik kata-kata itu dalam sejarah panjang Katalonia?'
+                titleId: 'Bagian 1 dari 3: "Lebih dari Sekadar Klub", Bagaimana FC Barcelona Dibangun sebagai Institusi Demokratis',
+                excerptId: 'Ada frasa dalam bahasa Katalonia, Més que un club, yang dibawa FC Barcelona selama lebih dari setengah abad. Artinya: "Lebih dari sekadar klub." Namun apa sesungguhnya makna di balik kata-kata itu dalam sejarah panjang Katalonia?'
             },
             'wifi-chronicles': {
                 titleId: 'Kronik WIFI: Perjalanan Keyakinan, Kehati-hatian, dan Timing Pasar',
-                excerptId: 'Perjalanan saya dengan saham WIFI (PT Solusi Sinergi Digital Tbk.) berawal dari seleksi kuantitatif sederhana di Stockbit. Saya mencari permata yang undervalued, dan WIFI menarik perhatian dengan PBV dan PE-nya yang rendah — lalu segalanya berubah.'
+                excerptId: 'Perjalanan saya dengan saham WIFI (PT Solusi Sinergi Digital Tbk.) berawal dari seleksi kuantitatif sederhana di Stockbit. Saya mencari permata yang undervalued, dan WIFI menarik perhatian dengan PBV dan PE-nya yang rendah, lalu segalanya berubah.'
             },
             'mbg-part-5': {
                 titleId: 'MBG Bagian 5: Visi Besar dan Dampak Jangka Panjang Program Makan Bergizi Gratis',
@@ -174,31 +174,31 @@ window.LANG = (function () {
             },
             'mbg-part-4': {
                 titleId: 'MBG Bagian 4: Keamanan Pangan, Standar Kualitas, dan Mandat "Nol Kesalahan"',
-                excerptId: 'Saat Indonesia bergerak menuju target melayani lebih dari 82,9 juta penerima manfaat pada 2029, Badan Gizi Nasional harus menghadapi realita kegagalan sistemik yang nyata di lapangan — mulai dari rantai pasok hingga pengawasan mutu.'
+                excerptId: 'Saat Indonesia bergerak menuju target melayani lebih dari 82,9 juta penerima manfaat pada 2029, Badan Gizi Nasional harus menghadapi realita kegagalan sistemik yang nyata di lapangan, mulai dari rantai pasok hingga pengawasan mutu.'
             },
             'mbg-part-3': {
                 titleId: 'MBG Bagian 3: Menavigasi Ranjau Implementasi Program Makan Bergizi Gratis',
-                excerptId: 'Meski visi program makan bergizi gratis secara teori sangat kuat, transisi dari dokumen kebijakan ke piring makan anak dipenuhi hambatan sistemik yang berlapis — logistik, sumber daya manusia, hingga koordinasi lintas kementerian.'
+                excerptId: 'Meski visi program makan bergizi gratis secara teori sangat kuat, transisi dari dokumen kebijakan ke piring makan anak dipenuhi hambatan sistemik yang berlapis, logistik, sumber daya manusia, hingga koordinasi lintas kementerian.'
             },
             'mbg-part-2': {
                 titleId: 'MBG Bagian 2: Kesenjangan Gizi dan Konsumsi Per Kapita Indonesia',
-                excerptId: 'Untuk memahami mengapa program makan bergizi di sekolah disebut intervensi "jenius", kita perlu memeriksa data empiris tentang apa yang sesungguhnya tersaji di piring warga Indonesia setiap harinya — dan angkanya cukup mengejutkan.'
+                excerptId: 'Untuk memahami mengapa program makan bergizi di sekolah disebut intervensi "jenius", kita perlu memeriksa data empiris tentang apa yang sesungguhnya tersaji di piring warga Indonesia setiap harinya, dan angkanya cukup mengejutkan.'
             },
             'mbg-genius-initiative': {
                 titleId: 'Program Makan Bergizi Gratis (MBG): Inisiatif "Jenius" yang Menghadapi Tantangan Implementasi',
-                excerptId: 'Kebijakan gizi sekolah telah berkembang dari intervensi kesehatan masyarakat sederhana menjadi pilar strategis pembangunan modal manusia dan stabilitas geopolitik. Indonesia kini memilih jalurnya sendiri — ambisius, mahal, dan penuh risiko eksekusi.'
+                excerptId: 'Kebijakan gizi sekolah telah berkembang dari intervensi kesehatan masyarakat sederhana menjadi pilar strategis pembangunan modal manusia dan stabilitas geopolitik. Indonesia kini memilih jalurnya sendiri, ambisius, mahal, dan penuh risiko eksekusi.'
             },
             'glitch-in-the-archive': {
                 titleId: 'Gangguan dalam Arsip',
-                excerptId: 'Arsip semakin berat dari jam ke jam. Baris kode baru, paragraf segar, satu artikel lagi dikirim ke server. Halaman indeks menggulir tanpa henti ke bawah — sebuah monumen dari fokus yang tiba-tiba menjadi intens.'
+                excerptId: 'Arsip semakin berat dari jam ke jam. Baris kode baru, paragraf segar, satu artikel lagi dikirim ke server. Halaman indeks menggulir tanpa henti ke bawah, sebuah monumen dari fokus yang tiba-tiba menjadi intens.'
             },
             'hajj-fund-portfolio-war': {
-                titleId: 'Perang Portofolio Dana Haji — Bedah Mendalam Strategi Investasi Malaysia vs. Indonesia',
+                titleId: 'Perang Portofolio Dana Haji, Bedah Mendalam Strategi Investasi Malaysia vs. Indonesia',
                 excerptId: 'TH Malaysia beroperasi sebagai endowmen multi-aset, sementara BPKH Indonesia berfungsi lebih mendekati akumulator surat utang negara. Bedah neraca keuangan keduanya mengungkap kesenjangan strategi yang sangat signifikan.'
             },
             'hajj-fund-management': {
                 titleId: 'Ibadah Haji dan Ekonomi Politik: Analisis Komparatif Pengelolaan Dana Haji Malaysia dan Indonesia',
-                excerptId: 'Tabung Haji Malaysia unggul lebih dari 50 tahun, membangun ekosistem investasi yang terintegrasi secara vertikal. BPKH Indonesia kini beralih dari strategi "penabung" pasif ke strategi "investor" aktif — sebuah transformasi yang tidak mudah.'
+                excerptId: 'Tabung Haji Malaysia unggul lebih dari 50 tahun, membangun ekosistem investasi yang terintegrasi secara vertikal. BPKH Indonesia kini beralih dari strategi "penabung" pasif ke strategi "investor" aktif, sebuah transformasi yang tidak mudah.'
             },
             'nusantara-evolution': {
                 titleId: 'Melampaui Sekadar Bertahan: Mengapa IKN Nusantara Bukan Sekadar Pilihan, Melainkan Sebuah Evolusi',
@@ -206,14 +206,14 @@ window.LANG = (function () {
             },
             'archipelago-black-gold': {
                 titleId: '"Emas Hitam" Nusantara: Narasi Karakter di Atas Kuantitas',
-                excerptId: 'Kisah "Emas Hitam" dari Nusantara. Sebuah narasi yang membuktikan bahwa dalam dunia kopi yang semakin kompetitif, Indonesia tidak mengejar kuantitas — Indonesia mengejar karakter, kompleksitas rasa, dan keunikan terroir.'
+                excerptId: 'Kisah "Emas Hitam" dari Nusantara. Sebuah narasi yang membuktikan bahwa dalam dunia kopi yang semakin kompetitif, Indonesia tidak mengejar kuantitas, Indonesia mengejar karakter, kompleksitas rasa, dan keunikan terroir.'
             },
             'gold-harbinger': {
                 titleId: 'Emas sebagai Pertanda: Satu Abad Siklus Komoditas (1928–2026)',
                 excerptId: 'Sejarah mengungkap pola yang persisten dalam keuangan makro: emas jarang sekadar batu berkilau. Sejak 1928, revaluasi emas ke atas hampir selalu mendahului bull market sekuler yang lebih luas di seluruh kelas aset komoditas.'
             },
             'cita-analysis': {
-                titleId: 'Analisis Investasi: PT Cita Mineral Investindo Tbk (CITA) — Lebih dari Sekadar Penambang Bauksit',
+                titleId: 'Analisis Investasi: PT Cita Mineral Investindo Tbk (CITA), Lebih dari Sekadar Penambang Bauksit',
                 excerptId: 'Saat harga aluminium global mencapai level tertinggi empat tahun pada Januari 2026, CITA tampil sebagai instrumen unik di sektor logam. Profitabilitas sejatinya kini digerakkan oleh "mesin uang" hilir melalui entitas asosiasi WHW dan KAI.'
             },
             'ihsg-decline': {
@@ -234,7 +234,7 @@ window.LANG = (function () {
             },
             'sril-analysis': {
                 titleId: 'Naik dan Turunnya Sritex (SRIL): Kisah Panjang Bendera Merah yang Diabaikan',
-                excerptId: 'Sri Rejeki Isman Tbk (SRIL), dikenal luas sebagai Sritex, pernah menjadi produsen tekstil terintegrasi terbesar di Asia Tenggara. Era keemasannya dimulai saat mengamankan kontrak bergengsi pada 1994 — dan berakhir dengan cara yang seharusnya bisa diprediksi.'
+                excerptId: 'Sri Rejeki Isman Tbk (SRIL), dikenal luas sebagai Sritex, pernah menjadi produsen tekstil terintegrasi terbesar di Asia Tenggara. Era keemasannya dimulai saat mengamankan kontrak bergengsi pada 1994, dan berakhir dengan cara yang seharusnya bisa diprediksi.'
             },
             'adro-admr-analysis': {
                 titleId: 'Analisis ADRO & ADMR: Pergeseran Strategis dan Transisi Menuju Energi Hijau',
@@ -250,7 +250,7 @@ window.LANG = (function () {
             },
             'investment-journey': {
                 titleId: 'Bagaimana Saya Memasuki Dunia Investasi?',
-                excerptId: 'Saya, Reza Fahlevi. Tulisan pertama ini adalah kisah pribadi bagaimana saya memasuki dunia investasi saham — dimulai saat kuliah Ekonomi jurusan Akuntansi di Universitas Syiah Kuala, Banda Aceh, hingga porto pertama yang saya bangun sendiri.'
+                excerptId: 'Saya, Reza Fahlevi. Tulisan pertama ini adalah kisah pribadi bagaimana saya memasuki dunia investasi saham, dimulai saat kuliah Ekonomi jurusan Akuntansi di Universitas Syiah Kuala, Banda Aceh, hingga porto pertama yang saya bangun sendiri.'
             }
         }
     };
@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
             articleH1.textContent = lang === 'id' && _articleTr && _articleTr.titleId ? _articleTr.titleId : _titleEn;
         }
 
-        // Article body bilingual toggle — articles with both lang="en" and lang="id" excerpt divs
+        // Article body bilingual toggle, articles with both lang="en" and lang="id" excerpt divs
         document.querySelectorAll('.excerpt[lang]').forEach(function (el) {
             el.style.display = el.getAttribute('lang') === lang ? 'block' : 'none';
         });
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var portWidgetH3 = document.querySelector('.portfolio-update-widget h3');
         if (portWidgetH3) portWidgetH3.textContent = T.portfolioUpdate;
 
-        // Table of Contents (each lang excerpt has its own TOC — update all)
+        // Table of Contents (each lang excerpt has its own TOC, update all)
         document.querySelectorAll('.toc-title').forEach(function (tocTitleEl) {
             tocTitleEl.innerHTML = '<i class="fas fa-list-ul"></i> ' + T.tableOfContents;
         });
@@ -534,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Fallback: pages without sidebar (privacy.html) — inject in header nav
+        // Fallback: pages without sidebar (privacy.html), inject in header nav
         var navWrapper = document.querySelector('.nav-wrapper');
         if (!navWrapper) return;
 
