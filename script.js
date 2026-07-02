@@ -456,6 +456,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Money That Outlives Its Source: The Quiet Logic of Sovereign Wealth Funds",
+            url: "danantara",
+            category: "INVESTMENT",
+            date: "July 2, 2026",
+            excerpt: "Every windfall comes with a deadline. Oil fields deplete, commodity booms end, demographic dividends expire. Countries that understand this build sovereign wealth funds — converting temporary income into permanent capital.",
+            image: "images/danantara.jpeg",
+            featured: true
+        },
+        {
             title: "The Tesla Playbook",
             url: "tesla-playbook",
             category: "INVESTMENT",

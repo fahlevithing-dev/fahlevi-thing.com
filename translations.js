@@ -120,6 +120,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'danantara': {
+                titleId: 'Uang yang Bertahan Lebih Lama dari Sumbernya: Logika Sederhana Sovereign Wealth Fund',
+                excerptId: 'Setiap rezeki besar punya tanggal kedaluwarsa. Ladang minyak habis, harga komoditas jatuh, bonus demografi berakhir. Negara yang memahami ini membangun sovereign wealth fund — mengubah pendapatan sementara menjadi modal permanen.'
+            },
             'tesla-playbook': {
                 titleId: 'Buku Pedoman Tesla',
                 excerptId: 'Tesla bernilai $1,5 triliun di atas laba yang terus menyusut. Inilah buku pedomannya — lebih tua dari GoTo, lebih tua dari Uber, ditulis pertama kali oleh Amazon — yang memungkinkan sebuah perusahaan menguasai valuasi bertahun-tahun sebelum laba itu tiba.'
