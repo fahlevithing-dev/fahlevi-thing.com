@@ -121,8 +121,8 @@ window.LANG = (function () {
         },
         posts: {
             'danantara': {
-                titleId: 'Uang yang Hidup Lebih Lama dari Sumbernya: Cara Kerja Sovereign Wealth Fund',
-                excerptId: 'Setiap rezeki besar ada masa habisnya. Ladang minyak akan kering, harga komoditas akan jatuh, bonus demografi akan berlalu. Negara yang sadar akan hal ini membangun sovereign wealth fund untuk mengubah pendapatan sesaat menjadi kekayaan yang bertahan selamanya.'
+                titleId: 'Kekayaan yang Hidup Lebih Lama dari Sumbernya: Logika Senyap Sovereign Wealth Fund',
+                excerptId: 'Sebagian besar kekayaan Norwegia tidak pernah ada di dasar laut; ia diciptakan oleh pasar, oleh modal yang ditanam sejak dini dan dibiarkan tumbuh. Fakta itu adalah seluruh argumen sovereign wealth fund, sekaligus kacamata yang benar untuk menilai Danantara.'
             },
             'tesla-playbook': {
                 titleId: 'Buku Pedoman Tesla',

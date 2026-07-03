@@ -548,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "danantara",
             category: "INVESTMENT",
             date: "July 2, 2026",
-            excerpt: "Every windfall comes with a deadline. Oil fields deplete, commodity booms end, demographic dividends expire. Countries that understand this build sovereign wealth funds, converting temporary income into permanent capital.",
+            excerpt: "Most of Norway's sovereign wealth was never under the seabed; it was created by markets, by capital planted early and left alone to grow. That fact is the entire argument for sovereign wealth funds, and the right lens for judging Danantara.",
             image: "images/danantara.jpeg",
             featured: true
         },
