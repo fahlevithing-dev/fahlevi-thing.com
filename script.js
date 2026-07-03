@@ -847,7 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const catDisplay = (T.categories && T.categories[catKey]) ? T.categories[catKey] : item.category;
                 const readMoreTxt = T.readMore || 'Read More';
 
-                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
+                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
                         ${thumbHTML}
@@ -1017,7 +1017,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const catKey = (item.category || '').toUpperCase();
                 const catDisplay = (T.categories && T.categories[catKey]) ? T.categories[catKey] : item.category;
                 const readMoreTxt = T.readMore || 'Read More';
-                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
+                const thumbHTML = item.image ? `<div class="post-thumb"><img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async"${item.thumbPosition ? ` style="object-position:${item.thumbPosition}"` : ""}></div>` : "";
                 const articleHTML = `
                     <article class="post-item">
                         ${thumbHTML}
@@ -1045,7 +1045,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Attach Click Event
         loadMoreBtn.addEventListener('click', renderBatch);
 
-        // Initial Render
+        // Initial Render (clear the static pre-render used for crawlers first)
+        relatedContainer.innerHTML = '';
         renderBatch();
     }
 

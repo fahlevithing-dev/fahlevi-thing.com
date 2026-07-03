@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Reza Fahlevi">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://translate.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://translate.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://api.emailjs.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://region1.google-analytics.com; frame-src https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <!-- Google Tag Manager -->
@@ -50,16 +51,56 @@
       "dateModified": "2026-06-10",
       "author": {
         "@type": "Person",
-        "name": "Reza Fahlevi"
+        "name": "Reza Fahlevi",
+        "url": "https://fahlevi-thing.com/about",
+        "sameAs": [
+          "https://twitter.com/rezafahlevirff",
+          "https://instagram.com/fahlevithing"
+        ]
       },
       "description": "Gojek lost money almost every year yet grew from a $1.3B valuation to $31B at IPO. Here is how a startup sells the next round, not the next profit, and what Amazon's story actually teaches.",
       "url": "https://fahlevi-thing.com/how-gojek-got-big",
       "publisher": {
         "@type": "Organization",
         "name": "Fahlevi Thing",
-        "url": "https://fahlevi-thing.com"
+        "url": "https://fahlevi-thing.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fahlevi-thing.com/images/logofahlevithing.jpeg"
+        }
       },
-      "image": "https://fahlevi-thing.com/images/gojek.png"
+      "image": "https://fahlevi-thing.com/images/gojek.png",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fahlevi-thing.com/how-gojek-got-big"
+      },
+      "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fahlevi-thing.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://fahlevi-thing.com/insights"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Gojek Got Big by Selling the Next Round, Not the Next Profit",
+          "item": "https://fahlevi-thing.com/how-gojek-got-big"
+        }
+      ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +108,12 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="alternate" type="application/rss+xml" title="Fahlevi Thing RSS Feed" href="https://fahlevi-thing.com/feed.xml">
     <link rel="stylesheet" href="style.css">
+    <meta property="article:published_time" content="2026-06-10">
+    <meta property="article:modified_time" content="2026-06-10">
+    <meta property="article:author" content="https://fahlevi-thing.com/about">
+    <meta property="article:section" content="INVESTMENT">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -301,7 +347,13 @@
 
             <div class="recent-posts">
                 <h2 class="featured-label" style="margin-top: 40px;">Related Posts</h2>
-                <div id="related-posts-container" class="posts-grid"></div>
+                <div id="related-posts-container" class="posts-grid">
+                    <!-- Static pre-render for crawlers. JS replaces with interactive list. -->
+                    <article class="post-item"><div class="post-details"><div class="meta-cat">INVESTMENT • <span class="meta-date">July 2, 2026</span></div><h2><a href="/danantara">Money That Outlives Its Source: The Quiet Logic of Sovereign Wealth Funds</a></h2><a href="/danantara" class="read-more">Read More</a></div></article>
+                    <article class="post-item"><div class="post-details"><div class="meta-cat">INVESTMENT • <span class="meta-date">June 13, 2026</span></div><h2><a href="/tesla-playbook">The Tesla Playbook</a></h2><a href="/tesla-playbook" class="read-more">Read More</a></div></article>
+                    <article class="post-item"><div class="post-details"><div class="meta-cat">INVESTMENT • <span class="meta-date">June 12, 2026</span></div><h2><a href="/spacex-gojek-playbook">Is SpaceX Following Gojek's Playbook?</a></h2><a href="/spacex-gojek-playbook" class="read-more">Read More</a></div></article>
+                    <article class="post-item"><div class="post-details"><div class="meta-cat">INVESTMENT • <span class="meta-date">May 30, 2026</span></div><h2><a href="/pension-fund-diy">Why Do Employees Need a Pension Fund If They Can Build One Themselves?</a></h2><a href="/pension-fund-diy" class="read-more">Read More</a></div></article>
+                </div>
             </div>
         </main>
 
@@ -341,7 +393,7 @@
         </div>
     </footer>
 
-    <script src="translations.js?v=20260704"></script>
-    <script src="script.js?v=20260704"></script>
+    <script src="translations.js?v=20260705"></script>
+    <script src="script.js?v=20260705"></script>
 </body>
 </html>
