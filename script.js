@@ -7,6 +7,94 @@
     document.head.appendChild(script);
 })();
 
+// === SECURITY & BUG MONITOR ===
+// Detector layer for a static site: catches runtime JS errors, broken
+// resources, CSP violations (blocked injection attempts), clickjacking
+// frames, and XSS probes in the URL, then reports each one to Google
+// Analytics as an event. Capped and deduplicated so a single broken
+// page cannot flood the analytics property.
+(function () {
+    var reported = {};
+    var reportCount = 0;
+    var MAX_REPORTS = 10;
+
+    function report(eventName, params) {
+        if (reportCount >= MAX_REPORTS) return;
+        var key = eventName + '|' + (params.description || '');
+        if (reported[key]) return;
+        reported[key] = true;
+        reportCount++;
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, params);
+        }
+    }
+
+    // --- BUG DETECTOR: runtime JS errors and failed resources ---
+    window.addEventListener('error', function (e) {
+        var t = e.target;
+        if (t && t !== window && (t.tagName === 'IMG' || t.tagName === 'SCRIPT' || t.tagName === 'LINK')) {
+            report('resource_error', {
+                description: (t.tagName + ' failed: ' + (t.src || t.href || '')).slice(0, 150),
+                page: location.pathname
+            });
+            return;
+        }
+        report('js_error', {
+            description: String(e.message || 'unknown error').slice(0, 150),
+            source: ((e.filename || '') + ':' + (e.lineno || 0)).slice(0, 100),
+            page: location.pathname
+        });
+    }, true);
+
+    // --- BUG DETECTOR: unhandled promise rejections ---
+    window.addEventListener('unhandledrejection', function (e) {
+        var msg = e.reason && e.reason.message ? e.reason.message : String(e.reason);
+        report('js_error', {
+            description: ('Unhandled promise: ' + msg).slice(0, 150),
+            page: location.pathname
+        });
+    });
+
+    // --- FIREWALL DETECTOR: CSP violations (blocked script/style injections) ---
+    document.addEventListener('securitypolicyviolation', function (e) {
+        report('security_violation', {
+            description: ('CSP blocked ' + e.violatedDirective + ': ' + (e.blockedURI || 'inline')).slice(0, 150),
+            page: location.pathname
+        });
+    });
+
+    // --- FIREWALL DETECTOR: clickjacking (site loaded inside a foreign iframe) ---
+    // X-Frame-Options already blocks this at the header level on Cloudflare;
+    // this is a fallback that also records the attempt.
+    try {
+        if (window.top !== window.self) {
+            report('security_violation', {
+                description: ('Page framed by: ' + (document.referrer || 'unknown')).slice(0, 150),
+                page: location.pathname
+            });
+            window.top.location = window.self.location;
+        }
+    } catch (err) { /* cross-origin parent refused access; header already blocks rendering */ }
+
+    // --- FIREWALL DETECTOR: XSS probes in the URL ---
+    try {
+        var q = decodeURIComponent(location.search + location.hash);
+        if (q.length > 1 && /<script|javascript:|onerror\s*=|onload\s*=|<img|<svg|<iframe/i.test(q)) {
+            report('security_violation', {
+                description: ('Suspicious URL payload: ' + q).slice(0, 150),
+                page: location.pathname
+            });
+            history.replaceState(null, '', location.pathname);
+        }
+    } catch (err) { /* malformed URI; nothing to clean */ }
+
+    // --- Self-XSS warning for anyone opening the console ---
+    if (window.console && console.log) {
+        console.log('%cSTOP!', 'color:#B5404F;font-size:40px;font-weight:900;');
+        console.log('%cThis console is for developers. If someone told you to copy-paste something here, it is a scam that could hijack your session. Close this panel.', 'font-size:13px;');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- ACCESSIBILITY: SKIP TO CONTENT ---
