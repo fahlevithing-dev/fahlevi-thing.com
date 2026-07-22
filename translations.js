@@ -120,6 +120,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'mbg-30-day-fix': {
+                titleId: 'Perbaikan 30 Hari: Mampukah Program Makan Bergizi Gratis Membenahi Dirinya Sendiri?',
+                excerptId: 'Delapan belas bulan sejak diluncurkan, Presiden Prabowo memberi waktu tiga puluh hari kepada BGN untuk membenahi tata kelola MBG. Apa yang terjadi dalam rentang waktu itu akan menentukan apakah program ini bertahan sebagai investasi human capital yang kredibel.'
+            },
             'danantara': {
                 titleId: 'Kekayaan yang Hidup Lebih Lama dari Sumbernya: Logika Senyap Sovereign Wealth Fund',
                 excerptId: 'Sebagian besar kekayaan Norwegia tidak pernah ada di dasar laut; ia diciptakan oleh pasar, oleh modal yang ditanam sejak dini dan dibiarkan tumbuh. Fakta itu adalah seluruh argumen sovereign wealth fund, sekaligus kacamata yang benar untuk menilai Danantara.'

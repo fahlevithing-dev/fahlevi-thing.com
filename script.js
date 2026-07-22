@@ -544,6 +544,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "The 30-Day Fix: Can Indonesia's Free Meals Program Reform Itself?",
+            url: "mbg-30-day-fix",
+            category: "MACRO-ECONOMICS",
+            date: "July 22, 2026",
+            excerpt: "Eighteen months into Indonesia's most ambitious social program, President Prabowo has given BGN thirty days to overhaul MBG's governance. What happens in that window will determine whether the program survives as a credible investment in human capital.",
+            image: "images/masbahlilganteng.avif"
+        },
+        {
             title: "Money That Outlives Its Source: The Quiet Logic of Sovereign Wealth Funds",
             url: "danantara",
             category: "INVESTMENT",

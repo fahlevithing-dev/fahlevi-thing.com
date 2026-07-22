@@ -5,8 +5,16 @@
     <link>https://fahlevi-thing.com/</link>
     <description>A personal archive of thoughts, investment insights, and stock analysis by Reza Fahlevi.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jul 2026 11:54:26 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 12:41:57 GMT</lastBuildDate>
     <atom:link href="https://fahlevi-thing.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>The 30-Day Fix: Can Indonesia's Free Meals Program Reform Itself?</title>
+      <link>https://fahlevi-thing.com/mbg-30-day-fix</link>
+      <guid isPermaLink="true">https://fahlevi-thing.com/mbg-30-day-fix</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <category>MACRO-ECONOMICS</category>
+      <description>Eighteen months into Indonesia's most ambitious social program, President Prabowo has given BGN thirty days to overhaul MBG's governance. What happens in that window will determine whether the program survives as a credible investment in human capital.</description>
+    </item>
     <item>
       <title>Money That Outlives Its Source: The Quiet Logic of Sovereign Wealth Funds</title>
       <link>https://fahlevi-thing.com/danantara</link>
@@ -158,14 +166,6 @@
       <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
       <category>POLITICAL ECONOMY</category>
       <description>While Part 1 explored institutional structures, Part 2 dissects balance sheets. Malaysia’s TH operates as a diversified multi-asset endowment, while Indonesia’s BPKH functions closer to a sovereign debt accumulator.</description>
-    </item>
-    <item>
-      <title>Pilgrimage and Political Economy: A Comparative Analysis of Hajj Fund Management in Malaysia and Indonesia</title>
-      <link>https://fahlevi-thing.com/hajj-fund-management</link>
-      <guid isPermaLink="true">https://fahlevi-thing.com/hajj-fund-management</guid>
-      <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
-      <category>POLITICAL ECONOMY</category>
-      <description>First-Mover Advantage: Malaysia’s Tabung Haji (TH) has a 50-year head start, allowing it to build a vertically integrated ecosystem. Indonesia’s BPKH is currently shifting from a passive 'saver' strategy to an active 'investor' strategy.</description>
     </item>
   </channel>
 </rss>
