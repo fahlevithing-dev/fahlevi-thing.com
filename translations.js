@@ -513,10 +513,39 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function injectLangToggle() {
-        var connectWrapper = document.querySelector('.sidebar-area .connect-wrapper');
+        // Header toggle: EN / ID pills in the main nav, left of the search box (all pages)
+        var navWrapper = document.querySelector('.nav-wrapper');
+        if (navWrapper && !navWrapper.querySelector('.lang-toggle')) {
+            var langWrapper = document.createElement('div');
+            langWrapper.className = 'lang-toggle';
 
+            ['en', 'id'].forEach(function (lang) {
+                var btn = document.createElement('button');
+                btn.className = 'lang-btn' + (lang === window.LANG.current ? ' active' : '');
+                btn.setAttribute('data-lang', lang);
+                btn.textContent = lang.toUpperCase();
+                btn.setAttribute('aria-label', lang === 'en' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia');
+                btn.addEventListener('click', function () { applyLanguage(lang); });
+                langWrapper.appendChild(btn);
+            });
+
+            var searchBox = navWrapper.querySelector('.search-box');
+            var themeToggle = navWrapper.querySelector('.theme-toggle');
+            var hamburger = navWrapper.querySelector('.hamburger');
+            if (searchBox) {
+                navWrapper.insertBefore(langWrapper, searchBox);
+            } else if (themeToggle) {
+                navWrapper.insertBefore(langWrapper, themeToggle);
+            } else if (hamburger) {
+                navWrapper.insertBefore(langWrapper, hamburger);
+            } else {
+                navWrapper.appendChild(langWrapper);
+            }
+        }
+
+        // Sidebar widget: full-word English / Indonesia buttons (pages with sidebar)
+        var connectWrapper = document.querySelector('.sidebar-area .connect-wrapper');
         if (connectWrapper) {
-            // Primary: inject in sidebar after .connect-wrapper (same position as old DeepL widget)
             var wrapper = document.createElement('div');
             wrapper.className = 'translate-wrapper lang-switch-widget';
 
@@ -535,36 +564,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             connectWrapper.parentNode.insertBefore(wrapper, connectWrapper.nextSibling);
-            return;
-        }
-
-        // Fallback: pages without sidebar (privacy.html), inject in header nav
-        var navWrapper = document.querySelector('.nav-wrapper');
-        if (!navWrapper) return;
-
-        var langWrapper = document.createElement('div');
-        langWrapper.className = 'lang-toggle';
-
-        ['en', 'id'].forEach(function (lang) {
-            var btn = document.createElement('button');
-            btn.className = 'lang-btn' + (lang === window.LANG.current ? ' active' : '');
-            btn.setAttribute('data-lang', lang);
-            btn.textContent = lang.toUpperCase();
-            btn.setAttribute('aria-label', lang === 'en' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia');
-            btn.addEventListener('click', function () { applyLanguage(lang); });
-            langWrapper.appendChild(btn);
-        });
-
-        var themeToggle = navWrapper.querySelector('.theme-toggle');
-        if (themeToggle) {
-            navWrapper.insertBefore(langWrapper, themeToggle);
-        } else {
-            var hamburger = navWrapper.querySelector('.hamburger');
-            if (hamburger) {
-                navWrapper.insertBefore(langWrapper, hamburger);
-            } else {
-                navWrapper.appendChild(langWrapper);
-            }
         }
     }
 
