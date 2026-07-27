@@ -544,6 +544,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Independence Is a Structure, Not a Signature",
+            url: "central-bank-independence",
+            category: "POLITICAL ECONOMY",
+            date: "July 27, 2026",
+            excerpt: "Turkey fired its central bank governor and paid with 85 percent inflation. Argentina turned its central bank into a printing press. America's Fed held. What actually protects central bank independence is not a signature; it is a structure.",
+            image: "images/bi.jpeg"
+        },
+        {
             title: "The 30-Day Fix: Can Indonesia's Free Meals Program Reform Itself?",
             url: "mbg-30-day-fix",
             category: "MACRO-ECONOMICS",

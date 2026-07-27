@@ -5,8 +5,16 @@
     <link>https://fahlevi-thing.com/</link>
     <description>A personal archive of thoughts, investment insights, and stock analysis by Reza Fahlevi.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jul 2026 12:41:57 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 02:19:44 GMT</lastBuildDate>
     <atom:link href="https://fahlevi-thing.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Independence Is a Structure, Not a Signature</title>
+      <link>https://fahlevi-thing.com/central-bank-independence</link>
+      <guid isPermaLink="true">https://fahlevi-thing.com/central-bank-independence</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <category>POLITICAL ECONOMY</category>
+      <description>Turkey fired its central bank governor and paid with 85 percent inflation. Argentina turned its central bank into a printing press. America's Fed held. What actually protects central bank independence is not a signature; it is a structure.</description>
+    </item>
     <item>
       <title>The 30-Day Fix: Can Indonesia's Free Meals Program Reform Itself?</title>
       <link>https://fahlevi-thing.com/mbg-30-day-fix</link>
@@ -158,14 +166,6 @@
       <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
       <category>POETRY</category>
       <description>The archive grows heavier by the hour. New lines of code, fresh paragraphs, Another article was pushed to the live server. The index page scrolls endlessly down, A monument of sudden, manic focus.</description>
-    </item>
-    <item>
-      <title>The Portfolio War – A Deep Dive into Hajj Fund Strategies (Malaysia vs. Indonesia)</title>
-      <link>https://fahlevi-thing.com/hajj-fund-portfolio-war</link>
-      <guid isPermaLink="true">https://fahlevi-thing.com/hajj-fund-portfolio-war</guid>
-      <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
-      <category>POLITICAL ECONOMY</category>
-      <description>While Part 1 explored institutional structures, Part 2 dissects balance sheets. Malaysia’s TH operates as a diversified multi-asset endowment, while Indonesia’s BPKH functions closer to a sovereign debt accumulator.</description>
     </item>
   </channel>
 </rss>

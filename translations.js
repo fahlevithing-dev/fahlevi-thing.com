@@ -120,6 +120,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'central-bank-independence': {
+                titleId: 'Independensi Itu Struktur, Bukan Tanda Tangan',
+                excerptId: 'Turki memecat gubernur bank sentralnya dan membayarnya dengan inflasi 85 persen. Argentina menjadikan bank sentralnya mesin cetak uang. The Fed Amerika bertahan. Yang benar-benar melindungi independensi bank sentral bukan tanda tangan, melainkan struktur.'
+            },
             'mbg-30-day-fix': {
                 titleId: 'Perbaikan 30 Hari: Mampukah Program Makan Bergizi Gratis Membenahi Dirinya Sendiri?',
                 excerptId: 'Delapan belas bulan sejak diluncurkan, Presiden Prabowo memberi waktu tiga puluh hari kepada BGN untuk membenahi tata kelola MBG. Apa yang terjadi dalam rentang waktu itu akan menentukan apakah program ini bertahan sebagai investasi human capital yang kredibel.'
