@@ -120,6 +120,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'gold-vs-currency-trust': {
+                titleId: 'Mata Uang yang Kita Pakai dan Logam yang Kita Kubur',
+                excerptId: 'Uang kertas dan emas memperoleh kepercayaan dari sifat yang berlawanan: satu dari peredaran, satu lagi dari kediamannya. Mengapa Warren Buffett menolak membeli emas, diverifikasi ulang lewat surat Berkshire 2011 dan asal-usul kutipan Mars-nya yang sebenarnya.'
+            },
             'central-bank-independence': {
                 titleId: 'Independensi Itu Struktur, Bukan Tanda Tangan',
                 excerptId: 'Turki memecat gubernur bank sentralnya dan membayarnya dengan inflasi 85 persen. Argentina menjadikan bank sentralnya mesin cetak uang. The Fed Amerika bertahan. Yang benar-benar melindungi independensi bank sentral bukan tanda tangan, melainkan struktur.'

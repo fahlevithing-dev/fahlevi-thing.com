@@ -967,6 +967,40 @@ figure img.article-portrait-image {
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
+/* Inline source citation chip — links a claim to its primary source */
+a.source-cite {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--accent-navy);
+    background: rgba(0, 77, 152, 0.08);
+    border: 1px solid rgba(0, 77, 152, 0.28);
+    border-radius: 20px;
+    padding: 2px 10px 2px 8px;
+    margin-left: 6px;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+a.source-cite:hover {
+    background: var(--accent-navy);
+    color: #fff;
+    border-color: var(--accent-navy);
+}
+[data-theme="dark"] a.source-cite {
+    background: rgba(77, 143, 214, 0.14);
+    border-color: rgba(77, 143, 214, 0.35);
+}
+[data-theme="dark"] a.source-cite:hover {
+    background: var(--accent-navy);
+    color: #0d0d0d;
+}
+
 /* Side-by-side screenshot comparison row */
 .screenshot-row {
     display: flex;

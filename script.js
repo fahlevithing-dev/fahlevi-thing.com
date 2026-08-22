@@ -544,6 +544,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "The Currency We Use and the Metal We Bury",
+            url: "gold-vs-currency-trust",
+            category: "INVESTMENT",
+            date: "August 22, 2026",
+            excerpt: "Paper money and gold earn trust from opposite qualities: one from circulation, the other from staying inert. Why Warren Buffett refuses to own gold, fact-checked against his 2011 Berkshire letter and the real origin of his famous Mars quote.",
+            image: "images/money.jpeg"
+        },
+        {
             title: "Independence Is a Structure, Not a Signature",
             url: "central-bank-independence",
             category: "POLITICAL ECONOMY",

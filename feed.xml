@@ -5,8 +5,16 @@
     <link>https://fahlevi-thing.com/</link>
     <description>A personal archive of thoughts, investment insights, and stock analysis by Reza Fahlevi.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jul 2026 02:19:44 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2026 09:05:01 GMT</lastBuildDate>
     <atom:link href="https://fahlevi-thing.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>The Currency We Use and the Metal We Bury</title>
+      <link>https://fahlevi-thing.com/gold-vs-currency-trust</link>
+      <guid isPermaLink="true">https://fahlevi-thing.com/gold-vs-currency-trust</guid>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 GMT</pubDate>
+      <category>INVESTMENT</category>
+      <description>Paper money and gold earn trust from opposite qualities: one from circulation, the other from staying inert. Why Warren Buffett refuses to own gold, fact-checked against his 2011 Berkshire letter and the real origin of his famous Mars quote.</description>
+    </item>
     <item>
       <title>Independence Is a Structure, Not a Signature</title>
       <link>https://fahlevi-thing.com/central-bank-independence</link>
@@ -158,14 +166,6 @@
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <category>MACRO-ECONOMICS</category>
       <description>School nutrition policies have evolved from simple public health interventions into strategic pillars for human capital development and geopolitical stability. Globally, providing school meals is no longer just an act of philanthropy...</description>
-    </item>
-    <item>
-      <title>The Glitch in the Archive</title>
-      <link>https://fahlevi-thing.com/glitch-in-the-archive</link>
-      <guid isPermaLink="true">https://fahlevi-thing.com/glitch-in-the-archive</guid>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
-      <category>POETRY</category>
-      <description>The archive grows heavier by the hour. New lines of code, fresh paragraphs, Another article was pushed to the live server. The index page scrolls endlessly down, A monument of sudden, manic focus.</description>
     </item>
   </channel>
 </rss>
