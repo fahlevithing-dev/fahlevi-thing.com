@@ -5,8 +5,16 @@
     <link>https://fahlevi-thing.com/</link>
     <description>A personal archive of thoughts, investment insights, and stock analysis by Reza Fahlevi.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 22 Aug 2026 09:05:01 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 06:05:37 GMT</lastBuildDate>
     <atom:link href="https://fahlevi-thing.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Bitcoin: When Scarcity Becomes a Mathematical Claim</title>
+      <link>https://fahlevi-thing.com/bitcoin-mathematical-scarcity</link>
+      <guid isPermaLink="true">https://fahlevi-thing.com/bitcoin-mathematical-scarcity</guid>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 GMT</pubDate>
+      <category>INVESTMENT</category>
+      <description>Bitcoin's 21 million cap and gold's geological scarcity earn trust the same way, but the trust itself is relocated, not eliminated. Warren Buffett's rat poison squared and $25 quotes fact-checked against CNBC.</description>
+    </item>
     <item>
       <title>The Currency We Use and the Metal We Bury</title>
       <link>https://fahlevi-thing.com/gold-vs-currency-trust</link>
@@ -158,14 +166,6 @@
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <category>MACRO-ECONOMICS</category>
       <description>To understand why a national school meal program is hailed as a 'genius' intervention, one must examine the empirical data regarding what actually reaches the plates of citizens...</description>
-    </item>
-    <item>
-      <title>Program Makan Bergizi Gratis (MBG): The “Genius” Initiative Facing Implementation Challenges</title>
-      <link>https://fahlevi-thing.com/mbg-genius-initiative</link>
-      <guid isPermaLink="true">https://fahlevi-thing.com/mbg-genius-initiative</guid>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
-      <category>MACRO-ECONOMICS</category>
-      <description>School nutrition policies have evolved from simple public health interventions into strategic pillars for human capital development and geopolitical stability. Globally, providing school meals is no longer just an act of philanthropy...</description>
     </item>
   </channel>
 </rss>

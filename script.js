@@ -544,6 +544,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Bitcoin: When Scarcity Becomes a Mathematical Claim",
+            url: "bitcoin-mathematical-scarcity",
+            category: "INVESTMENT",
+            date: "August 23, 2026",
+            excerpt: "Bitcoin's 21 million cap and gold's geological scarcity earn trust the same way, but the trust itself is relocated, not eliminated. Warren Buffett's rat poison squared and $25 quotes fact-checked against CNBC.",
+            image: "images/bitcoin.png"
+        },
+        {
             title: "The Currency We Use and the Metal We Bury",
             url: "gold-vs-currency-trust",
             category: "INVESTMENT",

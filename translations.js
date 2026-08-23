@@ -120,6 +120,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'bitcoin-mathematical-scarcity': {
+                titleId: 'Bitcoin: Ketika Kelangkaan Menjadi Klaim Matematis',
+                excerptId: 'Batas 21 juta Bitcoin dan kelangkaan geologis emas sama-sama memperoleh kepercayaan lewat cara serupa, tetapi kepercayaan itu dipindahkan, bukan dihapuskan. Kutipan Buffett "racun tikus berpangkat dua" dan "25 dolar" diverifikasi ulang lewat CNBC.'
+            },
             'gold-vs-currency-trust': {
                 titleId: 'Mata Uang yang Kita Pakai dan Logam yang Kita Kubur',
                 excerptId: 'Uang kertas dan emas memperoleh kepercayaan dari sifat yang berlawanan: satu dari peredaran, satu lagi dari kediamannya. Mengapa Warren Buffett menolak membeli emas, diverifikasi ulang lewat surat Berkshire 2011 dan asal-usul kutipan Mars-nya yang sebenarnya.'
