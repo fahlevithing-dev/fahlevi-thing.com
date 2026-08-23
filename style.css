@@ -967,6 +967,23 @@ figure img.article-portrait-image {
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
+/* Small, fully-visible square/icon-style hero image (no crop) */
+figure img.article-icon-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 380px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+@media (max-width: 768px) {
+    figure img.article-icon-image {
+        max-height: 280px;
+    }
+}
+
 /* Inline source citation chip — links a claim to its primary source */
 a.source-cite {
     display: inline-flex;
