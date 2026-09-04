@@ -120,6 +120,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'what-the-fuck-is-love': {
+                titleId: 'Apa Sebenarnya Cinta Itu',
+                excerptId: 'Tentang cinta yang tidak bisa dijelaskan, dan memang tidak perlu dijelaskan. Sebuah renungan tentang rasa syukur, pemberian, dan membiarkan cinta menjadi apa adanya.'
+            },
             'broken-paper-of-me': {
                 titleId: 'Kertas Rusak dalam Diriku',
                 excerptId: 'Sebuah renungan tentang mencari seseorang yang terbuat dari kertas daur ulang bertekstur yang sama, bukan kanvas yang sempurna.'

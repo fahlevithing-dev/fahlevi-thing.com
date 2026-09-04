@@ -5,8 +5,16 @@
     <link>https://fahlevi-thing.com/</link>
     <description>A personal archive of thoughts, investment insights, and stock analysis by Reza Fahlevi.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Sep 2026 14:02:48 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 14:31:11 GMT</lastBuildDate>
     <atom:link href="https://fahlevi-thing.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>What the Fuck Is Love</title>
+      <link>https://fahlevi-thing.com/what-the-fuck-is-love</link>
+      <guid isPermaLink="true">https://fahlevi-thing.com/what-the-fuck-is-love</guid>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
+      <category>POETRY</category>
+      <description>On the kind of love you cannot explain, and would not want to. A reflection on gratitude, gift, and letting love be what it is.</description>
+    </item>
     <item>
       <title>Broken Paper of Me</title>
       <link>https://fahlevi-thing.com/broken-paper-of-me</link>
@@ -158,14 +166,6 @@
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <category>MACRO-ECONOMICS</category>
       <description>If Indonesia successfully navigates the current implementation hurdles and achieves a 'zero mistake' operational state, the MBG program transforms into a powerful engine for national restructuring...</description>
-    </item>
-    <item>
-      <title>MBG Part 4: Safety, Quality, and the &quot;Zero Mistake&quot; Mandate</title>
-      <link>https://fahlevi-thing.com/mbg-part-4</link>
-      <guid isPermaLink="true">https://fahlevi-thing.com/mbg-part-4</guid>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
-      <category>MACRO-ECONOMICS</category>
-      <description>As Indonesia moves toward its ambitious goal of serving over 82.9 million beneficiaries by 2029, the National Nutrition Agency (BGN) has had to confront immediate systemic failures...</description>
     </item>
   </channel>
 </rss>

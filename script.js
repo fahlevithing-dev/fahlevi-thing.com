@@ -544,6 +544,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "What the Fuck Is Love",
+            url: "what-the-fuck-is-love",
+            category: "POETRY",
+            date: "September 6, 2026",
+            excerpt: "On the kind of love you cannot explain, and would not want to. A reflection on gratitude, gift, and letting love be what it is.",
+            image: "images/love.jpeg"
+        },
+        {
             title: "Broken Paper of Me",
             url: "broken-paper-of-me",
             category: "POETRY",
