@@ -5,8 +5,16 @@
     <link>https://fahlevi-thing.com/</link>
     <description>A personal archive of thoughts, investment insights, and stock analysis by Reza Fahlevi.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 23 Aug 2026 06:05:37 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 13:23:25 GMT</lastBuildDate>
     <atom:link href="https://fahlevi-thing.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>I Was Never a Blank Page</title>
+      <link>https://fahlevi-thing.com/i-was-never-a-blank-page</link>
+      <guid isPermaLink="true">https://fahlevi-thing.com/i-was-never-a-blank-page</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 GMT</pubDate>
+      <category>POETRY</category>
+      <description>A lesson learned on being shredded and remade. Not a blank page, but paper that gets to be made twice.</description>
+    </item>
     <item>
       <title>Bitcoin: When Scarcity Becomes a Mathematical Claim</title>
       <link>https://fahlevi-thing.com/bitcoin-mathematical-scarcity</link>
@@ -158,14 +166,6 @@
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <category>MACRO-ECONOMICS</category>
       <description>While the vision of a universal school meal program is theoretically 'genius,' the transition from policy paper to a child’s plate is fraught with systemic obstacles...</description>
-    </item>
-    <item>
-      <title>MBG Part 2: The Nutritional Gap &amp; Per Capita Consumption</title>
-      <link>https://fahlevi-thing.com/mbg-part-2</link>
-      <guid isPermaLink="true">https://fahlevi-thing.com/mbg-part-2</guid>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
-      <category>MACRO-ECONOMICS</category>
-      <description>To understand why a national school meal program is hailed as a 'genius' intervention, one must examine the empirical data regarding what actually reaches the plates of citizens...</description>
     </item>
   </channel>
 </rss>

@@ -120,6 +120,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'i-was-never-a-blank-page': {
+                titleId: 'Aku Tidak Pernah Jadi Kertas Kosong',
+                excerptId: 'Sebuah pelajaran tentang menjadi hancur lalu dibentuk lagi. Bukan kertas kosong, hanya kertas yang mendapat kesempatan untuk dibuat dua kali.'
+            },
             'bitcoin-mathematical-scarcity': {
                 titleId: 'Bitcoin: Ketika Kelangkaan Menjadi Klaim Matematis',
                 excerptId: 'Batas 21 juta Bitcoin dan kelangkaan geologis emas sama-sama memperoleh kepercayaan lewat cara serupa, tetapi kepercayaan itu dipindahkan, bukan dihapuskan. Kutipan Buffett "racun tikus berpangkat dua" dan "25 dolar" diverifikasi ulang lewat CNBC.'

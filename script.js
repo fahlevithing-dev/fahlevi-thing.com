@@ -544,6 +544,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "I Was Never a Blank Page",
+            url: "i-was-never-a-blank-page",
+            category: "POETRY",
+            date: "September 4, 2026",
+            excerpt: "A lesson learned on being shredded and remade. Not a blank page, but paper that gets to be made twice.",
+            image: ""
+        },
+        {
             title: "Bitcoin: When Scarcity Becomes a Mathematical Claim",
             url: "bitcoin-mathematical-scarcity",
             category: "INVESTMENT",
