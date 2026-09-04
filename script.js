@@ -544,6 +544,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Broken Paper of Me",
+            url: "broken-paper-of-me",
+            category: "POETRY",
+            date: "September 5, 2026",
+            excerpt: "A reflection on looking for someone made of the same recycled, textured paper, not a perfect canvas.",
+            image: ""
+        },
+        {
             title: "I Was Never a Blank Page",
             url: "i-was-never-a-blank-page",
             category: "POETRY",

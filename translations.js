@@ -120,6 +120,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'broken-paper-of-me': {
+                titleId: 'Kertas Rusak dalam Diriku',
+                excerptId: 'Sebuah renungan tentang mencari seseorang yang terbuat dari kertas daur ulang bertekstur yang sama, bukan kanvas yang sempurna.'
+            },
             'i-was-never-a-blank-page': {
                 titleId: 'Aku Tidak Pernah Jadi Kertas Kosong',
                 excerptId: 'Sebuah pelajaran tentang menjadi hancur lalu dibentuk lagi. Bukan kertas kosong, hanya kertas yang mendapat kesempatan untuk dibuat dua kali.'
