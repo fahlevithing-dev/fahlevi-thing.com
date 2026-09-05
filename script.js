@@ -464,38 +464,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="overlay-divider"></div>
                 <div class="portfolio-grid">
                     <a href="pwon-analysis.html" class="portfolio-card">
-                        <span class="stock-icon"><i class="fas fa-building"></i></span>
-                        <span class="stock-code">PWON</span>
+                        <span class="stock-code-row">
+                            <span class="stock-code">PWON</span>
+                            <span class="stock-cat">Property Developer</span>
+                        </span>
                         <span class="stock-name">Pakuwon Jati</span>
-                        <span class="stock-cat">Property Developer</span>
                         <span class="portfolio-readmore">View Analysis &rarr;</span>
                     </a>
                     <a href="dkft-analysis.html" class="portfolio-card">
-                        <span class="stock-icon"><i class="fas fa-mountain"></i></span>
-                        <span class="stock-code">DKFT</span>
+                        <span class="stock-code-row">
+                            <span class="stock-code">DKFT</span>
+                            <span class="stock-cat">Nickel Mining</span>
+                        </span>
                         <span class="stock-name">Central Omega</span>
-                        <span class="stock-cat">Nickel Mining</span>
                         <span class="portfolio-readmore">View Analysis &rarr;</span>
                     </a>
                     <a href="sril-analysis.html" class="portfolio-card">
-                        <span class="stock-icon"><i class="fas fa-shirt"></i></span>
-                        <span class="stock-code">SRIL</span>
+                        <span class="stock-code-row">
+                            <span class="stock-code">SRIL</span>
+                            <span class="stock-cat">Textile & Garment</span>
+                        </span>
                         <span class="stock-name">Sri Rejeki Isman</span>
-                        <span class="stock-cat">Textile & Garment</span>
                         <span class="portfolio-readmore">View Analysis &rarr;</span>
                     </a>
                     <a href="adro-admr-analysis.html" class="portfolio-card">
-                        <span class="stock-icon"><i class="fas fa-bolt"></i></span>
-                        <span class="stock-code">ADRO & ADMR</span>
+                        <span class="stock-code-row">
+                            <span class="stock-code">ADRO &amp; ADMR</span>
+                            <span class="stock-cat">Energy & Minerals</span>
+                        </span>
                         <span class="stock-name">Adaro Group</span>
-                        <span class="stock-cat">Energy & Minerals</span>
                         <span class="portfolio-readmore">View Analysis &rarr;</span>
                     </a>
                     <a href="cita-analysis.html" class="portfolio-card">
-                        <span class="stock-icon"><i class="fas fa-layer-group"></i></span>
-                        <span class="stock-code">CITA</span>
+                        <span class="stock-code-row">
+                            <span class="stock-code">CITA</span>
+                            <span class="stock-cat">Bauxite Mining</span>
+                        </span>
                         <span class="stock-name">Cita Mineral</span>
-                        <span class="stock-cat">Bauxite Mining</span>
                         <span class="portfolio-readmore">View Analysis &rarr;</span>
                     </a>
                 </div>
