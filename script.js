@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "What the Fuck Is Love",
             url: "what-the-fuck-is-love",
-            category: "POETRY",
+            category: "SELF REFLECTION",
             date: "September 4, 2026",
             excerpt: "On the kind of love you cannot explain, and would not want to. A reflection on gratitude, gift, and letting love be what it is.",
             image: "images/love.jpeg"
@@ -571,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "Broken Paper of Me",
             url: "broken-paper-of-me",
-            category: "POETRY",
+            category: "SELF REFLECTION",
             date: "September 4, 2026",
             excerpt: "A reflection on looking for someone made of the same recycled, textured paper, not a perfect canvas.",
             image: ""
@@ -579,7 +579,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "I Was Never a Blank Page",
             url: "i-was-never-a-blank-page",
-            category: "POETRY",
+            category: "SELF REFLECTION",
             date: "September 4, 2026",
             excerpt: "A lesson learned on being shredded and remade. Not a blank page, but paper that gets to be made twice.",
             image: ""

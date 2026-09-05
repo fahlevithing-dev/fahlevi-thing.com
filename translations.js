@@ -58,7 +58,8 @@ window.LANG = (function () {
                     'MARKET UPDATE': 'MARKET UPDATE',
                     TECHNOLOGY: 'TECHNOLOGY',
                     'PORTFOLIO UPDATE': 'PORTFOLIO UPDATE',
-                    POETRY: 'POETRY'
+                    POETRY: 'POETRY',
+                    'SELF REFLECTION': 'SELF REFLECTION'
                 }
             },
             id: {
@@ -115,7 +116,8 @@ window.LANG = (function () {
                     'MARKET UPDATE': 'UPDATE PASAR',
                     TECHNOLOGY: 'TEKNOLOGI',
                     'PORTFOLIO UPDATE': 'UPDATE PORTOFOLIO',
-                    POETRY: 'PUISI'
+                    POETRY: 'PUISI',
+                    'SELF REFLECTION': 'REFLEKSI DIRI'
                 }
             }
         },
