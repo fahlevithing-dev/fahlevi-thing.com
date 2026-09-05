@@ -39,10 +39,36 @@
       "Bash(sed -i 's/v=20260704/v=20260705/g' *.html)",
       "Bash(node \"C:/Users/rezaf/AppData/Local/Temp/claude/d--Fahlevithing/84b3edcd-30ea-45ba-88b4-b6cb060b3e5c/scratchpad/danantara-rev.js\")",
       "Bash(sed -i 's/v=20260705/v=20260706/g' *.html)",
-      "Bash(git fetch *)"
+      "Bash(git fetch *)",
+      "Bash(sed -i 's/v=20260706/v=20260707/g' *.html)",
+      "Bash(node \"C:/Users/rezaf/AppData/Local/Temp/claude/d--Fahlevithing/84b3edcd-30ea-45ba-88b4-b6cb060b3e5c/scratchpad/gen-feed.js\")",
+      "Bash(sed -i 's/v=20260707/v=20260708/g' *.html)",
+      "Bash(node -e \"new Function\\(require\\('fs'\\).readFileSync\\('translations.js','utf8'\\)\\)\")",
+      "Bash(sed -i 's/v=20260708/v=20260709/g' *.html)",
+      "Bash(sed -i 's/v=20260709/v=20260710/g' *.html)",
+      "Bash(sed -i 's/v=20260710/v=20260711/g' *.html && grep -c 'v=20260711' central-bank-independence.html)",
+      "Bash(node -e \"new Function\\(require\\('fs'\\).readFileSync\\('central-bank-independence.html'\\).toString\\(\\).match\\(/<script[^>]*>\\([\\\\s\\\\S]*?\\)<\\\\/script>/g\\)===null?'':''\\)\")",
+      "WebFetch(domain:www.congress.gov)",
+      "WebFetch(domain:www.scotusblog.com)",
+      "WebFetch(domain:bankingjournal.aba.com)",
+      "WebFetch(domain:www.everycrsreport.com)",
+      "WebFetch(domain:www.supremecourt.gov)",
+      "WebFetch(domain:supreme.justia.com)",
+      "WebFetch(domain:www.faegredrinker.com)",
+      "WebFetch(domain:www.cnbc.com)",
+      "Bash(sed -i 's/v=20260711/v=20260712/g' *.html)",
+      "WebFetch(domain:quoteinvestigator.com)",
+      "Bash(sed -i 's/v=20260712/v=20260713/g' *.html)",
+      "Bash(sed -i 's/v=20260713/v=20260714/g' *.html && grep -c \"gold-vs-currency-trust\" index.html)",
+      "Bash(sed -i 's/v=20260715/v=20260716/g' *.html)",
+      "Bash(sed -i 's|images/money\\\\.jpeg|images/bitcoin.png|g; s|image/jpeg|image/png|g' bitcoin-mathematical-scarcity.html)",
+      "Bash(sed -i 's|Photo: Rupiah banknotes and gold bars|Bitcoin: Proof of Work, genesis block 3 January 2009, SHA-256, 21,000,000 supply cap|; s|Foto: Uang rupiah dan batangan emas|Bitcoin: Proof of Work, blok genesis 3 Januari 2009, SHA-256, batas pasokan 21.000.000|' bitcoin-mathematical-scarcity.html)",
+      "Bash(sed -i 's/v=20260716/v=20260717/g' bitcoin-mathematical-scarcity.html)",
+      "Bash(sed -i 's/v=20260717/v=20260718/g' bitcoin-mathematical-scarcity.html)"
     ],
     "additionalDirectories": [
-      "D:\\Fahlevithing"
+      "D:\\Fahlevithing",
+      "d:\\Fahlevithing"
     ]
   }
 }
