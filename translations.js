@@ -122,6 +122,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'bbca-analysis': {
+                titleId: 'Bank yang Kembali dari Titik Nol: BCA dan Jalan Panjang Sejak Mei 1998',
+                excerptId: 'BCA selamat dari rush 1998 dan pengambilalihan negara hingga menjadi emiten dengan kapitalisasi pasar terbesar di Indonesia, ditopang basis dana pihak ketiga termurah dan paling lengket di pasar. Kualitas ini, dan harga yang kini melekat padanya.'
+            },
             'what-the-fuck-is-love': {
                 titleId: 'Apa Sebenarnya Cinta Itu',
                 excerptId: 'Tentang cinta yang tidak bisa dijelaskan, dan memang tidak perlu dijelaskan. Sebuah renungan tentang rasa syukur, pemberian, dan membiarkan cinta menjadi apa adanya.'

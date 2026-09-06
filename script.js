@@ -460,9 +460,17 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="close-overlay">&times;</div>
             <div class="overlay-content">
                 <h2 class="overlay-title">Investment Portfolio</h2>
-                <p class="overlay-subtitle">5 Active Positions &middot; Indonesia Stock Exchange</p>
+                <p class="overlay-subtitle">6 Active Positions &middot; Indonesia Stock Exchange</p>
                 <div class="overlay-divider"></div>
                 <div class="portfolio-grid">
+                    <a href="bbca-analysis.html" class="portfolio-card">
+                        <span class="stock-code-row">
+                            <span class="stock-code">BBCA</span>
+                            <span class="stock-cat">Banking</span>
+                        </span>
+                        <span class="stock-name">Bank Central Asia</span>
+                        <span class="portfolio-readmore">View Analysis &rarr;</span>
+                    </a>
                     <a href="pwon-analysis.html" class="portfolio-card">
                         <span class="stock-code-row">
                             <span class="stock-code">PWON</span>
@@ -560,6 +568,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Centralized Post Data
     const allPosts = [
+        {
+            title: "The Bank That Came Back: BCA and the Long Road from May 1998",
+            url: "bbca-analysis",
+            category: "STOCK ANALYSIS",
+            date: "September 6, 2026",
+            excerpt: "BCA survived a 1998 bank run and state takeover to become Indonesia's largest listed company, built on the cheapest, stickiest deposit base in the market. A look at the quality, and the price now attached to it.",
+            image: "images/bbca.png"
+        },
         {
             title: "What the Fuck Is Love",
             url: "what-the-fuck-is-love",
