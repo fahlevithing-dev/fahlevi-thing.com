@@ -38,14 +38,6 @@
     --accent-navy: #4D8FD6;
 }
 
-/* Dark Mode Specific Overrides */
-[data-theme="dark"] .sub-translate-text,
-[data-theme="dark"] .goog-te-gadget-simple,
-[data-theme="dark"] .goog-te-gadget-simple span,
-[data-theme="dark"] .goog-te-gadget-simple .goog-te-menu-value span {
-    color: #ffffff !important;
-}
-
 /* Smooth Theme Transition */
 .theme-transition,
 .theme-transition *,
@@ -1761,70 +1753,6 @@ a.spotify-link:hover {
         grid-template-columns: 1fr;
     }
 }
-
-/* --- TRANSLATE WIDGET --- */
-.translate-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border-color);
-}
-
-.translate-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-}
-
-.translate-btn-row {
-    display: flex;
-    gap: 8px;
-}
-
-
-/* --- SIDEBAR LANGUAGE SWITCH BUTTONS --- */
-.sidebar-lang-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 7px 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border: 1.5px solid var(--border-color);
-    color: var(--text-muted);
-    border-radius: 4px;
-    background: transparent;
-    transition: all 0.25s ease;
-    cursor: pointer;
-    font-family: var(--font-sans);
-}
-
-.sidebar-lang-btn.active {
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
-}
-
-.sidebar-lang-btn:hover:not(.active) {
-    background-color: var(--text-heading);
-    border-color: var(--text-heading);
-    color: #fff;
-}
-
-[data-theme="dark"] .sidebar-lang-btn {
-    border-color: var(--border-color);
-    color: var(--text-muted);
-}
-
-[data-theme="dark"] .sidebar-lang-btn.active {
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
-}
-
 
 .portfolio-disclaimer {
     margin-top: 40px;

@@ -487,8 +487,8 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.innerHTML = '<i class="fas fa-copy"></i> ' + T.copy;
         });
 
-        // Update all lang toggle buttons (sidebar + nav fallback)
-        document.querySelectorAll('.lang-btn, .sidebar-lang-btn').forEach(function (btn) {
+        // Update nav lang toggle buttons
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
     }
@@ -573,29 +573,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 navWrapper.appendChild(langWrapper);
             }
-        }
-
-        // Sidebar widget: full-word English / Indonesia buttons (pages with sidebar)
-        var connectWrapper = document.querySelector('.sidebar-area .connect-wrapper');
-        if (connectWrapper) {
-            var wrapper = document.createElement('div');
-            wrapper.className = 'translate-wrapper lang-switch-widget';
-
-            var btnRow = document.createElement('div');
-            btnRow.className = 'translate-btn-row';
-            wrapper.appendChild(btnRow);
-
-            ['en', 'id'].forEach(function (lang) {
-                var btn = document.createElement('button');
-                btn.className = 'sidebar-lang-btn' + (lang === window.LANG.current ? ' active' : '');
-                btn.setAttribute('data-lang', lang);
-                btn.textContent = lang === 'en' ? 'English' : 'Indonesia';
-                btn.setAttribute('aria-label', lang === 'en' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia');
-                btn.addEventListener('click', function () { applyLanguage(lang); });
-                btnRow.appendChild(btn);
-            });
-
-            connectWrapper.parentNode.insertBefore(wrapper, connectWrapper.nextSibling);
         }
     }
 
