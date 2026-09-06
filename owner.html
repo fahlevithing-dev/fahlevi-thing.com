@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <title>Owner - Fahlevi Thing</title>
+    <link rel="icon" type="image/jpeg" href="images/logofahlevithing.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #1D3557; --navy-dark: #162640; --accent: #4D8FD6; --bg: #f7f8fa; --border: #e2e5ea; --text: #1a1a1a; --muted: #6b7280; --danger: #c0392b; --ok: #1a7f4b; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Inter', Arial, sans-serif; background: var(--bg); color: var(--text); }
+        header.top { background: linear-gradient(160deg, var(--navy-dark), var(--navy)); color: #fff; padding: 22px 28px; display: flex; align-items: center; justify-content: space-between; }
+        header.top h1 { font-size: 1.1rem; margin: 0; letter-spacing: 1px; }
+        header.top .sub { font-size: 0.75rem; opacity: 0.6; margin-top: 2px; }
+        #logout-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); color: #fff; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
+        #logout-btn:hover { background: rgba(255,255,255,0.18); }
+        main { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+
+        #login-screen { max-width: 380px; margin: 90px auto 0; padding: 32px; background: #fff; border: 1px solid var(--border); border-radius: 10px; text-align: center; }
+        #login-screen h2 { margin-top: 0; font-size: 1.1rem; }
+        #login-screen input { width: 100%; padding: 12px 14px; font-size: 1.1rem; letter-spacing: 4px; text-align: center; border: 1.5px solid var(--border); border-radius: 6px; margin-bottom: 14px; }
+        #login-screen button { width: 100%; padding: 12px; background: var(--navy); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; }
+        #login-screen button:hover { background: var(--navy-dark); }
+        #login-error { color: var(--danger); font-size: 0.85rem; min-height: 1.2em; margin-top: 10px; }
+
+        .tabs { display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid var(--border); }
+        .tab-btn { background: none; border: none; padding: 10px 4px; margin-right: 20px; font-size: 0.9rem; font-weight: 600; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; }
+        .tab-btn.active { color: var(--navy); border-bottom-color: var(--accent); }
+
+        .field { margin-bottom: 18px; }
+        .field label { display: block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 6px; }
+        .field input[type="text"], .field select, .field textarea { width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 0.95rem; }
+        .field textarea { min-height: 110px; resize: vertical; font-family: 'Inter', Arial, sans-serif; line-height: 1.5; }
+        .field textarea.code { font-family: ui-monospace, Consolas, monospace; font-size: 0.82rem; min-height: 420px; }
+        .field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+        .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        fieldset { border: 1px solid var(--border); border-radius: 8px; padding: 18px; margin-bottom: 22px; }
+        legend { font-weight: 700; padding: 0 8px; font-size: 0.85rem; }
+
+        .primary-btn { background: var(--navy); color: #fff; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; }
+        .primary-btn:hover { background: var(--navy-dark); }
+        .primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        #status-msg { margin-top: 18px; padding: 12px 16px; border-radius: 6px; font-size: 0.9rem; display: none; }
+        #status-msg.ok { display: block; background: #e8f6ee; color: var(--ok); border: 1px solid #b6e2c8; }
+        #status-msg.err { display: block; background: #fdecea; color: var(--danger); border: 1px solid #f3c2bc; }
+        #status-msg a { color: inherit; font-weight: 700; }
+
+        [hidden] { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <div id="login-screen">
+        <h2>Owner Access</h2>
+        <p style="color: var(--muted); font-size: 0.85rem;">Enter your access code to continue.</p>
+        <input type="password" id="login-code" inputmode="numeric" autocomplete="off" placeholder="••••••" maxlength="12">
+        <button id="login-btn">Unlock</button>
+        <div id="login-error"></div>
+    </div>
+
+    <div id="app" hidden>
+        <header class="top">
+            <div>
+                <h1>FAHLEVI THING — OWNER</h1>
+                <div class="sub">Create or edit posts without touching code</div>
+            </div>
+            <button id="logout-btn">Log out</button>
+        </header>
+
+        <main>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="new">New Post</button>
+                <button class="tab-btn" data-tab="edit">Edit Existing Post</button>
+            </div>
+
+            <section id="tab-new">
+                <fieldset>
+                    <legend>Title</legend>
+                    <div class="row2">
+                        <div class="field"><label>English</label><input type="text" id="n-titleEn"></div>
+                        <div class="field"><label>Indonesian</label><input type="text" id="n-titleId"></div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Metadata</legend>
+                    <div class="row2">
+                        <div class="field">
+                            <label>Category</label>
+                            <select id="n-category">
+                                <option>INVESTMENT</option>
+                                <option>STOCK ANALYSIS</option>
+                                <option>MACRO-ECONOMICS</option>
+                                <option>POLITICAL ECONOMY</option>
+                                <option>MARKET UPDATE</option>
+                                <option>TECHNOLOGY</option>
+                                <option>URBAN HISTORY</option>
+                                <option>SELF REFLECTION</option>
+                                <option>PORTFOLIO UPDATE</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>URL slug (optional)</label>
+                            <input type="text" id="n-slug" placeholder="auto-generated from English title">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Cover image (optional)</label>
+                        <input type="file" id="n-image" accept="image/*">
+                        <div class="hint">Uploaded to /images/ and used as the article's hero image and social preview.</div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Excerpt (used for previews, search, and SEO)</legend>
+                    <div class="field"><label>English</label><textarea id="n-excerptEn"></textarea></div>
+                    <div class="field"><label>Indonesian</label><textarea id="n-excerptId"></textarea></div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Body</legend>
+                    <div class="field">
+                        <label>English</label>
+                        <textarea id="n-bodyEn" style="min-height: 220px;"></textarea>
+                        <div class="hint">Plain paragraphs separated by a blank line, or paste your own HTML.</div>
+                    </div>
+                    <div class="field">
+                        <label>Indonesian</label>
+                        <textarea id="n-bodyId" style="min-height: 220px;"></textarea>
+                    </div>
+                </fieldset>
+
+                <button class="primary-btn" id="publish-btn">Publish</button>
+            </section>
+
+            <section id="tab-edit" hidden>
+                <div class="field">
+                    <label>Choose a post</label>
+                    <select id="e-select"><option value="">Loading posts…</option></select>
+                </div>
+                <div class="field" id="e-editor-wrap" hidden>
+                    <label>Full page HTML</label>
+                    <textarea id="e-content" class="code"></textarea>
+                    <div class="hint">This is the entire live HTML file. Edit the text inside the two "excerpt" blocks (lang="en" / lang="id") to change the article body, then save.</div>
+                </div>
+                <button class="primary-btn" id="save-btn" hidden style="margin-top: 14px;">Save Changes</button>
+            </section>
+
+            <div id="status-msg"></div>
+        </main>
+    </div>
+
+    <script>
+    (function () {
+        var loginScreen = document.getElementById('login-screen');
+        var app = document.getElementById('app');
+        var statusEl = document.getElementById('status-msg');
+
+        function showStatus(kind, html) {
+            statusEl.className = kind;
+            statusEl.innerHTML = html;
+        }
+        function clearStatus() {
+            statusEl.className = '';
+            statusEl.innerHTML = '';
+        }
+
+        async function checkSession() {
+            var res = await fetch('/api/owner-session');
+            var data = await res.json();
+            if (data.authenticated) {
+                loginScreen.hidden = true;
+                app.hidden = false;
+                loadPostsForEdit();
+            } else {
+                loginScreen.hidden = false;
+                app.hidden = true;
+            }
+        }
+
+        document.getElementById('login-btn').addEventListener('click', async function () {
+            var code = document.getElementById('login-code').value.trim();
+            var errEl = document.getElementById('login-error');
+            errEl.textContent = '';
+            if (!code) return;
+            var res = await fetch('/api/owner-login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code: code })
+            });
+            var data = await res.json();
+            if (res.ok) {
+                checkSession();
+            } else {
+                errEl.textContent = data.error || 'Login failed.';
+            }
+        });
+        document.getElementById('login-code').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') document.getElementById('login-btn').click();
+        });
+
+        document.getElementById('logout-btn').addEventListener('click', async function () {
+            await fetch('/api/owner-logout', { method: 'POST' });
+            checkSession();
+        });
+
+        // Tabs
+        document.querySelectorAll('.tab-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                document.getElementById('tab-new').hidden = btn.dataset.tab !== 'new';
+                document.getElementById('tab-edit').hidden = btn.dataset.tab !== 'edit';
+                clearStatus();
+            });
+        });
+
+        function slugify(s) {
+            return String(s || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        }
+
+        function fileToDataUrl(file) {
+            return new Promise(function (resolve, reject) {
+                var reader = new FileReader();
+                reader.onload = function () { resolve(reader.result); };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        document.getElementById('publish-btn').addEventListener('click', async function () {
+            clearStatus();
+            var btn = this;
+            var payload = {
+                action: 'create',
+                titleEn: document.getElementById('n-titleEn').value.trim(),
+                titleId: document.getElementById('n-titleId').value.trim(),
+                category: document.getElementById('n-category').value,
+                slug: document.getElementById('n-slug').value.trim() || slugify(document.getElementById('n-titleEn').value),
+                excerptEn: document.getElementById('n-excerptEn').value.trim(),
+                excerptId: document.getElementById('n-excerptId').value.trim(),
+                bodyEn: document.getElementById('n-bodyEn').value.trim(),
+                bodyId: document.getElementById('n-bodyId').value.trim()
+            };
+
+            var imageFile = document.getElementById('n-image').files[0];
+            if (imageFile) {
+                var dataUrl = await fileToDataUrl(imageFile);
+                var ext = (imageFile.name.split('.').pop() || 'jpg').toLowerCase();
+                payload.image = { path: 'images/' + payload.slug + '.' + ext, dataUrl: dataUrl };
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Publishing…';
+            try {
+                var res = await fetch('/api/owner-publish', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                var data = await res.json();
+                if (res.ok) {
+                    showStatus('ok', 'Published! Cloudflare Pages will redeploy in a minute or two. <a href="' + data.url + '" target="_blank">' + data.url + '</a>');
+                } else {
+                    showStatus('err', data.error || 'Something went wrong.');
+                }
+            } catch (e) {
+                showStatus('err', 'Network error: ' + e.message);
+            }
+            btn.disabled = false;
+            btn.textContent = 'Publish';
+        });
+
+        async function loadPostsForEdit() {
+            var select = document.getElementById('e-select');
+            try {
+                var res = await fetch('/api/owner-posts');
+                var data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Failed to load posts.');
+                select.innerHTML = '<option value="">Select a post…</option>' + data.posts.map(function (p) {
+                    return '<option value="' + p.url + '">' + p.title + ' (' + p.date + ')</option>';
+                }).join('');
+            } catch (e) {
+                select.innerHTML = '<option value="">Could not load posts</option>';
+            }
+        }
+
+        document.getElementById('e-select').addEventListener('change', async function () {
+            var slug = this.value;
+            var wrap = document.getElementById('e-editor-wrap');
+            var saveBtn = document.getElementById('save-btn');
+            clearStatus();
+            if (!slug) { wrap.hidden = true; saveBtn.hidden = true; return; }
+            var res = await fetch('/api/owner-posts?slug=' + encodeURIComponent(slug));
+            var data = await res.json();
+            if (!res.ok) { showStatus('err', data.error || 'Failed to load post.'); return; }
+            document.getElementById('e-content').value = data.content;
+            document.getElementById('e-content').dataset.slug = data.slug;
+            wrap.hidden = false;
+            saveBtn.hidden = false;
+        });
+
+        document.getElementById('save-btn').addEventListener('click', async function () {
+            clearStatus();
+            var btn = this;
+            var slug = document.getElementById('e-content').dataset.slug;
+            var content = document.getElementById('e-content').value;
+            btn.disabled = true;
+            btn.textContent = 'Saving…';
+            try {
+                var res = await fetch('/api/owner-publish', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'update', slug: slug, content: content })
+                });
+                var data = await res.json();
+                if (res.ok) {
+                    showStatus('ok', 'Saved! Cloudflare Pages will redeploy in a minute or two. <a href="' + data.url + '" target="_blank">' + data.url + '</a>');
+                } else {
+                    showStatus('err', data.error || 'Something went wrong.');
+                }
+            } catch (e) {
+                showStatus('err', 'Network error: ' + e.message);
+            }
+            btn.disabled = false;
+            btn.textContent = 'Save Changes';
+        });
+
+        checkSession();
+    })();
+    </script>
+</body>
+</html>
