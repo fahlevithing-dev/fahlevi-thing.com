@@ -33,7 +33,7 @@ window.LANG = (function () {
                 emailPlaceholder: 'Your Email, Contact or Social Media',
                 messagePlaceholder: 'Your Message',
                 sendMessage: 'Send Message',
-                portfolioTitle: 'Investment Portfolio',
+                portfolioTitle: 'Portfolio',
                 portfolioUpdate: 'Portfolio Update',
                 tableOfContents: 'Table of Contents',
                 minRead: 'min read',
@@ -42,6 +42,7 @@ window.LANG = (function () {
                 copy: 'Copy',
                 copied: 'Copied!',
                 stockCats: {
+                    'Banking': 'Banking',
                     'Property Developer': 'Property Developer',
                     'Nickel Mining': 'Nickel Mining',
                     'Textile & Garment': 'Textile & Garment',
@@ -91,7 +92,7 @@ window.LANG = (function () {
                 emailPlaceholder: 'Email, Kontak, atau Media Sosial Anda',
                 messagePlaceholder: 'Pesan Anda',
                 sendMessage: 'Kirim Pesan',
-                portfolioTitle: 'Portofolio Investasi',
+                portfolioTitle: 'Portofolio',
                 portfolioUpdate: 'Update Portofolio',
                 tableOfContents: 'Daftar Isi',
                 minRead: 'mnt baca',
@@ -100,6 +101,7 @@ window.LANG = (function () {
                 copy: 'Salin',
                 copied: 'Disalin!',
                 stockCats: {
+                    'Banking': 'Perbankan',
                     'Property Developer': 'Pengembang Properti',
                     'Nickel Mining': 'Tambang Nikel',
                     'Textile & Garment': 'Tekstil & Garmen',
