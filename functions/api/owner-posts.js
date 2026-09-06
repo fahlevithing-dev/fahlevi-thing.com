@@ -1,5 +1,6 @@
 import { requireSession } from '../_lib/session.js';
 import { getFile } from '../_lib/github.js';
+import { parseJsLiteral } from '../_lib/jsparse.js';
 
 function extractAllPosts(scriptSource) {
     const marker = 'const allPosts = [';
@@ -16,8 +17,9 @@ function extractAllPosts(scriptSource) {
     }
     const arrayLiteral = scriptSource.slice(start + marker.length - 1, i);
     // The literal uses unquoted keys and single/double quotes, which is valid
-    // JS but not JSON - evaluate it as JS instead of JSON.parse.
-    return new Function(`return ${arrayLiteral};`)();
+    // JS but not JSON. Cloudflare Workers disallows eval()/new Function(), so
+    // parse it with a small hand-rolled parser instead.
+    return parseJsLiteral(arrayLiteral);
 }
 
 export async function onRequestGet({ request, env }) {
