@@ -568,6 +568,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Yellow Bourbon, and Coldplay",
+            url: "yellow-bourbon-and-coldplay",
+            category: "SUKASUKA",
+            date: "September 12, 2026",
+            excerpt: "A cup of Sukahurip Yellow Bourbon, Coldplay's Yellow playing in the background, and the pattern the two share: what lasts is rarely what was loudest at the start.",
+            image: "images/yellow.jpeg"
+        },
+        {
             title: "The Bank That Came Back: BCA and the Long Road from May 1998",
             url: "bbca-analysis",
             category: "STOCK ANALYSIS",

@@ -60,7 +60,8 @@ window.LANG = (function () {
                     TECHNOLOGY: 'TECHNOLOGY',
                     'PORTFOLIO UPDATE': 'PORTFOLIO UPDATE',
                     POETRY: 'POETRY',
-                    'SELF REFLECTION': 'SELF REFLECTION'
+                    'SELF REFLECTION': 'SELF REFLECTION',
+                    SUKASUKA: 'SUKASUKA'
                 }
             },
             id: {
@@ -119,11 +120,16 @@ window.LANG = (function () {
                     TECHNOLOGY: 'TEKNOLOGI',
                     'PORTFOLIO UPDATE': 'UPDATE PORTOFOLIO',
                     POETRY: 'PUISI',
-                    'SELF REFLECTION': 'REFLEKSI DIRI'
+                    'SELF REFLECTION': 'REFLEKSI DIRI',
+                    SUKASUKA: 'SUKASUKA'
                 }
             }
         },
         posts: {
+            'yellow-bourbon-and-coldplay': {
+                titleId: 'Yellow Bourbon, dan Coldplay',
+                excerptId: 'Secangkir Yellow Bourbon dari Sukahurip, lagu Yellow dari Coldplay mengalun di latar, dan satu pola yang sama-sama mereka miliki: yang bertahan lama jarang menjadi yang paling ramai di awal.'
+            },
             'bbca-analysis': {
                 titleId: 'Bank yang Kembali dari Titik Nol: BCA dan Jalan Panjang Sejak Mei 1998',
                 excerptId: 'BCA selamat dari rush 1998 dan pengambilalihan negara hingga menjadi emiten dengan kapitalisasi pasar terbesar di Indonesia, ditopang basis dana pihak ketiga termurah dan paling lengket di pasar. Kualitas ini, dan harga yang kini melekat padanya.'
