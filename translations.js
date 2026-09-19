@@ -126,6 +126,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'redeemed-from-the-pawnshop': {
+                titleId: 'Ditebus dari Pegadaian: Cara Keluarga Hartono Memercayakan Como kepada Mirwan Suwarso',
+                excerptId: 'Keluarga Hartono membeli klub Italia yang bangkrut dengan harga di bawah Rp5 miliar, lalu mencapai Liga Champions dalam tujuh tahun, bukan dengan mengeluarkan uang lebih banyak dari siapa pun, melainkan dengan mempercayakannya pada satu orang dan tidak ikut campur.'
+            },
             'yellow-bourbon-and-coldplay': {
                 titleId: 'Yellow Bourbon, dan Coldplay',
                 excerptId: 'Secangkir Yellow Bourbon dari Sukahurip, lagu Yellow dari Coldplay mengalun di latar, dan satu pola yang sama-sama mereka miliki: yang bertahan lama jarang menjadi yang paling ramai di awal.'

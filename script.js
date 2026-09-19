@@ -568,6 +568,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Redeemed from the Pawnshop: How the Hartonos Trusted Mirwan Suwarso to Build Como",
+            url: "redeemed-from-the-pawnshop",
+            category: "INVESTMENT",
+            date: "September 19, 2026",
+            excerpt: "The Hartono family paid under Rp5 billion for a bankrupt Italian club and reached the Champions League within seven years, not by outspending anyone, but by trusting one person to run it and staying out of the way.",
+            image: "images/como.jpg"
+        },
+        {
             title: "Yellow Bourbon, and Coldplay",
             url: "yellow-bourbon-and-coldplay",
             category: "SUKASUKA",
@@ -848,7 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "INVESTMENT",
             date: "January 27, 2026",
             excerpt: "Historically (from 1965 to 2023), Berkshire Hathaway has achieved a Compound Annual Growth Rate (CAGR) of approximately 19.8%. While this figure may seem modest compared to the \"anomalies\" of short-term trading gains, it is extraordinary for the following three reasons...",
-            image: "" 
+            image: "images/buffet.jpeg"
         },
         {
             title: "How China Could Win Against The US",
