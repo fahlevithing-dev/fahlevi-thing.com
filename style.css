@@ -1835,8 +1835,13 @@ a.spotify-link:hover {
 }
 
 @media (max-width: 768px) {
+    /* Below the desktop 2-up grid, cards stack, so there's no shared row
+       height to match -- let the media box follow the image's own aspect
+       ratio instead of a fixed landscape height, so a portrait quote card
+       like buffet.jpeg fills it edge to edge with no letterboxing. */
     .hero-feature-card-media {
-        height: 260px;
+        height: auto;
+        aspect-ratio: 4 / 5;
         min-height: 0;
     }
 }
