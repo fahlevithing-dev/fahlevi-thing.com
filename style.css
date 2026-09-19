@@ -1642,19 +1642,20 @@ a.spotify-link:hover {
     transform: translateY(-3px);
 }
 
-/* --- HOMEPAGE HERO FEATURES (magazine lead-story treatment) --- */
+/* --- HOMEPAGE HERO FEATURES (magazine lead-story treatment, full page width) --- */
 .hero-features {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 3px;
     margin-bottom: 56px;
 }
 
 .hero-feature {
     position: relative;
     display: block;
-    height: 440px;
-    border-radius: 8px;
+    height: min(64vh, 620px);
+    min-height: 440px;
     overflow: hidden;
     margin-bottom: 0;
 }
@@ -1752,10 +1753,10 @@ a.spotify-link:hover {
 @media (max-width: 768px) {
     .hero-features {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 3px;
     }
     .hero-feature {
-        height: 340px;
+        height: 380px;
     }
 }
 
@@ -1765,16 +1766,18 @@ a.spotify-link:hover {
 .hero-feature-card {
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border-color);
+    border-top: none;
+    border-bottom: none;
     background: var(--bg-body);
     margin-bottom: 0;
 }
 
 .hero-feature-card-media {
     width: 100%;
-    height: 260px;
+    height: min(46vh, 430px);
+    min-height: 280px;
     background-color: #0d1117;
     overflow: hidden;
 }
@@ -1826,7 +1829,8 @@ a.spotify-link:hover {
 
 @media (max-width: 768px) {
     .hero-feature-card-media {
-        height: 220px;
+        height: 260px;
+        min-height: 0;
     }
 }
 
@@ -2405,6 +2409,12 @@ a.spotify-link:hover {
     margin-top: 50px;
     padding-top: 30px;
     border-top: 1px solid var(--border-color);
+}
+
+.sidebar-area > .portfolio-update-widget:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
 }
 
 .portfolio-update-widget h3 {
