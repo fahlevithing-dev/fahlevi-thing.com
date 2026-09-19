@@ -552,6 +552,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+
+        // Translate homepage hero side-teaser links (small headline links flanking
+        // the Miracle card's image on wide desktop screens)
+        document.querySelectorAll('.hero-side-teaser[href]').forEach(function (teaser) {
+            var url = teaser.getAttribute('href').replace(/^\//, '');
+            var post = postsMap[url];
+            if (!post) return;
+            var postTr = window.LANG.posts && window.LANG.posts[url];
+
+            var catEl = teaser.querySelector('.hero-side-teaser-cat');
+            if (catEl) {
+                var catKey = (post.category || '').toUpperCase();
+                catEl.textContent = (T.categories && T.categories[catKey]) ? T.categories[catKey] : post.category;
+            }
+
+            var titleEl = teaser.querySelector('.hero-side-teaser-title');
+            if (titleEl) {
+                titleEl.textContent = lang === 'id' && postTr && postTr.titleId ? postTr.titleId : post.title;
+            }
+        });
     }
 
     function injectLangToggle() {
