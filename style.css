@@ -1759,6 +1759,77 @@ a.spotify-link:hover {
     }
 }
 
+/* Alternate hero-feature layout for source images that already carry their own
+   baked-in text (quote cards, etc.) -- image stays fully visible (contain),
+   caption sits below instead of overlaid, so nothing gets cropped or covered. */
+.hero-feature-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--bg-body);
+    margin-bottom: 0;
+}
+
+.hero-feature-card-media {
+    width: 100%;
+    height: 260px;
+    background-color: #0d1117;
+    overflow: hidden;
+}
+
+.hero-feature-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.hero-feature-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px 24px 26px;
+}
+
+.hero-feature-card-body .meta-cat {
+    margin-bottom: 10px;
+}
+
+.hero-feature-card-body h2 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin-bottom: 10px;
+    line-height: 1.25;
+}
+
+.hero-feature-card-body h2 a {
+    color: var(--text-heading);
+    text-decoration: none;
+}
+
+.hero-feature-card-body h2 a:hover {
+    color: var(--accent-blue);
+}
+
+.hero-feature-card-body .excerpt p {
+    font-size: 0.92rem;
+    color: var(--text-main);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-feature-card-media {
+        height: 220px;
+    }
+}
+
 /* --- PRIVACY & SINGLE PAGE STYLES --- */
 .content-area.single-col {
     width: 100%;
