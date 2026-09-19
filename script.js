@@ -1483,7 +1483,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- PORTFOLIO UPDATE WIDGET ---
     // Injects a new widget below the existing Connect/Translate widget in the sidebar
-    const sidebarArea = document.querySelector('.sidebar-area');
+    // (skipped on the homepage, which has no sidebar widgets at all)
+    const isHomePageForWidgets = window.location.pathname.endsWith('/') || window.location.pathname.toLowerCase().endsWith('index.html');
+    const sidebarArea = isHomePageForWidgets ? null : document.querySelector('.sidebar-area');
     if (sidebarArea) {
         const portfolioWidget = document.createElement('div');
         portfolioWidget.className = 'widget portfolio-update-widget';

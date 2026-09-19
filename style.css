@@ -718,6 +718,12 @@ ul { list-style: none; }
     background-color: var(--disclaimer-bg);
 }
 
+/* Homepage has no sidebar widgets (Connect + Portfolio Update both live
+   elsewhere only), so drop it entirely and let content use the full width. */
+body.home-page .sidebar-area {
+    display: none;
+}
+
 /* --- ARTICLE HERO (full-width cinematic image) --- */
 .article-hero {
     position: relative;
@@ -1654,8 +1660,8 @@ a.spotify-link:hover {
 .hero-feature {
     position: relative;
     display: block;
-    height: min(64vh, 620px);
-    min-height: 440px;
+    height: min(78vh, 740px);
+    min-height: 480px;
     overflow: hidden;
     margin-bottom: 0;
 }
@@ -1694,7 +1700,7 @@ a.spotify-link:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 32px;
+    padding: 44px;
 }
 
 .hero-feature-overlay a {
@@ -1703,12 +1709,12 @@ a.spotify-link:hover {
 
 .hero-feature-meta {
     font-family: var(--font-heading);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255,255,255,0.75);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .hero-feature-meta .meta-date {
@@ -1717,11 +1723,11 @@ a.spotify-link:hover {
 
 .hero-feature-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    font-size: clamp(1.7rem, 3.2vw, 2.6rem);
     font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: -0.3px;
-    margin-bottom: 10px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
     text-shadow: 0 2px 16px rgba(0,0,0,0.35);
 }
 
@@ -1736,10 +1742,10 @@ a.spotify-link:hover {
 
 .hero-feature-excerpt {
     font-family: var(--font-body);
-    font-size: 0.88rem;
+    font-size: 1rem;
     color: rgba(255,255,255,0.85);
-    line-height: 1.5;
-    max-width: 95%;
+    line-height: 1.55;
+    max-width: 90%;
 }
 
 .hero-feature-excerpt p {
@@ -1776,8 +1782,8 @@ a.spotify-link:hover {
 
 .hero-feature-card-media {
     width: 100%;
-    height: min(46vh, 430px);
-    min-height: 280px;
+    height: min(56vh, 540px);
+    min-height: 320px;
     background-color: #0d1117;
     overflow: hidden;
 }
@@ -1794,17 +1800,18 @@ a.spotify-link:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 22px 24px 26px;
+    padding: 30px 32px 34px;
 }
 
 .hero-feature-card-body .meta-cat {
-    margin-bottom: 10px;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
 }
 
 .hero-feature-card-body h2 {
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-    margin-bottom: 10px;
-    line-height: 1.25;
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    margin-bottom: 12px;
+    line-height: 1.15;
 }
 
 .hero-feature-card-body h2 a {
@@ -1817,7 +1824,7 @@ a.spotify-link:hover {
 }
 
 .hero-feature-card-body .excerpt p {
-    font-size: 0.92rem;
+    font-size: 1rem;
     color: var(--text-main);
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -1924,6 +1931,13 @@ a.spotify-link:hover {
 @media (max-width: 768px) {
     .posts-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Homepage has no sidebar, so its content column is wide enough for a third card */
+@media (min-width: 900px) {
+    body.home-page .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
