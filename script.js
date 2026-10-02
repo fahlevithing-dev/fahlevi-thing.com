@@ -468,7 +468,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="stock-cat">Banking</span>
                         </span>
                         <span class="stock-name">Bank Central Asia</span>
-                        <span class="portfolio-readmore">View &rarr;</span>
                     </a>
                     <a href="pwon-analysis.html" class="portfolio-card">
                         <span class="stock-code-row">
@@ -476,7 +475,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="stock-cat">Property Developer</span>
                         </span>
                         <span class="stock-name">Pakuwon Jati</span>
-                        <span class="portfolio-readmore">View &rarr;</span>
                     </a>
                     <a href="dkft-analysis.html" class="portfolio-card">
                         <span class="stock-code-row">
@@ -484,7 +482,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="stock-cat">Nickel Mining</span>
                         </span>
                         <span class="stock-name">Central Omega</span>
-                        <span class="portfolio-readmore">View &rarr;</span>
                     </a>
                     <a href="sril-analysis.html" class="portfolio-card">
                         <span class="stock-code-row">
@@ -492,7 +489,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="stock-cat">Textile & Garment</span>
                         </span>
                         <span class="stock-name">Sri Rejeki Isman</span>
-                        <span class="portfolio-readmore">View &rarr;</span>
                     </a>
                     <a href="adro-admr-analysis.html" class="portfolio-card">
                         <span class="stock-code-row">
@@ -500,7 +496,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="stock-cat">Energy & Minerals</span>
                         </span>
                         <span class="stock-name">Adaro Group</span>
-                        <span class="portfolio-readmore">View &rarr;</span>
                     </a>
                     <a href="cita-analysis.html" class="portfolio-card">
                         <span class="stock-code-row">
@@ -508,7 +503,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="stock-cat">Bauxite Mining</span>
                         </span>
                         <span class="stock-name">Cita Mineral</span>
-                        <span class="portfolio-readmore">View &rarr;</span>
                     </a>
                 </div>
             </div>
