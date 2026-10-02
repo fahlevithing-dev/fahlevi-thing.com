@@ -1378,6 +1378,80 @@ a.spotify-link:hover {
     font-size: 1.1rem;
 }
 
+/* --- YOUTUBE PREVIEW CARD (no iframe, just a linked thumbnail) ---
+   For videos whose owner blocks embedding: shows the public thumbnail
+   with a play button, clicking through to the real watch page instead
+   of trying to play inline. */
+.youtube-preview-card {
+    position: relative;
+    display: block;
+    margin: 28px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.youtube-preview-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.youtube-preview-card:hover img {
+    transform: scale(1.03);
+}
+
+.youtube-preview-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.85);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.youtube-preview-card:hover .youtube-preview-play {
+    background: #FF0000;
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.youtube-preview-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.youtube-preview-label span {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.youtube-preview-label i {
+    color: #FF0000;
+    background: #fff;
+    border-radius: 3px;
+    padding: 2px 3px;
+    font-size: 0.85rem;
+}
+
 .footer-legal {
     font-size: 0.78rem;
     margin-top: 4px;
