@@ -562,6 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Kelong Country: Malaysia, Singapore and the Long Shadow of Match-Fixing",
+            url: "kelong-country",
+            category: "SUKASUKA",
+            date: "October 2, 2026",
+            excerpt: "Malaysia and Singapore share a border, a football history and a word for cheating: kelong. Why last night's 6-0 and a stoppage-time controversy reopened old suspicions, and why the evidence is still thin.",
+            image: "images/malaysg.webp"
+        },
+        {
             title: "Redeemed from the Pawnshop: How the Hartonos Trusted Mirwan Suwarso to Build Como",
             url: "redeemed-from-the-pawnshop",
             category: "INVESTMENT",

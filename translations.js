@@ -126,6 +126,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'kelong-country': {
+                titleId: 'Negeri Kelong: Malaysia, Singapura, dan Bayang-Bayang Panjang Pengaturan Skor',
+                excerptId: 'Malaysia dan Singapura berbagi perbatasan, sejarah sepak bola, dan satu kata untuk kecurangan: kelong. Mengapa kemenangan 6-0 semalam dan kontroversi waktu tambahan membangkitkan kecurigaan lama, dan mengapa buktinya masih tipis.'
+            },
             'redeemed-from-the-pawnshop': {
                 titleId: 'Ditebus dari Pegadaian: Cara Keluarga Hartono Memercayakan Como kepada Mirwan Suwarso',
                 excerptId: 'Keluarga Hartono membeli klub Italia yang bangkrut dengan harga di bawah Rp5 miliar, lalu mencapai Liga Champions dalam tujuh tahun, bukan dengan mengeluarkan uang lebih banyak dari siapa pun, melainkan dengan mempercayakannya pada satu orang dan tidak ikut campur.'
