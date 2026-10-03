@@ -1318,6 +1318,19 @@ a.spotify-link:hover {
     width: 100%;
 }
 
+/* --- INLINE SOURCE CITATION LINKS --- */
+.source-link,
+a.source-link,
+.excerpt .source-link {
+    color: var(--accent-navy) !important;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+.source-link:hover,
+a.source-link:hover {
+    opacity: 0.75;
+}
+
 .spotify-embed-wrap .spotify-link {
     display: inline-flex;
     align-items: center;
