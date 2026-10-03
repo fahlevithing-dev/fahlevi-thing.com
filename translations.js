@@ -128,7 +128,7 @@ window.LANG = (function () {
         posts: {
             'kelong-country': {
                 titleId: 'Negeri Kelong: Malaysia, Singapura, dan Bayang-Bayang Panjang Pengaturan Skor',
-                excerptId: 'Malaysia dan Singapura berbagi perbatasan, sejarah sepak bola, dan satu kata untuk kecurangan: kelong. Mengapa kemenangan 6-0 semalam dan kontroversi waktu tambahan membangkitkan kecurigaan lama, dan mengapa buktinya masih tipis.'
+                excerptId: 'Malaysia mengalahkan Singapura 6-0 di FIFA ASEAN Cup, dan kata lama kelong langsung terlintas di kepala. Pandangan pribadi yang jujur soal kenapa kecurigaan itu ada, kenapa buktinya masih tipis, dan kenapa hanya FIFA yang sebenarnya bisa memastikannya.'
             },
             'redeemed-from-the-pawnshop': {
                 titleId: 'Ditebus dari Pegadaian: Cara Keluarga Hartono Memercayakan Como kepada Mirwan Suwarso',

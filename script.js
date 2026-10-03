@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: "kelong-country",
             category: "SUKASUKA",
             date: "October 2, 2026",
-            excerpt: "Malaysia and Singapore share a border, a football history and a word for cheating: kelong. Why last night's 6-0 and a stoppage-time controversy reopened old suspicions, and why the evidence is still thin.",
+            excerpt: "Malaysia beat Singapore 6-0 in the FIFA ASEAN Cup, and the old word kelong came to mind at once. A personal, honest look at why the suspicion is there, why the evidence is still thin, and why only FIFA could actually settle it.",
             image: "images/malaysg.webp"
         },
         {
