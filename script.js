@@ -1499,7 +1499,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <ul class="quarters-list" style="display: none;">
                         <li><a href="portfolio-update-q1-2026.html">Q1 2026</a></li>
                         <li><a href="portfolio-update-q2-2026.html">Q2 2026</a></li>
-                        <li><a href="#">Q3 (Coming Soon)</a></li>
+                        <li><a href="portfolio-update-q3-2026.html">Q3 2026</a></li>
                         <li><a href="#">FY (Coming Soon)</a></li>
                     </ul>
                 </li>
