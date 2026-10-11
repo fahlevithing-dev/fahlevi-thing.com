@@ -562,6 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Five Times Cheaper Is Not the Same as Cheap: Haji Isam's Rp2,588 Bet on Bayan Resources (BYAN)",
+            url: "byan-analysis",
+            category: "STOCK ANALYSIS",
+            date: "October 12, 2026",
+            excerpt: "Haji Isam paid Rp2,588 a share for 30.25% of Bayan Resources (BYAN), a steep discount to the Rp13,000 screen price. A look at why that discount is misleading, and what the deal price really implies.",
+            image: "images/coal.jpg"
+        },
+        {
             title: "Kelong Country: Malaysia, Singapore and the Long Shadow of Match-Fixing",
             url: "kelong-country",
             category: "SUKASUKA",

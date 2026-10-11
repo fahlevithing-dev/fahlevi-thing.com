@@ -126,6 +126,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'byan-analysis': {
+                titleId: 'Lima Kali Lebih Murah Bukan Berarti Murah: Taruhan Rp2.588 Haji Isam di Bayan Resources (BYAN)',
+                excerptId: 'Haji Isam membayar Rp2.588 per saham untuk 30,25% Bayan Resources (BYAN), diskon besar dari harga layar sekitar Rp13.000. Mengulas mengapa diskon itu menyesatkan, dan apa arti sebenarnya dari harga transaksi tersebut.'
+            },
             'kelong-country': {
                 titleId: 'Negeri Kelong: Malaysia, Singapura, dan Bayang-Bayang Panjang Pengaturan Skor',
                 excerptId: 'Malaysia mengalahkan Singapura 6-0 di FIFA ASEAN Cup, dan kata lama kelong langsung terlintas di kepala. Pandangan pribadi yang jujur soal kenapa kecurigaan itu ada, kenapa buktinya masih tipis, dan kenapa hanya FIFA yang sebenarnya bisa memastikannya.'
