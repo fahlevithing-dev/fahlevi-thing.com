@@ -126,6 +126,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'watchdog-waits-for-foreign-whistle': {
+                titleId: 'Ketika Pengawas Menunggu Peluit dari Luar Negeri',
+                excerptId: 'OJK mendenda DSSA, BREN, dan CUAN total Rp2,1 triliun kurang dari sehari setelah MSCI mengusulkan penurunan status Indonesia menjadi Standalone. Urutan kejadiannya, dan dua tahun OJK menyimpan bukti yang sama, menunjukkan tekanannya datang dari New York, bukan dari Jakarta.'
+            },
             'byan-analysis': {
                 titleId: 'Lima Kali Lebih Murah Bukan Berarti Murah: Taruhan Rp2.588 Haji Isam di Bayan Resources (BYAN)',
                 excerptId: 'Haji Isam membayar Rp2.588 per saham untuk 30,25% Bayan Resources (BYAN), diskon besar dari harga layar sekitar Rp13.000. Mengulas mengapa diskon itu menyesatkan, dan apa arti sebenarnya dari harga transaksi tersebut.'

@@ -562,6 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "When the Watchdog Waits for a Foreign Whistle",
+            url: "watchdog-waits-for-foreign-whistle",
+            category: "POLITICAL ECONOMY",
+            date: "October 18, 2026",
+            excerpt: "OJK fined DSSA, BREN and CUAN Rp2.1 trillion less than a day after MSCI proposed demoting Indonesia to Standalone status. The order of events, and the two years OJK sat on the same evidence, say the pressure came from New York, not Jakarta.",
+            image: ""
+        },
+        {
             title: "Five Times Cheaper Is Not the Same as Cheap: Haji Isam's Rp2,588 Bet on Bayan Resources (BYAN)",
             url: "byan-analysis",
             category: "STOCK ANALYSIS",
