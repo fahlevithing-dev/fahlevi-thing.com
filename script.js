@@ -562,6 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "When Developed Nations Struggle: The Cost-of-Living Protests and What They Mean for Us",
+            url: "when-developed-nations-struggle",
+            category: "POLITICAL ECONOMY",
+            date: "October 25, 2026",
+            excerpt: "Europe's cost-of-living protests just drew crowds across five countries in one weekend. Why interest rates and AI are the same warning sign developing countries like Indonesia cannot afford to ignore.",
+            image: ""
+        },
+        {
             title: "When the Watchdog Waits for a Foreign Whistle",
             url: "watchdog-waits-for-foreign-whistle",
             category: "POLITICAL ECONOMY",

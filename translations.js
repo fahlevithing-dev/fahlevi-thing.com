@@ -126,6 +126,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'when-developed-nations-struggle': {
+                titleId: 'Ketika Negara-Negara Maju Bergejolak: Protes Biaya Hidup dan Artinya bagi Kita',
+                excerptId: 'Protes biaya hidup di Eropa baru saja menarik massa di lima negara dalam satu akhir pekan. Mengapa kenaikan suku bunga dan AI adalah tanda peringatan yang sama, yang tidak bisa diabaikan oleh negara berkembang seperti Indonesia.'
+            },
             'watchdog-waits-for-foreign-whistle': {
                 titleId: 'Ketika Pengawas Menunggu Peluit dari Luar Negeri',
                 excerptId: 'OJK mendenda DSSA, BREN, dan CUAN total Rp2,1 triliun kurang dari sehari setelah MSCI mengusulkan penurunan status Indonesia menjadi Standalone. Urutan kejadiannya, dan dua tahun OJK menyimpan bukti yang sama, menunjukkan tekanannya datang dari New York, bukan dari Jakarta.'
