@@ -567,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "POLITICAL ECONOMY",
             date: "October 25, 2026",
             excerpt: "Europe's cost-of-living protests just drew crowds across five countries in one weekend. Why interest rates and AI are the same warning sign developing countries like Indonesia cannot afford to ignore.",
-            image: ""
+            image: "images/riots.webp"
         },
         {
             title: "When the Watchdog Waits for a Foreign Whistle",
