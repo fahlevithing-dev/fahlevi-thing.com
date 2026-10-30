@@ -562,6 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Whalers, Generals, and Broadway Angels: The Surprising Birth of Startup Investing",
+            url: "whalers-generals-and-broadway-angels",
+            category: "INVESTMENT",
+            date: "October 30, 2026",
+            excerpt: "From a queen's gamble on Columbus to whaling ships, a French general, and a Broadway word for angels: the 500-year history behind the venture capital industry that built Apple, Google, and Nvidia.",
+            image: null
+        },
+        {
             title: "When Developed Nations Struggle: The Cost-of-Living Protests and What They Mean for Us",
             url: "when-developed-nations-struggle",
             category: "POLITICAL ECONOMY",

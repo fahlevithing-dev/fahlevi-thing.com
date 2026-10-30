@@ -126,6 +126,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'whalers-generals-and-broadway-angels': {
+                titleId: 'Pemburu Paus, Jenderal, dan Angel dari Broadway: Asal Mula Mengejutkan Investasi Startup',
+                excerptId: 'Dari taruhan seorang ratu pada Columbus hingga kapal pemburu paus, seorang jenderal Prancis, dan sebuah istilah dari dunia Broadway: sejarah 500 tahun di balik industri venture capital yang membangun Apple, Google, dan Nvidia.'
+            },
             'when-developed-nations-struggle': {
                 titleId: 'Ketika Negara-Negara Maju Bergejolak: Protes Biaya Hidup dan Artinya bagi Kita',
                 excerptId: 'Protes biaya hidup di Eropa baru saja menarik massa di lima negara dalam satu akhir pekan. Mengapa kenaikan suku bunga dan AI adalah tanda peringatan yang sama, yang tidak bisa diabaikan oleh negara berkembang seperti Indonesia.'
