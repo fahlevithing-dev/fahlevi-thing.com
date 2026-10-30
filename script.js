@@ -1653,8 +1653,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const excerpt = postDetails.querySelector('.excerpt[lang="en"]') || postDetails.querySelector('.excerpt');
         const metaCat = postDetails.querySelector('.meta-cat');
 
-        // Only calculate for single post pages (no read-more link, has excerpt content)
-        if (!readMore && excerpt && metaCat) {
+        // Only calculate for single post pages (no read-more link, has excerpt content).
+        // Excludes the homepage outright: its Featured cards also lack a .read-more
+        // link (by design, for the newspaper-style layout), which would otherwise
+        // make this fire on whichever card happens to be first in the DOM.
+        if (!readMore && excerpt && metaCat && !document.body.classList.contains('home-page')) {
             const text = excerpt.textContent;
             const wpm = 200;
             const words = text.trim().length === 0 ? 0 : text.trim().split(/\s+/).length;
@@ -1676,8 +1679,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const readMore = postDetails.querySelector('.read-more');
         const metaCat = postDetails.querySelector('.meta-cat');
 
-        // Only add to single post pages (where there is no read-more link)
-        if (!readMore && metaCat) {
+        // Only add to single post pages (where there is no read-more link).
+        // Same homepage exclusion as the reading-time block above.
+        if (!readMore && metaCat && !document.body.classList.contains('home-page')) {
             let lastModifiedStr = null;
 
             // 1. Coba ambil dari meta tag HTML (opsional: <meta name="last-modified" content="2026-03-19">)
