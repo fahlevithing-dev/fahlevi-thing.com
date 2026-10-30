@@ -1781,27 +1781,33 @@ a.source-link:hover {
     transform: translateY(-3px);
 }
 
-/* --- FEATURED: NEWSPAPER FRONT-PAGE GRID (6 headline-led stories, no photos) --- */
+/* --- FEATURED: NEWSPAPER FRONT-PAGE GRID (headline-led stories, no photos) ---
+   Border uses the classic "collapsed table" trick (top+left rule on the
+   container, right+bottom rule on every cell) instead of nth-child math,
+   because .featured-hero-dup items toggle display:none at the 1300px
+   breakpoint where the homepage hero's side teasers appear, which would
+   break any row/column counting done via nth-child. */
 .featured-newspaper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-top: 3px solid var(--text-heading);
+    border-left: 1px solid var(--border-color);
 }
 
 .featured-newspaper .post-item {
     margin-bottom: 0;
     padding: 30px 32px;
+    border-right: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     transition: background-color 0.25s ease;
 }
 
-.featured-newspaper .post-item:nth-child(3n+1),
-.featured-newspaper .post-item:nth-child(3n+2) {
-    border-right: 1px solid var(--border-color);
-}
-
-.featured-newspaper .post-item:nth-child(-n+3) {
-    border-bottom: 1px solid var(--border-color);
+/* Hidden on wide desktop (>=1300px), where the homepage hero's side
+   teasers already show these same stories, to avoid repeating them. */
+@media (min-width: 1300px) {
+    .featured-newspaper .featured-hero-dup {
+        display: none;
+    }
 }
 
 .featured-newspaper .meta-cat {
@@ -1848,29 +1854,16 @@ a.source-link:hover {
     .featured-newspaper {
         grid-template-columns: repeat(2, 1fr);
     }
-    .featured-newspaper .post-item {
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-    }
-    .featured-newspaper .post-item:nth-child(2n+1) {
-        border-right: 1px solid var(--border-color);
-    }
-    .featured-newspaper .post-item:nth-child(n+5) {
-        border-bottom: none;
-    }
 }
 
 @media (max-width: 600px) {
     .featured-newspaper {
         grid-template-columns: 1fr;
+        border-left: none;
     }
     .featured-newspaper .post-item {
         border-right: none;
-        border-bottom: 1px solid var(--border-color);
         padding: 26px 4px;
-    }
-    .featured-newspaper .post-item:last-child {
-        border-bottom: none;
     }
 }
 
