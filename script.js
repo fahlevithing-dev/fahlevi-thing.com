@@ -562,7 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
-            title: "Whalers, Generals, and Broadway Angels: The Surprising Birth of Startup Investing",
+            title: "Whalers, Generals, and Broadway Angels: The Curious Birth of Startup Investing",
             url: "whalers-generals-and-broadway-angels",
             category: "INVESTMENT",
             date: "October 30, 2026",
