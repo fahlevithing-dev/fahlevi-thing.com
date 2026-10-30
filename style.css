@@ -1781,6 +1781,99 @@ a.source-link:hover {
     transform: translateY(-3px);
 }
 
+/* --- FEATURED: NEWSPAPER FRONT-PAGE GRID (6 headline-led stories, no photos) --- */
+.featured-newspaper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 3px solid var(--text-heading);
+}
+
+.featured-newspaper .post-item {
+    margin-bottom: 0;
+    padding: 30px 32px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.25s ease;
+}
+
+.featured-newspaper .post-item:nth-child(3n+1),
+.featured-newspaper .post-item:nth-child(3n+2) {
+    border-right: 1px solid var(--border-color);
+}
+
+.featured-newspaper .post-item:nth-child(-n+3) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.featured-newspaper .meta-cat {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
+}
+
+.featured-newspaper .meta-cat .meta-date {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.featured-newspaper .post-details h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.65rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    margin-bottom: 14px;
+}
+
+.featured-newspaper .post-details h2 a {
+    color: var(--text-heading);
+}
+.featured-newspaper .post-details h2 a:hover {
+    color: var(--accent-blue);
+}
+
+.featured-newspaper .excerpt {
+    font-family: 'Lora', serif;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+.featured-newspaper .excerpt p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .featured-newspaper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .featured-newspaper .post-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .featured-newspaper .post-item:nth-child(2n+1) {
+        border-right: 1px solid var(--border-color);
+    }
+    .featured-newspaper .post-item:nth-child(n+5) {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .featured-newspaper {
+        grid-template-columns: 1fr;
+    }
+    .featured-newspaper .post-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 26px 4px;
+    }
+    .featured-newspaper .post-item:last-child {
+        border-bottom: none;
+    }
+}
+
 /* --- HOMEPAGE HERO FEATURES (magazine lead-story treatment, full page width) --- */
 .hero-features {
     width: 100%;
