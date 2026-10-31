@@ -126,8 +126,12 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'from-a-diner-booth-to-trillions': {
+                titleId: 'Dari Bilik Diner ke Triliunan: Bagaimana Venture Capital Membangun Nvidia',
+                excerptId: 'Tiga insinyur, sebuah bilik Denny\'s, dan US$40.000. Bagaimana Nvidia nyaris bangkrut dua kali sebelum venture capital, dana talangan dari Sega, dan taruhan pada AI mengubahnya menjadi salah satu perusahaan paling bernilai dalam sejarah.'
+            },
             'whalers-generals-and-broadway-angels': {
-                titleId: 'Pemburu Paus, Jenderal, dan Angel dari Broadway: Asal Mula Mengejutkan Investasi Startup',
+                titleId: 'Pemburu Paus, Jenderal, dan Angel dari Broadway: Asal Mula yang Unik dari Investasi Startup',
                 excerptId: 'Dari taruhan seorang ratu pada Columbus hingga kapal pemburu paus, seorang jenderal Prancis, dan sebuah istilah dari dunia Broadway: sejarah 500 tahun di balik industri venture capital yang membangun Apple, Google, dan Nvidia.'
             },
             'when-developed-nations-struggle': {

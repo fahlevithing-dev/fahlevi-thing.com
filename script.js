@@ -562,6 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "From a Diner Booth to Trillions: How Venture Capital Built Nvidia",
+            url: "from-a-diner-booth-to-trillions",
+            category: "INVESTMENT",
+            date: "October 31, 2026",
+            excerpt: "Three engineers, a Denny's booth, and $40,000. How Nvidia nearly went bankrupt twice before venture capital, a Sega bailout, and a bet on AI turned it into one of the most valuable companies in history.",
+            image: "images/nvidia.jpg"
+        },
+        {
             title: "Whalers, Generals, and Broadway Angels: The Curious Birth of Startup Investing",
             url: "whalers-generals-and-broadway-angels",
             category: "INVESTMENT",
