@@ -562,6 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Born Under a Tree, Born in a Colony (Part 1 of 2)",
+            url: "born-under-a-tree-born-in-a-colony",
+            category: "POLITICAL ECONOMY",
+            date: "November 1, 2026",
+            excerpt: "Wall Street was born from a crisis of trust in 1792. The Indonesia Stock Exchange was born from a colonial plantation economy in 1912. Part 1 of 2: how the two exchanges actually came to be, checked against primary sources.",
+            image: null
+        },
+        {
             title: "From a Diner Booth to Trillions: How Venture Capital Built Nvidia",
             url: "from-a-diner-booth-to-trillions",
             category: "INVESTMENT",

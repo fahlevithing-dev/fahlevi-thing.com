@@ -126,6 +126,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'born-under-a-tree-born-in-a-colony': {
+                titleId: 'Lahir di Bawah Pohon, Lahir di Tanah Koloni (Bagian 1 dari 2)',
+                excerptId: 'Wall Street lahir dari krisis kepercayaan pada 1792. Bursa Efek Indonesia lahir dari ekonomi perkebunan kolonial pada 1912. Bagian 1 dari 2: bagaimana kedua bursa ini sebenarnya terbentuk, diverifikasi ke sumber primer.'
+            },
             'from-a-diner-booth-to-trillions': {
                 titleId: 'Dari Bilik Diner ke Triliunan: Bagaimana Venture Capital Membangun Nvidia',
                 excerptId: 'Tiga insinyur, sebuah bilik Denny\'s, dan US$40.000. Bagaimana Nvidia nyaris bangkrut dua kali sebelum venture capital, dana talangan dari Sega, dan taruhan pada AI mengubahnya menjadi salah satu perusahaan paling bernilai dalam sejarah.'
