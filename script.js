@@ -575,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "POLITICAL ECONOMY",
             date: "November 1, 2026",
             excerpt: "Wall Street was born from a crisis of trust in 1792. The Indonesia Stock Exchange was born from a colonial plantation economy in 1912. Part 1 of 2: how the two exchanges actually came to be, checked against primary sources.",
-            image: "images/nyse-building.jpg"
+            image: "images/charging-bull.jpg"
         },
         {
             title: "From a Diner Booth to Trillions: How Venture Capital Built Nvidia",
