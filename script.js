@@ -562,12 +562,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Centralized Post Data
     const allPosts = [
         {
+            title: "Size Is Not Depth: MSCI, Rating Agencies and the Trust Gap (Part 2 of 2)",
+            url: "size-is-not-depth-msci-trust-gap",
+            category: "POLITICAL ECONOMY",
+            date: "November 1, 2026",
+            excerpt: "The US equity market is about 70 times the size of Indonesia's. Part 2 of 2: how deep each market really is, how MSCI decides where a market belongs, and why October 2026 became a trust crisis for Indonesia's exchange.",
+            image: "images/idx-building.jpg"
+        },
+        {
             title: "Born Under a Tree, Born in a Colony (Part 1 of 2)",
             url: "born-under-a-tree-born-in-a-colony",
             category: "POLITICAL ECONOMY",
             date: "November 1, 2026",
             excerpt: "Wall Street was born from a crisis of trust in 1792. The Indonesia Stock Exchange was born from a colonial plantation economy in 1912. Part 1 of 2: how the two exchanges actually came to be, checked against primary sources.",
-            image: null
+            image: "images/nyse-building.jpg"
         },
         {
             title: "From a Diner Booth to Trillions: How Venture Capital Built Nvidia",

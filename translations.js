@@ -126,6 +126,10 @@ window.LANG = (function () {
             }
         },
         posts: {
+            'size-is-not-depth-msci-trust-gap': {
+                titleId: 'Besar Belum Tentu Dalam: MSCI, Lembaga Pemeringkat, dan Soal Kepercayaan (Bagian 2 dari 2)',
+                excerptId: 'Pasar saham Amerika kira-kira 70 kali lebih besar daripada pasar saham Indonesia. Bagian 2 dari 2: seberapa dalam masing-masing pasar sebenarnya, bagaimana MSCI menentukan kelas sebuah pasar, dan mengapa Oktober 2026 menjadi krisis kepercayaan bagi bursa Indonesia.'
+            },
             'born-under-a-tree-born-in-a-colony': {
                 titleId: 'Lahir di Bawah Pohon, Lahir di Tanah Jajahan (Bagian 1 dari 2)',
                 excerptId: 'Wall Street lahir dari krisis kepercayaan pada 1792. Bursa Efek Indonesia lahir dari ekonomi perkebunan kolonial pada 1912. Bagian 1 dari 2: kisah lahirnya kedua bursa ini, diverifikasi ke sumber primer.'
